@@ -1,0 +1,79 @@
+.contact-us-sec__form-wrapper {
+    width: 480px;
+    margin: 0 auto;
+    margin-top: 96px;
+}
+
+.form__inp-title {
+    color: #364152;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 6px;
+}
+
+.form__inp {
+    border: 1px solid #CDD5DF;
+    width: 100%;
+    background: #FFF;
+    border-radius: 100px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 10px 16px;
+    color: #697586;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.form__inp-wrapper {
+    margin-bottom: 24px;
+}
+
+.form__select {
+    border: 1px solid #CDD5DF;
+    width: 100%;
+    background: #FFF;
+    border-radius: 100px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 10px 16px;
+    color: #697586;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.form__textarea {
+    border: 1px solid #CDD5DF;
+    width: 100%;
+    background: #FFF;
+    border-radius: 100px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 10px 16px;
+    color: #697586;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    resize: none;
+    border-radius: 16px;
+    height: 134px;
+    font-family: $mainFont;
+}
+
+.form__btn-send {
+    width: 100%;
+    border-radius: 100px;
+    color: #121926;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 12px;
+    border: 1px solid #80EAAF;
+    background: #80EAAF;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
+}

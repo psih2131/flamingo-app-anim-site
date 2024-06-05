@@ -1,0 +1,140 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+li {
+	list-style-type: none;
+}
+
+button {
+	cursor: pointer;
+	outline: 0 none !important;
+
+}
+
+body::-webkit-scrollbar {
+	width: 0px;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: darkgrey;
+	outline: 0px solid slategrey;
+}
+
+input {
+	outline: 0 none !important;
+
+}
+
+input[type=text] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input[type=tel] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input[type=email] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input[type=submit] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+button {}
+
+select {
+	cursor: pointer;
+	outline: 0 none !important;
+
+}
+
+textarea {
+	outline: 0 none !important;
+
+}
+
+body {
+	overscroll-behavior-y: contain;
+	/* Для совместимости с большинством браузеров */
+	overscroll-behavior-y: auto;
+	font-family: $mainFont;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+
+ul {
+	margin-bottom: 0;
+}
+
+
+.container {
+	width: 1217px;
+	margin: 0 auto;
+}
+
+// .overflowChange {
+// 	overflow: hidden;
+// 	height: 100vh;
+// }
+.overflowChange {
+	overflow: hidden;
+}
+
+.main {
+	min-height: 700px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 1150px) {}
+
+@media only screen and (max-width: 750px) {}
+
+@media only screen and (max-width: 430px) {}
+
+@media only screen and (max-width: 370px) {}

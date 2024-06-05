@@ -1,0 +1,116 @@
+.legal-main {
+    background: #fff;
+
+    .container {
+        padding-top: 224px;
+        border-bottom: solid 4px #EEF2F6;
+        padding-bottom: 130px;
+    }
+}
+
+.legal-container {
+    width: 768px;
+    margin: 0 auto;
+}
+
+.legal-sec__date {
+    text-align: center;
+    color: #151F34;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.legal-sec__title {
+    color: #121926;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
+}
+
+.legal-sec__subtitle {
+    color: #4B5565;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.legal-sec__text-wrapper {
+    margin-top: 96px;
+}
+
+.text-container {
+    p {
+        color: #4B5565;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
+
+    ul {
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        li {
+            list-style-type: disc;
+            color: #4B5565;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+        }
+    }
+
+    ol {
+        padding-left: 20px;
+        margin-bottom: 30px;
+
+        li {
+            list-style-type: decimal;
+            color: #4B5565;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+        color: #4B5565;
+    }
+
+    h1,
+    h2 {
+        color: #121926;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 38px;
+        margin-bottom: 20px;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #121926;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+}

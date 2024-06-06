@@ -1,0 +1,268 @@
+.home-main {
+    padding-top: 250px;
+    background: #F1F3F6;
+}
+
+.faq-sec {
+    .container {
+        padding: 96px 0;
+        border-top: solid 4px #fff;
+    }
+}
+
+.faq-sec__title {
+    color: #121926;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
+}
+
+.faq-sec__subtitle {
+    color: #697586;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.faq-sec__wrapper {
+    width: 768px;
+    margin: 0 auto;
+    margin-top: 64px;
+}
+
+.faq-sec__element {
+    padding: 18px 32px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.faq-sec__element-header-icon-wrapper {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: solid 2px #697586;
+}
+
+.faq-l {
+    height: 2px;
+    width: 10px;
+    background: #697586;
+    position: absolute;
+    transition: all ease 0.3s;
+}
+
+.faq-Y {
+    transform: rotate(90deg);
+}
+
+.faq-sec__element-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.faq-sec__element-header-title {
+    width: calc(100% - 20px);
+    padding-left: 24px;
+    color: #121926;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.faq-sec__element-body {
+    padding-left: 48px;
+    padding-top: 8px;
+    color: #697586;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+
+.faq-sec__element_active {
+    background: #fff;
+    padding: 32px;
+
+    .faq-sec__element-body {
+        max-height: 400px;
+    }
+
+    .faq-Y {
+        transform: rotate(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.blog-home-sec {
+    padding-bottom: 96px;
+
+    .container {
+        padding-top: 96px;
+        border-top: solid 4px #fff;
+    }
+}
+
+.help-list-sec {
+    .container {
+        padding: 96px 0;
+        border-top: 4px solid #fff;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.help-list-sec__title-wrapper {
+    width: 402px;
+}
+
+.help-list-sec__title {
+    color: #121926;
+    margin-bottom: 4px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
+}
+
+.help-list-sec__list-wrapper {
+    width: calc(100% - 402px);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.help-list-sec__element {
+    display: flex;
+    align-items: flex-start;
+    width: calc(50%);
+    margin-top: 40px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:nth-child(2) {
+        margin-top: 0;
+    }
+}
+
+.help-list-sec__element-text {
+    width: calc(100% - 28px);
+    color: #121926;
+    padding-left: 24px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding-right: 32px;
+}
+
+.download-sec {
+    .container {
+        padding-top: 96px;
+        border-top: solid 4px #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.download-sec__info {
+    width: 576px;
+    padding-top: 38px;
+}
+
+.download-sec__title {
+    color: #121926;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
+}
+
+.download-sec__subtitle {
+    margin-top: 24px;
+    color: #697586;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.download-sec__row {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+
+    .header__download-ios {
+        margin-right: 32px;
+    }
+
+    svg {
+        margin-right: 32px;
+    }
+}
+
+.download-sec__qr {
+    width: 72px;
+}
+
+.download-sec__qr-img {
+    width: 100%;
+    display: block;
+}
+
+.download-sec__phone-wrapper {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    width: 554px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.download-sec__phone {
+    width: 336px;
+    position: relative;
+    z-index: 10;
+    margin-right: 84px;
+}
+
+.download-sec__bable {
+    position: absolute;
+    z-index: 1;
+    width: 532px;
+    right: 22px;
+    bottom: -64px;
+}

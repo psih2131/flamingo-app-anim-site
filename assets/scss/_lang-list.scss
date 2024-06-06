@@ -1,0 +1,20 @@
+.lang-list {
+    padding: 0 32px 0 16px;
+}
+
+.lang-list__row {
+    display: flex;
+    align-items: center;
+}
+
+.lang-list__drop-down-list {
+    margin-left: 8px;
+}
+
+.lang-list__drop-down-list-element {
+    color: #4B5565;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}

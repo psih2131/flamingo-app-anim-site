@@ -1,0 +1,16 @@
+.footer__social-list {
+    display: flex;
+    align-items: center;
+}
+
+.footer__social-element {
+    width: 24px;
+    display: block;
+    margin-left: 24px;
+
+    svg {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}

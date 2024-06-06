@@ -3,11 +3,11 @@ clone:
   depth: 200
 pipelines:
   branches:
-    master:
+    main:
       - step:
           script:
             - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/flamingo-blog.git HEAD
     dev:
       - step:
           script:
-            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/flamingo-blog.git dev:master
+            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/flamingo-blog.git dev:main

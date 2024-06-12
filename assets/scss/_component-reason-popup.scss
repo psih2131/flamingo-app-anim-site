@@ -1,0 +1,129 @@
+.reason-popup-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.reason-popup-wrapper-bg {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(12px);
+    position: relative;
+    z-index: 1;
+
+}
+
+.reason-popup {
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    width: 912px;
+    right: 16px;
+    height: calc(100% - 32px);
+    top: 16px;
+    border-radius: 24px;
+    transition: all ease 0.8s;
+    transform: translateX(1000px);
+}
+
+.reason-popup__active {
+    transition: all ease 0.8s;
+    transform: translateX(0px);
+}
+
+.reason-popup__close {
+    position: absolute;
+    background: #121926;
+    right: 16px;
+    top: 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    width: 44px;
+    height: 44px;
+}
+
+.reason-popup__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.reason-popup__img-wrapper {
+    width: 407px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-right: 1px solid #E3E8EF;
+
+
+}
+
+.reason-popup__img {
+    width: 301px;
+    display: block;
+}
+
+.reason-popup__body-text {
+    width: calc(100% - 407px);
+    height: 100%;
+    overflow-y: auto;
+    padding: 120px 48px 48px 48px;
+}
+
+.reason-popup__body-text::-webkit-scrollbar {
+    width: 0px;
+}
+
+.reason-popup__body-text::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+.reason-popup__body-text::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 0px solid slategrey;
+}
+
+.reason-popup__title {
+    color: #121926;
+    margin-top: 24px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+.reason-popup__subtitle {
+    color: #4B5565;
+    margin-top: 32px;
+    padding-bottom: 48px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    border-bottom: solid 4px #B5F3D1;
+}
+
+.reason-popup__text {
+    padding-top: 32px;
+
+    p {
+        margin-top: 12px;
+        color: #364152;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px
+    }
+}

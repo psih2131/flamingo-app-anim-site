@@ -1,11 +1,24 @@
 .home-main {
-    padding-top: 250px;
     background: #F1F3F6;
 }
 
+.home-front-sec {
+
+    padding-top: 16px;
+}
+
+.home-front-sec__container {
+
+    width: 1408px;
+    height: 900px;
+    border-radius: 24px;
+    background: #fff;
+    margin: 0 auto;
+
+}
 
 .who-needs-sec {
-    border-top: solid 4px #fff;
+    // border-top: solid 4px #fff;
     padding: 96px 0;
 }
 

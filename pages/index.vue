@@ -1,5 +1,9 @@
 <template>
     <main class="main home-main">
+        <section class="home-front-sec">
+            <div class="home-front-sec__container"></div>
+        </section>
+
         <section class="who-needs-sec">
             <div class="container">
                 <div class="who-needs-sec__subtitle-row">

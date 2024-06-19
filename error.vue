@@ -1,17 +1,20 @@
 <template>
     <header class="error-header">
       <div class="container">
-        <a @click="goBack" class="error-header__logo-wrapper">
+        <nuxt-link no-prefetch to="/" class="error-header__logo-wrapper">
           <img src="@/assets/images/logo.svg" alt="" class="error-header__error-img">
-        </a>
+        </nuxt-link>
       </div>
     </header>
   
     <main class="main main-error">
       <section class="error-page-sec">
         <div class="container">
-          <h2 class="error-page-sec__title">Error: {{ error.statusCode }} We can’t find that page</h2>
-          <p class="error-page-sec__subtitle">Sorry, the page you are looking for doesn't exist or has been moved.</p>
+          <div class="error-page-sec__text-wrapper">
+            <h2 class="error-page-sec__title">Error: {{ error.statusCode }} We can’t find that page</h2>
+            <p class="error-page-sec__subtitle">Sorry, the page you are looking for doesn't exist or has been moved.</p>
+          </div>
+          
           <div class="error-page-sec__btn-row">
             
             <button @click="goBack" class="error-page-sec__prev-link-btn">

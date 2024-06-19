@@ -76,7 +76,7 @@
         </section>
 
 
-        <section class="related-posts">
+        <section class="related-posts related-posts-post-page">
             <div class="container">
                 <div class="related-posts__header">
                     <div class="related-posts__header-text">

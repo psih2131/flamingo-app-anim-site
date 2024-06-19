@@ -131,10 +131,14 @@ ul {
 
 
 
-@media only screen and (max-width: 1150px) {}
+@media only screen and (max-width: 1250px) {
+	.container {
+		width: 746px;
+	}
+}
 
-@media only screen and (max-width: 750px) {}
-
-@media only screen and (max-width: 430px) {}
-
-@media only screen and (max-width: 370px) {}
+@media only screen and (max-width: 750px) {
+	.container {
+		width: 343px;
+	}
+}

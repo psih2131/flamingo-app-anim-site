@@ -4,7 +4,7 @@
             <div class="home-front-sec__container"></div>
         </section>
 
-        <section class="who-needs-sec">
+        <section class="who-needs-sec" id="ForWhom">
             <div class="container">
                 <div class="who-needs-sec__subtitle-row">
                     <p class="who-needs-sec__subtitle">For Whom</p>
@@ -63,7 +63,7 @@
         </section>
 
 
-        <section class="reasons-sec">
+        <section class="reasons-sec" id="Features">
             <div class="container">
                 <div class="who-needs-sec__subtitle-row">
                     <p class="who-needs-sec__subtitle">Features</p>
@@ -74,7 +74,7 @@
                 <div class="reasons-sec__wrapper">
 
                     <div class="reasons-sec__big-wrapper">
-                        <div class="reasons-sec__big-element reason-element r-big">
+                        <div class="reasons-sec__big-element reason-element r-big r-big_x1">
                             <div class="r-big__text">
                                 <p class="r-big__title">Auto<br>Trip Recordingt</p>
                                 <p class="r-big__subtitle">Flamingo automatically determines if you have left your residence country or state and accurately records your trip details.</p>
@@ -157,7 +157,7 @@
                         </div>
                     </div>
 
-                    <div class="reasons-sec__big-element reason-element r-big r-big_40">
+                    <div class="reasons-sec__big-element reason-element r-big r-big_40 r-big_x2">
                         <div class="r-big__text">
                             <p class="r-big__title">Residency <br>& Domicile Status</p>
                             <p class="r-big__subtitle">Flamingo helps you establish your country of residence and domicile by automatically counting your days and nights in and out of the country.</p>
@@ -169,9 +169,13 @@
                     </div>
 
                     <div class="reasons-sec__tax-element reason-element r-tax r_soon reason-element-active" @click="openPopupInfo">
-                        <p class="r-small__title">Tax<br>Residency<br>Assessment</p>
-                        <p class="r-small__teg">Coming soon</p>
-                        <img src="@/assets/images/reasons-pages/r3.png" alt="" class="r-tax__img">
+                        <div class="r-tax__text-wrapper">
+                            <p class="r-small__title">Tax <span><br></span>Residency <span><br></span>Assessment</p>
+                            <p class="r-small__teg">Coming soon</p>
+                        </div>
+                        
+                        <img src="@/assets/images/reasons-pages/r3.png" alt="" class="r-tax__img r-tax__img-pc">
+                        <img src="@/assets/images/reasons-pages/r3-mob.png" alt="" class="r-tax__img r-tax__img-mob">
 
 
                         <div class="r-small__svg-wrapper">
@@ -211,7 +215,7 @@
                         </div>
                     </div>
 
-                    <div class="reasons-sec__big-element reason-element r-big">
+                    <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x3">
                         <div class="r-big__text">
                             <p class="r-big__title">USA States<br>Day Count</p>
                             <p class="r-big__subtitle">Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.</p>
@@ -222,7 +226,7 @@
                         </div>
                     </div>
 
-                    <div class="reasons-sec__big-element reason-element r-big">
+                    <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x4">
                         <div class="r-big__text">
                             <p class="r-big__title">Schengen Area<br>Calculator</p>
                             <p class="r-big__subtitle">Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.</p>
@@ -233,7 +237,7 @@
                         </div>
                     </div>
 
-                    <div class="reasons-sec__small-element reason-element r-small r_soon reason-element-active" @click="openPopupInfo">
+                    <div class="reasons-sec__small-element reason-element  r-small r_soon reason-element-active" @click="openPopupInfo">
                         <p class="r-small__title">Short-Term Visa Tracking</p>
                         <p class="r-small__teg">Coming soon</p>
                         <div class="r-small__svg-wrapper">
@@ -300,7 +304,7 @@
 
                     </div>
 
-                    <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo">
+                    <div class="reasons-sec__small-element reason-element r-small r-small_black reason-element-active" @click="openPopupInfo">
                         <p class="r-small__title">Built-In Passport Index</p>
                         <!-- <p class="r-small__teg">Coming soon</p> -->
                         <div class="r-small__svg-wrapper">
@@ -362,7 +366,7 @@
         </section>
 
 
-        <section class="security-sec">
+        <section class="security-sec" id="HowItWorks">
             <div class="container">
                 <div class="who-needs-sec__subtitle-row">
                     <p class="who-needs-sec__subtitle">Security</p>
@@ -448,7 +452,17 @@
                                 <path d="M68.0751 104.362V101.848C68.0405 98.9046 65.6213 96.543 62.678 96.5804C59.7922 96.6178 57.4565 98.9392 57.4102 101.825V104.362" stroke="#233457" stroke-width="3.45" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M52.9528 137.929V137.684M51.959 137.876C51.959 137.323 52.4081 136.878 52.9609 136.878C53.5137 136.878 53.959 137.323 53.959 137.876C53.959 138.432 53.5137 138.878 52.9609 138.878C52.4081 138.878 51.959 138.432 51.959 137.876Z" stroke="#233457" stroke-width="3.45" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M51.7802 241.28C51.1066 241.954 51.1066 243.046 51.7802 243.72L62.7581 254.698C63.4317 255.371 64.5239 255.371 65.1976 254.698C65.8712 254.024 65.8712 252.932 65.1976 252.258L55.4395 242.5L65.1976 232.742C65.8712 232.068 65.8712 230.976 65.1976 230.302C64.5239 229.629 63.4317 229.629 62.7581 230.302L51.7802 241.28ZM-65.7802 121.28C-66.4539 120.607 -67.5461 120.607 -68.2198 121.28L-79.1976 132.258C-79.8712 132.932 -79.8712 134.024 -79.1976 134.698C-78.5239 135.371 -77.4317 135.371 -76.7581 134.698L-67 124.94L-57.2419 134.698C-56.5683 135.371 -55.4761 135.371 -54.8024 134.698C-54.1288 134.024 -54.1288 132.932 -54.8024 132.258L-65.7802 121.28ZM136.814 36.6206V38.3456H138.539V36.6206H136.814ZM171.275 122.5C171.275 187.821 118.321 240.775 53 240.775V244.225C120.227 244.225 174.725 189.727 174.725 122.5H171.275ZM53 4.225C85.1436 4.225 114.289 17.0451 135.609 37.855L138.019 35.3862C116.081 13.9727 86.0799 0.775 53 0.775V4.225ZM11.6956 233.363C-33.2604 216.607 -65.275 173.29 -65.275 122.5H-68.725C-68.725 174.777 -35.7712 219.353 10.4907 236.596L11.6956 233.363ZM-61.3954 92.34C-48.0614 41.6263 -1.8963 4.225 53 4.225V0.775C-3.50245 0.775 -51.0093 39.2708 -64.732 91.4627L-61.3954 92.34ZM138.539 36.6206V21.5H135.089V36.6206H138.539ZM136.814 34.8956H123V38.3456H136.814V34.8956Z" fill="#B5F3D1"/>
-                                </svg>
+                            </svg>
+                                
+                        </div>
+
+                        <div class="security-sec__icon-wrapper security-sec__icon-wrapper-2">
+                            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M31.4509 10.0801H27.7705C22.0162 10.0801 17.3535 14.7456 17.3535 20.4999L17.3563 51.5002C17.3563 57.2516 22.0191 61.9172 27.7733 61.9172H43.6566C49.4108 61.9172 54.0764 57.2516 54.0764 51.4974L54.0735 38.641" stroke="#B5F3D1" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M50.2097 31.6599H41.2731C38.8251 31.6599 36.8379 29.6755 36.8379 27.2247V22.2106C36.8379 19.7597 38.8251 17.7754 41.2731 17.7754H50.2097C52.6577 17.7754 54.6449 19.7597 54.6449 22.2106V27.2247C54.6449 29.6755 52.6577 31.6599 50.2097 31.6599Z" stroke="#233457" stroke-width="3.45" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M51.0751 17.8623V15.3481C51.0405 12.4047 48.6213 10.0431 45.678 10.0805C42.7922 10.118 40.4565 12.4393 40.4102 15.3251V17.8623" stroke="#233457" stroke-width="3.45" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M35.9528 51.4288V51.1831M34.959 51.375C34.959 50.8222 35.4081 50.377 35.9609 50.377C36.5137 50.377 36.959 50.8222 36.959 51.375C36.959 51.9316 36.5137 52.377 35.9609 52.377C35.4081 52.377 34.959 51.9316 34.959 51.375Z" stroke="#233457" stroke-width="3.45" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                                 
                         </div>
 
@@ -566,7 +580,6 @@
                         <nuxt-link no-prefetch to="/blog" class="btnV1">
                             View all posts
                         </nuxt-link>
-                        
                     </div>
                 </div>
             </div>
@@ -591,6 +604,14 @@
 
                 </swiper>
 
+            </div>
+
+            <div class="related-posts__btn-wrapper-mob">
+               <div class="container">
+                    <nuxt-link no-prefetch to="/blog" class="btnV1">
+                        View all posts
+                    </nuxt-link>
+               </div>
             </div>
         </section>
 
@@ -639,9 +660,11 @@
                             Download    
                         </a>
 
-                        <svg width="178" height="67" viewBox="0 0 178 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 57.0616C3 57.0616 20.6382 -3.89489 54.2235 5.34457C87.8088 14.584 71.0277 68.9085 54.1679 64.7761C37.3127 60.6378 52.2405 4.37581 87.4011 7.79052C122.562 11.2052 113.471 63.1974 95.0086 62.1149C76.5411 61.0385 99.2495 15.5311 116.59 4.09473C138.79 -10.547 116.59 57.0616 175 37.3418M175 37.3418C166.381 31.9384 152.93 23.5054 152.93 23.5054M175 37.3418C167.295 45.0429 162.976 49.3606 155.271 57.0616" stroke="white" stroke-width="3.45" stroke-linecap="square"/>
-                        </svg> 
+                        <div class="download-sec__ar">
+                            <svg width="178" height="67" viewBox="0 0 178 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 57.0616C3 57.0616 20.6382 -3.89489 54.2235 5.34457C87.8088 14.584 71.0277 68.9085 54.1679 64.7761C37.3127 60.6378 52.2405 4.37581 87.4011 7.79052C122.562 11.2052 113.471 63.1974 95.0086 62.1149C76.5411 61.0385 99.2495 15.5311 116.59 4.09473C138.79 -10.547 116.59 57.0616 175 37.3418M175 37.3418C166.381 31.9384 152.93 23.5054 152.93 23.5054M175 37.3418C167.295 45.0429 162.976 49.3606 155.271 57.0616" stroke="white" stroke-width="3.45" stroke-linecap="square"/>
+                            </svg> 
+                        </div>
                         
                         <div class="download-sec__qr">
                             <img src="@/assets/images/qr.png" alt="" class="download-sec__qr-img">
@@ -665,6 +688,9 @@
 
 
 <script>
+definePageMeta({
+  layout: 'home'
+})
 
 import component__news_box from '@/components/component__news-box.vue'
 import component__reason_popup from '@/components/component__reason-popup.vue'
@@ -705,7 +731,7 @@ export default {
             ],
 
             faq: [
-                {'question': 'What is Flamingo Tracker 1?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
+                {'question': 'What is Flamingo Tracker 1?' , 'ansver': 'Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keepsFlamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
                 {'question': 'What is Flamingo Tracker 2?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
                 {'question': 'What is Flamingo Tracker 3?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
                 {'question': 'What is Flamingo Tracker 4?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
@@ -738,62 +764,72 @@ export default {
 
     methods: {
         toggleActive(index) {
-            this.activeIndex = this.activeIndex === index ? null : index;
+            if (this.activeIndex === index) {
+                this.activeIndex = null;
+            } 
+            else {
+                this.activeIndex = index;
+            }
         },
 
         activHoverAnim(element, event){
-            let element1 = document.querySelector('.n-amin-1')
-            let element2 = document.querySelector('.n-amin-2')
-            let element3 = document.querySelector('.n-amin-3')
-            let element4 = document.querySelector('.n-amin-4')
 
-            this.animCounter = this.animCounter + 1;
+            let mediaQuery = window.matchMedia('(min-width: 1250px)');
+            if(mediaQuery.matches){
 
-            if(this.pastAnimCounter == element){
-                this.offHoverAnim()
-                this.pastAnimCounter = null
+                let element1 = document.querySelector('.n-amin-1')
+                let element2 = document.querySelector('.n-amin-2')
+                let element3 = document.querySelector('.n-amin-3')
+                let element4 = document.querySelector('.n-amin-4')
+
+                this.animCounter = this.animCounter + 1;
+
+                if(this.pastAnimCounter == element){
+                    this.offHoverAnim()
+                    this.pastAnimCounter = null
+                }
+                else{
+
+                    this.offHoverAnim()
+                    if(element == 'x1'){
+            
+                        element1.classList.add('active-hover-anim')
+                        element2.classList.add('activ-hover-anim-small')
+                        element3.classList.add('activ-hover-anim-small')
+                        element4.classList.add('activ-hover-anim-small')
+                    }
+
+                    if(element == 'x2'){
+
+                        element2.classList.add('active-hover-anim')
+                        element1.classList.add('activ-hover-anim-small')
+                        element3.classList.add('activ-hover-anim-small')
+                        element4.classList.add('activ-hover-anim-small')
+                    }
+
+                    if(element == 'x3'){
+
+                        element3.classList.add('active-hover-anim')
+                        element1.classList.add('activ-hover-anim-small')
+                        element2.classList.add('activ-hover-anim-small')
+                        element4.classList.add('activ-hover-anim-small')
+                    }
+
+                    if(element == 'x4'){
+
+                        element4.classList.add('active-hover-anim')
+                        element1.classList.add('activ-hover-anim-small')
+                        element2.classList.add('activ-hover-anim-small')
+                        element3.classList.add('activ-hover-anim-small')
+                    }
+
+                    this.pastAnimCounter = element
+                }
+
+                console.log(element)
+                console.log(event)
+                console.log(this.pastAnimCounter)
             }
-            else{
-
-                this.offHoverAnim()
-                if(element == 'x1'){
-        
-                    element1.classList.add('active-hover-anim')
-                    element2.classList.add('activ-hover-anim-small')
-                    element3.classList.add('activ-hover-anim-small')
-                    element4.classList.add('activ-hover-anim-small')
-                }
-
-                if(element == 'x2'){
-
-                    element2.classList.add('active-hover-anim')
-                    element1.classList.add('activ-hover-anim-small')
-                    element3.classList.add('activ-hover-anim-small')
-                    element4.classList.add('activ-hover-anim-small')
-                }
-
-                if(element == 'x3'){
-
-                    element3.classList.add('active-hover-anim')
-                    element1.classList.add('activ-hover-anim-small')
-                    element2.classList.add('activ-hover-anim-small')
-                    element4.classList.add('activ-hover-anim-small')
-                }
-
-                if(element == 'x4'){
-
-                    element4.classList.add('active-hover-anim')
-                    element1.classList.add('activ-hover-anim-small')
-                    element2.classList.add('activ-hover-anim-small')
-                    element3.classList.add('activ-hover-anim-small')
-                }
-
-                this.pastAnimCounter = element
-            }
-
-            console.log(element)
-            console.log(event)
-            console.log(this.pastAnimCounter)
 
         },
 

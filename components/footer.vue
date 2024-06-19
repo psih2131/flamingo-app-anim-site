@@ -3,9 +3,11 @@
         <div class="footer__top">
             <div class="container">
                 <div class="footer__top-info">
-                    <a href="" class="footer__logo">
+
+                    <nuxt-link no-prefetch to="/" class="footer__logo">
                         <img src="@/assets/images/logo.svg" alt="" class="footer__logo-img">
-                    </a>
+                    </nuxt-link>
+
                     <p class="footer__info-text">
                         Flamingo tracking and counting are created for information purposes only.
                         <br><br>

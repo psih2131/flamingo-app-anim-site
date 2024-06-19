@@ -1,21 +1,21 @@
 <template>
-    <header class="header" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }">
+    <header class="header header-home" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }">
         <div class="container">
             <div class="header__logo-wrapper">
                 <nuxt-link no-prefetch to="/" class="header__logo"><img src="@/assets/images/logo.svg" alt="" class="header__logo-img"></nuxt-link>
             </div>
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">
-                    <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#ForWhom" class="header__nav-element-link">For Whom</nuxt-link>
+                    <li  class="header__nav-element">
+                        <a  href="/#ForWhom" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'ForWhom' }">For Whom</a>
                     </li>
 
-                    <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#Features" class="header__nav-element-link">Features</nuxt-link>
+                    <li  class="header__nav-element">
+                        <a  href="/#Features" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">Features</a>
                     </li>
 
-                    <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#HowItWorks" class="header__nav-element-link">How it works</nuxt-link>
+                    <li  class="header__nav-element">
+                        <a  href="/#HowItWorks" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'HowItWorks' }">How it works</a>
                     </li>
 
                     <li class="header__nav-element">
@@ -59,15 +59,19 @@
                 <nav class="mob-meny__nav">
                     <div class="container">
                         <ul class="mob-meny__nav-list">
-                            <li class="mob-meny__nav-list-element">
-                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/#ForWhom" class="mob-meny__nav-list-element-link">For Whom</nuxt-link>
+
+                            <li  class="mob-meny__nav-list-element">
+                                <a  href="/#ForWhom" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'ForWhom' }">For Whom</a>
                             </li>
-                            <li class="mob-meny__nav-list-element">
-                                <nuxt-link no-prefetch to="/#Features" class="mob-meny__nav-list-element-link">Features</nuxt-link>
+        
+                            <li  class="mob-meny__nav-list-element">
+                                <a  href="/#Features" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">Features</a>
                             </li>
-                            <li class="mob-meny__nav-list-element">
-                                <nuxt-link no-prefetch to="/#HowItWorks" class="mob-meny__nav-list-element-link">How it works</nuxt-link>
+        
+                            <li  class="mob-meny__nav-list-element">
+                                <a  href="/#HowItWorks" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'HowItWorks' }">How it works</a>
                             </li>
+
                             <li class="mob-meny__nav-list-element">
                                 <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link">Blog</nuxt-link>
                             </li>
@@ -132,6 +136,7 @@ export default {
         return {
             isScrolled: false,
             mobMenyStatus: false,
+            activeSection: '',
         }
     },
 
@@ -143,6 +148,21 @@ export default {
         handleScroll() {
             this.isScrolled = window.scrollY > 100;
         },
+
+        onScroll() {
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 50 && rect.bottom > 50) {
+                currentSection = section.id;
+                }
+            });
+
+            this.activeSection = currentSection;
+        }
+
     },
 
     computed: {
@@ -155,9 +175,13 @@ export default {
 
     mounted(){
         window.addEventListener('scroll', this.handleScroll);
+
+        window.addEventListener('scroll', this.onScroll);
+        this.onScroll(); // Инициализация на загрузке страницы
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', this.onScroll);
     },
 
 }

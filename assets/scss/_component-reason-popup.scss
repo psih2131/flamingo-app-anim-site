@@ -127,3 +127,110 @@
         line-height: 24px
     }
 }
+
+
+@media only screen and (max-width: 1250px) {
+    .reason-popup {
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        top: 0;
+
+    }
+
+    .reason-popup__wrapper {
+        overflow-y: auto;
+        flex-wrap: wrap;
+    }
+
+    .reason-popup__wrapper::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    .reason-popup__wrapper::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .reason-popup__wrapper::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 0px solid slategrey;
+    }
+
+    .reason-popup-wrapper-bg {
+        background: none;
+        backdrop-filter: none
+    }
+
+    .reason-popup {
+
+        transform: translateX(0) translateY(100%);
+    }
+
+    .reason-popup__active {
+
+        transform: translateX(0px) translateY(0);
+    }
+
+    .reason-popup__body-text {
+        width: 100%;
+        padding: 48px 0 80px 0;
+        background: #F8FAFC;
+        height: auto;
+    }
+
+    .reason-popup__container {
+        width: 746px;
+        margin: 0 auto;
+    }
+
+    .reason-popup__img-wrapper {
+        height: auto;
+        height: 600px;
+        overflow: hidden;
+        width: 100%;
+        border: none;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        padding-top: 47px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .reason-popup__img {
+        width: 336px;
+        position: absolute;
+        top: 47px;
+
+    }
+
+    .reason-popup__close {
+        z-index: 10;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    .reason-popup__img {
+        width: 260px;
+        top: 64px;
+    }
+
+    .reason-popup__img-wrapper {
+        height: 420px;
+    }
+
+    .reason-popup__body-text {
+        padding: 64px 0 80px 0;
+    }
+
+    .reason-popup__subtitle {
+        font-size: 18px;
+        padding-bottom: 32px;
+    }
+
+    .reason-popup__container {
+        width: 343px;
+    }
+
+}

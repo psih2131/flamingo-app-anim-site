@@ -88,10 +88,7 @@ definePageMeta({
 })
 
 import component__reason_popup from '@/components/component__reason-popup.vue'
- // Import Swiper Vue.js components
 
-// import required modules
-import {Navigation, FreeMode, Pagination } from 'swiper/modules';
 
 export default {
     data() {
@@ -107,12 +104,6 @@ export default {
         component__reason_popup,
     },
 
-    setup() {
-      return {
-        modules: [Navigation, FreeMode, Pagination],
-
-      };
-    },
 
     methods: {
         toggleActive(index) {

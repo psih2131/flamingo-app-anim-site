@@ -16,7 +16,7 @@
     </div>
 
     <div class="related-posts__slider posts-slider">
-
+      {{ posts }}
       <swiper
           :slidesPerView="'auto'"
           :spaceBetween="4"
@@ -25,10 +25,6 @@
           :modules="modules"
           class="posts-slider__swiper"
       >
-        <swiper-slide v-for="item in posts" :key="item" >
-          <component__news_box :postId="item"/>
-        </swiper-slide>
-
         <swiper-slide v-for="item in posts" :key="item" >
           <component__news_box :postId="item"/>
         </swiper-slide>
@@ -48,9 +44,16 @@
 </template>
 
 
+<script setup>
+const { data : count } = await useFetch('/api/blogs')
+</script>
+
 <script>
+
+// import required modules
+import {Navigation, FreeMode, Pagination } from 'swiper/modules';
+
 import component__news_box from '@/components/component__news-box.vue'
-import component__reason_popup from '@/components/component__reason-popup.vue'
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -59,6 +62,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import {useFetch, useRuntimeConfig} from "nuxt/app";
 
 export default {
   name: "blog-on-main",
@@ -71,22 +75,34 @@ export default {
     Swiper,
     SwiperSlide,
     component__news_box,
-    component__reason_popup,
   },
 
-  // async setup() {
-  //   const config = useRuntimeConfig();
-  //
-  //   const [{ data: tags }, { data: blogs }] = await Promise.all([
-  //     useFetch(config.API_BASE_URL+'/blogs'),
-  //   ])
-  //
-  //   return {
-  //     tags,
-  //     blogs
-  //   }
-  // }
+  async setup() {
 
+    // const data = await Promise.all([
+    //   useFetch('/api/blogs'),
+    // ])
+    //
+    // console.log(data);
+
+    return {
+      modules: [Navigation, FreeMode, Pagination],
+
+    };
+  },
+  // async setup() {
+
+    // const config = useRuntimeConfig();
+    //
+    // const [{ data: tags }, { data: blogs }] = await Promise.all([
+    //   useFetch(config.API_BASE_URL+'/blogs'),
+    // ])
+    //
+    // return {
+    //   tags,
+    //   blogs
+    // }
+  // }
 }
 </script>
 

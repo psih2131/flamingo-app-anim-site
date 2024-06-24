@@ -6,7 +6,6 @@
           <h2 class="related-posts__title">Blog</h2>
           <p class="related-posts__subtitle">The latest news, travel directions, tips and tricks from our team.</p>
         </div>
-
         <div class="related-posts__btn-wrapper">
           <nuxt-link no-prefetch to="/blog" class="btnV1">
             View all posts
@@ -16,7 +15,6 @@
     </div>
 
     <div class="related-posts__slider posts-slider">
-      {{ posts }}
       <swiper
           :slidesPerView="'auto'"
           :spaceBetween="4"
@@ -25,8 +23,8 @@
           :modules="modules"
           class="posts-slider__swiper"
       >
-        <swiper-slide v-for="item in posts" :key="item" >
-          <component__news_box :postId="item"/>
+        <swiper-slide v-for="item in blogs" :key="item" >
+          <component__news_box :post="item"/>
         </swiper-slide>
 
       </swiper>
@@ -43,11 +41,6 @@
   </section>
 </template>
 
-
-<script setup>
-const { data : count } = await useFetch('/api/blogs')
-</script>
-
 <script>
 
 // import required modules
@@ -62,7 +55,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import {useFetch, useRuntimeConfig} from "nuxt/app";
+import {useFetch, useRuntimeConfig, useAsyncData} from "nuxt/app";
 
 export default {
   name: "blog-on-main",
@@ -78,31 +71,16 @@ export default {
   },
 
   async setup() {
-
-    // const data = await Promise.all([
-    //   useFetch('/api/blogs'),
-    // ])
-    //
-    // console.log(data);
+    const { data: blogs, error, execute, pending, refresh, status} = await useAsyncData('blogs', () => $fetch('/api/blogs' , {
+        method:"POST",
+        headers: { "Content-Type": "application/json" },
+    }))
 
     return {
       modules: [Navigation, FreeMode, Pagination],
-
+      blogs
     };
   },
-  // async setup() {
-
-    // const config = useRuntimeConfig();
-    //
-    // const [{ data: tags }, { data: blogs }] = await Promise.all([
-    //   useFetch(config.API_BASE_URL+'/blogs'),
-    // ])
-    //
-    // return {
-    //   tags,
-    //   blogs
-    // }
-  // }
 }
 </script>
 

@@ -2,20 +2,22 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     const runtimeConfig = useRuntimeConfig();
     try {
-        console.log(runtimeConfig.public.API_BASE_URL);
-        let result = await $fetch(`${ runtimeConfig.public.API_BASE_URL}/blogs`, {
+           let { data } = await $fetch(`${ runtimeConfig.public.API_BASE_URL}/blogs`, {
             method: "POST",
-            // body: { username: body.username, password: body.password },
+            body: { tag_id: null },
             headers: { "Content-Type": "application/json" },
         });
-        console.log(result);
-        return {
-            message: "success",
-        };
+
+        let blogs = data.blogs
+
+        return blogs;
+
     } catch (err) {
+        console.error(err);
         throw createError({
-            message: "Authorization Failed",
-            statusCode: 401,
+            message: "Error occured",
+            statusCode: 500,
+            error: err
         });
     }
 

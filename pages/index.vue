@@ -62,17 +62,17 @@
             </div>
         </section>
 
-<!--        <PartialsFeatures />-->
+        <PartialsFeatures />
 
-<!--        <PartialsHowItWorks />-->
+        <PartialsHowItWorks />
 
-<!--        <PartialsFaq />-->
+        <PartialsFaq />
 
-            <BlogsBlogOnMain />
+        <BlogsBlogOnMain />
 
-<!--        <PartialsHowhelp />-->
+        <PartialsHowhelp />
 
-<!--        <PartialsDownload />-->
+        <PartialsDownload />
 
         <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" />
 

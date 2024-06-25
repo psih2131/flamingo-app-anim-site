@@ -1,10 +1,11 @@
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
+
     const runtimeConfig = useRuntimeConfig();
     try {
         let { data } = await $fetch(`${ runtimeConfig.public.API_BASE_URL }/blogs`, {
             method: "POST",
-            body: { tag_id: null },
+            body: { tag_id: (body && body.tag_id) || null, page: (body && body.page ) || 1, per_page : (body && body.per_page ) || 1000  },
             headers: { "Content-Type": "application/json" },
         });
 

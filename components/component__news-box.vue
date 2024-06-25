@@ -1,7 +1,8 @@
 <template>
   <div class="news-box">
     <a :href="pageUrl" class="news-box__img-wrapper">
-        <img :src="`/_nuxt/assets/images/img-${post.id}.jpg`" alt="" class="news-box__img">
+        <!-- todo: clenup temp images -->
+        <img :src="post.hero_image_url.length > 10 ? post.hero_image_url : `/_nuxt/assets/images/img-${post.id}.jpg`" alt="" class="news-box__img">
     </a>
     <div class="news-box__info">
         <p class="news-box__date">{{ getDateParsed }}</p>
@@ -14,8 +15,8 @@
             </a>
         </h3>
         <p class="news-box__subtitle">{{ post.dsc }}</p>
-        <div class="news-box__tag-row">
-            <div class="news-box__tag">Visa Managment</div>
+        <div class="news-box__tag-row" v-for="tagId in post.tags" :key="tagId" :set="foundTag = tags.find(t => t.id === tagId)">
+            <div class="news-box__tag" :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}">{{ foundTag.title }}</div>
         </div>
     </div>
   </div>
@@ -40,6 +41,7 @@ export default {
 
     props:{
         post :  {},
+        tags :  Array
     },
 
 

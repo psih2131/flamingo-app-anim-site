@@ -23,8 +23,9 @@
           :modules="modules"
           class="posts-slider__swiper"
       >
+      {{ tags }}
         <swiper-slide v-for="item in blogs" :key="item" >
-          <component__news_box :post="item"/>
+          <component__news_box :post="item" :tags="tags" />
         </swiper-slide>
 
       </swiper>
@@ -71,14 +72,15 @@ export default {
   },
 
   async setup() {
-    const { data: blogs, error, execute, pending, refresh, status} = await useAsyncData('blogs', () => $fetch('/api/blogs' , {
+    const { data: { value: { blogs, tags } }, error, execute, pending, refresh, status } = await useAsyncData('blogsTags', () => $fetch('/api/blogs' , {
         method:"POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" }
     }))
 
     return {
       modules: [Navigation, FreeMode, Pagination],
-      blogs
+      blogs,
+      tags
     };
   },
 }

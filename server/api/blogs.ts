@@ -2,15 +2,13 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     const runtimeConfig = useRuntimeConfig();
     try {
-           let { data } = await $fetch(`${ runtimeConfig.public.API_BASE_URL}/blogs`, {
+        let { data } = await $fetch(`${ runtimeConfig.public.API_BASE_URL }/blogs`, {
             method: "POST",
             body: { tag_id: null },
             headers: { "Content-Type": "application/json" },
         });
 
-        let blogs = data.blogs
-
-        return blogs;
+        return data;
 
     } catch (err) {
         console.error(err);

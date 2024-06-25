@@ -2,7 +2,7 @@
   <div class="news-box">
     <a :href="pageUrl" class="news-box__img-wrapper">
         <!-- todo: clenup temp images -->
-        <img :src="post.hero_image_url.length > 10 ? post.hero_image_url : `/_nuxt/assets/images/img-${post.id}.jpg`" alt="" class="news-box__img">
+        <img :src="post.hero_image_url.length > 10 ? post.hero_image_url : `@/assets/images/images/img-${post.id}.jpg`" alt="" class="news-box__img">
     </a>
     <div class="news-box__info">
         <p class="news-box__date">{{ getDateParsed }}</p>

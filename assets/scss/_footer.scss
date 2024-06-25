@@ -44,15 +44,14 @@
 .footer__top-nav-list-element {
     min-width: 199px;
     margin-bottom: 16px;
-}
-
-.footer__nav-element-link {
-    display: inline-block;
-    color: #4B5565;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
+}
+
+.footer__nav-element-link {
+    color: #4B5565;
 }
 
 .footer__developer-row {

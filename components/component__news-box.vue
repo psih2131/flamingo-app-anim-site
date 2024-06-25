@@ -16,8 +16,13 @@
             </a>
         </h3>
         <p class="news-box__subtitle">{{ post.dsc }}</p>
-        <div class="news-box__tag-row" v-for="tagId in post.tags" :key="tagId" :set="foundTag = tags.find(t => t.id === tagId)">
-            <div class="news-box__tag" :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}">{{ foundTag.title }}</div>
+        <div class="news-box__tag-row">
+            <div class="news-box__tag" 
+                v-for="tagId in post.tags" 
+                :key="tagId" 
+                :set="foundTag = tags.find(t => t.id === tagId)"
+                :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}"
+            >{{ foundTag.title }}</div>
         </div>
     </div>
   </div>

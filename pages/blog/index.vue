@@ -11,14 +11,14 @@
                     <li class="blog-sec__nav-element">
                         <a href="" class="blog-sec__nav-link blog-sec__nav-link_active">Recent</a>
                     </li>
-                    <li class="blog-sec__nav-element"  v-for="item in tags">
+                    <li class="blog-sec__nav-element" v-for="item in tags" :key="item.id">
                         <a v-if="item.is_in_menu" href="" class="blog-sec__nav-link" :style="{ color : '#' + item.text_color }">{{ item.title }}</a>
                     </li>
                 </ul>
                 <div class="blog-sec__nav-mob">
                     <select name="" id="" class="blog-sec__nav-list" >
                         <option value=""><a href="">Recent</a></option>
-                        <option value=""  v-for="item in tags"><a href="" v-if="item.is_in_menu" >{{ item.title }}</a></option>
+                        <option value="" v-for="item in tags" :key="item.id"><a href="" v-if="item.is_in_menu" >{{ item.title }}</a></option>
                     </select>
                 </div>
 

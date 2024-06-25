@@ -115,6 +115,12 @@
     }
 }
 
+.post-body__text_italic.text-container {
+        p {
+            font-style: italic;
+        }
+    }
+
 
 @media only screen and (max-width: 1250px) {
     .legal-main {

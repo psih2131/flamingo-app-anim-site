@@ -70,6 +70,33 @@ export default {
     SwiperSlide,
     component__news_box,
   },
+  methods: {
+    resizeSliderNewsHeight(){
+      let boxes = document.querySelectorAll('.news-box');
+      let maxHeight = 0;
+
+      // Сброс высоты, чтобы измерить естественную высоту элементов
+      boxes.forEach(box => {
+        box.style.height = 'auto';
+      });
+
+      // Найти максимальную высоту
+      boxes.forEach(box => {
+        if (box.offsetHeight > maxHeight) {
+          maxHeight = box.offsetHeight;
+        }
+      });
+
+      // Установить максимальную высоту для всех элементов
+      boxes.forEach(box => {
+        box.style.height = `${maxHeight}px`;
+      });
+    }
+  },
+
+  mounted(){
+    this.resizeSliderNewsHeight()
+  },
 
   async setup() {
     const { data: { value: { blogs, tags } }, error, execute, pending, refresh, status } = await useAsyncData('blogsTags', () => $fetch('/api/blogs' , {

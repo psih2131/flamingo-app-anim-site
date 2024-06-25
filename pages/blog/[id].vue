@@ -106,11 +106,11 @@
                     class="posts-slider__swiper"
                 >   
                     <swiper-slide v-for="item in posts" :key="item" >
-                        <component__news_box :postId="item"/>
+                        <!-- <component__news_box :postId="item"/> -->
                     </swiper-slide>
 
                     <swiper-slide v-for="item in posts" :key="item" >
-                        <component__news_box :postId="item"/>
+                        <!-- <component__news_box :postId="item"/> -->
                     </swiper-slide>
 
                 </swiper>
@@ -126,7 +126,7 @@
 
 <script>
 
-import component__news_box from '@/components/component__news-box.vue'
+// import component__news_box from '@/components/component__news-box.vue'
  // Import Swiper Vue.js components
  import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -150,7 +150,7 @@ export default {
     components: {
         Swiper,
       SwiperSlide,
-      component__news_box,
+    //   component__news_box,
     },
 
     setup() {

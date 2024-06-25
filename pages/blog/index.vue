@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="blog-sec__news-container">
-                    <component__news_box v-for="item in posts" :key="item"  :postId="item"/>
+                    <!-- <component__news_box v-for="item in posts" :key="item"  :postId="item"/> -->
                 </div>
                 <div class="blog-sec__pagination-row pagination">
 
@@ -75,7 +75,7 @@
 
 
 <script>
-import component__news_box from '@/components/component__news-box.vue'
+// import component__news_box from '@/components/component__news-box.vue'
 
 export default {
     data() {
@@ -85,7 +85,7 @@ export default {
     },
 
     components: {
-        component__news_box,
+        // component__news_box,
     },
 
     methods: {

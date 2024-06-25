@@ -305,7 +305,26 @@
 
 <script>
 export default {
-  name: "features"
+  name: "features",
+
+  data() {
+      return {
+          animCounter: 0,
+          pastAnimCounter: null,
+
+          popupStatus: false,
+      }
+  },
+
+  methods: {
+    openPopupInfo(){
+      let testData = {
+        'title': 'test'
+      }
+      this.$emit('openPopup', testData)
+    }
+  }
+  
 }
 </script>
 

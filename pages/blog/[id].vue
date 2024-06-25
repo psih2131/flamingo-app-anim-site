@@ -117,8 +117,8 @@ export default {
 
     components: {
         Swiper,
-      SwiperSlide,
-    //   component__news_box,
+        SwiperSlide,
+        //   component__news_box,
     },
 
     async setup() {
@@ -146,7 +146,27 @@ export default {
     },
 
     methods: {
+        resizeSliderNewsHeight(){
+        let boxes = document.querySelectorAll('.news-box');
+        let maxHeight = 0;
 
+        // Сброс высоты, чтобы измерить естественную высоту элементов
+        boxes.forEach(box => {
+            box.style.height = 'auto';
+        });
+
+        // Найти максимальную высоту
+        boxes.forEach(box => {
+            if (box.offsetHeight > maxHeight) {
+            maxHeight = box.offsetHeight;
+            }
+        });
+
+        // Установить максимальную высоту для всех элементов
+        boxes.forEach(box => {
+            box.style.height = `${maxHeight}px`;
+        });
+        }
     },
 
     computed: {
@@ -198,6 +218,7 @@ export default {
 
 
     mounted() {
+        this.resizeSliderNewsHeight()
     },
 
 }

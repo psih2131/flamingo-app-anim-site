@@ -3,61 +3,27 @@
         <section class="post-boby-sec">
             <div class="container">
                 <div class="container-post">
-                    <p class="post-boby-sec__date">Published 20 Jan 2024</p>
-                    <h1 class="post-boby-sec__post-title">Stay on track with your visas! {{ $route.params.id }}</h1>
-                    <p class="post-boby-sec__post-subtitle">Discover essential tips and tricks to manage your visas effectively while on the go with our visa tracking guide.</p>
+                    <p class="post-boby-sec__date">Published {{ getDateParsed }}</p>
+                    <h1 class="post-boby-sec__post-title">{{ blog.title }}</h1>
+                    <p class="post-boby-sec__post-subtitle">{{ blog.dsc }}</p>
                 </div>
 
                 <div class="post-boby-sec__image-wrapper">
-                    <img :src="`/_nuxt/assets/images/img-${$route.params.id}.jpg`" alt="" class="post-boby-sec__image">
+                    <img v-if="blog.hero_image_url.length > 10" :src="blog.hero_image_url" alt="" class="post-boby-sec__image">
+                    <img v-if="blog.hero_image_url.length < 10" src="@/assets/images/img-5.jpg" alt="" class="post-boby-sec__image">
                 </div>
 
                 <div class="container-post">
 
-                    <div class="post-boby-sec__main-info post-body">
-                        <div class="post-body__small-description text-container">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper mattis lorem non. Ultrices praesent amet ipsum justo massa. Eu dolor aliquet risus gravida nunc at feugiat consequat purus. Non massa enim vitae duis mattis. Vel in ultricies vel fringilla.</p>
-                        </div>
-
-                        <div class="post-body__text text-container">
-                            <h2>Introduction</h2>
-                            <p>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</p>
-                            <p>Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. </p>
-                        </div>
-
-                        <div class="post-body__image-wrapper">
-                            <img :src="`/_nuxt/assets/images/img-${$route.params.id}.jpg`" alt="" class="post-body__image">
-                            <p class="post-body__description">Image courtesy of Scott Webb via <a href="">Pexels</a></p>
-                        </div>
-
-                        <div class="post-body__autor">
-                            <p class="post-body__autor-text">“In a world older and more complete than ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”</p>
-                            <div class="post-body__autor-info">
-                                <img :src="`/_nuxt/assets/images/img-${$route.params.id}.jpg`" alt="" class="post-body__autor-photo">
-                                <p class="post-body__autor-name">Olivia Rhye</p>
-                                <p class="post-body__autor-subname">Traveler</p>
-                            </div>
-                        </div>
-
-                        <div class="post-body__text text-container">
-                            <p>Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla.</p>
-                            <p>Elit nisi in eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.</p>
-                            <p>Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p>
-                        </div>
-
-                        <div class="post-body__white-text-background text-container">
-                            <h2>Conclusion</h2>
-
-                            <p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse.</p>
-                            <p>Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.</p>
-                            <p>Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet. Nam elementum urna nisi aliquet erat dolor enim. Ornare id morbi eget ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec posuere pharetra odio consequat scelerisque et, nunc tortor.</p>
-                        </div>
-                    </div>
-
+                    <div class="post-boby-sec__main-info post-body" v-html="renderArticle"></div>
 
                     <div class="post-tag-row">
-                        <p class="post-tag-row__element">Travel Tracker</p>
-                        <p class="post-tag-row__element">Food</p>
+                        <p class="post-tag-row__element" 
+                          v-for="tagId in blog.tags" 
+                          :key="tagId" 
+                          :set="foundTag = tags.find(t => t.id === tagId)" 
+                          :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}"
+                        >{{ foundTag.title }}</p>
                     </div>
 
                     <div class="post-btn-row">
@@ -105,13 +71,13 @@
                     :modules="modules"
                     class="posts-slider__swiper"
                 >   
-                    <swiper-slide v-for="item in posts" :key="item" >
-                        <!-- <component__news_box :postId="item"/> -->
+                    <swiper-slide v-for="item in related_blogs" :key="item" >
+                        <component__news_box :post="item" :tags="tags" />
                     </swiper-slide>
 
-                    <swiper-slide v-for="item in posts" :key="item" >
+                    <!-- <swiper-slide v-for="item in posts" :key="item" > -->
                         <!-- <component__news_box :postId="item"/> -->
-                    </swiper-slide>
+                    <!-- </swiper-slide> -->
 
                 </swiper>
 
@@ -138,7 +104,7 @@ import 'swiper/css/pagination';
 
 
 // import required modules
-import {Navigation, FreeMode, Pagination } from 'swiper/modules';
+import { Navigation, FreeMode, Pagination } from 'swiper/modules';
 
 export default {
     data() {
@@ -153,9 +119,27 @@ export default {
     //   component__news_box,
     },
 
-    setup() {
+    async setup() {
+      const route = useRoute();
+      const router = useRouter();
+
+      let blogId = route.params.id.split('-');
+
+      const { data: { value: { blog, tags, related_blogs } }, error, execute, pending, refresh, status } = await useAsyncData('blogItem', () => $fetch('/api/blog' , {
+        method:"POST",
+        headers: { "Content-Type": "application/json" },
+        body: { blog_id: blogId.pop() }
+      }))
+
+      if (route.params.id !== `${blog.slug}-${blog.id}`) {
+        router.replace({ path: `${blog.slug}-${blog.id}` });
+      }
+
       return {
         modules: [Navigation, FreeMode, Pagination],
+        blog,
+        tags,
+        related_blogs
       };
     },
 
@@ -164,7 +148,38 @@ export default {
     },
 
     computed: {
+      getDateParsed(){
+        const dayjs = useDayjs()
+        return dayjs(this.blog.published_at).format('DD MMM YYYY');
+      },
+      renderArticle(){
+        if (!this.blog.article || this.blog.article.length <= 0) return '-- empty article --'
+        let blocks = {
+            "text": "post-body__text text-container",
+            "text_italic": "post-body__small-description text-container",
+        }
+        let result = '';
+        for (let i = 0; i < this.blog.article.length; i++) {
+            const block = this.blog.article[i];
 
+            if (!block.block_type) return;
+            let blockHtml = `<div class="${blocks[block.block_type]}">`;
+            if (block.title) blockHtml += `<h2>${block.title}</h2>`;
+            if (block.subtitle) blockHtml += `<h3>${block.subtitle}</h3>`;
+            if (block.text) {
+                let paragraphs = block.text.split('\n\n');
+                for (let j = 0; j < paragraphs.length; j++) {
+                    const p = paragraphs[j];
+                    
+                    blockHtml += `<p>${p}</p>`;
+                }
+            }
+            blockHtml += `</div>`;
+            result += blockHtml;
+        }
+
+        return result;
+      }
     },
 
     watch: {
@@ -172,8 +187,7 @@ export default {
     },
 
 
-    mounted(){
-
+    mounted() {
     },
 
 }

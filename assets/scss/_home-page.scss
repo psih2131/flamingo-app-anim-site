@@ -280,6 +280,11 @@
     display: inline-block;
 }
 
+.reason-element {
+    z-index: 1;
+    position: relative;
+}
+
 .reason-element__link-btn-container {
     position: absolute;
     right: 0;

@@ -17,13 +17,13 @@
                 <nav class="footer__top-nav">
                     <ul class="footer__top-nav-list">
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/index" class="footer__nav-element-link">For whom</nuxt-link>
+                            <nuxt-link no-prefetch to="/#ForWhom" class="footer__nav-element-link">For whom</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/index" class="footer__nav-element-link">Features</nuxt-link>
+                            <nuxt-link no-prefetch to="/#Features" class="footer__nav-element-link">Features</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/index" class="footer__nav-element-link">How it works</nuxt-link>
+                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">How it works</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">Contact us</nuxt-link>
@@ -35,7 +35,7 @@
                             <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">Terms of Use</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/index" class="footer__nav-element-link">Support</nuxt-link>
+                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">Support</nuxt-link>
                         </li>
                     </ul>
                 </nav>
@@ -59,7 +59,7 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6001 9.6V0H26.4001V9.6H48.0001V14.4H26.4001V24H21.6001V14.4H0.00012207V9.6H21.6001Z" fill="#9AA4B2"/>
                             </g>
                         </svg>
-                        <p class="footer__developer-text">Made in the U.K.</p>    
+                        <p class="footer__developer-text">Made in the U.K.</p>
                     </div>
                 </div>
             </div>

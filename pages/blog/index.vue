@@ -11,42 +11,28 @@
                     <li class="blog-sec__nav-element">
                         <a href="" class="blog-sec__nav-link blog-sec__nav-link_active">Recent</a>
                     </li>
-                    <li class="blog-sec__nav-element">
-                        <a href="" class="blog-sec__nav-link">Visa Managment</a>
-                    </li>
-                    <li class="blog-sec__nav-element">
-                        <a href="" class="blog-sec__nav-link">Travel Tracker</a>
-                    </li>
-                    <li class="blog-sec__nav-element">
-                        <a href="" class="blog-sec__nav-link">Travel Planning</a>
-                    </li>
-                    <li class="blog-sec__nav-element">
-                        <a href="" class="blog-sec__nav-link">Fun</a>
-                    </li>
-                    <li class="blog-sec__nav-element">
-                        <a href="" class="blog-sec__nav-link">Food</a>
+                    <li class="blog-sec__nav-element" v-for="item in tags" :key="item.id">
+                        <a v-if="item.is_in_menu" href="" class="blog-sec__nav-link" :style="{ color : '#' + item.text_color }">{{ item.title }}</a>
                     </li>
                 </ul>
                 <div class="blog-sec__nav-mob">
-                    <select name="" id="" class="blog-sec__nav-list">
+                    <select name="" id="" class="blog-sec__nav-list" >
                         <option value=""><a href="">Recent</a></option>
-                        <option value=""><a href="">Visa Managment</a></option>
-                        <option value=""><a href="">Travel Tracker</a></option>
-                        <option value=""><a href="">Fun</a></option>
+                        <option value="" v-for="item in tags" :key="item.id"><a href="" v-if="item.is_in_menu" >{{ item.title }}</a></option>
                     </select>
                 </div>
 
                 <div class="blog-sec__news-container">
-                    <component__news_box v-for="item in posts" :key="item"  :postId="item"/>
+                     <component__news_box v-for="item in blogs" :key="item"  :post="item" :tags="tags"/>
                 </div>
+
+
                 <div class="blog-sec__pagination-row pagination">
 
                     <a href="" class="pagination__arrow-link pagination__arrow-link-prev">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.8327 9.99935H4.16602M4.16602 9.99935L9.99935 15.8327M4.16602 9.99935L9.99935 4.16602" stroke="#4B5565" stroke-width="1.66667" stroke-linecap="square"/>
                         </svg>
-                            
-                            
                         <span>Previous</span>
                     </a>
 
@@ -63,7 +49,7 @@
                         <span>Next</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.16602 9.99984H15.8327M15.8327 9.99984L9.99935 4.1665M15.8327 9.99984L9.99935 15.8332" stroke="#4B5565" stroke-width="1.66667" stroke-linecap="square"/>
-                        </svg>    
+                        </svg>
                     </a>
 
                 </div>
@@ -77,16 +63,35 @@
 <script>
 import component__news_box from '@/components/component__news-box.vue'
 
+import {FreeMode, Navigation, Pagination} from "swiper/modules";
+import {useAsyncData} from "nuxt/app";
+
 export default {
     data() {
-        return {
-            posts: [1,2,3,4,5,6]
-        }
+       let blogs_per_page = 6;
+    },
+
+    async setup() {
+      const { data: { value: { blogs, tags } }, error, execute, pending, refresh, status } = await useAsyncData('blogsTagsLib', () => $fetch('/api/blogs' , {
+        method:"POST",
+        headers: { "Content-Type": "application/json" }
+      }))
+
+      const current_page = ref(1)
+
+      return {
+        modules: [Navigation, FreeMode, Pagination],
+        blogs,
+        tags,
+        current_page,
+      };
     },
 
     components: {
         component__news_box,
     },
+
+
 
     methods: {
 

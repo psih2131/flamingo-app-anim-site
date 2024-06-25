@@ -32,6 +32,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
+    font-family: $titleFont;
     /* 125% */
     letter-spacing: -0.96px;
 }
@@ -100,6 +101,7 @@
         font-weight: 600;
         line-height: 38px;
         margin-bottom: 20px;
+        font-family: $titleFont;
     }
 
     h3,
@@ -112,14 +114,15 @@
         font-weight: 600;
         line-height: 32px;
         margin-bottom: 20px;
+        font-family: $titleFont;
     }
 }
 
 .post-body__text_italic.text-container {
-        p {
-            font-style: italic;
-        }
+    p {
+        font-style: italic;
     }
+}
 
 
 @media only screen and (max-width: 1250px) {

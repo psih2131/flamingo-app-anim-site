@@ -25,6 +25,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
+    font-family: $titleFont;
     /* 125% */
     letter-spacing: -0.96px;
     margin-top: 12px;
@@ -153,7 +154,8 @@
     }
 }
 
-.post-body__text, .post-body__text_italic {
+.post-body__text,
+.post-body__text_italic {
     margin-bottom: 48px;
 }
 
@@ -229,6 +231,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
+    font-family: $titleFont;
     /* 125% */
     letter-spacing: -0.96px;
 }
@@ -520,7 +523,8 @@
         margin-bottom: 40px;
     }
 
-    .post-body__text, .post-body__text_italic {
+    .post-body__text,
+    .post-body__text_italic {
         margin-bottom: 32px;
     }
 

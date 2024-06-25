@@ -44,7 +44,7 @@
 .who-needs-sec__title {
     text-align: center;
     color: #121926;
-
+    font-family: $titleFont;
     text-align: center;
     font-size: 60px;
     font-style: normal;
@@ -176,6 +176,7 @@
     line-height: 1.2;
     color: #121926;
     width: 100%;
+    font-family: $titleFont;
     transition: all ease 0.5s;
     position: absolute;
     top: 24px;
@@ -265,6 +266,7 @@
     line-height: 32px;
     padding-right: 48px;
     transition: all ease 0.3s;
+    font-family: $titleFont;
 }
 
 .r-small__teg {
@@ -410,6 +412,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 38px;
+    font-family: $titleFont;
 }
 
 .r-big__subtitle {
@@ -486,6 +489,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 38px;
+    font-family: $titleFont;
 }
 
 .security-sec__element-subtitle {
@@ -536,7 +540,7 @@
     }
 
     .security-sec__icon-wrapper-2 {
-        display: block;
+        display: none;
     }
 }
 
@@ -596,6 +600,7 @@
     font-weight: 600;
     line-height: 60px;
     /* 125% */
+    font-family: $titleFont;
     letter-spacing: -0.96px;
 }
 
@@ -718,6 +723,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
+    font-family: $titleFont;
     /* 125% */
     letter-spacing: -0.96px;
 }
@@ -776,6 +782,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 60px;
+    font-family: $titleFont;
     /* 125% */
     letter-spacing: -0.96px;
 }
@@ -1096,6 +1103,13 @@
 
     .faq-sec__wrapper {
         width: 100%;
+    }
+
+    .security-sec__el2 {
+
+        .security-sec__icon-wrapper-2 {
+            display: block;
+        }
     }
 
 }

@@ -62,7 +62,7 @@
             </div>
         </section>
 
-        <PartialsFeatures />
+        <PartialsFeatures @openPopup="openPopupInfo"/>
 
         <PartialsHowItWorks />
 
@@ -193,8 +193,9 @@ export default {
             element4.classList.remove('activ-hover-anim-small')
         },
 
-        openPopupInfo(){
+        openPopupInfo(data){
             this.popupStatus = true
+            console.log(data)
         },
         closePopup(data){
             this.popupStatus = data

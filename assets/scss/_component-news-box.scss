@@ -38,6 +38,7 @@
     font-weight: 600;
     line-height: 32px;
     margin-top: 12px;
+    font-family: $titleFont;
 }
 
 .news-box__title-link {
@@ -79,6 +80,9 @@
     border: 2px solid #9AEEC0;
     margin-right: 2px;
     border-radius: 100px;
+    margin-bottom: 4px;
+    display: inline-block;
+    margin-right: 4px;
 }
 
 @media only screen and (max-width: 1250px) {

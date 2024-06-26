@@ -15,6 +15,7 @@
             <a v-if="item.is_in_menu" href="" class="blog-sec__nav-link" :style="{ color : '#' + item.text_color }">{{ item.title }}</a>
           </li>
         </ul>
+
         <div class="blog-sec__nav-mob">
           <select name="" id="" class="blog-sec__nav-list" >
             <option value=""><a href="">Recent</a></option>
@@ -49,7 +50,6 @@ export default {
 
   async setup() {
     const route = useRoute();
-    const router = useRouter();
 
     let _page_num = route.params.id;
 

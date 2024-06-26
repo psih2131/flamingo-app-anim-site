@@ -95,7 +95,6 @@ export default {
         return {
             animCounter: 0,
             pastAnimCounter: null,
-
             popupStatus: false,
         }
     },

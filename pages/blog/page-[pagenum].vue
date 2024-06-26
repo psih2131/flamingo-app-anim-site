@@ -24,7 +24,7 @@
           <component__news_box v-for="item in blogs" :key="item"  :post="item" :tags="tags"/>
         </div>
 
-        <pagination />
+        <pagination :total="getTotal" :perPage="per_page"/>
 
       </div>
 
@@ -63,6 +63,7 @@ export default {
       blogs,
       tags,
       page_num,
+      per_page,
     };
   },
 
@@ -76,7 +77,9 @@ export default {
   },
 
   computed: {
-
+    getTotal() {
+       return this.blogs.length;
+    }
   },
 
   watch: {

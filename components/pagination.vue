@@ -8,13 +8,22 @@
       <span>Previous</span>
     </a>
 
-    <div class="pagination__nambers-row">
-      <a href="" class="pagination__number pagination__number_active">1</a>
-      <a href="" class="pagination__number">2</a>
-      <a href="" class="pagination__number">3</a>
-      <a href="" class="pagination__number">4</a>
-      <a href="" class="pagination__number">5</a>
+    <div class="pagination__nambers-row" v-for="n in parseInt(totalPages)" >
+<!--      <NuxtLink :to="{ name: '/page-id', params: { id: 1 } }">-->
+<!--        {{n}}-->
+<!--      </NuxtLink>-->
+      <a href="" class="pagination__number">{{n}}</a>
     </div>
+
+
+<!--    <div class="pagination__nambers-row">-->
+<!--      <a href="" class="pagination__number pagination__number_active">1</a>-->
+<!--      <a href="" class="pagination__number">2</a>-->
+<!--      <a href="" class="pagination__number">3</a>-->
+<!--      <a href="" class="pagination__number">4</a>-->
+<!--      <a href="" class="pagination__number">5</a>-->
+<!--    </div>-->
+
     <div class="pagination__numbers-mob">Page <b>1</b> of <b>10</b></div>
 
 

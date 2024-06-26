@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Public keys that are exposed to the client
     public: {
+
+    },
+    private: {
       API_BASE_URL: process.env.API_URL+'/api' || '/api'
     }
   },

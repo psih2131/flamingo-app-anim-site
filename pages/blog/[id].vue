@@ -10,7 +10,7 @@
 
                 <div class="post-boby-sec__image-wrapper">
                     <img v-if="blog.hero_image_url.length > 10" :src="blog.hero_image_url" alt="" class="post-boby-sec__image">
-                    <img v-if="blog.hero_image_url.length < 10" src="@/assets/images/img-5.jpg" alt="" class="post-boby-sec__image">
+                    <img v-else src="@/assets/images/img-5.jpg" alt="" class="post-boby-sec__image">
                 </div>
 
                 <div class="container-post">
@@ -171,10 +171,10 @@ export default {
 
     computed: {
       getParsedUrl(){
-        return (text) => {return text.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" rel="noopener ugc nofollow" target="_blank">$1</a>')};
+        return (text) => {if (!text) { return text } else return text.replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" rel="noopener ugc nofollow" target="_blank">$1</a>')};
       },
       getParsedBold(){
-        return (text) => {return text.replace(/\*\*([^\]!*]+)\*\*/g, '<b>$1</b>')};
+        return (text) => {if (!text) { return text } else return text.replace(/\*\*([^\]!*]+)\*\*/g, '<b>$1</b>')};
       },
       getDateParsed(){
         const dayjs = useDayjs()

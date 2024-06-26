@@ -50,9 +50,9 @@ export default {
     const route = useRoute();
 
     let page_num = route.params.pagenum;
-    let per_page = 6;
+    let per_page = 2;
 
-    const { data: { value: { blogs, tags } }, error, execute, pending, refresh, status } = await useAsyncData('blogspaging', () => $fetch('/api/blogs' , {
+    const { data: { value: { blogs, tags, blogs_qty } }, error, execute, pending, refresh, status } = await useAsyncData('blogspaging', () => $fetch('/api/blogs' , {
       method:"POST",
       headers: { "Content-Type": "application/json" },
       body: { page : page_num, per_page : per_page }
@@ -62,6 +62,7 @@ export default {
       modules: [Navigation, FreeMode, Pagination],
       blogs,
       tags,
+      blogs_qty,
       page_num,
       per_page,
     };
@@ -78,7 +79,7 @@ export default {
 
   computed: {
     getTotal() {
-       return this.blogs.length;
+       return this.blogs_qty;
     }
   },
 

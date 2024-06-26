@@ -23,7 +23,6 @@
           :modules="modules"
           class="posts-slider__swiper"
       >
-      {{ tags }}
         <swiper-slide v-for="item in blogs" :key="item" >
           <component__news_box :post="item" :tags="tags" />
         </swiper-slide>

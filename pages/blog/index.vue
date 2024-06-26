@@ -26,6 +26,8 @@
                      <component__news_box v-for="item in blogs" :key="item"  :post="item" :tags="tags"/>
                 </div>
 
+              <pagination />
+
             </div>
 
         </section>
@@ -38,33 +40,32 @@
 import component__news_box from '@/components/component__news-box.vue'
 
 import {FreeMode, Navigation, Pagination} from "swiper/modules";
-import {useAsyncData} from "nuxt/app";
+import {useAsyncData, useRoute} from "nuxt/app";
 
 export default {
     data() {
-       let blogs_per_page = 6;
+
     },
 
     async setup() {
+      let per_page = 6;
+
       const { data: { value: { blogs, tags } }, error, execute, pending, refresh, status } = await useAsyncData('blogsTagsLib', () => $fetch('/api/blogs' , {
         method:"POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body: { page_num  : 1, per_page : per_page }
       }))
-
-      const current_page = ref(1)
 
       return {
         modules: [Navigation, FreeMode, Pagination],
         blogs,
         tags,
-        current_page,
       };
     },
 
     components: {
         component__news_box,
     },
-
 
 
     methods: {

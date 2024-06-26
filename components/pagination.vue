@@ -17,6 +17,7 @@
     </div>
     <div class="pagination__numbers-mob">Page <b>1</b> of <b>10</b></div>
 
+
     <a href="" class="pagination__arrow-link pagination__arrow-link-next">
       <span>Next</span>
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,8 +29,60 @@
 </template>
 
 <script>
+import {useAsyncData, useRouter, useRoute} from "nuxt/app";
+
+
 export default {
-  name: "show-pager-block.vue"
+  name: "pagination",
+  data() {
+    return {
+
+    }
+  },
+  props: {
+    total: {
+      type: Number,
+      default: 0,
+    },
+    perPage: {
+      type: Number,
+      default: 5,
+    },
+  },
+  async setup() {
+    const route = useRoute();
+    let page_id = 1;
+
+    if(route.params.id) {
+      page_id = route.params.id;
+    }
+
+    return {
+      page_id
+    }
+  },
+
+  computed: {
+
+    totalPages() {
+      return Math.ceil(this.total / this.perPage);
+    },
+
+    currentPage() {
+      return parseInt(this.page_id) || 1;
+    },
+
+    prevPage() {
+      return this.currentPage > 1 ? this.currentPage - 1 : 1;
+    },
+
+    nextPage() {
+      return this.currentPage < this.totalPages
+          ? this.currentPage + 1
+          : this.totalPages;
+    },
+  },
+
 }
 </script>
 

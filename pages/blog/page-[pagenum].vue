@@ -23,7 +23,6 @@
         <div class="blog-sec__news-container">
           <component__news_box v-for="item in blogs" :key="item"  :post="item" :tags="tags"/>
         </div>
-
         <pagination :total="getTotal" :perPage="per_page"/>
 
       </div>

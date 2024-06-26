@@ -9,7 +9,7 @@
     </NuxtLink>
 
     <div class="pagination__nambers-row" >
-      <NuxtLink v-for="n in parseInt(totalPages)" :to="`/blog/page-${n}`" class="pagination__number" :class="{'pagination__number_active':(currentPage == n)}">
+      <NuxtLink v-for="n in parseInt(totalPages)"  :to="`/blog/page-${n}`" class="pagination__number" :class="{'pagination__number_active':(currentPage == n)}">
         {{n}}
       </NuxtLink>
     </div>

@@ -5,20 +5,8 @@
         <div class="blog-sec__teg-wrapper">
           <div class="blog-sec__teg">Stories and interviews. Page # {{page_num}}</div>
         </div>
-        <ul class="blog-sec__nav">
-          <li class="blog-sec__nav-element">
-            <a href="" class="blog-sec__nav-link blog-sec__nav-link_active">Recent</a>
-          </li>
-          <li class="blog-sec__nav-element" v-for="item in tags" :key="item.id">
-            <a v-if="item.is_in_menu" href="" class="blog-sec__nav-link" :style="{ color : '#' + item.text_color }">{{ item.title }}</a>
-          </li>
-        </ul>
-        <div class="blog-sec__nav-mob">
-          <select name="" id="" class="blog-sec__nav-list" >
-            <option value=""><a href="">Recent</a></option>
-            <option value="" v-for="item in tags" :key="item.id"><a href="" v-if="item.is_in_menu" >{{ item.title }}</a></option>
-          </select>
-        </div>
+
+        <TagsListTagsItems :tags="tags"/>
 
         <div class="blog-sec__news-container">
           <component__news_box v-for="item in blogs" :key="item"  :post="item" :tags="tags"/>
@@ -49,7 +37,7 @@ export default {
     const route = useRoute();
 
     let page_num = route.params.pagenum;
-    let per_page = 2;
+    let per_page = 3;
 
     const { data: { value: { blogs, tags, blogs_qty } }, error, execute, pending, refresh, status } = await useAsyncData('blogspaging', () => $fetch('/api/blogs' , {
       method:"POST",

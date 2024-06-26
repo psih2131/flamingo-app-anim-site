@@ -17,12 +17,12 @@
         </h3>
         <p class="news-box__subtitle">{{ post.dsc }}</p>
         <div class="news-box__tag-row">
-            <div class="news-box__tag" 
-                v-for="tagId in post.tags" 
-                :key="tagId" 
+            <div class="news-box__tag"
+                v-for="tagId in post.tags"
+                :key="tagId"
                 :set="foundTag = tags.find(t => t.id === tagId)"
                 :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}"
-            >{{ foundTag.title }}</div>
+            ><NuxtLink :to="`/blog/tag/${foundTag.id}`">{{ foundTag.title }}</NuxtLink></div>
         </div>
     </div>
   </div>

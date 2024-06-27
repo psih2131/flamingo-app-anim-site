@@ -13,5 +13,17 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['dayjs-nuxt', "@nuxt/image"]
+  modules: ['dayjs-nuxt', "@nuxt/image", "@nuxtjs/i18n"],
+
+  i18n: {
+    // vueI18n: './langs/i18n.config.ts',
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    langDir: 'langs/',
+    lazy: true,
+    locales: [
+      { code: 'fa', iso: 'fa-IR', name: 'fr', file: 'fr/index.js', dir:'ltr' },
+      { code: 'en', iso: 'en-US', name: 'en', file: 'en/index.js', dir:'ltr' }
+    ]
+  },
 })

@@ -200,12 +200,14 @@ export default {
             "text_italic": "post-body__text_italic text-container",
             "hr": "post-body__small-description text-container",
             "text_highlight": "post-body__white-text-background text-container",
+            "image": "post-body__image-wrapper",
+            "quote": "post-body__autor",
         }
         let result = '';
         for (let i = 0; i < this.blog.article.length; i++) {
             const block = this.blog.article[i];
 
-            if (!block.block_type) return;
+            if (!block.block_type || !blocks[block.block_type]) continue;
             let blockHtml = `<div class="${blocks[block.block_type]}">`;
             if (block.title) blockHtml += `<h2>${block.title}</h2>`;
             if (block.subtitle) blockHtml += `<h3>${block.subtitle}</h3>`;
@@ -215,6 +217,20 @@ export default {
                     const p = paragraphs[j];
                     
                     blockHtml += `<p>${p}</p>`;
+                }
+            }
+            if (block.block_type === 'image') {
+                if (block.image_url) blockHtml += `<img alt="article_image_${i}" class="post-body__image" src="${block.image_url}">`;
+                if (block.credential) blockHtml += `<p class="post-body__description">${block.credential}</p>`;
+            }
+            if (block.block_type === 'quote') {
+                if (block.quote) blockHtml += `<p class="post-body__autor-text">${block.quote}</p>`;
+                if (block.author || block.author_dsc || block.author_dsc) {
+                    blockHtml += `<div class="post-body__autor-info">`;
+                    if (block.author_avatar) blockHtml += `<img alt="article_image_${i}" class="post-body__autor-photo" src="${block.author_avatar}">`;
+                    if (block.author) blockHtml += `<p class="post-body__autor-name">${block.author}</p>`;
+                    if (block.author_dsc) blockHtml += `<p class="post-body__autor-subname">${block.author_dsc}</p>`;
+                    blockHtml += `</div>`;
                 }
             }
             blockHtml += `</div>`;
@@ -236,6 +252,34 @@ export default {
 
 }
 /*
+[
+  {
+    "block_type": "hero_image_credential",
+    "credential": "Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=medium&utm_medium=referral)"
+  },{
+    "block_type": "quote",
+    "quote":"“In a world older and more **complete than** ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”",
+    "author":"Olivia Rhye",
+    "author_dsc":"Traveler",
+    "author_avatar":"https://flamingo-blog-73266e011475.herokuapp.com/_nuxt/x1.Dsee2Vvg.png"    
+  },{
+    "block_type": "text_italic",
+    "title":"Understanding the 90/180 Rule",
+    "subtitle":"The 180-day period keeps ‘rolling’",
+    "text": "The 90/180 rule is a regulation that applies to non-European Union citizens traveling to the Schengen Area.<br>◾ list item 1\n\n◾ list item 2\n\n◾ list item 3",
+  },{
+    "block_type": "image",
+    "image_url":"https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/blogs/hero_170_1.jpg",
+    "credential": "Photo by [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=medium&utm_medium=referral)"
+  },{
+    "block_type": "text_highlight",
+    "title": "Conclusion",
+    "text": "Although tax residency is far from simple, by having a knowledgeable tax advisor, a reliable trip itinerary planner app, and a basic understanding of tax residency rules, you’re well-equipped to make informed decisions about your taxes."
+  },{
+    "block_type": "hr"
+  }
+]
+
 <div class="post-body__small-description text-container"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper mattis lorem non. Ultrices praesent amet ipsum justo massa. Eu dolor aliquet risus gravida nunc at feugiat consequat purus. Non massa enim vitae duis mattis. Vel in ultricies vel fringilla.</p></div><div class="post-body__text text-container"><h2>Introduction</h2><p>Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At feugiat sapien varius id.</p><p>Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu quis fusce augue enim. Quis at habitant diam at. Suscipit tristique risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet sodales id est ac volutpat. </p></div><div class="post-body__image-wrapper"><img :src="`/_nuxt/assets/images/img-${$route.params.id}.jpg`" alt="" class="post-body__image"><p class="post-body__description">Image courtesy of Scott Webb via <a href="">Pexels</a></p></div><div class="post-body__autor"><p class="post-body__autor-text">“In a world older and more complete than ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”</p><div class="post-body__autor-info"><img :src="`/_nuxt/assets/images/img-${$route.params.id}.jpg`" alt="" class="post-body__autor-photo"><p class="post-body__autor-name">Olivia Rhye</p><p class="post-body__autor-subname">Traveler</p></div></div><div class="post-body__text text-container"><p>Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla.</p><p>Elit nisi in eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus sit congue convallis aliquet. Arcu id augue ut feugiat donec porttitor neque. Mauris, neque ultricies eu vestibulum, bibendum quam lorem id. Dolor lacus, eget nunc lectus in tellus, pharetra, porttitor.</p><p>Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus. Quis velit eget ut tortor tellus. Sed vel, congue felis elit erat nam nibh orci.</p></div><div class="post-body__white-text-background text-container"><h2>Conclusion</h2><p>Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet nulla purus habitasse.</p><p>Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor commodo cursus.</p><p>Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet. Nam elementum urna nisi aliquet erat dolor enim. Ornare id morbi eget ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec posuere pharetra odio consequat scelerisque et, nunc tortor.</p></div>
 */
 </script>

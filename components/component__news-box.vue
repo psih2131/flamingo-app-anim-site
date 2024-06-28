@@ -16,13 +16,16 @@
             </nuxt-link>
         </h3>
         <p class="news-box__subtitle">{{ post.dsc }}</p>
-        <div class="news-box__tag-row">
-            <div class="news-box__tag"
-                v-for="tagId in post.tags"
-                :key="tagId"
-                :set="foundTag = tags.find(t => t.id === tagId)"
-                :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}"
-            ><NuxtLink :to="`/blog/tag/${foundTag.id}`">{{ foundTag.title }}</NuxtLink></div>
+        <div :set="foundTag = []" class="news-box__tag-row">
+            <nuxt-link class="news-box__tag"
+                  v-for="tagId in post.tags"
+                  :key="tagId"
+                  :set="foundTag[tagId] = tags.find(t => t.id === tagId)"
+                  :style="{'border-color':'#' + foundTag[tagId].border_color, 'color':'#' + foundTag[tagId].text_color}"
+                  :to="`/blog/tag/${foundTag[tagId].id}`"
+                  :data-title="foundTag[tagId].title"
+                >{{ foundTag[tagId].title }}
+            </nuxt-link>
         </div>
     </div>
   </div>

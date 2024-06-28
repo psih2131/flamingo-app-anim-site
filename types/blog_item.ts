@@ -7,6 +7,7 @@ export type BlogItem = {
     tags: string[],
     title: string,
     article?: BlogArticle,
+    meta_dsc?: string,
     published_at: string,
     hero_image_url: string
 }

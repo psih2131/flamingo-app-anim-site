@@ -29,7 +29,7 @@ import {useAsyncData, useRoute} from "nuxt/app";
 
 export default {
   data() {
-
+    return {}
   },
 
   async setup() {

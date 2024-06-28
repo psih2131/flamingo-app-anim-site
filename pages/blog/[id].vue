@@ -1,4 +1,16 @@
 <template>
+    <Head>
+        <Title>{{ blog.title }} | Flamingo App</Title>
+        <Meta name="description" :content="`${blog.meta_dsc || blog.dsc}`" />
+        <Meta name="og:title" :content="`${blog.title} | Flamingo App`" />
+        <Meta name="og:description" :content="`${blog.meta_dsc || blog.dsc}`" />
+        <Meta name="og:image" :content="`https://ma-artist-images-service.herokuapp.com/crop-image?image_url=${blog.hero_image_url}`" />
+        <Meta name="og:url" :content="`https://flamingotracker.com${$route.fullPath}`" />
+        <Meta name="twitter:title" :content="`${blog.title} | Flamingo App`" />
+        <Meta name="twitter:description" :content="`${blog.meta_dsc || blog.dsc}`" />
+        <Meta name="twitter:image" :content="`https://ma-artist-images-service.herokuapp.com/crop-image?image_url=${blog.hero_image_url}`" />
+        <Meta name="twitter:card" :content="'summary'" />
+    </Head>
     <main class="main blog-main">
         <section class="post-boby-sec">
             <div class="container">
@@ -19,13 +31,14 @@
                     </div>
                     <div class="post-boby-sec__main-info post-body" v-html="getParsedBold(getParsedUrl(renderArticle))"></div>
 
-                    <div class="post-tag-row">
-                        <p class="post-tag-row__element" 
+                    <div class="post-tag-row" :set="foundTag = []">
+                        <nuxt-link class="post-tag-row__element" 
                           v-for="tagId in blog.tags" 
                           :key="tagId" 
-                          :set="foundTag = tags.find(t => t.id === tagId)" 
-                          :style="{'color':'#' + foundTag.text_color, 'border-color':'#' + foundTag.border_color}"
-                        >{{ foundTag.title }}</p>
+                          :set="foundTag[tagId] = tags.find(t => t.id === tagId)" 
+                          :style="{'color':'#' + foundTag[tagId].text_color, 'border-color':'#' + foundTag[tagId].border_color}"
+                          :to="`/blog/tag/${foundTag[tagId].id}`"
+                        >{{ foundTag[tagId].title }}</nuxt-link>
                     </div>
 
                     <div class="post-btn-row">

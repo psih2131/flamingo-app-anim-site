@@ -34,7 +34,7 @@ import ListTagsItems from "../../components/tags/list-tags-items.vue";
 
 export default {
     data() {
-
+      return {}
     },
 
     async setup() {

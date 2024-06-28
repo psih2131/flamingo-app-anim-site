@@ -1,5 +1,5 @@
 <template>
-    <div class="header__lang lang-list">
+    <div class="header__lang lang-list lang-list__pc" v-if="mobStatus == false">
         <div class="lang-list__row">
             <div class="lang-list__icon-wrapper">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +28,37 @@
             
         </div>
     </div>
+
+
+    <div class="mob-meny__lang" v-if="mobStatus == true">
+        <div class="mob-meny__lang-header" :class="{'mob-meny__lang-header_active':show}" @click="show = !show">
+            <div class="mob-meny__lang-header-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.0914 6.72222H20.0451C20.5173 6.72222 20.7534 6.72222 20.8914 6.82149C21.0119 6.9081 21.0903 7.04141 21.1075 7.18877C21.1272 7.35767 21.0126 7.56403 20.7833 7.97677L19.3624 10.5343C19.2793 10.684 19.2377 10.7589 19.2214 10.8381C19.207 10.9083 19.207 10.9806 19.2214 11.0508C19.2377 11.13 19.2793 11.2049 19.3624 11.3545L20.7833 13.9121C21.0126 14.3248 21.1272 14.5312 21.1075 14.7001C21.0903 14.8475 21.0119 14.9808 20.8914 15.0674C20.7534 15.1667 20.5173 15.1667 20.0451 15.1667H12.6136C12.0224 15.1667 11.7269 15.1667 11.5011 15.0516C11.3024 14.9504 11.141 14.7889 11.0398 14.5903C10.9247 14.3645 10.9247 14.0689 10.9247 13.4778V10.9444M7.23027 21.5L3.00805 4.61111M4.59143 10.9444H12.4025C12.9937 10.9444 13.2892 10.9444 13.515 10.8294C13.7137 10.7282 13.8751 10.5667 13.9763 10.3681C14.0914 10.1423 14.0914 9.84672 14.0914 9.25556V4.18889C14.0914 3.59772 14.0914 3.30214 13.9763 3.07634C13.8751 2.87773 13.7137 2.71625 13.515 2.61505C13.2892 2.5 12.9937 2.5 12.4025 2.5H4.64335C3.90602 2.5 3.53735 2.5 3.2852 2.65278C3.0642 2.78668 2.89999 2.99699 2.82369 3.24387C2.73663 3.52555 2.82605 3.88321 3.00489 4.59852L4.59143 10.9444Z" stroke="#4B5565" stroke-width="2" stroke-linecap="square"/>
+                </svg>
+                {{activLang}}
+            </div>
+            <div class="amob-meny__lang-header-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="#697586" stroke-width="1.67" stroke-linecap="square"/>
+                </svg>
+            </div>
+        </div>
+
+        <transition name="slide-toggle">
+            <ul v-if="show" class="mob-meny__lang-list">
+                <template v-for="item in langList" :key="item.langSlug">
+                    <li @click="selectLang(item.langSlug)" 
+                        :class="{'lang-list__drop-down-list-element_current': activLang === item.langSlug}" 
+                        class="mob-meny__lang-list-element">
+                        {{item.langName}}
+                    </li>
+                </template>
+
+            </ul>
+        </transition>
+    </div>
+
 </template>
 
 <script>
@@ -40,6 +71,7 @@ export default {
                 { langSlug: 'FR', langName: 'Français' },
             ],
             activLang: '',
+            mobStatus: false,
         }
     },
     methods: {
@@ -47,9 +79,22 @@ export default {
             this.activLang = langSlug;
             this.show = false;
         },
+
+        updateContainerClass() {
+        if (window.innerWidth >= 1250) {
+            this.mobStatus = false
+        }  else {
+            this.mobStatus = true
+        }
+        }
     },
     mounted() {
         this.activLang = this.langList[0].langSlug;
+        this.updateContainerClass()
+        window.addEventListener('resize', this.updateContainerClass)
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.updateContainerClass)
     },
 }
 </script>

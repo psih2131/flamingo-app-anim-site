@@ -2,6 +2,10 @@
     padding: 0 32px 0 16px;
 }
 
+.mob-meny__lang-list-element {
+    color: #697586;
+}
+
 .lang-list__row {
     display: flex;
     align-items: center;
@@ -94,3 +98,56 @@
     opacity: 0;
 
 }
+
+
+
+
+@media only screen and (max-width: 1250px) {
+    .mob-meny__lang-header_active {
+        .amob-meny__lang-header-icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    .amob-meny__lang-header-icon {
+        transition: all ease 0.3s;
+    }
+
+
+
+    .mob-meny__lang-list {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .3s ease;
+    }
+
+    /* Enter and leave animations can use different */
+    /* durations and timing functions.              */
+    .slide-toggle-enter-active {
+
+        transform: translateY(-30px);
+        max-height: 0;
+        opacity: 0;
+
+    }
+
+    .slide-toggle-leave-active {
+
+        transform: translateY(-30px);
+        transition: all .3s ease;
+        opacity: 0;
+
+    }
+
+    .slide-toggle-enter,
+    .slide-toggle-leave-to
+
+    /* .slide-fade-leave-active below version 2.1.8 */
+        {
+        transform: translateY(-30px);
+        opacity: 0;
+
+    }
+}
+
+@media only screen and (max-width: 750px) {}

@@ -2,8 +2,8 @@
   <section class="download-sec">
     <div class="container">
       <div class="download-sec__info">
-        <h2 class="download-sec__title">Download<br>Flamingo Now</h2>
-        <p class="download-sec__subtitle">An essential tool for global expats, permanent residents, overseas homeowners and frequent travelers.</p>
+        <h2 class="download-sec__title">{{ $t('download') }}<br>{{ $t('download_now') }}</h2>
+        <p class="download-sec__subtitle">{{ $t('download_text') }}</p>
         <div class="download-sec__row">
 
           <a href="" class="header__download-ios">
@@ -17,7 +17,7 @@
                 </clipPath>
               </defs>
             </svg>
-            Download
+            {{ $t('download') }}
           </a>
 
           <div class="download-sec__ar">

@@ -9,33 +9,33 @@
                     </nuxt-link>
 
                     <p class="footer__info-text">
-                        Flamingo tracking and counting are created for information purposes only.
+                        {{ $t('footer_text') }}
                         <br><br>
-                        Always consult with your legal advisor about specific requirements for your residency and visa status.
+                        {{ $t('footer_text2') }}
                     </p>
                 </div>
                 <nav class="footer__top-nav">
                     <ul class="footer__top-nav-list">
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/#ForWhom" class="footer__nav-element-link">For whom</nuxt-link>
+                            <nuxt-link no-prefetch to="/#ForWhom" class="footer__nav-element-link">{{ $t('forwhom') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/#Features" class="footer__nav-element-link">Features</nuxt-link>
+                            <nuxt-link no-prefetch to="/#Features" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">How it works</nuxt-link>
+                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('how-it-works') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">Contact us</nuxt-link>
+                            <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">{{ $t('contact_us') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/legal" class="footer__nav-element-link">Privacy Notice</nuxt-link>
+                            <nuxt-link no-prefetch to="/legal" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">Terms of Use</nuxt-link>
+                            <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">Support</nuxt-link>
+                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('Support') }}</nuxt-link>
                         </li>
                     </ul>
                 </nav>
@@ -59,7 +59,7 @@
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6001 9.6V0H26.4001V9.6H48.0001V14.4H26.4001V24H21.6001V14.4H0.00012207V9.6H21.6001Z" fill="#9AA4B2"/>
                             </g>
                         </svg>
-                        <p class="footer__developer-text">Made in the U.K.</p>
+                        <p class="footer__developer-text">{{ $t('footer_made_in') }}</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         <div class="footer__down">
             <div class="container">
                 <p class="footer__copy">
-                    ©2022 — 2024 Taboo Media Limited. Registered in England <br>Company number: 12461952. All rights reserved.<br>Flamingo App is a trademark of Taboo Media Limited.
+                  {{ $t('footer_copyright') }} <br> {{ $t('footer_copyright2') }} <br> {{ $t('footer_copyright3') }}
                 </p>
 
                 <component__footer_social />

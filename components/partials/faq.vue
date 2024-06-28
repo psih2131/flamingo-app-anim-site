@@ -1,8 +1,8 @@
 <template>
   <section class="faq-sec">
     <div class="container">
-      <h2 class="faq-sec__title">Frequently Asked Questions</h2>
-      <p class="faq-sec__subtitle">Everything you need to know.</p>
+      <h2 class="faq-sec__title">{{ $t('faq') }}</h2>
+      <p class="faq-sec__subtitle">{{ $t('faq_text') }}</p>
 
       <!-- faq-sec__element_active -->
       <div class="faq-sec__wrapper" >
@@ -33,15 +33,20 @@ export default {
   data() {
     return {
       faq: [
-        {'question': 'What is Flamingo Tracker 1?' , 'ansver': 'Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keepsFlamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
+        {'question': this.t('faq_q1'), 'ansver': 'Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keepsFlamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
         {'question': 'What is Flamingo Tracker 2?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
         {'question': 'What is Flamingo Tracker 3?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
         {'question': 'What is Flamingo Tracker 4?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
         {'question': 'What is Flamingo Tracker 5?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
         {'question': 'What is Flamingo Tracker 6?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
       ],
-
       activeIndex: null,
+    }
+  },
+  setup() {
+    const { t } = useI18n()
+    return {
+      t
     }
   },
   methods: {

@@ -3,12 +3,12 @@
     <div class="container">
       <div class="related-posts__header">
         <div class="related-posts__header-text">
-          <h2 class="related-posts__title">Blog</h2>
-          <p class="related-posts__subtitle">The latest news, travel directions, tips and tricks from our team.</p>
+          <h2 class="related-posts__title">{{ $t('blog') }}</h2>
+          <p class="related-posts__subtitle">{{ $t('blog_text') }}</p>
         </div>
         <div class="related-posts__btn-wrapper">
           <nuxt-link no-prefetch to="/blog" class="btnV1">
-            View all posts
+            {{ $t('blog_view_all') }}
           </nuxt-link>
         </div>
       </div>

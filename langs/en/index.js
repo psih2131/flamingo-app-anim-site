@@ -16,8 +16,6 @@ export default {
     footer_copyright2: "Company number: 12461952. All rights reserved.",
     footer_copyright3: "Flamingo App is a trademark of Taboo Media Limited.",
 
-    blog_text : "The latest news, travel directions, tips and tricks from our team.",
-    blog_view_all : "View all posts",
 
     pagination_prev : "Previous",
     pagination_next: "Next",
@@ -96,6 +94,38 @@ export default {
     help12:'Tracking of permitted visa stay time and expiration date to prevent overstays',
     help13:'International health insurance for expats',
     help14:'US & UK tax residency requirements',
+
+    index_from_whom : 'For Whom',
+    index_who_need : "Who needs Flamingo?",
+    index_expats: "Expats",
+    index_expats_texts : "Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.",
+    index_tax : "Tax",
+    index_residents : "Residents",
+    index_residents_text : "Flamingo helps you establish your country of residence by automatically counting your days and nights in and out of the country.",
+    index_frequent_travelers : "Frequent Travelers",
+    index_ft_text : "Flamingo flies with you and automatically records when you cross the border to enter another country. You can view your trip history and see the number of days you’ve spent in a country. The app automatically calculates how many more days you have left based on your visa or passport details.",
+    index_i : "International",
+    index_s : "Students",
+    index_is_text : "Use Flamingo to maintain your student status and comply with your visa regulations.",
+
+    about_page :  "About",
+
+    contact_support: "In-App Support",
+    contact_text : "If you are an existing Flamingo app user, we recommend contacting us through the app settings. That way we will be better equipped to help you.",
+    contact_go_to : "Go to the App",
+    contact_dsc : "Use this form to complete a support request or send us your feedback.",
+
+    blog_back : "Back to the Articles",
+    blog_stories: "Stories and interviews",
+    blog_text_2 : "The latest news, travel directions, tips and tricks from our team.",
+    blog_related : "Related Posts",
+    blog_text : "The latest news, travel directions, tips and tricks from our team.",
+    blog_view_all : "View all posts",
+    blog_published : "Published",
+
+    page: "Page"
+
+
 
 
 

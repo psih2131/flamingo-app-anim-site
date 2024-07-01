@@ -7,9 +7,9 @@
         <section class="who-needs-sec" id="ForWhom">
             <div class="container">
                 <div class="who-needs-sec__subtitle-row">
-                    <p class="who-needs-sec__subtitle">For Whom</p>
+                    <p class="who-needs-sec__subtitle">{{ $t('for_whom') }}</p>
                 </div>
-                <h2 class="who-needs-sec__title">Who needs Flamingo?</h2>
+                <h2 class="who-needs-sec__title">{{ $t('index_who_need') }}</h2>
 
                 <div class="who-needs-sec__wrapper">
 
@@ -17,8 +17,8 @@
 
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
-                                <h3 class="needs-anim-elemen__title">Expats</h3>
-                                <p class="needs-anim-element__subtitle">Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.</p>
+                                <h3 class="needs-anim-elemen__title">{{ $t('index_expat') }}</h3>
+                                <p class="needs-anim-element__subtitle">{{ $t('index_expats_texts') }}</p>
                             </div>
 
                             <img src="@/assets/images/who-needs-image/x1.png" alt="" class="needs-anim-elemen__image">
@@ -28,8 +28,8 @@
                     <div class="who-needs-sec__element needs-anim-element n-amin-2" @click="activHoverAnim('x2', $event)" >
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
-                                <h3 class="needs-anim-elemen__title">Tax<br>Residents</h3>
-                                <p class="needs-anim-element__subtitle">Flamingo helps you establish your country of residence by automatically counting your days and nights in and out of the country.</p>
+                                <h3 class="needs-anim-elemen__title">{{ $t('index_tax') }}<br>{{ $t('index_residents') }}</h3>
+                                <p class="needs-anim-element__subtitle">$t('index_residents_text') </p>
                             </div>
 
                             <img src="@/assets/images/who-needs-image/x2.png" alt="" class="needs-anim-elemen__image">
@@ -39,8 +39,8 @@
                     <div class="who-needs-sec__element needs-anim-element n-amin-3" @click="activHoverAnim('x3', $event)" >
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
-                                <h3 class="needs-anim-elemen__title">Frequent Travelers</h3>
-                                <p class="needs-anim-element__subtitle">Flamingo flies with you and automatically records when you cross the border to enter another country. You can view your trip history and see the number of days you’ve spent in a country. The app automatically calculates how many more days you have left based on your visa or passport details.</p>
+                                <h3 class="needs-anim-elemen__title">{{ $t('index_frequent_travelers') }}</h3>
+                                <p class="needs-anim-element__subtitle">{{ $t('index_ft_text') }}</p>
                             </div>
 
                             <img src="@/assets/images/who-needs-image/x3.png" alt="" class="needs-anim-elemen__image">
@@ -50,8 +50,8 @@
                     <div class="who-needs-sec__element needs-anim-element n-amin-4" @click="activHoverAnim('x4', $event)" >
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
-                                <h3 class="needs-anim-elemen__title">International<br>Students</h3>
-                                <p class="needs-anim-element__subtitle">Use Flamingo to maintain your student status and comply with your visa regulations.</p>
+                                <h3 class="needs-anim-elemen__title">{{ $t('index_i') }}<br>{{ $t('index_s') }}</h3>
+                                <p class="needs-anim-element__subtitle">{{ $t('index_is_text') }}</p>
                             </div>
 
                             <img src="@/assets/images/who-needs-image/x4.png" alt="" class="needs-anim-elemen__image">

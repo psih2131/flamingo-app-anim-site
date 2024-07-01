@@ -2,7 +2,7 @@
 
   <ul class="blog-sec__nav">
     <li class="blog-sec__nav-element">
-      <nuxt-link :to="'/blog'" class="blog-sec__nav-link">{{'Recent'}}</nuxt-link>
+      <nuxt-link :to="'/blog'" class="blog-sec__nav-link" :class="{'blog-sec__nav-link_active': (null == currentTag)}">Recent</nuxt-link>
     </li>
     <li class="blog-sec__nav-element" v-for="item in tags" :key="item.id">
       <nuxt-link
@@ -46,7 +46,7 @@ export default {
 
   async setup() {
     const route = useRoute();
-    selectedTag = route.name === 'blog-tag-tag' ? route.params.tag : -1;
+    selectedTag = route.name.includes('blog-tag-tag') ? route.params.tag : -1;
   },
 
   methods: {

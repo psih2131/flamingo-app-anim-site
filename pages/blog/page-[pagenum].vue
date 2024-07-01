@@ -37,7 +37,7 @@ export default {
     const route = useRoute();
 
     let page_num = route.params.pagenum;
-    let per_page = 3;
+    let per_page = 9;
 
     const { data: { value: { blogs, tags, blogs_qty } }, error, execute, pending, refresh, status } = await useAsyncData('blogspaging', () => $fetch('/api/blogs' , {
       method:"POST",

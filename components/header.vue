@@ -19,7 +19,7 @@
                     </li>
 
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/blog" class="header__nav-element-link">{{ $t('blog') }}</nuxt-link>
+                        <nuxt-link no-prefetch to="/blog" class="header__nav-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
                     </li>
 
                 </ul>
@@ -69,7 +69,7 @@
                                 <nuxt-link no-prefetch to="/#HowItWorks" class="mob-meny__nav-list-element-link">{{ $t('how-it-works') }}</nuxt-link>
                             </li>
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link">{{ $t('blog') }}</nuxt-link>
+                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
                             </li>
 
                         </ul>

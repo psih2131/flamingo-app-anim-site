@@ -34,9 +34,6 @@
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
                         </li>
-                        <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('Support') }}</nuxt-link>
-                        </li>
                     </ul>
                 </nav>
                 <div class="footer__developer-row">

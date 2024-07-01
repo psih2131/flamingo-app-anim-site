@@ -17,6 +17,9 @@
                     <li  class="header__nav-element">
                         <a  href="/#Security" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
                     </li>
+                  <li  class="header__nav-element">
+                    <a  href="/#Faq" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
+                  </li>
 
                     <li class="header__nav-element">
                         <nuxt-link no-prefetch to="/blog" class="header__nav-element-link">{{ $t('blog') }}</nuxt-link>
@@ -70,6 +73,10 @@
 
                             <li  class="mob-meny__nav-list-element">
                                 <a  href="/#Security" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
+                            </li>
+
+                            <li  class="mob-meny__nav-list-element">
+                              <a  href="/#Faq" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
                             </li>
 
                             <li class="mob-meny__nav-list-element">

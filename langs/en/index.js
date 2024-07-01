@@ -25,6 +25,7 @@ export default {
     download_text : "An essential tool for global expats, permanent residents, dual-state residency and frequent travelers.",
 
     faq : "Frequently Asked Questions",
+    faq_short : "FAQ",
     faq_text : "Find quick answers to common questions about using the Flamingo app.",
     faq_q1 : 'Why do I need to set Location Services to "Always"?',
     faq_q2 : "Why do I have to open the app every month?",

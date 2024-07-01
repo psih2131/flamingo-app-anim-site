@@ -18,6 +18,10 @@
                         <nuxt-link no-prefetch to="/#Security" class="header__nav-element-link">{{ $t('security') }}</nuxt-link>
                     </li>
 
+                  <li class="header__nav-element">
+                    <nuxt-link no-prefetch to="/#Faq" class="header__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
+                  </li>
+
                     <li class="header__nav-element">
                         <nuxt-link no-prefetch to="/blog" class="header__nav-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
                     </li>
@@ -68,6 +72,9 @@
                             <li class="mob-meny__nav-list-element">
                                 <nuxt-link no-prefetch to="/#Security" class="mob-meny__nav-list-element-link">{{ $t('security') }}</nuxt-link>
                             </li>
+                          <li class="mob-meny__nav-list-element">
+                            <nuxt-link no-prefetch to="/#Faq" class="mob-meny__nav-list-element-link">{{ $t('faq_short') }}</nuxt-link>
+                          </li>
                             <li class="mob-meny__nav-list-element">
                                 <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
                             </li>

@@ -29,23 +29,29 @@ export default {
   data() {
     return {
       helpListArray: [
-        'USA Substantial Presence Test and Physical Presence Test',
-        'USA Substantial Presence Test and Physical Presence Test',
-        'UK Statutory Residence Test',
-        'UK Statutory Residence Test',
-        'EU Schengen Area tracking, 90 in 180 days rule',
-        'Cyprus residency day counting',
-        'Canada residence / physical presence requirements',
-        'Israel residency',
-        'Puerto Rico Act 60 (act 20/22) day counting',
-        'The international 183-day rule',
-        'India residence status day counting',
-        'Tracking of permitted visa stay time and expiration date to prevent overstays',
-        'International health insurance for expats',
-        'US & UK tax residency requirements',
+          this.t('help1'),
+          this.t('help2'),
+          this.t('help3'),
+          this.t('help4'),
+          this.t('help5'),
+          this.t('help6'),
+          this.t('help7'),
+          this.t('help8'),
+          this.t('help9'),
+          this.t('help10'),
+          this.t('help11'),
+          this.t('help12'),
+          this.t('help13'),
+          this.t('help14'),
       ],
     }
-  }
+  },
+  setup() {
+    const { t } = useI18n()
+    return {
+      t
+    }
+  },
 }
 </script>
 

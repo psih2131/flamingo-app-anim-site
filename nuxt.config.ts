@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     langDir: 'langs/',
     lazy: true,
     locales: [
-      { code: 'fa', iso: 'fa-IR', name: 'fr', file: 'fr/index.js', dir:'ltr' },
+      { code: 'fr', iso: 'fr-FR', name: 'fr', file: 'fr/index.js', dir:'ltr' },
       { code: 'en', iso: 'en-US', name: 'en', file: 'en/index.js', dir:'ltr' }
     ]
   },

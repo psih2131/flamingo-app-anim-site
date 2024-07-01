@@ -17,7 +17,7 @@
 
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
-                                <h3 class="needs-anim-elemen__title">{{ $t('index_expat') }}</h3>
+                                <h3 class="needs-anim-elemen__title">{{ $t('index_expats') }}</h3>
                                 <p class="needs-anim-element__subtitle">{{ $t('index_expats_texts') }}</p>
                             </div>
 

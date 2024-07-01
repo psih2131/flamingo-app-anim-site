@@ -1,8 +1,8 @@
 export default {
-    forwhom: 'For Whom',
+    forwhom: 'Our users',
     features: 'Features',
-    'how-it-works': 'How it works',
-    blog: 'Blog',
+    'how-it-works': 'Security',
+     blog: 'Blog',
     'contact_us': 'Contact us',
     'privacy_notice' : 'Privacy Notice',
     'terms_of_use' : 'Terms of Use',

@@ -16,8 +16,6 @@ export default {
     footer_copyright2: "Company number: 12461952. All rights reserved.",
     footer_copyright3: "Flamingo App is a trademark of Taboo Media Limited.",
 
-    blog_text : "The latest news, travel directions, tips and tricks from our team.",
-    blog_view_all : "View all posts",
 
     pagination_prev : "Previous",
     pagination_next: "Next",
@@ -116,6 +114,16 @@ export default {
     contact_text : "If you are an existing Flamingo app user, we recommend contacting us through the app settings. That way we will be better equipped to help you.",
     contact_go_to : "Go to the App",
     contact_dsc : "Use this form to complete a support request or send us your feedback.",
+
+    blog_back : "Back to the Articles",
+    blog_stories: "Stories and interviews",
+    blog_text_2 : "The latest news, travel directions, tips and tricks from our team.",
+    blog_related : "Related Posts",
+    blog_text : "The latest news, travel directions, tips and tricks from our team.",
+    blog_view_all : "View all posts",
+    blog_published : "Published",
+
+    page: "Page"
 
 
 

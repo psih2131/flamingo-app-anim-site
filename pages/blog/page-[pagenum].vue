@@ -3,7 +3,7 @@
     <section class="blog-sec">
       <div class="container">
         <div class="blog-sec__teg-wrapper">
-          <div class="blog-sec__teg">Stories and interviews. Page # {{page_num}}</div>
+          <div class="blog-sec__teg">{{ $t('blog_stories') }} {{ $t('page') }} # {{page_num}}</div>
         </div>
 
         <TagsListTagsItems :tags="tags"/>

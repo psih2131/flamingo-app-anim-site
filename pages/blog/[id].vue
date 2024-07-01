@@ -15,7 +15,7 @@
         <section class="post-boby-sec">
             <div class="container">
                 <div class="container-post">
-                    <p class="post-boby-sec__date">Published {{ getDateParsed }}</p>
+                    <p class="post-boby-sec__date">{{ $t('blog_published') }} {{ getDateParsed }}</p>
                     <h1 class="post-boby-sec__post-title">{{ blog.title }}</h1>
                     <p class="post-boby-sec__post-subtitle">{{ blog.dsc }}</p>
                 </div>
@@ -32,10 +32,10 @@
                     <div class="post-boby-sec__main-info post-body" v-html="getParsedBold(getParsedUrl(renderArticle))"></div>
 
                     <div class="post-tag-row" :set="foundTag = []">
-                        <nuxt-link class="post-tag-row__element" 
-                          v-for="tagId in blog.tags" 
-                          :key="tagId" 
-                          :set="foundTag[tagId] = tags.find(t => t.id === tagId)" 
+                        <nuxt-link class="post-tag-row__element"
+                          v-for="tagId in blog.tags"
+                          :key="tagId"
+                          :set="foundTag[tagId] = tags.find(t => t.id === tagId)"
                           :style="{'color':'#' + foundTag[tagId].text_color, 'border-color':'#' + foundTag[tagId].border_color}"
                           :to="`/blog/tag/${foundTag[tagId].id}`"
                         >{{ foundTag[tagId].title }}</nuxt-link>
@@ -45,14 +45,14 @@
                         <nuxt-link no-prefetch to="/blog" class="post-btn-row__btn">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.5 14L4.5 9M4.5 9L9.5 4M4.5 9H10.9C14.2603 9 15.9405 9 17.2239 9.65396C18.3529 10.2292 19.2708 11.1471 19.846 12.2761C20.5 13.5595 20.5 15.2397 20.5 18.6V20" stroke="#4C9BB6" stroke-width="2" stroke-linecap="square"/>
-                            </svg>                                
-                            Back to the Articles
+                            </svg>
+                            {{ $t('blog_back') }}
                         </nuxt-link>
                     </div>
 
                 </div>
 
-                
+
             </div>
         </section>
 
@@ -61,19 +61,19 @@
             <div class="container">
                 <div class="related-posts__header">
                     <div class="related-posts__header-text">
-                        <h2 class="related-posts__title">Related Posts</h2>
-                        <p class="related-posts__subtitle">The latest news, travel directions, tips and tricks from our team.</p>
+                        <h2 class="related-posts__title">{{ $t('blog_related') }}</h2>
+                        <p class="related-posts__subtitle">{{ $t('blog_text_2') }}</p>
                     </div>
 
                     <div class="related-posts__btn-wrapper">
                         <nuxt-link no-prefetch to="/blog" class="btnV1">
-                            View all posts
+                            {{ $t("blog_view_all") }}
                         </nuxt-link>
-                        
+
                     </div>
                 </div>
 
-                
+
             </div>
 
             <div class="related-posts__slider posts-slider">
@@ -85,7 +85,7 @@
                     :navigation="true"
                     :modules="modules"
                     class="posts-slider__swiper"
-                >   
+                >
                     <swiper-slide v-for="item in related_blogs" :key="item" >
                         <component__news_box :post="item" :tags="tags" />
                     </swiper-slide>
@@ -215,7 +215,7 @@ export default {
                 let paragraphs = block.text.split('\n\n');
                 for (let j = 0; j < paragraphs.length; j++) {
                     const p = paragraphs[j];
-                    
+
                     blockHtml += `<p>${p}</p>`;
                 }
             }
@@ -261,7 +261,7 @@ export default {
     "quote":"“In a world older and more **complete than** ours they move finished and complete, gifted with extensions of the senses we have lost or never attained, living by voices we shall never hear.”",
     "author":"Olivia Rhye",
     "author_dsc":"Traveler",
-    "author_avatar":"https://flamingo-blog-73266e011475.herokuapp.com/_nuxt/x1.Dsee2Vvg.png"    
+    "author_avatar":"https://flamingo-blog-73266e011475.herokuapp.com/_nuxt/x1.Dsee2Vvg.png"
   },{
     "block_type": "text_italic",
     "title":"Understanding the 90/180 Rule",

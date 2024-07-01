@@ -3,10 +3,10 @@
         <section class="blog-sec">
             <div class="container">
                 <div class="blog-sec__teg-wrapper">
-                    <div class="blog-sec__teg">Stories and interviews</div>
+                    <div class="blog-sec__teg">{{ $t('blog_stories') }}</div>
                 </div>
-                <h1 class="blog-sec__title">Blog</h1>
-                <p class="blog-sec__subtitle">The latest news, travel directions, tips and tricks from our team.</p>
+                <h1 class="blog-sec__title">{{ $t('blog') }}</h1>
+                <p class="blog-sec__subtitle">{{ $t('blog_text_2') }}</p>
 
 
                 <TagsListTagsItems :tags="tags"/>

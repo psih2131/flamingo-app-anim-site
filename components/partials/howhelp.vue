@@ -2,7 +2,7 @@
   <section class="help-list-sec">
     <div class="container">
       <div class="help-list-sec__title-wrapper">
-        <h2 class="help-list-sec__title">Flamingo Helps You with</h2>
+        <h2 class="help-list-sec__title">{{ $t('help_you') }}</h2>
         <div class="help-list-sec__icon-wrapper">
           <svg width="244" height="241" viewBox="0 0 244 241" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.96094 125.984C13.1068 91.247 45.9455 26.5432 96.1329 45.6255C158.867 69.4783 99.736 206.092 61.3309 189.25C24.6401 173.16 48.2835 64.1416 115.186 45.6255C180.76 27.4768 195.579 99.887 188.028 141.819C180.477 183.751 154.723 225.339 127.941 210.216C90.9576 189.332 134.465 62.0355 240.561 50.0497M240.561 50.0497L215.567 82.0426M240.561 50.0497L201.681 37.23" stroke="white" stroke-width="3.45" stroke-linecap="square"/>

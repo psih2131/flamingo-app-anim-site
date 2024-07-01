@@ -34,7 +34,7 @@
     <div class="related-posts__btn-wrapper-mob">
       <div class="container">
         <nuxt-link no-prefetch to="/blog" class="btnV1">
-          View all posts
+          {{ $t('blog_view_all') }}
         </nuxt-link>
       </div>
     </div>

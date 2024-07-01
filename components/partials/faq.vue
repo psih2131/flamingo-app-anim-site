@@ -33,12 +33,12 @@ export default {
   data() {
     return {
       faq: [
-        {'question': this.t('faq_q1'), 'ansver': 'Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keeps Flamingo automatically keepsFlamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
-        {'question': 'What is Flamingo Tracker 2?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
-        {'question': 'What is Flamingo Tracker 3?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
-        {'question': 'What is Flamingo Tracker 4?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
-        {'question': 'What is Flamingo Tracker 5?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
-        {'question': 'What is Flamingo Tracker 6?' , 'ansver': 'Flamingo automatically keeps tabs on the number of nights/days spent in your country of residence and away. A useful tool for global expats, overseas homeowners, digital nomads and permanent residents.'},
+        {'question': this.t('faq_q1'), 'ansver': this.t('faq_a1') },
+        {'question': this.t('faq_q2'), 'ansver': this.t('faq_a2') },
+        {'question': this.t('faq_q3'), 'ansver': this.t('faq_a3') },
+        {'question': this.t('faq_q4') , 'ansver': this.t('faq_a4') },
+        {'question': this.t('faq_q5') , 'ansver': this.t('faq_a5') },
+        {'question': this.t('faq_q6') , 'ansver': this.t('faq_a6') },
       ],
       activeIndex: null,
     }

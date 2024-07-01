@@ -3,18 +3,18 @@
   <section class="reasons-sec" id="Features">
     <div class="container">
       <div class="who-needs-sec__subtitle-row">
-        <p class="who-needs-sec__subtitle">Features</p>
+        <p class="who-needs-sec__subtitle">{{ $t('features_title') }}</p>
       </div>
-      <h2 class="who-needs-sec__title">10 reasons to Use Flamingo</h2>
-      <p class="reasons-sec__subtitle">An essential tool for global expats, permanent residents, overseas homeowners and frequent travelers.</p>
+      <h2 class="who-needs-sec__title">{{ $t('features_10reasons') }}</h2>
+      <p class="reasons-sec__subtitle">{{ $t('features_10reason_text') }}</p>
 
       <div class="reasons-sec__wrapper">
 
         <div class="reasons-sec__big-wrapper">
           <div class="reasons-sec__big-element reason-element r-big r-big_x1">
             <div class="r-big__text">
-              <p class="r-big__title">Auto<br>Trip Recordingt</p>
-              <p class="r-big__subtitle">Flamingo automatically determines if you have left your residence country or state and accurately records your trip details.</p>
+              <p class="r-big__title">{{ $t('features_auto') }}<br>{{ $t('features_record') }}</p>
+              <p class="r-big__subtitle">{{ $t('features_record_text') }}</p>
             </div>
 
             <div class="r-big__img-wrapper">
@@ -23,9 +23,9 @@
           </div>
 
           <div class="reasons-sec__small-element reason-element r-small  reason-element-active" @click="openPopupInfo">
-            
+
             <div class="reason-element-active__content-wrapper">
-              <p class="r-small__title">Plan future trips</p>
+              <p class="r-small__title">{{ $t('features_plan') }}</p>
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_1_6171)">
@@ -46,7 +46,7 @@
                     </clipPath>
                   </defs>
                 </svg>
-              </div>  
+              </div>
             </div>
 
             <div class="reason-element-active__border-wrapper">
@@ -65,12 +65,12 @@
                 </svg>
               </div>
             </div>
-            
+
           </div>
 
           <div class="reasons-sec__small-element reason-element r-small  reason-element-active" @click="openPopupInfo">
             <div class="reason-element-active__content-wrapper">
-              <p class="r-small__title">Store documents and trip details</p>
+              <p class="r-small__title">{{ $t('features_store') }}</p>
 
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +80,7 @@
                 </svg>
               </div>
             </div>
-            
+
 
             <div class="reason-element-active__border-wrapper">
               <div class="reason-element-active__border-1"></div>
@@ -104,8 +104,8 @@
 
         <div class="reasons-sec__big-element reason-element r-big r-big_40 r-big_x2">
           <div class="r-big__text">
-            <p class="r-big__title">Residency <br>& Domicile Status</p>
-            <p class="r-big__subtitle">Flamingo helps you establish your country of residence and domicile by automatically counting your days and nights in and out of the country.</p>
+            <p class="r-big__title">{{ $t('features_residency') }}<br>& {{ $t('features_dom_status') }}</p>
+            <p class="r-big__subtitle">{{ $t('features_dom_text') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">
@@ -116,14 +116,14 @@
         <div class="reasons-sec__tax-element reason-element r-tax r_soon reason-element-active" @click="openPopupInfo">
           <div class="reason-element-active__content-wrapper">
             <div class="r-tax__text-wrapper">
-              <p class="r-small__title">Tax <span><br></span>Residency <span><br></span>Assessment</p>
-              <p class="r-small__teg">Coming soon</p>
+              <p class="r-small__title">{{ $t('features_tax') }} <span><br></span>{{ $t('features_residency') }}<span><br></span>{{ $t('features_assessment') }}</p>
+              <p class="r-small__teg">{{ $t('features_coming_soon') }}</p>
             </div>
-  
+
             <img src="@/assets/images/reasons-pages/r3.png" alt="" class="r-tax__img r-tax__img-pc">
             <img src="@/assets/images/reasons-pages/r3-mob.png" alt="" class="r-tax__img r-tax__img-mob">
-  
-  
+
+
             <div class="r-small__svg-wrapper">
               <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1_6418)">
@@ -144,7 +144,7 @@
               </svg>
             </div>
           </div>
-          
+
 
           <div class="reason-element-active__border-wrapper">
             <div class="reason-element-active__border-1"></div>
@@ -166,8 +166,8 @@
 
         <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x3">
           <div class="r-big__text">
-            <p class="r-big__title">USA States<br>Day Count</p>
-            <p class="r-big__subtitle">Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.</p>
+            <p class="r-big__title">{{ $t('features_usa') }}<br> {{ $t('features_day_count') }}</p>
+            <p class="r-big__subtitle"> {{ $t('features_usa_text') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">
@@ -177,8 +177,8 @@
 
         <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x4">
           <div class="r-big__text">
-            <p class="r-big__title">Schengen Area<br>Calculator</p>
-            <p class="r-big__subtitle">Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.</p>
+            <p class="r-big__title">{{ $t('features_schengen') }}<br>{{ $t('features_calculator') }}</p>
+            <p class="r-big__subtitle"> {{ $t('features_calculator_text') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">
@@ -188,8 +188,8 @@
 
         <div class="reasons-sec__small-element reason-element  r-small r_soon reason-element-active" @click="openPopupInfo">
           <div class="reason-element-active__content-wrapper">
-            <p class="r-small__title">Short-Term Visa Tracking</p>
-            <p class="r-small__teg">Coming soon</p>
+            <p class="r-small__title">{{ $t('features_short_term') }}</p>
+            <p class="r-small__teg"> {{ $t('features_coming_soon') }}</p>
             <div class="r-small__svg-wrapper">
               <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M45.5544 25.7897L36.5625 34.7815" stroke="#6172F3" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
@@ -199,7 +199,7 @@
 
             </div>
           </div>
-          
+
 
           <div class="reason-element-active__border-wrapper">
             <div class="reason-element-active__border-1"></div>
@@ -222,7 +222,7 @@
 
         <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo">
           <div class="reason-element-active__content-wrapper">
-            <p class="r-small__title">New York City Day Count </p>
+            <p class="r-small__title">{{ $t('features_new_york') }}</p>
             <!-- <p class="r-small__teg">Coming soon</p> -->
             <div class="r-small__svg-wrapper">
               <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -240,7 +240,7 @@
 
             </div>
           </div>
-          
+
 
           <div class="reason-element-active__border-wrapper">
             <div class="reason-element-active__border-1"></div>
@@ -263,7 +263,7 @@
 
         <div class="reasons-sec__small-element reason-element r-small r-small_black reason-element-active" @click="openPopupInfo">
           <div class="reason-element-active__content-wrapper">
-            <p class="r-small__title">Built-In Passport Index</p>
+            <p class="r-small__title">{{ $t('features_build_in') }}</p>
             <!-- <p class="r-small__teg">Coming soon</p> -->
             <div class="r-small__svg-wrapper">
               <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@
               </svg>
             </div>
           </div>
-          
+
 
           <div class="reason-element-active__border-wrapper">
             <div class="reason-element-active__border-1"></div>
@@ -296,7 +296,7 @@
 
         <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo">
           <div class="reason-element-active__content-wrapper">
-            <p class="r-small__title">Export<br>Reports</p>
+            <p class="r-small__title">{{ $t('features_export') }}<br>{{ $t('features_reports') }}</p>
             <!-- <p class="r-small__teg">Coming soon</p> -->
             <div class="r-small__svg-wrapper">
               <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -306,7 +306,7 @@
               </svg>
             </div>
           </div>
-          
+
 
           <div class="reason-element-active__border-wrapper">
             <div class="reason-element-active__border-1"></div>
@@ -351,7 +351,7 @@ export default {
       this.$emit('openPopup', testData)
     }
   }
-  
+
 }
 </script>
 

@@ -3,14 +3,14 @@
   <section class="security-sec" id="HowItWorks">
     <div class="container">
       <div class="who-needs-sec__subtitle-row">
-        <p class="who-needs-sec__subtitle">Security</p>
+        <p class="who-needs-sec__subtitle">{{ $t('how_security') }}</p>
       </div>
-      <h2 class="who-needs-sec__title">Your Safety is Our Priority</h2>
+      <h2 class="who-needs-sec__title">{{ $t('how_text') }}</h2>
 
       <div class="security-sec__wrapper">
         <div class="security-sec__element security-sec__el1">
-          <h3 class="security-sec__element-title">Important<br>Notifications</h3>
-          <p class="security-sec__element-subtitle">Flamingo notifies you when you are reaching your stay limits or your visa is about to expire, so that you don’t get in trouble with authorities. </p>
+          <h3 class="security-sec__element-title">{{ $t('how_important') }}<br>{{ $t('how_notifications') }}</h3>
+          <p class="security-sec__element-subtitle">{{ $t('how_notify_text') }}</p>
 
           <div class="security-sec__icon-wrapper security-sec__icon-wrapper-1">
             <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,9 +75,9 @@
 
 
         <div class="security-sec__element security-sec__el2">
-          <h3 class="security-sec__element-title">Complete<br>Privacy</h3>
-          <p class="security-sec__element-subtitle">Your travel, residency and visa data is stored locally only on your device. We do not collect, nor store, your information on our servers.
-            <br><br>With Flamingo PRO you can sync your data via iCloud across all your devices.</p>
+          <h3 class="security-sec__element-title">{{ $t('how_complete') }}<br>{{ $t('how_privacy') }}</h3>
+          <p class="security-sec__element-subtitle">{{ $t('how_complete_text') }}
+            <br><br>{{ $t('how_complete_text2') }}</p>
 
           <div class="security-sec__icon-wrapper security-sec__icon-wrapper-1">
             <svg width="175" height="175" viewBox="0 0 175 175" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,8 +105,8 @@
 
 
         <div class="security-sec__element security-sec__el3">
-          <h3 class="security-sec__element-title">Bank-Level<br>Data Security</h3>
-          <p class="security-sec__element-subtitle">Flamingo employs multiple layers of data backups, guaranteeing peace of mind for your valuable travel information.</p>
+          <h3 class="security-sec__element-title">{{ $t('how_bank_level') }}<br>{{ $t('how_data_security') }}</h3>
+          <p class="security-sec__element-subtitle">{{ $t('how_bank_text') }}</p>
 
           <div class="security-sec__icon-wrapper security-sec__icon-wrapper-1">
             <svg width="244" height="143" viewBox="0 0 244 143" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -40,7 +40,7 @@ export default {
     async setup() {
 
       let page_num = 1
-      let per_page = 3;
+      let per_page = 9;
 
       const { data: { value: { blogs, tags, blogs_qty } }, error, execute, pending, refresh, status } = await useAsyncData('blogsTagsLib', () => $fetch('/api/blogs' , {
         method:"POST",

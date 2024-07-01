@@ -100,7 +100,8 @@ export default {
   async setup() {
     const { data: { value: { blogs, tags } }, error, execute, pending, refresh, status } = await useAsyncData('blogsTags', () => $fetch('/api/blogs' , {
         method:"POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body: { page_num  : 1, per_page : 6 }
     }))
 
     return {

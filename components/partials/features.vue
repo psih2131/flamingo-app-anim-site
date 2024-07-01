@@ -22,7 +22,7 @@
             </div>
           </div>
 
-          <div class="reasons-sec__small-element reason-element r-small  reason-element-active" @click="openPopupInfo">
+          <div class="reasons-sec__small-element reason-element r-small  reason-element-active" @click="openPopupInfo('plan')">
 
             <div class="reason-element-active__content-wrapper">
               <p class="r-small__title">{{ $t('features_plan') }}</p>
@@ -68,7 +68,7 @@
 
           </div>
 
-          <div class="reasons-sec__small-element reason-element r-small  reason-element-active" @click="openPopupInfo">
+          <div class="reasons-sec__small-element reason-element r-small  reason-element-active" @click="openPopupInfo('store')">
             <div class="reason-element-active__content-wrapper">
               <p class="r-small__title">{{ $t('features_store') }}</p>
 
@@ -113,7 +113,7 @@
           </div>
         </div>
 
-        <div class="reasons-sec__tax-element reason-element r-tax r_soon reason-element-active" @click="openPopupInfo">
+        <div class="reasons-sec__tax-element reason-element r-tax r_soon reason-element-active" @click="openPopupInfo('tax')">
           <div class="reason-element-active__content-wrapper">
             <div class="r-tax__text-wrapper">
               <p class="r-small__title">{{ $t('features_tax') }} <span><br></span>{{ $t('features_residency') }}<span><br></span>{{ $t('features_assessment') }}</p>
@@ -186,7 +186,7 @@
           </div>
         </div>
 
-        <div class="reasons-sec__small-element reason-element  r-small r_soon reason-element-active" @click="openPopupInfo">
+        <div class="reasons-sec__small-element reason-element  r-small r_soon reason-element-active" @click="openPopupInfo('short_term')">
           <div class="reason-element-active__content-wrapper">
             <p class="r-small__title">{{ $t('features_short_term') }}</p>
             <p class="r-small__teg"> {{ $t('features_coming_soon') }}</p>
@@ -220,7 +220,7 @@
 
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo">
+        <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo('new_york')">
           <div class="reason-element-active__content-wrapper">
             <p class="r-small__title">{{ $t('features_new_york') }}</p>
             <!-- <p class="r-small__teg">Coming soon</p> -->
@@ -261,7 +261,7 @@
 
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small r-small_black reason-element-active" @click="openPopupInfo">
+        <div class="reasons-sec__small-element reason-element r-small r-small_black reason-element-active" @click="openPopupInfo('build_in')">
           <div class="reason-element-active__content-wrapper">
             <p class="r-small__title">{{ $t('features_build_in') }}</p>
             <!-- <p class="r-small__teg">Coming soon</p> -->
@@ -294,7 +294,7 @@
 
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo">
+        <div class="reasons-sec__small-element reason-element r-small reason-element-active" @click="openPopupInfo('reports')">
           <div class="reason-element-active__content-wrapper">
             <p class="r-small__title">{{ $t('features_export') }}<br>{{ $t('features_reports') }}</p>
             <!-- <p class="r-small__teg">Coming soon</p> -->
@@ -342,13 +342,21 @@ export default {
           popupStatus: false,
       }
   },
-
+  setup() {
+    const { t } = useI18n()
+    return {
+      t
+    }
+  },
   methods: {
-    openPopupInfo(){
+    openPopupInfo(tag){
+      let title = this.t('features_'+tag+'_title')
+      let subtitle = this.t('features_'+tag+'_subtitle')
+      let text = this.t('features_'+tag+'_text')
       let popupData = {
-        'popup_title': 'title',
-        'popup_subtitle': 'subtitle',
-        'popup_text': 'text',
+        'popup_title': title,
+        'popup_subtitle': subtitle,
+        'popup_text': text,
       }
       this.$emit('openPopup', popupData)
     }

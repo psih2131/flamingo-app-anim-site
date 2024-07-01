@@ -74,7 +74,7 @@
 
         <PartialsDownload />
 
-        <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" />
+        <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/>
 
 
     </main>
@@ -94,6 +94,7 @@ import component__reason_popup from '@/components/component__reason-popup.vue'
 export default {
     data() {
         return {
+            popupData :{},
             animCounter: 0,
             pastAnimCounter: null,
             popupStatus: false,
@@ -194,8 +195,8 @@ export default {
         },
 
         openPopupInfo(data){
-            this.popupStatus = true
-            console.log(data)
+            this.popupStatus = true;
+            this.popupData = data;
         },
         closePopup(data){
             this.popupStatus = data

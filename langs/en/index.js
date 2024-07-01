@@ -50,8 +50,14 @@ export default {
     features_record_text  : "Flamingo automatically determines when you cross the border and accurately records your trip details. ",
 
     features_plan : "Plan Future Travel",
+    features_plan_title : "Plan Future Travel",
+    features_plan_subtitle : "Plan out your whole year by adding upcoming tripstothe app. Once you’re there, Flamingowill track your movements andadjust dates as needed.",
+    features_plan_text : "",
 
     features_store: "Store documents and trip details",
+    features_store_title: "Store Documents and Trip Details",
+    features_store_subtitle: "Keep your trips organized by adding detailed notes and storing all relevant documents in one place. This is especially useful if you need to present proof of your travels to lawyers, tax advisors,or government authorities. ",
+    features_store_text: "",
 
     features_residency : "Residency",
 
@@ -59,7 +65,12 @@ export default {
 
     features_dom_text : "Whether you’re looking to establish, maintain or avoid a domicile or residency status, Flamingo gotyou covered. Set up athreshold and tracking period and monitor your physical presence in the country or US state. ",
     features_tax :"Tax",
+    features_tax_title: "Tax Residency Assessment",
+    features_tax_subtitle: "",
+    features_tax_text: "",
+
     features_assessment: "Assessment",
+
     features_coming_soon: "Coming soon",
     features_usa : "USA States",
     features_day_count : "Day Count",
@@ -67,11 +78,27 @@ export default {
     features_schengen : "Schengen Area",
     features_calculator: "Calculator",
     features_calculator_text : "Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.",
+
     features_short_term : "Short-Term Visa Tracking",
-    features_new_york : "New York City Day Count",
-    features_build_in : "Built-In Passport Index",
+    features_short_term_title : 'Short-Term Visas Tracking ',
+    features_short_term_subtitle : 'Add your short-term visa details and visa-free access conditions, and the Flamingo app will automatically track your entries and stays in the country, alerting you as you approach your limits.',
+    features_short_term_text : '',
+
+    features_new_york : "US CitiesDay Count",
+    features_new_york_title : "US CitiesDay Count",
+    features_new_york_subtitle : 'We recognize the importance of adhering to both state and localcitytax regulations in the United States, which is why we now offer separate day tracking for individual US cities. For instance, you canset up tax residency andtrack your visits to the five New York Cityboroughs—Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—independently from your stays in New York State. We are continuously adding more US cities to the app to enhance your experience.',
+    features_new_york_text : "",
+
+    features_build_in : "Passport Index",
+    features_build_in_title : 'Passport Index',
+    features_build_in_subtitle : 'Lookup visa requirements for any country by entering your citizenship(s)into the app. Find out where you can travel visa-free, or if you need a paper visa, e-visa, or visa on arrival. This tool simplifies your travel planning, ensuring you\'re always preparedfor your next destination.',
+    features_build_in_text: 'Note: This information is for general guidance only and should not be considered legal advice.Always consult with official sources before making travel plans.',
+
     features_export : "Export",
     features_reports : "Reports",
+    features_reports_title : "Export Reports",
+    features_reports_subtitle : "Export customizable CSV reports detailing your travel history for domicileand residency. These reports, developed in consultation with lawyers and tax advisors, ensure ease of tax filing and immigration compliance. Share them with authorities and legal professionals to simplify your documentation needs.",
+    features_reports_text : "",
 
     how_security: "Security",
     how_text : "Your Privacy is Our Priority",

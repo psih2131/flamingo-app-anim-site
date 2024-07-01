@@ -4,7 +4,6 @@
     <div class="reason-popup-wrapper-bg">
 
     </div>
-
     <div class="reason-popup" :class="{'reason-popup__active': popupStatus}">
         <div class="reason-popup__close" @click="closePopup">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,8 +11,6 @@
             </svg>
         </div>
         <div class="reason-popup__wrapper">
-
-
             <div class="reason-popup__img-wrapper">
                 <img src="@/assets/images/iphone-mockup-2.png" alt="" class="reason-popup__img">
             </div>
@@ -26,10 +23,10 @@
                         </svg>
 
 
-                        <h3 class="reason-popup__title">{{ popup_title }}</h3>
-                        <p class="reason-popup__subtitle">{{ popup_subtitle }}</p>
+                        <h3 class="reason-popup__title">{{ popupData.popup_title }}</h3>
+                        <p class="reason-popup__subtitle">{{ popupData.popup_subtitle }}</p>
                         <div class="reason-popup__text">
-                              {{ popup_text }}
+                              {{ popupData.popup_text }}
                         </div>
 
                     </div>
@@ -48,11 +45,15 @@
 export default {
     data() {
         return {
-            popupStatus: false
-        }
+            popupStatus: false,
+      }
     },
     props:{
-
+        popupData :{
+          popup_title : "",
+          popup_subtitle : "",
+          popup_text : "",
+        }
     },
 
     components: {

@@ -43,6 +43,7 @@ export default {
           this.t('help12'),
           this.t('help13'),
           this.t('help14'),
+          this.t('help15'),
       ],
     }
   },

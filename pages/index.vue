@@ -4,10 +4,10 @@
             <div class="home-front-sec__container"></div>
         </section>
 
-        <section class="who-needs-sec" id="ForWhom">
+        <section class="who-needs-sec" id="ourUsers">
             <div class="container">
                 <div class="who-needs-sec__subtitle-row">
-                    <p class="who-needs-sec__subtitle">{{ $t('for_whom') }}</p>
+                    <p class="who-needs-sec__subtitle">{{ $t('ourusers') }}</p>
                 </div>
                 <h2 class="who-needs-sec__title">{{ $t('index_who_need') }}</h2>
 
@@ -17,7 +17,7 @@
 
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
-                                <h3 class="needs-anim-elemen__title">{{ $t('index_expats') }}</h3>
+                                <h3 class="needs-anim-elemen__title">{{ $t('index_expats') }}<br>{{ $t('index_expats_nomads') }}</h3>
                                 <p class="needs-anim-element__subtitle">{{ $t('index_expats_texts') }}</p>
                             </div>
 
@@ -29,7 +29,7 @@
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_tax') }}<br>{{ $t('index_residents') }}</h3>
-                                <p class="needs-anim-element__subtitle">$t('index_residents_text') </p>
+                                <p class="needs-anim-element__subtitle">{{ $t('index_residents_text') }}</p>
                             </div>
 
                             <img src="@/assets/images/who-needs-image/x2.png" alt="" class="needs-anim-elemen__image">

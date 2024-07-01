@@ -39,6 +39,7 @@ export default {
         {'question': this.t('faq_q4') , 'ansver': this.t('faq_a4') },
         {'question': this.t('faq_q5') , 'ansver': this.t('faq_a5') },
         {'question': this.t('faq_q6') , 'ansver': this.t('faq_a6') },
+        {'question': this.t('faq_q7') , 'ansver': this.t('faq_a7') },
       ],
       activeIndex: null,
     }

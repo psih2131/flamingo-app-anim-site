@@ -7,7 +7,7 @@
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#ForWhom" class="header__nav-element-link">{{ $t('forwhom') }}</nuxt-link>
+                        <nuxt-link no-prefetch to="/#OurUsers" class="header__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                     </li>
 
                     <li class="header__nav-element">
@@ -15,7 +15,7 @@
                     </li>
 
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#HowItWorks" class="header__nav-element-link">{{ $t('how-it-works') }}</nuxt-link>
+                        <nuxt-link no-prefetch to="/#Security" class="header__nav-element-link">{{ $t('security') }}</nuxt-link>
                     </li>
 
                     <li class="header__nav-element">
@@ -60,13 +60,13 @@
                     <div class="container">
                         <ul class="mob-meny__nav-list">
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/#ForWhom" class="mob-meny__nav-list-element-link">{{ $t('forwhom') }}</nuxt-link>
+                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/#ourUsers" class="mob-meny__nav-list-element-link">{{ $t('ourusers') }}</nuxt-link>
                             </li>
                             <li class="mob-meny__nav-list-element">
                                 <nuxt-link no-prefetch to="/#Features" class="mob-meny__nav-list-element-link">{{ $t('features') }}</nuxt-link>
                             </li>
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link no-prefetch to="/#HowItWorks" class="mob-meny__nav-list-element-link">{{ $t('how-it-works') }}</nuxt-link>
+                                <nuxt-link no-prefetch to="/#Security" class="mob-meny__nav-list-element-link">{{ $t('security') }}</nuxt-link>
                             </li>
                             <li class="mob-meny__nav-list-element">
                                 <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link">{{ $t('blog') }}</nuxt-link>

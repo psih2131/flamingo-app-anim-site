@@ -345,10 +345,12 @@ export default {
 
   methods: {
     openPopupInfo(){
-      let testData = {
-        'title': 'test'
+      let popupData = {
+        'popup_title': 'title',
+        'popup_subtitle': 'subtitle',
+        'popup_text': 'text',
       }
-      this.$emit('openPopup', testData)
+      this.$emit('openPopup', popupData)
     }
   }
 

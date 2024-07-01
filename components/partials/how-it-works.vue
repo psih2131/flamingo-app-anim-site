@@ -1,6 +1,6 @@
 <template>
 
-  <section class="security-sec" id="HowItWorks">
+  <section class="security-sec" id="Security">
     <div class="container">
       <div class="who-needs-sec__subtitle-row">
         <p class="who-needs-sec__subtitle">{{ $t('how_security') }}</p>

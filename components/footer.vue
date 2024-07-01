@@ -17,13 +17,13 @@
                 <nav class="footer__top-nav">
                     <ul class="footer__top-nav-list">
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/#ForWhom" class="footer__nav-element-link">{{ $t('forwhom') }}</nuxt-link>
+                            <nuxt-link no-prefetch to="/#ourUsers" class="footer__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch to="/#Features" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('how-it-works') }}</nuxt-link>
+                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('security') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">{{ $t('contact_us') }}</nuxt-link>

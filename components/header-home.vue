@@ -7,7 +7,7 @@
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">
                     <li  class="header__nav-element">
-                        <a  href="/#ForWhom" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'ForWhom' }">{{ $t('forwhom') }}</a>
+                        <a  href="/#ourUsers" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
                     </li>
 
                     <li  class="header__nav-element">
@@ -15,7 +15,7 @@
                     </li>
 
                     <li  class="header__nav-element">
-                        <a  href="/#HowItWorks" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'HowItWorks' }">{{ $t('how-it-works') }}</a>
+                        <a  href="/#Security" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
                     </li>
 
                     <li class="header__nav-element">
@@ -61,7 +61,7 @@
                         <ul class="mob-meny__nav-list">
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  href="/#ForWhom" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'ForWhom' }">{{ $t('forwhom') }}</a>
+                                <a  href="/#ourUsers" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
@@ -69,7 +69,7 @@
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  href="/#HowItWorks" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'HowItWorks' }">{{ $t('how-it-works') }}</a>
+                                <a  href="/#Security" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
                             </li>
 
                             <li class="mob-meny__nav-list-element">

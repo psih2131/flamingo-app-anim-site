@@ -20,7 +20,13 @@
                             <nuxt-link no-prefetch to="/#ourUsers" class="footer__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
+                          <nuxt-link no-prefetch to="/legal" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
+                        </li>
+                        <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch to="/#Features" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
+                        </li>
+                        <li class="footer__top-nav-list-element">
+                          <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('security') }}</nuxt-link>
@@ -29,11 +35,10 @@
                             <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">{{ $t('contact_us') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/legal" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
+                          <nuxt-link no-prefetch to="/blog" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
                         </li>
-                        <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
-                        </li>
+
+
                     </ul>
                 </nav>
                 <div class="footer__developer-row">

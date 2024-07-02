@@ -75,10 +75,10 @@ export default {
     features_coming_soon: "Coming soon",
     features_usa : "USA States",
     features_day_count : "Day Count",
-    features_usa_text : "Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.",
+    features_usa_text : "If you are a dual-state resident, or just travel frequently between US states, Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.",
     features_schengen : "Schengen Area",
     features_calculator: "Calculator",
-    features_calculator_text : "Flamingo shows how many combined days you’ve already spent in Schengen countries and how many more you have left in the 180-day period.",
+    features_calculator_text : "Flamingo’s built-in Schengen calculator uses your cumulative days spent in Schengen countries to display days you have left and allows you to plan future trips to the EU based on the 90/180 day rule.",
 
     features_short_term : "Short-Term Visa Tracking",
     features_short_term_title : 'Short-Term Visas Tracking ',

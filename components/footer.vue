@@ -32,11 +32,16 @@
                             <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('security') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">{{ $t('contact_us') }}</nuxt-link>
+                            <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">{{ $t('contact_support_link') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
                           <nuxt-link no-prefetch to="/blog" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
                         </li>
+                        <li class="footer__top-nav-list-element">
+                       </li>
+                      <li class="footer__top-nav-list-element">
+                        <nuxt-link no-prefetch to="/#Faq" class="footer__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
+                      </li>
 
 
                     </ul>

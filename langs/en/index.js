@@ -4,6 +4,7 @@ export default {
     security: 'Security',
     blog: 'Blog',
     'contact_us': 'Contact us',
+    'contact_support_link': 'Contact Support',
     'privacy_notice' : 'Privacy Notice',
     'terms_of_use' : 'Terms of Use',
     'support': 'Support',
@@ -11,7 +12,7 @@ export default {
     footer_text : "Flamingo tracking and counting are created for information purposes only.",
     footer_text2 : "Always consult with your legal advisor and tax consulting firm about specific requirements for your residency and visa status.",
 
-    'footer_made_in': "Made in the U.K",
+    'footer_made_in': "Made in the U.K.",
     footer_copyright: "©2022 — 2024 Taboo Media Limited. Registered in England",
     footer_copyright2: "Company number: 12461952. All rights reserved.",
     footer_copyright3: "Flamingo App is a trademark of Taboo Media Limited.",
@@ -67,7 +68,7 @@ export default {
     features_dom_text : "Whether you’re looking to establish, maintain or avoid a domicile or residency status, Flamingo got you covered. Set up a threshold and tracking period and monitor your physical presence in the country or US state. ",
     features_tax :"Tax",
     features_tax_title: "Tax Residency Assessment",
-    features_tax_subtitle: "",
+    features_tax_subtitle: "Flamingo automatically determines the likelihood of your acquiring a tax residency status in most countries, US states and cities based on international tax rules. The tax residency assessment is based on physical presence, as well as additional criteria commonly used by local authorities, such as your income, property, and family ties.",
     features_tax_text: "",
 
     features_assessment: "Assessment",
@@ -87,7 +88,7 @@ export default {
 
     features_new_york : "US Cities Day Count",
     features_new_york_title : "US Cities Day Count",
-    features_new_york_subtitle : 'We recognize the importance of adhering to both state and local city tax regulations in the United States, which is why we now offer separate day tracking for individual US cities. For instance, you can set up tax residency and track your visits to the five New York Cityboroughs—Manhattan, Brooklyn, Queens, the Bronx, and Staten Island—independently from your stays in New York State. We are continuously adding more US cities to the app to enhance your experience.',
+    features_new_york_subtitle : 'We recognize the importance of adhering to both state and local city tax regulations in the United States, which is why we now offer separate day tracking for individual US cities. For instance, you can set up tax residency and track your visits to the five New York Cityboroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — independently from your stays in New York State. \n We are continuously adding more US cities to the app to enhance your experience.',
     features_new_york_text : "",
 
     features_build_in : "Passport Index",

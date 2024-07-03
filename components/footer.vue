@@ -37,13 +37,10 @@
                         <li class="footer__top-nav-list-element">
                           <nuxt-link no-prefetch to="/blog" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
                         </li>
+                        <li class="footer__top-nav-list-element"></li>
                         <li class="footer__top-nav-list-element">
-                       </li>
-                      <li class="footer__top-nav-list-element">
-                        <nuxt-link no-prefetch to="/#Faq" class="footer__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
-                      </li>
-
-
+                            <nuxt-link no-prefetch to="/#Faq" class="footer__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
+                        </li>
                     </ul>
                 </nav>
                 <div class="footer__developer-row">

@@ -88,7 +88,7 @@ export default {
 
     features_new_york : "US Cities Day Count",
     features_new_york_title : "US Cities Day Count",
-    features_new_york_subtitle : 'We recognize the importance of adhering to both state and local city tax regulations in the United States, which is why we now offer separate day tracking for individual US cities. For instance, you can set up tax residency and track your visits to the five New York Cityboroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — independently from your stays in New York State. \n We are continuously adding more US cities to the app to enhance your experience.',
+    features_new_york_subtitle : 'We recognize the importance of adhering to both state and local city tax regulations in the United States, which is why we now offer separate day tracking for individual US cities. For instance, you can set up tax residency and track your visits to the five New York Cityboroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — independently from your stays in New York State. \n\n We are continuously adding more US cities to the app to enhance your experience.',
     features_new_york_text : "",
 
     features_build_in : "Passport Index",

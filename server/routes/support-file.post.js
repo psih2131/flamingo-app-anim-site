@@ -76,7 +76,13 @@ export default defineEventHandler(async (event) => {
                 // res.setHeader('Content-Type', 'application/json');
                 if (fields.udid && fields.udid.length > 0 && files.data && files.data.length > 0) {
                     await postMsg(fields.udid?.pop(), fields.is_support ? true : false);
-                    await uploadAttachment(files.data?.pop());
+                    let f = files.data.pop();
+                    let safety = 0;
+                    while (f && safety < 10) {
+                        await uploadAttachment(f);
+                        f = files.data.pop();
+                        safety++;
+                    }
                     resolve({ "success":true });
                 } else {
                     resolve({ "success":false, t:2 });

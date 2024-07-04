@@ -182,7 +182,13 @@ export default defineEventHandler(async (event) => {
 
                     await postMsg(message);
                     if (files.file && files.file.length > 0) {
-                        await uploadAttachment(files.file?.pop());
+                        let f = files.file.pop();
+                        let safety = 0;
+                        while (f && safety < 10) {
+                            await uploadAttachment(f);
+                            f = files.file.pop();
+                            safety++;
+                        }
                     }
                     if (fields.email && fields.email.length > 0) {
                         await sendEmail(fields.email);

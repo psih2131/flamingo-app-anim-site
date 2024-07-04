@@ -24,7 +24,7 @@
 
 
                         <h3 class="reason-popup__title">{{ popupData.popup_title }}</h3>
-                        <p class="reason-popup__subtitle">{{ popupData.popup_subtitle }}</p>
+                        <p class="reason-popup__subtitle" v-html="this.breakText(popupData.popup_subtitle)"></p>
                         <div class="reason-popup__text">
                               {{ popupData.popup_text }}
                         </div>
@@ -71,7 +71,9 @@ export default {
     },
 
     computed: {
-
+        breakText(){
+            return (text) => {if (!text) { return text } else return text.replace(/\n/g, '<br>')};
+        },
     },
 
     watch: {

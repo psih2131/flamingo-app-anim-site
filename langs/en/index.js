@@ -149,9 +149,19 @@ export default {
     about_page :  "About",
 
     contact_support: "In-App Support",
-    contact_text : "If you are an existing Flamingo app user, we recommend contacting us through the app settings. That way we will be better equipped to help you.",
+    contact_text : "If you are an existing Flamingo app user, we recommend contacting us through the app settings, so that we will be better equipped to assist you",
     contact_go_to : "Go to the App",
     contact_dsc : "Use this form to complete a support request or send us your feedback.",
+    contact_name : "Your Name",
+    contact_email: "Email address",
+    contact_model : "iPhone Model",
+    contact_select_model : "Select Model",
+    contact_version : "iOS Version",
+    contact_select_version : "Select Version",
+    contact_message : "Message",
+    contact_message_placeholder : "Enter your message",
+    contact_submit : "Submit",
+
 
     blog_back : "Back to the Articles",
     blog_stories: "Stories and interviews",

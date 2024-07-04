@@ -22,8 +22,8 @@ export default defineNuxtConfig({
     langDir: 'langs/',
     lazy: false,
     locales: [
-      { code: 'fr', iso: 'fr-FR', name: 'fr', file: 'fr/index.js', dir:'ltr' },
-      { code: 'en', iso: 'en-US', name: 'en', file: 'en/index.js', dir:'ltr' }
+      { code: 'fr', iso: 'fr-FR', name: 'Français', file: 'fr/index.js', dir:'ltr' },
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en/index.js', dir:'ltr' }
     ]
   },
 })

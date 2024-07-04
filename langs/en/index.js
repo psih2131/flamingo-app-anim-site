@@ -93,7 +93,7 @@ export default {
 
     features_build_in : "Passport Index",
     features_build_in_title : 'Passport Index',
-    features_build_in_subtitle : 'Lookup visa requirements for any country by entering your citizenship(s)into the app. Find out where you can travel visa-free, or if you need a paper visa, e-visa, or visa on arrival. This tool simplifies your travel planning, ensuring you\'re always prepared for your next destination.',
+    features_build_in_subtitle : 'Look up visa requirements for any country by entering your citizenship(s) into the app. Find out where you can travel visa-free, or if you need a paper visa, e-visa, or visa on arrival. This tool simplifies your travel planning, ensuring you\'re always prepared for your next destination.',
     features_build_in_text: 'Note: This information is for general guidance only and should not be considered legal advice. Always consult with official sources before making travel plans.',
 
     features_export : "Export",

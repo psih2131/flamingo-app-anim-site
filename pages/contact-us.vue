@@ -12,7 +12,7 @@
                     </div>
                     <p class="contact-us-sec__form-title">{{ $t('contact_dsc') }}</p>
     
-                     <component__contact_form />
+                     <component__contact_form @formSubmitStatus="checkFormStatus" />
                 </div>
 
                 <div v-else class="contact-us-sec__send-status send-status-contact">
@@ -70,6 +70,10 @@ export default {
     methods: {
         goBack(){
             window.history.back();
+        },
+
+        checkFormStatus(data){
+            this.sendStatus = data
         }
     },
 

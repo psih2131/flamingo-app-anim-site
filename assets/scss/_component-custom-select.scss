@@ -1,0 +1,132 @@
+//form-custom-select START
+.form__inp-wrapper-select {
+    margin-bottom: 24px;
+}
+
+.form-custom-select__wrapper {
+    position: relative;
+}
+
+.form-custom-select__current-value {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+
+    input {
+        border: 1px solid #CDD5DF;
+        width: 100%;
+        background: #FFF;
+        border-radius: 100px;
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        padding: 10px 16px;
+        color: #697586;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        transition: all ease 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid #CEE0E8;
+            transition: all ease 0.3s;
+            background: #FFF;
+            box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px rgba(105, 117, 134, 0.05);
+        }
+    }
+
+
+}
+
+.form-custom-select__current-value_activ {
+    input {
+        border: 1px solid #CEE0E8;
+        transition: all ease 0.3s;
+        background: #FFF;
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px rgba(105, 117, 134, 0.05);
+    }
+}
+
+
+
+.form-custom-select__ar-wrapper {
+    position: absolute;
+    right: 14px;
+    transition: all ease 0.3s;
+    cursor: pointer;
+
+    svg {
+        display: block;
+    }
+}
+
+.form-custom-select__ar-wrapper_activ {
+    transform: rotate(180deg);
+}
+
+.form-custom-select__value-list {
+    margin-top: 4px;
+    border: 1px solid #E3E8EF;
+    background: #FFF;
+    border-radius: 16px;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    padding: 6px;
+}
+
+.form-custom-select__ul-value-list {
+    overflow-y: auto;
+    max-height: 400px;
+    padding-right: 4px;
+}
+
+.form-custom-select__ul-value-list::-webkit-scrollbar {
+    width: 2px;
+}
+
+.form-custom-select__ul-value-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+.form-custom-select__ul-value-list::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 0px solid slategrey;
+}
+
+.form-custom-select__vvalue-list-element {
+    padding: 10px 10px 10px 12px;
+    color: #121926;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.3s;
+
+    &:hover {
+        padding-left: 20px;
+        transition: all ease 0.3s;
+    }
+}
+
+.form-custom-select__vvalue-list-element_active {
+    background: #F8FAFC;
+
+    &:before {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 10px;
+        content: "";
+        background-image: url('../images//icons/check.svg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+//form-custom-select END

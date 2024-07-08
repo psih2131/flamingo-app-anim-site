@@ -22,8 +22,11 @@
     "pg": "^8.12.0",
     "request": "^2.88.2",
     "swiper": "^11.1.4",
+    "v-dropdown-menu": "^2.0.4",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2",
+    "vue-slide-toggle": "^1.1.1",
+    "vue-slide-up-down": "^3.0.0",
     "vue3-carousel-nuxt": "^1.1.1",
     "vuelidate": "^0.7.7"
   },

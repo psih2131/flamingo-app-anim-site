@@ -17,6 +17,8 @@
     /* 125% */
     letter-spacing: -0.96px;
     font-family: $titleFont;
+    position: relative;
+    z-index: 20;
 }
 
 .container-contact-us {
@@ -74,6 +76,109 @@
     font-weight: 400;
     line-height: 30px;
 }
+
+.send-status-contact {
+    padding-top: 96px;
+}
+
+.send-status-contact__icon-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 56px;
+    height: 56px;
+}
+
+.send-status-contact__icon-main {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E3E8EF;
+    background: #FFF;
+    border-radius: 100px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+}
+
+.send-status-contact__circle {
+    position: absolute;
+
+    border-radius: 10000px;
+}
+
+.send-status-contact__circle-1 {
+    width: 96px;
+    height: 96px;
+    border: solid 1px #E6EAF0;
+}
+
+.send-status-contact__circle-2 {
+    width: 160px;
+    height: 160px;
+    border: solid 1px #E8ECF1;
+}
+
+.send-status-contact__circle-3 {
+    width: 224px;
+    height: 224px;
+    border: solid 1px #E9EDF2;
+}
+
+.send-status-contact__circle-4 {
+    width: 288px;
+    height: 288px;
+    border: solid 1px #EBEFF3;
+}
+
+.send-status-contact__circle-5 {
+    width: 352px;
+    height: 352px;
+    border: solid 1px #EDF0F4;
+}
+
+.send-status-contact__title {
+    text-align: center;
+    color: #121926;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 60px;
+    /* 125% */
+    letter-spacing: -0.96px;
+    margin-top: 84px;
+    position: relative;
+    z-index: 10;
+}
+
+.send-status-contact__subtitle {
+    margin: 0 auto;
+    margin-top: 32px;
+    text-align: center;
+    color: #697586;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    max-width: 352px;
+}
+
+.send-status-contact__btn-wrapper {
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 
 
 @media only screen and (max-width: 1250px) {
@@ -144,6 +249,35 @@
         line-height: 28px;
     }
 
+    .send-status-contact {
+        padding-top: 64px;
+    }
 
+    .send-status-contact__title {
+        margin-top: 52px;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 44px;
+        /* 122.222% */
+        letter-spacing: -0.72px;
+    }
 
+    .send-status-contact__subtitle {
+        margin-top: 32px;
+        width: 100%;
+        max-width: 100%;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .send-status-contact__btn-wrapper {
+        margin-top: 64px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
 }

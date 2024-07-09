@@ -9,8 +9,8 @@
         </div> -->
 
         <!-- input component name data -->
-        <component__input :inpPlaceholderTranslate="'contact_name'" 
-        :titleTextTranslate="'contact_name'" 
+        <component__input :inpPlaceholderTranslate="'contact_name'"
+        :titleTextTranslate="'contact_name'"
         :errorStatus="nameErorStatus"
         :textError="nameTextError"
         @sentInputValueToParent="getNameEmitData"
@@ -18,15 +18,15 @@
 
 
         <!-- input component enail data -->
-        <component__input :inpPlaceholderTranslate="'contact_email'" 
-        :titleTextTranslate="'contact_email'" 
+        <component__input :inpPlaceholderTranslate="'contact_email'"
+        :titleTextTranslate="'contact_email'"
         :errorStatus="emailErorStatus"
         :textError="emailTextError"
         @sentInputValueToParent="getEmailEmitData"
         />
 
 
-  
+
         <!-- custom select component for phone model data -->
         <component__custom_select :translateText="'contact_model'" :optionList="phone" @selectDataSend="emitSelectDataPhone" />
 
@@ -45,15 +45,15 @@
           <div class="form-file__button-load">
             <input hidden name="file" type="file" id="field__file-1" @change="fileCheck($event)" class="form-file__input" multiple accept=".svg,.png,.jpg,.gif">
             <label class="form-file__input-label input-label" for="field__file-1">
-              
+
               <div class="input-label__icon-wrapper">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.66797 13.3333L10.0013 10M10.0013 10L13.3346 13.3333M10.0013 10V17.5M16.668 13.9524C17.6859 13.1117 18.3346 11.8399 18.3346 10.4167C18.3346 7.88536 16.2826 5.83333 13.7513 5.83333C13.5692 5.83333 13.3989 5.73833 13.3064 5.58145C12.2197 3.73736 10.2133 2.5 7.91797 2.5C4.46619 2.5 1.66797 5.29822 1.66797 8.75C1.66797 10.4718 2.36417 12.0309 3.49043 13.1613" stroke="#364152" stroke-width="1.66667" stroke-linecap="square"/>
-                </svg>                  
+                </svg>
               </div>
 
               <p class="input-label__title">
-                <b>Click to upload</b> or drag and drop
+                <b>{{ $t('to_upload')}})</b> {{ $t('or_drop') }}
               </p>
               <p class="input-label__subtitle">SVG, PNG, JPG or GIF (max. 800x400px)</p>
 
@@ -70,15 +70,15 @@
                   <div class="file-loaded-element__file-icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M11.6654 1.89057V5.33268C11.6654 5.79939 11.6654 6.03275 11.7562 6.21101C11.8361 6.36781 11.9636 6.49529 12.1204 6.57519C12.2986 6.66602 12.532 6.66602 12.9987 6.66602H16.4408M16.6654 8.32287V14.3327C16.6654 15.7328 16.6654 16.4329 16.3929 16.9677C16.1532 17.4381 15.7707 17.8205 15.3003 18.0602C14.7656 18.3327 14.0655 18.3327 12.6654 18.3327H7.33203C5.9319 18.3327 5.23183 18.3327 4.69705 18.0602C4.22665 17.8205 3.8442 17.4381 3.60451 16.9677C3.33203 16.4329 3.33203 15.7328 3.33203 14.3327V5.66602C3.33203 4.26588 3.33203 3.56582 3.60451 3.03104C3.8442 2.56063 4.22665 2.17818 4.69705 1.9385C5.23183 1.66602 5.9319 1.66602 7.33203 1.66602H10.0085C10.62 1.66602 10.9257 1.66602 11.2134 1.73509C11.4685 1.79633 11.7124 1.89734 11.9361 2.03442C12.1884 2.18902 12.4046 2.40521 12.8369 2.83759L15.4938 5.49444C15.9262 5.92682 16.1424 6.14301 16.297 6.3953C16.434 6.61898 16.535 6.86285 16.5963 7.11794C16.6654 7.40565 16.6654 7.71139 16.6654 8.32287Z" stroke="#9AA4B2" stroke-width="1.66667" stroke-linecap="square"/>
-                    </svg>                      
+                    </svg>
                   </div>
                   <div class="file-loaded-element__file-info">
                     <p class="file-loaded-element__file-name">{{item.name}}</p>
                     <p class="file-loaded-element__file-size">{{ convertToMB(item.size) }} MB</p>
                   </div>
-                 
+
                 </div>
-              
+
 
                 <div class="file-loaded-element__file-remove-btn" @click="removeFile(index)">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,26 +95,25 @@
 
 
         <div class="form__inp-wrapper-btn">
-            <button class="form__btn-send" 
-            :class="{'form__btn-send-activ-animation' : btnSendLoadingStatus}" 
+            <button class="form__btn-send"
+            :class="{'form__btn-send-activ-animation' : btnSendLoadingStatus}"
             @click="sendMessage">
             {{ $t('contact_submit') }}
             <div class="form__btn-send-circle">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M30 16C30 17.8385 29.6379 19.659 28.9343 21.3576C28.2308 23.0561 27.1995 24.5995 25.8995 25.8995C24.5995 27.1995 23.0561 28.2307 21.3576 28.9343C19.659 29.6379 17.8385 30 16 30C14.1615 30 12.341 29.6379 10.6424 28.9343C8.94387 28.2307 7.40052 27.1995 6.1005 25.8995C4.80048 24.5995 3.76925 23.0561 3.06569 21.3576C2.36212 19.659 2 17.8385 2 16C2 14.1615 2.36212 12.341 3.06569 10.6424C3.76926 8.94387 4.80049 7.40052 6.10051 6.1005C7.40053 4.80048 8.94388 3.76925 10.6424 3.06568C12.341 2.36212 14.1615 2 16 2C17.8385 2 19.659 2.36212 21.3576 3.06569C23.0561 3.76926 24.5995 4.80049 25.8995 6.10051C27.1995 7.40053 28.2308 8.94388 28.9343 10.6424C29.6379 12.341 30 14.1615 30 16L30 16Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M16 2C17.8385 2 19.659 2.36212 21.3576 3.06569C23.0561 3.76925 24.5995 4.80049 25.8995 6.10051C27.1995 7.40053 28.2308 8.94388 28.9343 10.6424C29.6379 12.341 30 14.1615 30 16" stroke="#80EAAF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg> 
+              </svg>
             </div>
           </button>
         </div>
 
-
         <p class="form__error-message">
-          This is an error message. <a href="">Try Again</a>
+          {{ $t('error_text') }} <a href="">{{ $t('error_try') }}</a>
         </p>
 
         <!-- error message -->
-        
+
 
     </div>
 </template>
@@ -310,11 +309,11 @@ export default {
       },
       submitTxt: 'submit',
 
-      nameErorStatus: true,
-      nameTextError: 'Name error text',
+      nameErorStatus: false,
+      nameTextError: 'Please enter your name',
 
-      emailErorStatus: true,
-      emailTextError: 'Email error text',
+      emailErorStatus: false,
+      emailTextError: 'Please enter your email address in proper format: yourname@company.comPlease enter your messag',
 
       loadedFielWrapperStatus: false,
       loadedFileList: [],
@@ -357,7 +356,7 @@ export default {
     //file size convert from bite to MB
     convertToMB(bytes) {
       const MB = 1024 * 1024;
-      return (bytes / MB).toFixed(3); 
+      return (bytes / MB).toFixed(3);
     },
 
     //get custom select emit data phone
@@ -427,8 +426,8 @@ export default {
             this.btnSendLoadingStatus = false
             console.log(error)
         });
-       
-        
+
+
       }
     },
   },
@@ -449,71 +448,3 @@ export default {
 </script>
 
 
-<!--<div v-if="!formSubmitted" class="custom-popup__wrapper">-->
-<!--<div class="custom-popup__body">-->
-<!--  <div class="custom-popup__title">Use this form to complete a support request or send us your feedback.</div>-->
-<!--  <div class="custom-popup__form form">-->
-<!--    <div class="form__inputs">-->
-<!--      <ui-input-->
-<!--          v-model="form.name"-->
-<!--          width="412px"-->
-<!--          height="48px"-->
-<!--          placeholder="Name"-->
-<!--          error-text="Please enter your name"-->
-<!--          :error="$v.form.name.$anyError"-->
-<!--      ></ui-input>-->
-<!--      <ui-input-->
-<!--          v-model="form.email"-->
-<!--          height="48px"-->
-<!--          placeholder="Email"-->
-<!--          error-text="Please enter your email address in proper format"-->
-<!--          :error="$v.form.email.$anyError"-->
-<!--      ></ui-input>-->
-<!--    </div>-->
-<!--    <div class="form__inputs">-->
-<!--      <ui-select-->
-<!--          v-model="form.phone"-->
-<!--          class="planer-page__select"-->
-<!--          height="48px"-->
-<!--          placeholder="iPhone Model"-->
-<!--          :options="phone"-->
-<!--          error-text="The iphone model is incorrect"-->
-<!--      ></ui-select>-->
-<!--      <ui-select-->
-<!--          v-model="form.ios"-->
-<!--          class="planer-page__select"-->
-<!--          height="48px"-->
-<!--          :options="ios"-->
-<!--          placeholder="iOS version"-->
-<!--          error-text="The ios version is incorrect"-->
-<!--      ></ui-select>-->
-<!--    </div>-->
-<!--    <div class="form__inputs">-->
-<!--      <div class="form__payment-column">-->
-<!--        <ui-input-->
-<!--            v-model="form.message"-->
-<!--            width="412px"-->
-<!--            height="48px"-->
-<!--            placeholder="Message"-->
-<!--            error-text="Please enter your message"-->
-<!--            :error="$v.form.message.$anyError"-->
-<!--        ></ui-input>-->
-<!--        <img src="~/static/images/payment.svg" alt="" class="form__payment-image">-->
-<!--        &lt;!&ndash;              <div class="form__payment-download">&ndash;&gt;-->
-<!--        &lt;!&ndash;                <div class="form__payment-download__text">&ndash;&gt;-->
-<!--        &lt;!&ndash;                  <p>studio-3194524.jpg</p>&ndash;&gt;-->
-<!--        &lt;!&ndash;                  <span>300 KB</span>&ndash;&gt;-->
-<!--        &lt;!&ndash;                </div>&ndash;&gt;-->
-<!--        &lt;!&ndash;                <img src="~/static/images/payment-delete.svg" alt="">&ndash;&gt;-->
-<!--        &lt;!&ndash;              </div>&ndash;&gt;-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="form__button" @click="sendMessage">-->
-<!--    {{ submitTxt }}-->
-<!--  </div>-->
-<!--  &lt;!&ndash;        <div class="form__error-button">&ndash;&gt;-->
-<!--  &lt;!&ndash;          Opps! Seems like connection with the server failed. Please, try again later&ndash;&gt;-->
-<!--  &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--</div>-->
-<!--</div>-->

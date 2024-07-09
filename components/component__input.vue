@@ -3,8 +3,8 @@
         <p class="form__inp-title">{{ $t(titleTextTranslate) }}*</p>
 
         <div class="input-wrapper__cover">
-            <input :placeholder="$t(inpPlaceholderTranslate)" 
-            type="text" class="form__inp" 
+            <input :placeholder="$t(inpPlaceholderTranslate)"
+            type="text" class="form__inp"
             :class="{'form__inp-error': errorStatus}"
             v-model="inputValue"
             @input="changeInput"
@@ -21,7 +21,7 @@
                         <rect width="16" height="16" fill="white"/>
                         </clipPath>
                         </defs>
-                    </svg>                        
+                    </svg>
                 </div>
             </div>
 
@@ -53,13 +53,13 @@ export default {
     },
 
     components: {
-   
+
     },
 
     methods: {
         changeInput(){
             this.$emit('sentInputValueToParent', this.inputValue)
-            console.log(this.inputValue)
+            //console.log(this.inputValue)
         }
     },
 

@@ -46,7 +46,7 @@ let getMoreData = (message, sourceIp) => {
                         if (d.ip_city) ipData.push(d.ip_city);
                         if (ipData.length > 0) message += '\nGeoIP2: ' + ipData.join(', ');
                         if (d.ip_autonomous_system) message += '\nIP Autonomous system: ' + d.ip_autonomous_system;
-                        
+
                         if (d.subs_first) message += '\n' + d.subs_first;
                         if (d.subs_qty > 1) {
                             message += '\n' + d.subs_qty_text;
@@ -78,13 +78,13 @@ let postMsg = (message) => {
     return new Promise((resolve, reject) => {
         request({
             method:'post',
-            url:'https://slack.com/api/chat.postMessage', 
+            url:'https://slack.com/api/chat.postMessage',
             form: {
-                "channel": channelId, 
+                "channel": channelId,
                 "text": message
-            }, 
+            },
             headers: {
-                'Content-type': 'application/json', 
+                'Content-type': 'application/json',
                 "Authorization": `Bearer ${slackToken}`
             },
             json: true,
@@ -130,7 +130,7 @@ let sendEmail = (email, name) => {
     return new Promise((resolve, reject) => {
         request({
             method:'post',
-            url:'https://api.postmarkapp.com/email', 
+            url:'https://api.postmarkapp.com/email',
             body: {
                 "From": "noreply@flamingo.tax",
                 "To": `"${email}"`,
@@ -144,10 +144,10 @@ let sendEmail = (email, name) => {
                 "TrackOpens": true,
                 "TrackLinks": "HtmlOnly",
                 "MessageStream": "outbound"
-            }, 
+            },
             headers: {
                 "Accept": "application/json",
-                "Content-type": 'application/json', 
+                "Content-type": 'application/json',
                 "X-Postmark-Server-Token": postmarkToken
             },
             json: true,
@@ -181,6 +181,7 @@ export default defineEventHandler(async (event) => {
                     message = await getMoreData(message, source_ip);
 
                     await postMsg(message);
+
                     if (files.file && files.file.length > 0) {
                         let f = files.file.pop();
                         let safety = 0;

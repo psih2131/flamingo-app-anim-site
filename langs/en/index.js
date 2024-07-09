@@ -161,7 +161,15 @@ export default {
     contact_message : "Message",
     contact_message_placeholder : "Enter your message",
     contact_submit : "Submit",
+    contact_send_result : "Sent!",
+    contact_send_text : "Thank you for your message! Someone from our team will reach out to you soon.",
+    take_me_home : "Take me home",
 
+    error_text: "Something went wrong. Please try again.",
+    error_try: "Try Again",
+
+    to_upload : "Click to upload",
+    or_drop: "or drag and drop",
 
     blog_back : "Back to the Articles",
     blog_stories: "Stories and interviews",

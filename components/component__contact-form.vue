@@ -38,7 +38,7 @@
 
         <div class="form__inp-wrapper">
             <p class="form__inp-title">{{ $t('contact_message') }}</p>
-            <textarea class="form__textarea"  v-model="form.message" :placeholder="$t('contact_message_placeholder')"></textarea>
+            <textarea class="form__textarea"  :class="{'form__inp-error': textErrorStatus}"  v-model="form.message" :placeholder="$t('contact_message_placeholder')"></textarea>
         </div>
 
         <!-- input type file START -->
@@ -322,6 +322,8 @@ export default {
       emailErorStatus: false,
       emailTextError: 'Please enter your email address in proper format: yourname@company.comPlease enter your messag',
 
+      textErrorStatus: false,
+
       loadedFielWrapperStatus: false,
       loadedFileList: [],
 
@@ -330,8 +332,13 @@ export default {
   },
   validations () {
     return {
-      name: { required }, // Matches this.firstName
-      email: { required, email } // Matches this.contact.email
+      form: {
+        name: {required}, // Matches this.firstName
+        email: {required, email}, // Matches this.contact.email
+        // phone:{required},
+        // ios: {required},
+        // message: {required},
+      }
     }
   },
 
@@ -367,38 +374,46 @@ export default {
     //get custom select emit data phone
     emitSelectDataPhone(data){
       this.form.phone = data
-      console.log(this.form)
+     // console.log(this.form)
     },
 
     //get custom select emit data ios
     emitSelectDataIos(data){
       this.form.ios = data
-      console.log(this.form)
+     // console.log(this.form)
     },
 
     //get name emit input data
     getNameEmitData(data){
+      this.nameErorStatus = false;
       this.form.name = data
-      console.log(this.form)
+      //console.log(this.form)
     },
 
     //get email emit input data
     getEmailEmitData(data){
+      this.emailErorStatus = false;
       this.form.email = data
-      console.log(this.form)
+   //   console.log(this.form)
     },
 
 
     //FORM SEND SCRIPT POST QUERY
     sendMessage(){
       //button circle animation ON
-      this.btnSendLoadingStatus = true
 
-      this.submitTxt = 'submitting'
       this.submitTxt = 'submit'
-      this.v$.$touch()
-      if(this.v$.$invalid) {
-        // console.log(this.form);
+      this.v$.form.$touch();
+
+      if(this.v$.form.name.$errors.length) this.nameErorStatus = true;
+      if(this.v$.form.email.$errors.length) this.emailErorStatus = true;
+
+      if(!this.v$.form.$invalid) {
+
+        this.btnSendLoadingStatus = true
+        this.submitTxt = 'submitting'
+
+        //console.log(this.form);
         const message = `Support request from ${this.$route.query.udid ? ('udid: ' + this.$route.query.udid) : 'landing page'}.
         Name: ${this.form.name}
         Email: ${this.form.email}
@@ -409,6 +424,7 @@ export default {
 
         bodyFormData.append('message', message);
         bodyFormData.append('email', this.form.email);
+        bodyFormData.append('files', this.loadedFileList);
         axios({
           method: 'post',
           url: '/support-form',

@@ -415,16 +415,19 @@ export default {
 
         //console.log(this.form);
         const message = `Support request from ${this.$route.query.udid ? ('udid: ' + this.$route.query.udid) : 'landing page'}.
-        Name: ${this.form.name}
-        Email: ${this.form.email}
-        Phone: ${this.form.phone ? this.form.phone : '----'}
-        IOS: ${this.form.ios ? this.form.ios : '----'}
-        Message: ${this.form.message ? this.form.message : '----'}`
-              let bodyFormData = new FormData();
+Name: ${this.form.name}
+Email: ${this.form.email}
+Phone: ${this.form.phone ? this.form.phone : '----'}
+IOS: ${this.form.ios ? this.form.ios : '----'}
+Message: ${this.form.message ? this.form.message : '----'}`
+        let bodyFormData = new FormData();
 
         bodyFormData.append('message', message);
         bodyFormData.append('email', this.form.email);
-        bodyFormData.append('files', this.loadedFileList);
+        this.loadedFileList?.forEach(f => {
+          bodyFormData.append('file', f);
+        });
+
         axios({
           method: 'post',
           url: '/support-form',
@@ -437,12 +440,11 @@ export default {
 
             this.$emit('formSubmitStatus', true);
             this.btnSendLoadingStatus = false
-            console.log(response)
+           // console.log(response)
         })
         .catch((error) => {
             // handle error
             // console.log(error);
-
             this.$emit('formSubmitStatus', false);
             this.btnSendLoadingStatus = false
             console.log(error)

@@ -6,21 +6,11 @@
 
       <!-- faq-sec__element_active -->
       <div class="faq-sec__wrapper" >
+        <template v-for="(item, index) in faq" :key="index">
+          <component__faq_element :faqData="item" :currentIndex="+index" @activIndexFaq="getCurrentIndex" :activIndexProps="+activeIndex"/>
+        </template>
 
-        <div v-for="(item, index) in faq" :key="index"
-             :class="['faq-sec__element', { 'faq-sec__element_active ': activeIndex === index }]"
-             @click="toggleActive(index)">
-          <div class="faq-sec__element-header">
-            <div class="faq-sec__element-header-icon-wrapper">
-              <div class="faq-l faq-X"></div>
-              <div class="faq-l faq-Y"></div>
-            </div>
-            <p class="faq-sec__element-header-title">{{ item.question }}</p>
-          </div>
-          <div class="faq-sec__element-body">
-            {{ item.ansver }}
-          </div>
-        </div>
+        
 
       </div>
     </div>
@@ -28,6 +18,10 @@
 </template>
 
 <script>
+
+import component__faq_element from '@/components/component__faq-element.vue'
+
+
 export default {
   name: "faq",
   data() {
@@ -44,20 +38,25 @@ export default {
       activeIndex: null,
     }
   },
+
+
   setup() {
     const { t } = useI18n()
     return {
       t
     }
   },
+
+
+  component: {
+    component__faq_element,
+    
+  },
+
   methods: {
-    toggleActive(index) {
-      if (this.activeIndex === index) {
-        this.activeIndex = null;
-      } else {
-        this.activeIndex = index;
-      }
-    },
+    getCurrentIndex(data) {
+      this.activeIndex = data
+    }
   }
 
 }

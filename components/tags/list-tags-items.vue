@@ -16,15 +16,21 @@
   </ul>
 
   <div class="blog-sec__nav-mob">
-    <select name="" id="" class="blog-sec__nav-list" @change="goTo" v-model="selectedTag">
+
+    <component__blog_mobile_custom_select :optionList="filterMenu(tags)"   />
+    
+    <!-- <select name="" id="" class="blog-sec__nav-list" @change="goTo" v-model="selectedTag">
       <option value="-1" :key="-1">{{ 'Recent' }}</option>
       <option v-for="item in filterMenu(tags)" :value="item.id" :key="item.id">{{ item.title }}</option>
-    </select>
+    </select> -->
   </div>
 </template>
 
 <script>
-let selectedTag;
+
+import component__blog_mobile_custom_select from '@/components/component__blog-mobile-custom-select.vue'
+
+// let selectedTag;
 export default {
   name: "list-tags-items",
   props:{
@@ -34,8 +40,12 @@ export default {
 
   data() {
     return {
-      selectedTag
+      // selectedTag
     }
+  },
+
+  component: {
+    component__blog_mobile_custom_select
   },
 
   computed: {
@@ -44,21 +54,21 @@ export default {
     }
   },
 
-  async setup() {
-    const route = useRoute();
-    selectedTag = route.name.includes('blog-tag-tag') ? route.params.tag : -1;
-  },
+  // async setup() {
+  //   const route = useRoute();
+  //   selectedTag = route.name.includes('blog-tag-tag') ? route.params.tag : -1;
+  // },
 
   methods: {
-    goTo() {
-      const router = useRouter();
-      if (this.selectedTag > -1) {
-        router.push({ path: `/blog/tag/${this.selectedTag}` });
-      } else {
-        router.push({ path: `/blog` });
-      }
-      return {}
-    }
+    // goTo() {
+    //   const router = useRouter();
+    //   if (this.selectedTag > -1) {
+    //     router.push({ path: `/blog/tag/${this.selectedTag}` });
+    //   } else {
+    //     router.push({ path: `/blog` });
+    //   }
+    //   return {}
+    // }
   }
 }
 </script>

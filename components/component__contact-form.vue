@@ -1,13 +1,7 @@
 <template>
     <div class="contact-us-sec__form-wrapper form" >
         <div class="form__white-cover-loader" :class="{'form__white-cover-loader_activ' : btnSendLoadingStatus}"></div>
-        <!-- <div class="form__inp-wrapper">
-            <p class="form__inp-title">{{ $t('contact_name') }}*</p>
-            <input type="text" class="form__inp"
-                   :placeholder="$t('contact_name')"
-                    v-model="form.name"
-            >
-        </div> -->
+
 
         <!-- input component name data -->
         <component__input :inpPlaceholderTranslate="'contact_name'"
@@ -25,7 +19,6 @@
         :textError="emailTextError"
         @sentInputValueToParent="getEmailEmitData"
         />
-
 
 
         <!-- custom select component for phone model data -->
@@ -115,12 +108,13 @@
           </button>
         </div>
 
+
+        <!-- error message -->
         <p class="form__error-message">
           {{ $t('error_text') }} <a href="">{{ $t('error_try') }}</a>
         </p>
 
-        <!-- error message -->
-
+       
 
     </div>
 </template>

@@ -618,8 +618,8 @@
     .reason-element__dropdown-active {
         .reasons-sec__dropdown-container {
 
-            animation: jumpAnimationDropdownSmall 0.7s ease;
-            width: 484px;
+            animation: jumpAnimationDropdownSmall 0.7s ease forwards;
+
 
             .reason-element-active__content-wrapper-text {
                 padding-left: 24px;
@@ -658,8 +658,7 @@
 
     .reasons-sec__dropdown-container {
 
-        animation: jumpAnimationDropdownMidle 0.7s ease;
-        width: 380px;
+        animation: jumpAnimationDropdownMidle 0.7s ease forwards;
         height: 100%;
 
         .reason-element-active__content-wrapper-text {
@@ -700,8 +699,8 @@
 .reason-element__large-anim.reason-element__dropdown-active {
     .reasons-sec__dropdown-container {
 
-        animation: jumpAnimationDropdownLarge 0.7s ease;
-        width: 607px;
+        animation: jumpAnimationDropdownLarge 0.7s ease forwards;
+
 
         .reason-element-active__content-wrapper-text {
             padding-left: 24px;
@@ -1501,8 +1500,8 @@
 
         .reasons-sec__dropdown-container {
 
-            animation: jumpAnimationDropdownMidle 0.7s ease;
-            width: 380px;
+            animation: jumpAnimationDropdownMidle 0.7s ease forwards;
+
             height: 100%;
 
         }
@@ -2002,8 +2001,8 @@
         .reason-element__dropdown-active {
             .reasons-sec__dropdown-container {
 
-                animation: jumpAnimationDropdownSmall 0.7s ease;
-                width: 370px;
+                animation: jumpAnimationDropdownSmall 0.7s ease forwards;
+
 
                 .reason-element-active__content-wrapper-text {
                     padding-left: 16px;
@@ -2050,8 +2049,8 @@
 
         .reasons-sec__dropdown-container {
 
-            animation: jumpAnimationDropdownMidle 0.7s ease;
-            width: 100%;
+            animation: jumpAnimationDropdownMidle 0.7s ease forwards;
+
             height: auto;
             min-height: 200px;
             max-height: 400px;
@@ -2094,9 +2093,8 @@
 
     .reason-element__large-anim.reason-element__dropdown-active {
         .reasons-sec__dropdown-container {
-            width: 370px;
-            // animation: jumpAnimationDropdownLarge 0.7s ease;
-            animation: none;
+
+            animation: jumpAnimationDropdownLarge 0.7s ease forwards;
 
 
             .reason-element-active__content-wrapper-text {

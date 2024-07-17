@@ -1,6 +1,6 @@
 <template>
     <main class="main contact-us-main">
-        <section class="contact-us-sec">
+        <section class="contact-us-sec" >
             <div class="container-contact-us">
                 <h1 class="contact-us-sec__page-title">{{ $t('contact_us') }}</h1>
 
@@ -74,6 +74,17 @@ export default {
 
         checkFormStatus(data){
             this.sendStatus = data
+
+            if(data == true){
+                this.scrollToTop()
+            }
+        },
+
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Опция для плавной прокрутки
+            });
         }
     },
 

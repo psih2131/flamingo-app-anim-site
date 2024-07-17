@@ -167,7 +167,7 @@ export default {
 
     error_text: "Something went wrong. Please try again.",
     error_try: "Try Again",
-    error_email: "Please enter your email address in proper format: yourname@company.com",
+    error_email: "Please enter your email address in proper format: yournameAtcompany.com",
     error_name: "Please enter your name",
     to_upload : "Click here",
     or_drop: "or drag and drop to upload files",

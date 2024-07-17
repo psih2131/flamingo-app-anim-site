@@ -59,7 +59,7 @@
     display: flex;
     align-items: flex-start;
     width: calc(100%);
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 560px;
     position: relative;
 }
@@ -226,6 +226,7 @@
 
 .needs-anim-element__header {
     width: 100%;
+    position: relative;
 }
 
 .needs-anim-elemen__title {
@@ -238,8 +239,8 @@
     font-family: $titleFont;
     transition: all ease 0.5s;
     position: absolute;
-    top: 24px;
-    left: 24px;
+    top: 0;
+    left: 0;
 }
 
 .needs-anim-element__subtitle {

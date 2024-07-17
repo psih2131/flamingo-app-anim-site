@@ -40,7 +40,7 @@
                         Go back
                         </button>
 
-                        <nuxt-link no-prefetch to="/" class="error-page-sec__home-btn">{{ $t('take_me_home') }}</nuxt-link>
+                        <!-- <nuxt-link no-prefetch to="/" class="error-page-sec__home-btn">{{ $t('take_me_home') }}</nuxt-link> -->
                     </div>
                 </div>
 

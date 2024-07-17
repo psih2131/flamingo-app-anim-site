@@ -74,7 +74,7 @@
 
         <PartialsDownload />
 
-        <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/>
+        <!-- <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/> -->
 
 
     </main>
@@ -97,7 +97,7 @@ export default {
             popupData :{},
             animCounter: 0,
             pastAnimCounter: null,
-            popupStatus: false,
+            // popupStatus: false,
         }
     },
 
@@ -194,13 +194,13 @@ export default {
             element4.classList.remove('activ-hover-anim-small')
         },
 
-        openPopupInfo(data){
-            this.popupStatus = true;
-            this.popupData = data;
-        },
-        closePopup(data){
-            this.popupStatus = data
-        }
+        // openPopupInfo(data){
+        //     this.popupStatus = true;
+        //     this.popupData = data;
+        // },
+        // closePopup(data){
+        //     this.popupStatus = data
+        // }
     },
 
     computed: {

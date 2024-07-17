@@ -1,13 +1,7 @@
 <template>
     <div class="contact-us-sec__form-wrapper form" >
         <div class="form__white-cover-loader" :class="{'form__white-cover-loader_activ' : btnSendLoadingStatus}"></div>
-        <!-- <div class="form__inp-wrapper">
-            <p class="form__inp-title">{{ $t('contact_name') }}*</p>
-            <input type="text" class="form__inp"
-                   :placeholder="$t('contact_name')"
-                    v-model="form.name"
-            >
-        </div> -->
+
 
         <!-- input component name data -->
         <component__input :inpPlaceholderTranslate="'contact_name'"
@@ -25,7 +19,6 @@
         :textError="emailTextError"
         @sentInputValueToParent="getEmailEmitData"
         />
-
 
 
         <!-- custom select component for phone model data -->
@@ -54,7 +47,7 @@
               </div>
 
               <p class="input-label__title">
-                <b>{{ $t('to_upload')}}</b> {{ $t('or_drop') }}
+                <b>{{ $t('to_upload')}})</b> {{ $t('or_drop') }}
               </p>
               <p class="input-label__subtitle">SVG, PNG, JPG or GIF (max. 800x400px)</p>
 
@@ -115,12 +108,13 @@
           </button>
         </div>
 
-        <p class="form__error-message" v-show="displayError">
+
+        <!-- error message -->
+        <p class="form__error-message">
           {{ $t('error_text') }} <a href="">{{ $t('error_try') }}</a>
         </p>
 
-        <!-- error message -->
-
+       
 
     </div>
 </template>
@@ -139,7 +133,6 @@ export default {
   },
   data() {
     return {
-      displayError: false,
       isOpen: this.show || false,
       formSubmitted: false,
       phone:[
@@ -438,14 +431,14 @@ Message: ${this.form.message ? this.form.message : '----'}`
         .then((response) => {
             // handle success
             // console.log(response);
+
             this.$emit('formSubmitStatus', true);
             this.btnSendLoadingStatus = false
            // console.log(response)
         })
         .catch((error) => {
             // handle error
-            // console.log(error)
-            this.displayError = true;
+            // console.log(error);
             this.$emit('formSubmitStatus', false);
             this.btnSendLoadingStatus = false
             console.log(error)

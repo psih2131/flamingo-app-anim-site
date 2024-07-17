@@ -11,7 +11,7 @@
                 </div>
                 <h2 class="who-needs-sec__title">{{ $t('index_who_need') }}</h2>
 
-                <div class="who-needs-sec__wrapper" :class="{'one-open-elemen': activeFirsLoad}">
+                <div class="who-needs-sec__wrapper" ref="animContainerRow" :class="{'one-open-elemen': activeFirsLoad}">
 
                     <div class="who-needs-sec__element needs-anim-element n-amin-1" @click="activHoverAnim(0, $event)" >
 
@@ -161,6 +161,8 @@ export default {
                             elementOpen.classList.remove('active-hover-anim_revers')
                         }
 
+
+                  
                         if(element == 0){
 
                             if(this.previewActivIndex == 1){
@@ -169,12 +171,25 @@ export default {
 
                                 allAnimElement[0].classList.remove('fixed')
                                 allAnimElement[1].classList.remove('fixed')
+
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-end'
+                            }
+
+                            else if(this.previewActivIndex == 2){
+                                allAnimElement[2].classList.add('fixed')
+                                allAnimElement[3].classList.add('fixed')
+
+                                allAnimElement[0].classList.remove('fixed')
+                                allAnimElement[1].classList.remove('fixed')
+
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-end'
                             }
                             else{
                                 allAnimElement[0].classList.remove('fixed')
                                 allAnimElement[1].classList.remove('fixed')
                                 allAnimElement[2].classList.remove('fixed')
                                 allAnimElement[3].classList.remove('fixed')
+                                this.$refs.animContainerRow.style.justifyContent = 'space-between'
                             }
 
                            
@@ -188,13 +203,17 @@ export default {
 
                                 allAnimElement[0].classList.remove('fixed')
                                 allAnimElement[1].classList.remove('fixed')
+
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-end'
                             }
                             else if(this.previewActivIndex == 2){
-                                allAnimElement[1].classList.add('fixed')
+                                allAnimElement[0].classList.add('fixed')
                                 allAnimElement[3].classList.add('fixed')
 
                                 allAnimElement[1].classList.remove('fixed')
                                 allAnimElement[2].classList.remove('fixed')
+                                
+                                this.$refs.animContainerRow.style.justifyContent = 'space-between'
                             }
 
                             else if(this.previewActivIndex == 3){
@@ -205,6 +224,8 @@ export default {
                                 allAnimElement[1].classList.remove('fixed')
                                 allAnimElement[2].classList.remove('fixed')
                                 allAnimElement[3].classList.remove('fixed')
+
+                                this.$refs.animContainerRow.style.justifyContent = 'space-between'
                             }
             
                            
@@ -217,6 +238,7 @@ export default {
 
                                 allAnimElement[1].classList.remove('fixed')
                                 allAnimElement[2].classList.remove('fixed')
+                                this.$refs.animContainerRow.style.justifyContent = 'space-between'
                             }
                             else if(this.previewActivIndex == 3){
                                 allAnimElement[0].classList.add('fixed')
@@ -224,14 +246,17 @@ export default {
 
                                 allAnimElement[2].classList.remove('fixed')
                                 allAnimElement[3].classList.remove('fixed')
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-start'
                             }
 
                             else if(this.previewActivIndex == 0){
                                 allAnimElement[0].classList.add('fixed')
+                                allAnimElement[3].classList.add('fixed')
 
                                 allAnimElement[1].classList.remove('fixed')
                                 allAnimElement[2].classList.remove('fixed')
-                                allAnimElement[3].classList.remove('fixed')
+                                
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-star'
                             }
                             
                         }
@@ -239,11 +264,12 @@ export default {
                         if(element == 3){
 
                             if(this.previewActivIndex == 0){
+                                allAnimElement[0].classList.add('fixed')
                                 allAnimElement[1].classList.add('fixed')
-                                allAnimElement[2].classList.add('fixed')
 
-                                allAnimElement[0].classList.remove('fixed')
+                                allAnimElement[2].classList.remove('fixed')
                                 allAnimElement[3].classList.remove('fixed')
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-end'
                             }
                             else if(this.previewActivIndex == 2){
                                 allAnimElement[0].classList.add('fixed')
@@ -251,6 +277,8 @@ export default {
 
                                 allAnimElement[2].classList.remove('fixed')
                                 allAnimElement[3].classList.remove('fixed')
+
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-star'
                             }
                             else if(this.previewActivIndex == 1){
                                 allAnimElement[0].classList.add('fixed')
@@ -258,15 +286,21 @@ export default {
 
                                 allAnimElement[1].classList.remove('fixed')
                                 allAnimElement[3].classList.remove('fixed')
+                                this.$refs.animContainerRow.style.justifyContent = 'flex-start'
                             }
                             
                         }
 
+                  
+
                     }
                     
                     // elementOpen.classList.remove('activ-hover-anim-small')
-                    elementOpen.classList.add('active-hover-anim')
-                    elementOpen.classList.remove('active-hover-anim_revers')
+                
+                        elementOpen.classList.add('active-hover-anim')
+                        elementOpen.classList.remove('active-hover-anim_revers')
+                 
+                    
                 }
 
                 

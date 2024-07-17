@@ -795,14 +795,16 @@
 
     100% {
         width: 484px;
-        padding: 24px 50px 24px 24px;
+        padding: 0 50px 24px 0;
+
+
     }
 }
 
 @keyframes jumpAnimationDropdownSmallRevers {
     0% {
         width: 484px;
-        padding: 24px 50px 24px 24px;
+        padding: 0 50px 24px 0;
     }
 
     100% {
@@ -827,14 +829,14 @@
 
     100% {
         width: 380px;
-        padding: 24px 24px 24px 24px;
+        padding: 0 24px 24px 0;
     }
 }
 
 @keyframes jumpAnimationDropdownMidleRevers {
     0% {
         width: 380px;
-        padding: 24px 24px 24px 24px;
+        padding: 0 24px 24px 24px;
     }
 
     100% {
@@ -861,14 +863,14 @@
 
     100% {
         width: 607px;
-        padding: 24px 24px 50px 24px;
+        padding: 0 24px 50px 0;
     }
 }
 
 @keyframes jumpAnimationDropdownLargeRevers {
     0% {
         width: 607px;
-        padding: 24px 24px 50px 24px;
+        padding: 24px 24px 50px 0;
     }
 
     100% {
@@ -2125,12 +2127,12 @@
                 animation: jumpAnimationDropdownSmall 0.7s ease forwards;
 
 
-                .reason-element-active__content-wrapper-text {
-                    padding-left: 16px;
-                    padding-top: 16px;
-                    padding-bottom: 16px;
-                    padding-right: 16px;
-                }
+                // .reason-element-active__content-wrapper-text {
+                //     padding-left: 16px;
+                //     padding-top: 16px;
+                //     padding-bottom: 16px;
+                //     padding-right: 16px;
+                // }
 
                 .reason-element__text {
                     opacity: 1;
@@ -2175,9 +2177,9 @@
             animation: jumpAnimationDropdownMidle 0.7s ease forwards;
 
 
-            .reason-element-active__content-wrapper-text {
-                padding: 0;
-            }
+            // .reason-element-active__content-wrapper-text {
+            //     padding: 0;
+            // }
 
             .reason-element__text {
                 opacity: 1;
@@ -2217,9 +2219,7 @@
             animation: jumpAnimationDropdownLarge 0.7s ease forwards;
 
 
-            // .reason-element-active__content-wrapper-text {
-            //     padding: 16px;
-            // }
+            // пше
 
             .reason-element__text {
                 opacity: 1;

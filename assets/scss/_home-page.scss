@@ -633,12 +633,12 @@
             }
 
             .r-small__title {
-                font-size: 30px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 38px;
+                // font-size: 30px;
+                // font-style: normal;
+                // font-weight: 600;
+                // line-height: 38px;
 
-                animation: fontAnimationDropdownSmall 0.7s ease;
+                animation: fontAnimationDropdownSmall 0.7s ease forwards;
             }
         }
     }
@@ -673,12 +673,12 @@
         }
 
         .r-small__title {
-            font-size: 30px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 38px;
+            // font-size: 30px;
+            // font-style: normal;
+            // font-weight: 600;
+            // line-height: 38px;
 
-            animation: fontAnimationDropdownSmall 0.7s ease;
+            animation: fontAnimationDropdownSmall 0.7s ease forwards;
         }
     }
 }
@@ -714,12 +714,12 @@
         }
 
         .r-small__title {
-            font-size: 30px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 38px;
+            // font-size: 30px;
+            // font-style: normal;
+            // font-weight: 600;
+            // line-height: 38px;
 
-            animation: fontAnimationDropdownSmall 0.7s ease;
+            animation: fontAnimationDropdownSmall 0.7s ease forwards;
         }
     }
 }
@@ -2016,12 +2016,12 @@
                 }
 
                 .r-small__title {
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 600;
-                    line-height: 26px;
+                    // font-size: 24px;
+                    // font-style: normal;
+                    // font-weight: 600;
+                    // line-height: 26px;
 
-                    animation: fontAnimationDropdownSmall 0.7s ease;
+                    animation: fontAnimationDropdownSmall 0.7s ease forwards;
                 }
             }
         }
@@ -2064,12 +2064,12 @@
             }
 
             .r-small__title {
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 26px;
+                // font-size: 24px;
+                // font-style: normal;
+                // font-weight: 600;
+                // line-height: 26px;
 
-                animation: fontAnimationDropdownSmall 0.7s ease;
+                animation: fontAnimationDropdownSmall 0.7s ease forwards;
             }
 
             .r-tax__text-wrapper {
@@ -2106,13 +2106,13 @@
             }
 
             .r-small__title {
-                font-size: 24px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 26px;
+                // font-size: 24px;
+                // font-style: normal;
+                // font-weight: 600;
+                // line-height: 26px;
 
-                // animation: fontAnimationDropdownSmall 0.7s ease;
-                animation: none;
+                animation: fontAnimationDropdownSmall 0.7s ease forwards;
+
             }
         }
     }

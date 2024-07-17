@@ -649,6 +649,10 @@
     .reason-element__dropdown-revers {
         .reasons-sec__dropdown-container {
             animation: jumpAnimationDropdownSmallRevers 0.7s ease forwards;
+
+            .r-small__title {
+                animation: fontAnimationDropdownSmallRevers 0.7s ease forwards;
+            }
         }
     }
 }
@@ -697,6 +701,10 @@
 .r-tax.reason-element__dropdown-revers {
     .reasons-sec__dropdown-container {
         animation: jumpAnimationDropdownMidleRevers 0.7s ease forwards;
+
+        .r-small__title {
+            animation: fontAnimationDropdownSmallRevers 0.7s ease forwards;
+        }
     }
 
 }
@@ -746,6 +754,10 @@
 .reason-element__large-anim.reason-element__dropdown-revers {
     .reasons-sec__dropdown-container {
         animation: jumpAnimationDropdownLargeRevers 0.7s ease forwards;
+
+        .r-small__title {
+            animation: fontAnimationDropdownSmallRevers 0.7s ease forwards;
+        }
     }
 
 }
@@ -863,6 +875,17 @@
 
     100% {
         font-size: 30px;
+    }
+}
+
+
+@keyframes fontAnimationDropdownSmallRevers {
+    0% {
+        font-size: 30px;
+    }
+
+    100% {
+        font-size: 24px;
     }
 }
 
@@ -2186,13 +2209,7 @@
             }
 
             .r-small__title {
-                // font-size: 24px;
-                // font-style: normal;
-                // font-weight: 600;
-                // line-height: 26px;
-
                 animation: fontAnimationDropdownSmall 0.7s ease forwards;
-
             }
         }
     }
@@ -2310,6 +2327,16 @@
 
         100% {
             font-size: 24px;
+        }
+    }
+
+    @keyframes fontAnimationDropdownSmallRevers {
+        0% {
+            font-size: 24px;
+        }
+
+        100% {
+            font-size: 18px;
         }
     }
 

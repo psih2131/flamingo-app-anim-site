@@ -623,12 +623,12 @@
             animation: jumpAnimationDropdownSmall 0.7s ease forwards;
 
 
-            .reason-element-active__content-wrapper-text {
-                padding-left: 24px;
-                padding-top: 24px;
-                padding-bottom: 24px;
-                padding-right: 50px;
-            }
+            // .reason-element-active__content-wrapper-text {
+            //     padding-left: 24px;
+            //     padding-top: 24px;
+            //     padding-bottom: 24px;
+            //     padding-right: 50px;
+            // }
 
             .reason-element__text {
                 opacity: 1;
@@ -676,12 +676,12 @@
         animation: jumpAnimationDropdownMidle 0.7s ease forwards;
         height: 100%;
 
-        .reason-element-active__content-wrapper-text {
-            padding-left: 24px;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            padding-right: 24px;
-        }
+        // .reason-element-active__content-wrapper-text {
+        //     padding-left: 24px;
+        //     padding-top: 24px;
+        //     padding-bottom: 24px;
+        //     padding-right: 24px;
+        // }
 
         .reason-element__text {
             opacity: 1;
@@ -729,10 +729,10 @@
 
 
         .reason-element-active__content-wrapper-text {
-            padding-left: 24px;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            padding-right: 50px;
+            // padding-left: 24px;
+            // padding-top: 24px;
+            // padding-bottom: 24px;
+            // padding-right: 50px;
         }
 
         .reason-element__text {
@@ -777,6 +777,7 @@
 @keyframes jumpAnimationDropdownSmall {
     0% {
         width: 301px;
+        padding: 0;
     }
 
     40% {
@@ -789,22 +790,26 @@
 
     100% {
         width: 484px;
+        padding: 24px 50px 24px 24px;
     }
 }
 
 @keyframes jumpAnimationDropdownSmallRevers {
     0% {
         width: 484px;
+        padding: 24px 50px 24px 24px;
     }
 
     100% {
         width: 100%;
+        padding: 0
     }
 }
 
 @keyframes jumpAnimationDropdownMidle {
     0% {
         width: 240px;
+        padding: 0;
     }
 
     40% {
@@ -817,16 +822,19 @@
 
     100% {
         width: 380px;
+        padding: 24px 24px 24px 24px;
     }
 }
 
 @keyframes jumpAnimationDropdownMidleRevers {
     0% {
         width: 380px;
+        padding: 24px 24px 24px 24px;
     }
 
     100% {
         width: 100%;
+        padding: 0;
     }
 }
 
@@ -835,6 +843,7 @@
 @keyframes jumpAnimationDropdownLarge {
     0% {
         width: 301px;
+        padding: 0;
     }
 
     40% {
@@ -847,16 +856,19 @@
 
     100% {
         width: 607px;
+        padding: 24px 24px 50px 24px;
     }
 }
 
 @keyframes jumpAnimationDropdownLargeRevers {
     0% {
         width: 607px;
+        padding: 24px 24px 50px 24px;
     }
 
     100% {
         width: 100%;
+        padding: 0;
     }
 }
 

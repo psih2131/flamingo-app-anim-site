@@ -56,7 +56,7 @@ export default {
     features_plan_subtitle : "Plan out your whole year by adding upcoming trips to the app. Once you’re there, Flamingo will track your movements and adjust dates as needed.",
     features_plan_text : "",
 
-    features_store: "Store documents and trip details",
+    features_store: "Store Documents and Trip Details",
     features_store_title: "Store Documents and Trip Details",
     features_store_subtitle: "Keep your trips organized by adding detailed notes and storing all relevant documents in one place. This is especially useful if you need to present proof of your travels to lawyers, tax advisors, or government authorities.",
     features_store_text: "",
@@ -167,9 +167,8 @@ export default {
 
     error_text: "Something went wrong. Please try again.",
     error_try: "Try Again",
-
-    to_upload : "Click to upload",
-    or_drop: "or drag and drop",
+    to_upload : "Click here",
+    or_drop: "or drag and drop to upload files",
 
     blog_back : "Back to the Articles",
     blog_stories: "Stories and interviews",

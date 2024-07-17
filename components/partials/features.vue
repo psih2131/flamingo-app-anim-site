@@ -116,7 +116,7 @@
         <div class="reasons-sec__tax-element reason-element r-tax r_soon reason-element-active" @click="openPopupInfo('tax')">
           <div class="reason-element-active__content-wrapper">
             <div class="r-tax__text-wrapper">
-              <p class="r-small__title">{{ $t('features_tax') }} <span><br></span>{{ $t('features_residency') }}<span><br></span>{{ $t('features_assessment') }}</p>
+              <p class="r-small__title">{{ $t('features_tax') }} <span><br></span>{{ $t('features_residency') }}<span><br/></span>{{ $t('features_assessment') }}</p>
               <p class="r-small__teg">{{ $t('features_coming_soon') }}</p>
             </div>
 

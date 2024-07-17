@@ -54,7 +54,7 @@
               </div>
 
               <p class="input-label__title">
-                <b>{{ $t('to_upload')}})</b> {{ $t('or_drop') }}
+                <b>{{ $t('to_upload')}}</b> {{ $t('or_drop') }}
               </p>
               <p class="input-label__subtitle">SVG, PNG, JPG or GIF (max. 800x400px)</p>
 
@@ -115,7 +115,7 @@
           </button>
         </div>
 
-        <p class="form__error-message">
+        <p class="form__error-message" v-show="displayError">
           {{ $t('error_text') }} <a href="">{{ $t('error_try') }}</a>
         </p>
 
@@ -139,6 +139,7 @@ export default {
   },
   data() {
     return {
+      displayError: false,
       isOpen: this.show || false,
       formSubmitted: false,
       phone:[
@@ -437,14 +438,14 @@ Message: ${this.form.message ? this.form.message : '----'}`
         .then((response) => {
             // handle success
             // console.log(response);
-
             this.$emit('formSubmitStatus', true);
             this.btnSendLoadingStatus = false
            // console.log(response)
         })
         .catch((error) => {
             // handle error
-            // console.log(error);
+            // console.log(error)
+            this.displayError = true;
             this.$emit('formSubmitStatus', false);
             this.btnSendLoadingStatus = false
             console.log(error)

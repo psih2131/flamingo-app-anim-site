@@ -431,16 +431,16 @@ export default {
 
       if(elementOpen.classList.contains('reason-element__dropdown-active')){
 
-        for(let i = 0; i < allAnimElement.length; i++){
-          allAnimElement[i].classList.remove('reason-element__dropdown-active')
-        }
+        // for(let i = 0; i < allAnimElement.length; i++){
+        //   allAnimElement[i].classList.remove('reason-element__dropdown-active')
+        // }
 
         elementOpen.classList.remove('reason-element__dropdown-active')
       }
       else{
-        for(let i = 0; i < allAnimElement.length; i++){
-          allAnimElement[i].classList.remove('reason-element__dropdown-active')
-        }
+        // for(let i = 0; i < allAnimElement.length; i++){
+        //   allAnimElement[i].classList.remove('reason-element__dropdown-active')
+        // }
         elementOpen.classList.add('reason-element__dropdown-active')
       }
       

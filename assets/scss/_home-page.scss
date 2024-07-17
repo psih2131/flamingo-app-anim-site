@@ -2167,21 +2167,17 @@
             width: 200px;
         }
 
+        40% {
+            width: 387px;
+        }
+
+        80% {
+            width: 350px;
+        }
+
         100% {
             width: 370px;
         }
-
-        // 40% {
-        //     width: 387px;
-        // }
-
-        // 80% {
-        //     width: 350px;
-        // }
-
-        // 100% {
-        //     width: 370px;
-        // }
     }
 
     @keyframes fontAnimationDropdownSmall {

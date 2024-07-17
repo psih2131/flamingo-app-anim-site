@@ -24,7 +24,7 @@
 
 
 
-          <div class="reasons-sec__small-element reason-element r-small r-small-x1 reason-element-active reasons-sec__dropdown" @click="openPopupInfo('smal-anim',$event)">
+          <div class="reasons-sec__small-element reason-element r-small r-small-x1 reason-element-active reasons-sec__dropdown reason-element__dropdown-revers" @click="openPopupInfo('smal-anim',$event)">
 
             <div class="reasons-sec__dropdown-container">
               <div class="reason-element-active__content-wrapper ">
@@ -82,7 +82,7 @@
           </div>
 
 
-          <div class="reasons-sec__small-element reason-element r-small r-small-x2  reason-element-active reasons-sec__dropdown reasons-sec__dropdown_right" @click="openPopupInfo('smal-anim',$event)">
+          <div class="reasons-sec__small-element reason-element r-small r-small-x2  reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reasons-sec__dropdown_right" @click="openPopupInfo('smal-anim',$event)">
 
             <div class="reasons-sec__dropdown-container">
               <div class="reason-element-active__content-wrapper">
@@ -136,7 +136,7 @@
           </div>
         </div>
 
-        <div class="reasons-sec__tax-element reason-element r-tax r_soon  reason-element-active reasons-sec__dropdown reasons-sec__dropdown_right" @click="openPopupInfo('midle-anim',$event)">
+        <div class="reasons-sec__tax-element reason-element r-tax r_soon  reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reasons-sec__dropdown_right" @click="openPopupInfo('midle-anim',$event)">
 
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
@@ -219,7 +219,7 @@
           </div>
         </div>
 
-        <div class="reasons-sec__small-element reason-element  r-small r-small-x3 r_soon reason-element-active reasons-sec__dropdown reason-element__large-anim"  @click="openPopupInfo('large-anim',$event)">
+        <div class="reasons-sec__small-element reason-element  r-small r-small-x3 r_soon reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim"  @click="openPopupInfo('large-anim',$event)">
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
 
@@ -261,7 +261,7 @@
       
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small r-small-x4 reason-element-active reasons-sec__dropdown reason-element__large-anim "  @click="openPopupInfo('large-anim',$event)">
+        <div class="reasons-sec__small-element reason-element r-small r-small-x4 reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim "  @click="openPopupInfo('large-anim',$event)">
           
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
@@ -312,7 +312,7 @@
 
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small r-small-x5 r-small_black reason-element-active reasons-sec__dropdown reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
+        <div class="reasons-sec__small-element reason-element r-small r-small-x5 r-small_black reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
           
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
@@ -355,7 +355,7 @@
 
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small r-small-x6 reason-element-active reasons-sec__dropdown reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
+        <div class="reasons-sec__small-element reason-element r-small r-small-x6 reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
 
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">

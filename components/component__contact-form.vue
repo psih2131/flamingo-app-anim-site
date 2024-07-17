@@ -47,7 +47,7 @@
               </div>
 
               <p class="input-label__title">
-                <b>{{ $t('to_upload')}})</b> {{ $t('or_drop') }}
+                <b>{{ $t('to_upload')}}</b> {{ $t('or_drop') }}
               </p>
               <p class="input-label__subtitle">SVG, PNG, JPG or GIF (max. 800x400px)</p>
 
@@ -110,11 +110,11 @@
 
 
         <!-- error message -->
-        <p class="form__error-message">
+        <p class="form__error-message" v-show="displayError">
           {{ $t('error_text') }} <a href="">{{ $t('error_try') }}</a>
         </p>
 
-       
+
 
     </div>
 </template>
@@ -135,6 +135,7 @@ export default {
     return {
       isOpen: this.show || false,
       formSubmitted: false,
+      displayError: false,
       phone:[
         {
           id:30,
@@ -314,7 +315,7 @@ export default {
       nameTextError: 'Please enter your name',
 
       emailErorStatus: false,
-      emailTextError: 'Please enter your email address in proper format: yourname@company.comPlease enter your messag',
+      emailTextError: 'Please enter your email address in proper format: yourname@company.com',
 
       textErrorStatus: false,
 
@@ -440,6 +441,7 @@ Message: ${this.form.message ? this.form.message : '----'}`
             // handle error
             // console.log(error);
             this.$emit('formSubmitStatus', false);
+            this.displayError = true;
             this.btnSendLoadingStatus = false
             console.log(error)
         });

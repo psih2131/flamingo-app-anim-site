@@ -11,9 +11,9 @@
                 </div>
                 <h2 class="who-needs-sec__title">{{ $t('index_who_need') }}</h2>
 
-                <div class="who-needs-sec__wrapper">
+                <div class="who-needs-sec__wrapper" :class="{'one-open-elemen': activeFirsLoad}">
 
-                    <div class="who-needs-sec__element needs-anim-element n-amin-1" @click="activHoverAnim('x1', $event)" >
+                    <div class="who-needs-sec__element needs-anim-element n-amin-1" @click="activHoverAnim(0, $event)" >
 
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
 
-                    <div class="who-needs-sec__element needs-anim-element n-amin-2" @click="activHoverAnim('x2', $event)" >
+                    <div class="who-needs-sec__element needs-anim-element n-amin-2" @click="activHoverAnim(1, $event)" >
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_tax') }}<br>{{ $t('index_residents') }}</h3>
@@ -36,7 +36,7 @@
                         </div>
                     </div>
 
-                    <div class="who-needs-sec__element needs-anim-element n-amin-3" @click="activHoverAnim('x3', $event)" >
+                    <div class="who-needs-sec__element needs-anim-element n-amin-3" @click="activHoverAnim(2, $event)" >
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_frequent_travelers') }}</h3>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="who-needs-sec__element needs-anim-element n-amin-4" @click="activHoverAnim('x4', $event)" >
+                    <div class="who-needs-sec__element needs-anim-element n-amin-4" @click="activHoverAnim(3, $event)" >
                         <div class="needs-anim-element__wrapper">
                             <div class="needs-anim-element__header">
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_i') }}<br>{{ $t('index_s') }}</h3>
@@ -98,6 +98,9 @@ export default {
             animCounter: 0,
             pastAnimCounter: null,
             // popupStatus: false,
+
+            activeFirsLoad: false,
+            previewActivIndex: null,
         }
     },
 
@@ -117,6 +120,8 @@ export default {
         },
 
         activHoverAnim(element, event){
+            this.activeFirsLoad = true
+
 
             let mediaQuery = window.matchMedia('(min-width: 1250px)');
             if(mediaQuery.matches){
@@ -128,24 +133,155 @@ export default {
                 if(elementOpen.classList.contains('active-hover-anim')){
                     for(let i = 0; i < allAnimElement.length; i++){
                         allAnimElement[i].classList.remove('active-hover-anim')
+                        allAnimElement[i].classList.remove('fixed')
                         // allAnimElement[i].classList.remove('activ-hover-anim-small')
                         elementOpen.classList.remove('active-hover-anim_revers')
+
+                        this.previewActivIndex = null
+                        
                     }
                     // elementOpen.classList.remove('activ-hover-anim-small')
                     elementOpen.classList.remove('active-hover-anim')
 
                     elementOpen.classList.add('active-hover-anim_revers')
+
+                    this.activeFirsLoad = false
+            
+              
                 }
                 else{
-                    for(let i = 0; i < allAnimElement.length; i++){
-                        allAnimElement[i].classList.remove('active-hover-anim')
-                        // allAnimElement[i].classList.add('activ-hover-anim-small')
-                        elementOpen.classList.remove('active-hover-anim_revers')
+                    
+                    if(this.activeFirsLoad == true){    
+
+                        
+
+                        for(let i = 0; i < allAnimElement.length; i++){
+                            allAnimElement[i].classList.remove('active-hover-anim')
+                            // allAnimElement[i].classList.add('activ-hover-anim-small')
+                            elementOpen.classList.remove('active-hover-anim_revers')
+                        }
+
+                        if(element == 0){
+
+                            if(this.previewActivIndex == 1){
+                                allAnimElement[2].classList.add('fixed')
+                                allAnimElement[3].classList.add('fixed')
+
+                                allAnimElement[0].classList.remove('fixed')
+                                allAnimElement[1].classList.remove('fixed')
+                            }
+                            else{
+                                allAnimElement[0].classList.remove('fixed')
+                                allAnimElement[1].classList.remove('fixed')
+                                allAnimElement[2].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+
+                           
+                            
+                        }
+
+                        if(element == 1){
+                            if(this.previewActivIndex == 0){
+                                allAnimElement[2].classList.add('fixed')
+                                allAnimElement[3].classList.add('fixed')
+
+                                allAnimElement[0].classList.remove('fixed')
+                                allAnimElement[1].classList.remove('fixed')
+                            }
+                            else if(this.previewActivIndex == 2){
+                                allAnimElement[1].classList.add('fixed')
+                                allAnimElement[3].classList.add('fixed')
+
+                                allAnimElement[1].classList.remove('fixed')
+                                allAnimElement[2].classList.remove('fixed')
+                            }
+
+                            else if(this.previewActivIndex == 3){
+                                allAnimElement[0].classList.add('fixed')
+
+                                
+
+                                allAnimElement[1].classList.remove('fixed')
+                                allAnimElement[2].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+            
+                           
+                        }
+
+                        if(element == 2){
+                            if(this.previewActivIndex == 1){
+                                allAnimElement[0].classList.add('fixed')
+                                allAnimElement[3].classList.add('fixed')
+
+                                allAnimElement[1].classList.remove('fixed')
+                                allAnimElement[2].classList.remove('fixed')
+                            }
+                            else if(this.previewActivIndex == 3){
+                                allAnimElement[0].classList.add('fixed')
+                                allAnimElement[1].classList.add('fixed')
+
+                                allAnimElement[2].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+
+                            else if(this.previewActivIndex == 0){
+                                allAnimElement[0].classList.add('fixed')
+
+                                allAnimElement[1].classList.remove('fixed')
+                                allAnimElement[2].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+                            
+                        }
+
+                        if(element == 3){
+
+                            if(this.previewActivIndex == 0){
+                                allAnimElement[1].classList.add('fixed')
+                                allAnimElement[2].classList.add('fixed')
+
+                                allAnimElement[0].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+                            else if(this.previewActivIndex == 2){
+                                allAnimElement[0].classList.add('fixed')
+                                allAnimElement[1].classList.add('fixed')
+
+                                allAnimElement[2].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+                            else if(this.previewActivIndex == 1){
+                                allAnimElement[0].classList.add('fixed')
+                                allAnimElement[2].classList.add('fixed')
+
+                                allAnimElement[1].classList.remove('fixed')
+                                allAnimElement[3].classList.remove('fixed')
+                            }
+                            
+                        }
+
                     }
+                    
                     // elementOpen.classList.remove('activ-hover-anim-small')
                     elementOpen.classList.add('active-hover-anim')
                     elementOpen.classList.remove('active-hover-anim_revers')
                 }
+
+                
+                console.log(element)
+                console.log(this.activeFirsLoad)
+                console.log('preview element',this.previewActivIndex)
+
+
+
+                this.previewOpenedElement(element)
+
+
+
+
+
 
                 // let element1 = document.querySelector('.n-amin-1')
                 // let element2 = document.querySelector('.n-amin-2')
@@ -201,6 +337,17 @@ export default {
                 // console.log(this.pastAnimCounter)
             }
 
+        },
+
+
+        previewOpenedElement(element){
+            if(this.activeFirsLoad == true){
+                this.previewActivIndex = +element
+            }
+            else{
+                this.activeFirsLoad = false
+            }
+            
         },
 
         offHoverAnim(element, event){

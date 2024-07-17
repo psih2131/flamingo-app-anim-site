@@ -121,58 +121,84 @@ export default {
             let mediaQuery = window.matchMedia('(min-width: 1250px)');
             if(mediaQuery.matches){
 
-                let element1 = document.querySelector('.n-amin-1')
-                let element2 = document.querySelector('.n-amin-2')
-                let element3 = document.querySelector('.n-amin-3')
-                let element4 = document.querySelector('.n-amin-4')
+                let allAnimElement = document.querySelectorAll('.needs-anim-element')
+                let elementOpen = event.target.closest('.needs-anim-element')
 
-                this.animCounter = this.animCounter + 1;
 
-                if(this.pastAnimCounter == element){
-                    this.offHoverAnim()
-                    this.pastAnimCounter = null
+                if(elementOpen.classList.contains('active-hover-anim')){
+                    for(let i = 0; i < allAnimElement.length; i++){
+                        allAnimElement[i].classList.remove('active-hover-anim')
+                        // allAnimElement[i].classList.remove('activ-hover-anim-small')
+                        elementOpen.classList.remove('active-hover-anim_revers')
+                    }
+                    // elementOpen.classList.remove('activ-hover-anim-small')
+                    elementOpen.classList.remove('active-hover-anim')
+
+                    elementOpen.classList.add('active-hover-anim_revers')
                 }
                 else{
-
-                    this.offHoverAnim()
-                    if(element == 'x1'){
-
-                        element1.classList.add('active-hover-anim')
-                        element2.classList.add('activ-hover-anim-small')
-                        element3.classList.add('activ-hover-anim-small')
-                        element4.classList.add('activ-hover-anim-small')
+                    for(let i = 0; i < allAnimElement.length; i++){
+                        allAnimElement[i].classList.remove('active-hover-anim')
+                        // allAnimElement[i].classList.add('activ-hover-anim-small')
+                        elementOpen.classList.remove('active-hover-anim_revers')
                     }
-
-                    if(element == 'x2'){
-
-                        element2.classList.add('active-hover-anim')
-                        element1.classList.add('activ-hover-anim-small')
-                        element3.classList.add('activ-hover-anim-small')
-                        element4.classList.add('activ-hover-anim-small')
-                    }
-
-                    if(element == 'x3'){
-
-                        element3.classList.add('active-hover-anim')
-                        element1.classList.add('activ-hover-anim-small')
-                        element2.classList.add('activ-hover-anim-small')
-                        element4.classList.add('activ-hover-anim-small')
-                    }
-
-                    if(element == 'x4'){
-
-                        element4.classList.add('active-hover-anim')
-                        element1.classList.add('activ-hover-anim-small')
-                        element2.classList.add('activ-hover-anim-small')
-                        element3.classList.add('activ-hover-anim-small')
-                    }
-
-                    this.pastAnimCounter = element
+                    // elementOpen.classList.remove('activ-hover-anim-small')
+                    elementOpen.classList.add('active-hover-anim')
+                    elementOpen.classList.remove('active-hover-anim_revers')
                 }
 
-                console.log(element)
-                console.log(event)
-                console.log(this.pastAnimCounter)
+                // let element1 = document.querySelector('.n-amin-1')
+                // let element2 = document.querySelector('.n-amin-2')
+                // let element3 = document.querySelector('.n-amin-3')
+                // let element4 = document.querySelector('.n-amin-4')
+
+                // this.animCounter = this.animCounter + 1;
+
+                // if(this.pastAnimCounter == element){
+                //     this.offHoverAnim()
+                //     this.pastAnimCounter = null
+                // }
+                // else{
+
+                //     this.offHoverAnim()
+                //     if(element == 'x1'){
+
+                //         element1.classList.add('active-hover-anim')
+                //         element2.classList.add('activ-hover-anim-small')
+                //         element3.classList.add('activ-hover-anim-small')
+                //         element4.classList.add('activ-hover-anim-small')
+                //     }
+
+                //     if(element == 'x2'){
+
+                //         element2.classList.add('active-hover-anim')
+                //         element1.classList.add('activ-hover-anim-small')
+                //         element3.classList.add('activ-hover-anim-small')
+                //         element4.classList.add('activ-hover-anim-small')
+                //     }
+
+                //     if(element == 'x3'){
+
+                //         element3.classList.add('active-hover-anim')
+                //         element1.classList.add('activ-hover-anim-small')
+                //         element2.classList.add('activ-hover-anim-small')
+                //         element4.classList.add('activ-hover-anim-small')
+                //     }
+
+                //     if(element == 'x4'){
+
+                //         element4.classList.add('active-hover-anim')
+                //         element1.classList.add('activ-hover-anim-small')
+                //         element2.classList.add('activ-hover-anim-small')
+                //         element3.classList.add('activ-hover-anim-small')
+                //     }
+
+                //     this.pastAnimCounter = element
+                // }
+
+                // console.log(element)
+                // console.log(event)
+                // console.log(this.pastAnimCounter)
             }
 
         },

@@ -86,45 +86,66 @@
 }
 
 .active-hover-anim {
-    width: 504px;
+    // width: 504px;
+
     background: #fff;
-    animation: jumpAnimation 0.5s ease;
+    animation: jumpAnimation 0.7s ease forwards;
 
     &:hover {
         background: #fff;
     }
 
     .needs-anim-elemen__title {
-        font-size: 48px;
-        animation: fontAnimation 0.5s ease;
+        // font-size: 48px;
+        animation: fontAnimation 0.7s ease forwards;
     }
 
     .needs-anim-element__subtitle {
         opacity: 1;
-        max-height: 280px;
+        max-height: 350px;
     }
 
     .needs-anim-elemen__image {
-        margin-left: 37px;
-        margin-top: 32px;
+        transform: translateX(37px);
+        // margin-top: 32px;
+    }
+}
+
+.active-hover-anim_revers {
+    animation: jumpAnimationRevers 0.7s ease forwards;
+
+    .needs-anim-elemen__title {
+        // font-size: 48px;
+        animation: fontAnimationRevers 0.7s ease forwards;
     }
 }
 
 @keyframes jumpAnimation {
     0% {
-        width: 301px;
+        min-width: 301px;
     }
 
     40% {
-        width: 600px;
+        min-width: 600px;
     }
 
     80% {
-        width: 498px;
+        min-width: 498px;
     }
 
     100% {
+        min-width: 504px;
+    }
+}
+
+@keyframes jumpAnimationRevers {
+    0% {
         width: 504px;
+
+    }
+
+    100% {
+        width: 301px;
     }
 }
 
@@ -147,14 +168,24 @@
     }
 }
 
-.activ-hover-anim-small {
-    min-width: 200px;
-    width: 233px;
+@keyframes fontAnimationRevers {
+    0% {
+        font-size: 48px;
+    }
 
-    .needs-anim-elemen__title {
-        white-space: nowrap;
+    100% {
+        font-size: 24px;
     }
 }
+
+// .activ-hover-anim-small {
+//     min-width: 200px;
+//     width: 233px;
+
+//     .needs-anim-elemen__title {
+//         white-space: nowrap;
+//     }
+// }
 
 .needs-anim-element__wrapper {
     min-height: 560px;
@@ -163,6 +194,7 @@
     flex-direction: column;
     justify-content: space-between;
     transition: all ease 0.5s;
+    padding-bottom: 380px;
 }
 
 .needs-anim-element__header {
@@ -193,15 +225,18 @@
     transition: all ease 0.5s;
     max-height: 0px;
     width: 440px;
+    max-width: 100%;
 }
 
 .needs-anim-elemen__image {
     width: 380px;
     bottom: 0;
-    margin-left: -64px;
+    transform: translateX(-64px);
+    bottom: 0;
     display: block;
     height: auto;
     transition: all ease 0.5s;
+    position: absolute;
 }
 
 .n-amin-1 {

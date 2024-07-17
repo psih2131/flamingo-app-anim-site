@@ -433,15 +433,19 @@ export default {
 
         for(let i = 0; i < allAnimElement.length; i++){
           allAnimElement[i].classList.remove('reason-element__dropdown-active')
+          allAnimElement[i].classList.add('reason-element__dropdown-revers')
         }
 
         elementOpen.classList.remove('reason-element__dropdown-active')
+        elementOpen.classList.add('reason-element__dropdown-revers')
       }
       else{
         for(let i = 0; i < allAnimElement.length; i++){
           allAnimElement[i].classList.remove('reason-element__dropdown-active')
+          allAnimElement[i].classList.add('reason-element__dropdown-revers')
         }
         elementOpen.classList.add('reason-element__dropdown-active')
+        elementOpen.classList.remove('reason-element__dropdown-revers')
       }
       
 

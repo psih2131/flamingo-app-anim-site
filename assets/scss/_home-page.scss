@@ -544,9 +544,7 @@
 
 .reasons-sec__dropdown-container {
     transition: all ease 0.5s;
-}
 
-.reasons-sec__dropdown-container {
     // background: #fff;
     border-radius: 24px;
     position: absolute;
@@ -585,6 +583,10 @@
     opacity: 0;
 
 }
+
+
+
+
 
 .reason-element__dropdown-active {
     z-index: 10;
@@ -642,7 +644,16 @@
             }
         }
     }
+
+
+    .reason-element__dropdown-revers {
+        .reasons-sec__dropdown-container {
+            animation: jumpAnimationDropdownSmallRevers 0.7s ease forwards;
+        }
+    }
 }
+
+
 
 
 .r-tax {
@@ -681,6 +692,13 @@
             animation: fontAnimationDropdownSmall 0.7s ease forwards;
         }
     }
+}
+
+.r-tax.reason-element__dropdown-revers {
+    .reasons-sec__dropdown-container {
+        animation: jumpAnimationDropdownMidleRevers 0.7s ease forwards;
+    }
+
 }
 
 
@@ -725,6 +743,17 @@
 }
 
 
+.reason-element__large-anim.reason-element__dropdown-revers {
+    .reasons-sec__dropdown-container {
+        animation: jumpAnimationDropdownLargeRevers 0.7s ease forwards;
+    }
+
+}
+
+
+
+
+
 
 .r-small_black {
     .reason-element__text {
@@ -751,6 +780,16 @@
     }
 }
 
+@keyframes jumpAnimationDropdownSmallRevers {
+    0% {
+        width: 484px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 @keyframes jumpAnimationDropdownMidle {
     0% {
         width: 240px;
@@ -769,6 +808,18 @@
     }
 }
 
+@keyframes jumpAnimationDropdownMidleRevers {
+    0% {
+        width: 380px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+
 @keyframes jumpAnimationDropdownLarge {
     0% {
         width: 301px;
@@ -784,6 +835,16 @@
 
     100% {
         width: 607px;
+    }
+}
+
+@keyframes jumpAnimationDropdownLargeRevers {
+    0% {
+        width: 607px;
+    }
+
+    100% {
+        width: 100%;
     }
 }
 
@@ -1540,6 +1601,16 @@
         }
     }
 
+    @keyframes jumpAnimationDropdownSmallRevers {
+        0% {
+            width: 504px;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
 
     @keyframes jumpAnimationDropdownLarge {
         0% {
@@ -1559,6 +1630,16 @@
         }
     }
 
+
+    @keyframes jumpAnimationDropdownLargeRevers {
+        0% {
+            width: 504px;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
 
 
     .r-small__title {
@@ -2144,6 +2225,16 @@
         }
     }
 
+    @keyframes jumpAnimationDropdownSmallRevers {
+        0% {
+            width: 370px;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
     @keyframes jumpAnimationDropdownMidle {
         0% {
             width: 100%;
@@ -2154,6 +2245,16 @@
         }
 
         80% {
+            width: 100%;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes jumpAnimationDropdownMidleRevers {
+        0% {
             width: 100%;
         }
 
@@ -2179,6 +2280,17 @@
             width: 370px;
         }
     }
+
+    @keyframes jumpAnimationDropdownMidleRevers {
+        0% {
+            width: 370px;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
 
     @keyframes fontAnimationDropdownSmall {
         0% {

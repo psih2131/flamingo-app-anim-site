@@ -47,7 +47,7 @@
               </div>
 
               <p class="input-label__title">
-                <b>{{ $t('to_upload')}})</b> {{ $t('or_drop') }}
+                <b>{{ $t('to_upload')}}</b> {{ $t('or_drop') }}
               </p>
               <p class="input-label__subtitle">SVG, PNG, JPG or GIF (max. 800x400px)</p>
 
@@ -114,7 +114,7 @@
           {{ $t('error_text') }} <a href="">{{ $t('error_try') }}</a>
         </p>
 
-       
+
 
     </div>
 </template>

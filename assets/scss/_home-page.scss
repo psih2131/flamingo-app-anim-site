@@ -204,7 +204,12 @@
     transition: all ease 0.5s;
 }
 
-.n-amin-1,
+.n-amin-1 {
+    .needs-anim-element__subtitle {
+        padding-top: 140px;
+    }
+}
+
 .n-amin-3 {
     .needs-anim-element__subtitle {
         padding-top: 80px;
@@ -262,7 +267,7 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    line-height: 32px;
+    line-height: 1.2;
     padding-right: 48px;
     transition: all ease 0.3s;
     font-family: $titleFont;

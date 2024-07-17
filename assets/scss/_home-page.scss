@@ -700,7 +700,7 @@
 .reason-element__large-anim.reason-element__dropdown-active {
     .reasons-sec__dropdown-container {
 
-        // animation: jumpAnimationDropdownLarge 0.7s ease;
+        animation: jumpAnimationDropdownLarge 0.7s ease;
         width: 607px;
 
         .reason-element-active__content-wrapper-text {
@@ -2094,9 +2094,10 @@
 
     .reason-element__large-anim.reason-element__dropdown-active {
         .reasons-sec__dropdown-container {
-
-            // animation: jumpAnimationDropdownLarge 0.7s ease;
             width: 370px;
+            // animation: jumpAnimationDropdownLarge 0.7s ease;
+            animation: none;
+
 
             .reason-element-active__content-wrapper-text {
                 padding: 16px;
@@ -2112,7 +2113,8 @@
                 font-weight: 600;
                 line-height: 26px;
 
-                animation: fontAnimationDropdownSmall 0.7s ease;
+                // animation: fontAnimationDropdownSmall 0.7s ease;
+                animation: none;
             }
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <main class="main contact-us-main">
-        <section class="contact-us-sec" >
+        <section class="contact-us-sec" id="contact-us-top" >
             <div class="container-contact-us">
                 <h1 class="contact-us-sec__page-title">{{ $t('contact_us') }}</h1>
 
@@ -76,15 +76,16 @@ export default {
             this.sendStatus = data
 
             if(data == true){
-                this.scrollToTop()
+                this.scrollToSection()
             }
         },
 
-        scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Опция для плавной прокрутки
-            });
+        scrollToSection() {
+        // const section = document.getElementById('contact-us-top');
+        // if (section) {
+        //     section.scrollIntoView({ behavior: 'smooth' });
+        // }
+        window.scrollTo(0, 0);
         }
     },
 

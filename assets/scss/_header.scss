@@ -21,6 +21,8 @@
     }
 }
 
+
+
 .header__logo-wrapper {
     width: 195px;
 }
@@ -112,6 +114,12 @@
     .header__logo {
         opacity: 0;
         pointer-events: none;
+    }
+}
+
+.header-for-all-pages {
+    .header__download-ios-wrapper {
+        max-width: 150px;
     }
 }
 

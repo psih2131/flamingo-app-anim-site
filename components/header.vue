@@ -1,5 +1,7 @@
 <template>
-    <header class="header" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }">
+    <header class="header header-for-all-pages" 
+    :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }"
+    >
         <div class="container">
             <div class="header__logo-wrapper">
                 <nuxt-link no-prefetch to="/" class="header__logo"><img src="@/assets/images/logo.svg" alt="" class="header__logo-img"></nuxt-link>

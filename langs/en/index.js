@@ -8,7 +8,6 @@ export default {
     privacy_notice : 'Privacy Notice',
     terms_of_use : 'Terms of Use',
     support: 'Support',
-    // 'Support': 'Support',
     footer_text : "Flamingo tracking and counting are created for information purposes only.",
     footer_text2 : "Always consult with your legal advisor and tax consulting firm about specific requirements for your residency and visa status.",
 
@@ -132,7 +131,6 @@ export default {
     help14: 'New Zealand 325-day rule',
     help15: 'Cyprus 60-day rule',
 
-    index_from_whom : 'For Whom',
     index_who_need : "Who needs Flamingo?",
     index_expats: "Expats &",
     index_expats_nomads : "Digital Nomads",
@@ -163,7 +161,6 @@ export default {
     contact_submit : "Submit",
     contact_send_result : "Sent!",
     contact_send_text : "Thank you for your message! Someone from our team will reach out to you soon.",
-    take_me_home : "Take me home",
 
     error_text: "Something went wrong. Please try again.",
     error_try: "Try Again",
@@ -174,15 +171,14 @@ export default {
 
     blog_back : "Back to the Articles",
     blog_stories: "Stories and interviews",
-    blog_text_2 : "TThe latest news, travel tips, and tricks from our team.",
+    blog_text_2 : "The latest news, travel tips, and tricks from our team.",
     blog_related : "Related Posts",
     blog_text : "The latest news, travel tips, and tricks from our team.",
     blog_view_all : "View all posts",
     blog_published : "Published",
 
-    page: "Page"
-
-
+    page: "Page",
+    go_back : "Go back"
 
 
 

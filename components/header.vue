@@ -4,7 +4,7 @@
     >
         <div class="container">
             <div class="header__logo-wrapper">
-                <nuxt-link no-prefetch to="/" class="header__logo"><img src="@/assets/images/logo.svg" alt="" class="header__logo-img"></nuxt-link>
+                <nuxt-link no-prefetch to="/" class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></nuxt-link>
             </div>
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">

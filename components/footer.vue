@@ -5,7 +5,7 @@
                 <div class="footer__top-info">
 
                     <nuxt-link no-prefetch to="/" class="footer__logo">
-                        <img src="@/assets/images/logo.svg" alt="" class="footer__logo-img">
+                        <img src="@/assets/images/logo.png" alt="" class="footer__logo-img">
                     </nuxt-link>
 
                     <p class="footer__info-text">

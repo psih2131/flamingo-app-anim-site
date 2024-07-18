@@ -143,7 +143,7 @@
               <div class="r-tax__text-wrapper">
 
                 <div class="reason-element-active__content-wrapper-text">
-                  <p class="r-small__title">{{ $t('features_tax') }} <span><br></span>{{ $t('features_residency') }}<span><br></span>{{ $t('features_assessment') }}</p>
+                  <p class="r-small__title">{{ $t('features_tax') }} <span><br></span> {{ $t('features_residency') }}<span><br></span> {{ $t('features_assessment') }}</p>
                   <p class="r-small__teg">{{ $t('features_coming_soon') }}</p>
                   <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
                 </div>

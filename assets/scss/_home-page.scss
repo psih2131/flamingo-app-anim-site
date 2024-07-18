@@ -241,6 +241,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    margin-block-start: auto;
 }
 
 .needs-anim-element__subtitle {
@@ -334,6 +335,7 @@
     padding-right: 48px;
     transition: all ease 0.3s;
     font-family: $titleFont;
+    margin-block-start: auto;
 }
 
 .r-small__teg {
@@ -1459,6 +1461,15 @@
         width: calc(100% + 12px);
         margin-left: -6px;
         margin-top: 32px;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: translateX(0);
+    }
+
+    .needs-anim-element__wrapper {
+        padding-bottom: 0;
+        min-height: 0;
     }
 
     .who-needs-sec {
@@ -1765,6 +1776,8 @@
             left: auto;
         }
     }
+
+
 
 
 }

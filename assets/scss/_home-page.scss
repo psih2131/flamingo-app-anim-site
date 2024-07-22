@@ -1199,18 +1199,17 @@
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    max-height: 0;
+    // max-height: 0;
     overflow: hidden;
     transition: all linear 0.5s;
 }
 
 .faq-sec__element_active {
-    background: #fff;
+    background: #F8FAFC;
     padding: 32px;
 
     .faq-sec__element-body {
-        max-height: 500px;
-        transition: max-height 0.5s linear, ;
+        // transition: max-height 0.5s linear, ;
     }
 
     .faq-Y {

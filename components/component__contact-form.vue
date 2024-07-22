@@ -29,10 +29,12 @@
         <component__custom_select :translateText="'contact_version'" :optionList="ios" @selectDataSend="emitSelectDataIos" />
 
 
+        <!-- textarea message field -->
         <div class="form__inp-wrapper">
             <p class="form__inp-title">{{ $t('contact_message') }}</p>
             <textarea class="form__textarea"  :class="{'form__inp-error': textErrorStatus}"  v-model="form.message" :placeholder="$t('contact_message_placeholder')"></textarea>
         </div>
+
 
         <!-- input type file START -->
         <div class="form__file-wrapper form-file">
@@ -126,6 +128,7 @@ import axios from 'axios'
 
 import component__custom_select from '@/components/component__custom-select.vue'
 import component__input from '@/components/component__input.vue'
+import component__drag_and_drop_file from '@/components/component__drag-and-drop-file.vue'
 
 export default {
   setup () {
@@ -339,7 +342,8 @@ export default {
 
   components:{
     component__custom_select,
-    component__input
+    component__input,
+    component__drag_and_drop_file
   },
   methods: {
     //file load script
@@ -358,7 +362,6 @@ export default {
     removeFile(index){
       this.loadedFileList.splice(index, 1);
     },
-
 
     //file size convert from bite to MB
     convertToMB(bytes) {

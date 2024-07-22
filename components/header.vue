@@ -9,7 +9,7 @@
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#OurUsers" class="header__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
+                        <nuxt-link no-prefetch to="/#ourUsers" class="header__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                     </li>
 
                     <li class="header__nav-element">

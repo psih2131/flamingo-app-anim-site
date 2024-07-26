@@ -20,8 +20,9 @@
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_expats') }}<br>{{ $t('index_expats_nomads') }}</h3>
                                 <p class="needs-anim-element__subtitle">{{ $t('index_expats_texts') }}</p>
                             </div>
-
-                            <img src="@/assets/images/who-needs-image/x1.png" alt="" class="needs-anim-elemen__image">
+                            <div class="needs-anim-elemen__image-wrapper">
+                                <img src="@/assets/images/who-needs-image/x1.png" alt="" class="needs-anim-elemen__image">
+                            </div>
                         </div>
                     </div>
 
@@ -31,8 +32,9 @@
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_tax') }}<br>{{ $t('index_residents') }}</h3>
                                 <p class="needs-anim-element__subtitle">{{ $t('index_residents_text') }}</p>
                             </div>
-
-                            <img src="@/assets/images/who-needs-image/x2.png" alt="" class="needs-anim-elemen__image">
+                            <div class="needs-anim-elemen__image-wrapper">
+                                <img src="@/assets/images/who-needs-image/x2.png" alt="" class="needs-anim-elemen__image">
+                            </div>
                         </div>
                     </div>
 
@@ -42,8 +44,9 @@
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_frequent_travelers') }}</h3>
                                 <p class="needs-anim-element__subtitle">{{ $t('index_ft_text') }}</p>
                             </div>
-
-                            <img src="@/assets/images/who-needs-image/x3.png" alt="" class="needs-anim-elemen__image">
+                            <div class="needs-anim-elemen__image-wrapper">
+                                <img src="@/assets/images/who-needs-image/x3.png" alt="" class="needs-anim-elemen__image">
+                            </div>
                         </div>
                     </div>
 
@@ -53,8 +56,9 @@
                                 <h3 class="needs-anim-elemen__title">{{ $t('index_i') }}<br>{{ $t('index_s') }}</h3>
                                 <p class="needs-anim-element__subtitle">{{ $t('index_is_text') }}</p>
                             </div>
-
-                            <img src="@/assets/images/who-needs-image/x4.png" alt="" class="needs-anim-elemen__image">
+                            <div class="needs-anim-elemen__image-wrapper">
+                                <img src="@/assets/images/who-needs-image/x4.png" alt="" class="needs-anim-elemen__image">
+                            </div>
                         </div>
                     </div>
 
@@ -291,6 +295,8 @@ export default {
                             
                         }
 
+
+                        allAnimElement[+this.previewActivIndex].classList.add('active-hover-anim_revers')
                   
 
                     }

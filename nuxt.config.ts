@@ -22,8 +22,14 @@ export default defineNuxtConfig({
     langDir: 'langs/',
     lazy: false,
     locales: [
-      { code: 'fr', iso: 'fr-FR', name: 'Français', file: 'fr/index.js', dir:'ltr' },
-      { code: 'en', iso: 'en-US', name: 'English', file: 'en/index.js', dir:'ltr' }
+      // { code: 'fr', iso: 'fr-FR', name: 'Français', file: 'fr/index.js', dir:'ltr' },
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en/index.js', dir:'ltr' },
+      { code: 'ar', iso: 'ar-AE', name: ' العربية', file: 'ar/Flamingo App Website_En_Final_AR.js', dir:'rtl' },
+      { code: 'cn', iso: 'zh-CN', name: '中文', file: 'cn/Flamingo App Website_En_Final_CN.js', dir:'ltr' },
+      { code: 'sp', iso: 'es-ES', name: 'Español', file: 'sp/Flamingo App Website_En_Final_ES.js', dir:'ltr' },
+      { code: 'pt', iso: 'pt-PT', name: 'Português', file: 'pt/Flamingo App Website_En_Final_PT.js', dir:'ltr' },
     ]
   },
 })
+
+

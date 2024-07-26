@@ -31,11 +31,11 @@
 
                 <div class="reason-element-active__content-wrapper-text">
                   <p class="r-small__title">{{ $t('features_plan') }}</p>
-                  <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                  <div class="reason-element__text">{{ $t('features_plan_subtitle') }}</div>
                 </div>
-                
 
-                
+
+
                 <div class="r-small__svg-wrapper">
                   <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_1_6171)">
@@ -58,7 +58,7 @@
                   </svg>
                 </div>
               </div>
-  
+
               <div class="reason-element-active__border-wrapper">
                 <div class="reason-element-active__border-1"></div>
                 <div class="reason-element-active__border-2"></div>
@@ -68,7 +68,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                   </svg>
                 </div>
-  
+
                 <div class="reason-element__link-btn-wrapper">
                   <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -77,7 +77,7 @@
               </div>
             </div>
 
-            
+
 
           </div>
 
@@ -89,10 +89,10 @@
 
                 <div class="reason-element-active__content-wrapper-text">
                   <p class="r-small__title">{{ $t('features_store') }}</p>
-                  <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                  <div class="reason-element__text">{{ $t('features_store_subtitle') }}</div>
                 </div>
-                
-  
+
+
                 <div class="r-small__svg-wrapper">
                   <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M52.1399 29.5575L56.8631 32.1126L58.0165 32.7606C60.4735 34.141 60.4735 37.6998 58.0165 39.0802L42.3695 47.8711C38.7407 49.9098 34.3216 49.9098 30.6928 47.8711L15.0458 39.0802C12.5889 37.6998 12.5889 34.141 15.0458 32.7606L16.1991 32.1126L20.796 29.48" stroke="#B5F3D1" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
@@ -101,8 +101,8 @@
                   </svg>
                 </div>
               </div>
-  
-  
+
+
               <div class="reason-element-active__border-wrapper">
                 <div class="reason-element-active__border-1"></div>
                 <div class="reason-element-active__border-2"></div>
@@ -112,7 +112,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                   </svg>
                 </div>
-  
+
                 <div class="reason-element__link-btn-wrapper">
                   <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -120,7 +120,7 @@
                 </div>
               </div>
             </div>
-           
+
 
           </div>
         </div>
@@ -145,15 +145,15 @@
                 <div class="reason-element-active__content-wrapper-text">
                   <p class="r-small__title">{{ $t('features_tax') }} <span><br></span> {{ $t('features_residency') }}<span><br></span> {{ $t('features_assessment') }}</p>
                   <p class="r-small__teg">{{ $t('features_coming_soon') }}</p>
-                  <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                  <div class="reason-element__text">{{ $t('features_tax_subtitle') }}</div>
                 </div>
-                
+
               </div>
-  
+
               <img src="@/assets/images/reasons-pages/r3.png" alt="" class="r-tax__img r-tax__img-pc">
               <img src="@/assets/images/reasons-pages/r3-mob.png" alt="" class="r-tax__img r-tax__img-mob">
-  
-  
+
+
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_1_6418)">
@@ -174,8 +174,8 @@
                 </svg>
               </div>
             </div>
-  
-  
+
+
             <div class="reason-element-active__border-wrapper">
               <div class="reason-element-active__border-1"></div>
               <div class="reason-element-active__border-2"></div>
@@ -185,7 +185,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                 </svg>
               </div>
-  
+
               <div class="reason-element__link-btn-wrapper">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -194,7 +194,7 @@
             </div>
           </div>
 
-          
+
         </div>
 
         <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x3 ">
@@ -225,22 +225,21 @@
 
               <div class="reason-element-active__content-wrapper-text">
                 <p class="r-small__title">{{ $t('features_short_term') }}</p>
-                <p class="r-small__teg"> {{ $t('features_coming_soon') }}</p>
-                <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                <div class="reason-element__text">{{ $t('features_short_term_subtitle') }}</div>
               </div>
 
-             
+
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M45.5544 25.7897L36.5625 34.7815" stroke="#6172F3" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
                   <path d="M12.9609 38.1534L22.1222 47.3147C22.6502 47.8426 23.5021 47.8426 24.0302 47.3147L29.8187 41.5259" stroke="#6172F3" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
                   <path d="M25.3203 37.0281L35.6048 47.3128C36.133 47.8407 36.9872 47.8407 37.5128 47.3128L59.0385 25.7896" stroke="#233457" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
                 </svg>
-  
+
               </div>
             </div>
-  
-  
+
+
             <div class="reason-element-active__border-wrapper">
               <div class="reason-element-active__border-1"></div>
               <div class="reason-element-active__border-2"></div>
@@ -250,7 +249,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                 </svg>
               </div>
-  
+
               <div class="reason-element__link-btn-wrapper">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -258,20 +257,20 @@
               </div>
             </div>
           </div>
-      
+
         </div>
 
         <div class="reasons-sec__small-element reason-element r-small r-small-x4 reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim "  @click="openPopupInfo('large-anim',$event)">
-          
+
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
 
               <div class="reason-element-active__content-wrapper-text">
                 <p class="r-small__title">{{ $t('features_new_york') }}</p>
-                <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                <div class="reason-element__text">{{ $t('features_new_york_subtitle') }}</div>
               </div>
 
-              
+
               <!-- <p class="r-small__teg">Coming soon</p> -->
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -286,11 +285,11 @@
                   <path d="M64.346 62.5106H10.4902" stroke="#233457" stroke-width="3.45" stroke-linecap="square" stroke-linejoin="round"/>
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M14.569 8.82704L17.5754 5.82058L20.5819 8.82704C22.2423 10.4875 22.2423 13.1795 20.5819 14.84V14.84C18.9214 16.5004 16.2294 16.5004 14.569 14.84V14.84C12.9085 13.1795 12.9085 10.4875 14.569 8.82704V8.82704Z" stroke="#233457" stroke-width="3.45" stroke-linecap="square"/>
                 </svg>
-  
+
               </div>
             </div>
-  
-  
+
+
             <div class="reason-element-active__border-wrapper">
               <div class="reason-element-active__border-1"></div>
               <div class="reason-element-active__border-2"></div>
@@ -300,7 +299,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                 </svg>
               </div>
-  
+
               <div class="reason-element__link-btn-wrapper">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -308,20 +307,20 @@
               </div>
             </div>
           </div>
-          
+
 
         </div>
 
         <div class="reasons-sec__small-element reason-element r-small r-small-x5 r-small_black reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
-          
+
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
 
               <div class="reason-element-active__content-wrapper-text">
                 <p class="r-small__title">{{ $t('features_build_in') }}</p>
-                <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                <div class="reason-element__text">{{ $t('features_build_in_subtitle') }}</div>
               </div>
-              
+
               <!-- <p class="r-small__teg">Coming soon</p> -->
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -331,8 +330,8 @@
                 </svg>
               </div>
             </div>
-  
-  
+
+
             <div class="reason-element-active__border-wrapper">
               <div class="reason-element-active__border-1"></div>
               <div class="reason-element-active__border-2"></div>
@@ -342,7 +341,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                 </svg>
               </div>
-  
+
               <div class="reason-element__link-btn-wrapper">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -350,8 +349,8 @@
               </div>
             </div>
           </div>
-          
-          
+
+
 
         </div>
 
@@ -362,10 +361,10 @@
 
               <div class="reason-element-active__content-wrapper-text">
                 <p class="r-small__title">{{ $t('features_export') }}<br>{{ $t('features_reports') }}</p>
-                <div class="reason-element__text">Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.</div>
+                <div class="reason-element__text">{{ $t('features_reports_subtitle') }}</div>
               </div>
 
-              
+
               <!-- <p class="r-small__teg">Coming soon</p> -->
               <div class="r-small__svg-wrapper">
                 <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -375,8 +374,8 @@
                 </svg>
               </div>
             </div>
-  
-  
+
+
             <div class="reason-element-active__border-wrapper">
               <div class="reason-element-active__border-1"></div>
               <div class="reason-element-active__border-2"></div>
@@ -386,7 +385,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.75H72V12.75C72 19.3774 66.6274 24.75 60 24.75H48C34.7452 24.75 24 35.4952 24 48.75V60.7499C24 67.3774 18.6274 72.7499 12 72.7499H0V24.75V20.7499V0.75Z" fill="#F8FAFC"/>
                 </svg>
               </div>
-  
+
               <div class="reason-element__link-btn-wrapper">
                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.83203 14.9168L14.1654 6.5835M14.1654 6.5835H5.83203M14.1654 6.5835V14.9168" stroke="black" stroke-width="2" stroke-linecap="square"/>
@@ -395,7 +394,7 @@
             </div>
           </div>
 
-          
+
 
         </div>
       </div>
@@ -427,7 +426,7 @@ export default {
       console.log(typeAnim)
       console.log(elementOpen)
 
-      
+
 
       if(elementOpen.classList.contains('reason-element__dropdown-active')){
 
@@ -447,7 +446,7 @@ export default {
         elementOpen.classList.add('reason-element__dropdown-active')
         elementOpen.classList.remove('reason-element__dropdown-revers')
       }
-      
+
 
       // let title = this.t('features_'+tag+'_title')
       // let subtitle = this.t('features_'+tag+'_subtitle')

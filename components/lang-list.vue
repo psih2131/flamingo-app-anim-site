@@ -8,7 +8,7 @@
             </div>
 
             <div class="lang-list__wrapper" @mouseenter="show = true" @mouseleave="show = false">
-                <p  class="lang-list__drop-down-list-element-active">{{activLang.toUpperCase()}}</p>
+                <p  class="lang-list__drop-down-list-element-active">{{ activLang.toUpperCase() }}</p>
 
                 <transition name="slide-fade">
                 <div v-if="show" class="lang-list__drop-down-list-fixed-wrapper">

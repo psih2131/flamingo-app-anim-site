@@ -17,29 +17,29 @@
                 <nav class="footer__top-nav">
                     <ul class="footer__top-nav-list">
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/#ourUsers" class="footer__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/#ourUsers')" class="footer__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch to="/legal" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
+                          <nuxt-link no-prefetch :to="localePath('/legal')" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/#Features" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/#Features')" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch to="/terms-of-use" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
+                          <nuxt-link no-prefetch :to="localePath('/terms-of-use')" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/" class="footer__nav-element-link">{{ $t('security') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/#Security')" class="footer__nav-element-link">{{ $t('security') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/contact-us" class="footer__nav-element-link">{{ $t('contact_support_link') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/contact-us')" class="footer__nav-element-link">{{ $t('contact_support_link') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch to="/blog" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
+                          <nuxt-link no-prefetch :to="localePath('/blog')" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
                         </li>
                         <li class="footer__top-nav-list-element"></li>
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch to="/#Faq" class="footer__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/#Faq')" class="footer__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
                         </li>
                     </ul>
                 </nav>

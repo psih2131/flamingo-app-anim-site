@@ -2,27 +2,27 @@
     <header class="header header-home" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }">
         <div class="container">
             <div class="header__logo-wrapper">
-                <nuxt-link no-prefetch to="/" class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></nuxt-link>
+                <nuxt-link no-prefetch :to="localePath('/')"  class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></nuxt-link>
             </div>
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">
                     <li  class="header__nav-element">
-                        <a  href="/#ourUsers" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
+                        <a  :href="localePath('/#ourUsers')" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
                     </li>
 
                     <li  class="header__nav-element">
-                        <a  href="/#Features" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">{{ $t('features') }}</a>
+                        <a  :href="localePath('/#Features')" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">{{ $t('features') }}</a>
                     </li>
 
                     <li  class="header__nav-element">
-                        <a  href="/#Security" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
+                        <a  :href="localePath('/#Security')" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
                     </li>
                   <li  class="header__nav-element">
-                    <a  href="/#Faq" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
+                    <a  :href="localePath('/#Faq')" class="header__nav-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
                   </li>
 
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/blog" class="header__nav-element-link">{{ $t('blog') }}</nuxt-link>
+                        <nuxt-link no-prefetch :to="localePath('/blog')" class="header__nav-element-link">{{ $t('blog') }}</nuxt-link>
                     </li>
 
                 </ul>
@@ -64,23 +64,23 @@
                         <ul class="mob-meny__nav-list">
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  href="/#ourUsers" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
+                                <a  :href="localePath('/#ourUsers')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  href="/#Features" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">{{ $t('features') }}</a>
+                                <a  :href="localePath('/#Features')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">{{ $t('features') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  href="/#Security" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
+                                <a :href="localePath('/#Security')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                              <a  href="/#Faq" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
+                              <a  :href="localePath('/#Faq')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
                             </li>
 
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link">{{ $t('blog') }}</nuxt-link>
+                                <nuxt-link @click="mobMenyStatus = false" no-prefetch :to="localePath('/blog')" class="mob-meny__nav-list-element-link">{{ $t('blog') }}</nuxt-link>
                             </li>
 
                         </ul>

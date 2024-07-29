@@ -1,31 +1,31 @@
 <template>
-    <header class="header header-for-all-pages" 
+    <header class="header header-for-all-pages"
     :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }"
     >
         <div class="container">
             <div class="header__logo-wrapper">
-                <nuxt-link no-prefetch to="/" class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></nuxt-link>
+                <nuxt-link no-prefetch :to="localePath('/')"  class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></nuxt-link>
             </div>
             <nav class="header__nav-wrapper">
                 <ul class="header__nav-list">
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#ourUsers" class="header__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
+                        <nuxt-link no-prefetch :to="localePath('/#ourUsers')" class="header__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                     </li>
 
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#Features" class="header__nav-element-link">{{ $t('features') }}</nuxt-link>
+                        <nuxt-link no-prefetch :to="localePath('/#Features')" class="header__nav-element-link">{{ $t('features') }}</nuxt-link>
                     </li>
 
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/#Security" class="header__nav-element-link">{{ $t('security') }}</nuxt-link>
+                        <nuxt-link no-prefetch  :to="localePath('/#Security')"  class="header__nav-element-link">{{ $t('security') }}</nuxt-link>
                     </li>
 
                   <li class="header__nav-element">
-                    <nuxt-link no-prefetch to="/#Faq" class="header__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
+                    <nuxt-link no-prefetch :to="localePath('/#Faq')" class="header__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
                   </li>
 
                     <li class="header__nav-element">
-                        <nuxt-link no-prefetch to="/blog" class="header__nav-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
+                        <nuxt-link no-prefetch :to="localePath('/blog')" class="header__nav-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
                     </li>
 
                 </ul>
@@ -66,19 +66,19 @@
                     <div class="container">
                         <ul class="mob-meny__nav-list">
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/#ourUsers" class="mob-meny__nav-list-element-link">{{ $t('ourusers') }}</nuxt-link>
+                                <nuxt-link @click="mobMenyStatus = false" no-prefetch :to="localePath('/#ourUsers')" class="mob-meny__nav-list-element-link">{{ $t('ourusers') }}</nuxt-link>
                             </li>
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link no-prefetch to="/#Features" class="mob-meny__nav-list-element-link">{{ $t('features') }}</nuxt-link>
+                                <nuxt-link no-prefetch :to="localePath('/#Features')" class="mob-meny__nav-list-element-link">{{ $t('features') }}</nuxt-link>
                             </li>
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link no-prefetch to="/#Security" class="mob-meny__nav-list-element-link">{{ $t('security') }}</nuxt-link>
+                                <nuxt-link no-prefetch :to="localePath('/#Security')"  class="mob-meny__nav-list-element-link">{{ $t('security') }}</nuxt-link>
                             </li>
                           <li class="mob-meny__nav-list-element">
-                            <nuxt-link no-prefetch to="/#Faq" class="mob-meny__nav-list-element-link">{{ $t('faq_short') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/#Faq')" class="mob-meny__nav-list-element-link">{{ $t('faq_short') }}</nuxt-link>
                           </li>
                             <li class="mob-meny__nav-list-element">
-                                <nuxt-link @click="mobMenyStatus = false" no-prefetch to="/blog" class="mob-meny__nav-list-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
+                                <nuxt-link @click="mobMenyStatus = false" no-prefetch :to="localePath('/blog')" class="mob-meny__nav-list-element-link" :class="{'router-link-active': $route.path.includes('/blog')}">{{ $t('blog') }}</nuxt-link>
                             </li>
 
                         </ul>
@@ -114,10 +114,6 @@
 
 
 </template>
-<script setup>
-const { locale, setLocale } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-</script>
 <script>
 import component__lang_list from '@/components/lang-list.vue'
 

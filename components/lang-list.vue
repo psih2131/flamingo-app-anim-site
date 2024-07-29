@@ -60,15 +60,6 @@
     </div>
 
 </template>
-
-<script setup>
-const { locale, locales, setLocale } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-
-const availableLocales = computed(() => {
-  return (locales.value).filter(i => i.code !== locale.value)
-})
-</script>
 <script>
 export default {
     data() {
@@ -76,7 +67,10 @@ export default {
             show: false,
             langList: [
                 { langSlug: 'EN', langName: 'English' },
-                { langSlug: 'FR', langName: 'Français' },
+                { langSlug: 'AR', langName: ' العربية' },
+                { langSlug: 'CN', langName: '中文' },
+                { langSlug: 'SP', langName: 'Español' },
+                { langSlug: 'PT', langName: 'Português' }
             ],
             activLang: '',
             mobStatus: false,
@@ -86,7 +80,6 @@ export default {
         selectLang(langSlug) {
             this.activLang = langSlug;
             this.show = false;
-
         },
 
         updateContainerClass() {
@@ -97,8 +90,23 @@ export default {
         }
         }
     },
+    setup() {
+      const { locale, locales, setLocale } = useI18n()
+      const availableLocales = computed(() => {
+        return (locales.value).filter(i => i.code !== locale.value)
+      })
+
+      return {
+        locale,
+        locales,
+        setLocale,
+        availableLocales
+      }
+    },
     mounted() {
-        this.activLang = this.langList[0].langSlug;
+        console.log(this.locale);
+
+        this.activLang = (this.locale)?this.locale:this.langList[0].langSlug;
         this.updateContainerClass()
         window.addEventListener('resize', this.updateContainerClass)
     },

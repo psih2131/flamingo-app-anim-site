@@ -37,12 +37,12 @@
                           :key="tagId"
                           :set="foundTag[tagId] = tags.find(t => t.id === tagId)"
                           :style="{'color':'#' + foundTag[tagId].text_color, 'border-color':'#' + foundTag[tagId].border_color}"
-                          :to="`/blog/tag/${foundTag[tagId].id}`"
+                          :to="`${localePath()}/tag/${foundTag[tagId].id}`"
                         >{{ foundTag[tagId].title }}</nuxt-link>
                     </div>
 
                     <div class="post-btn-row">
-                        <nuxt-link no-prefetch to="/blog" class="post-btn-row__btn">
+                        <nuxt-link no-prefetch :to="localePath('/blog')" class="post-btn-row__btn">
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.5 14L4.5 9M4.5 9L9.5 4M4.5 9H10.9C14.2603 9 15.9405 9 17.2239 9.65396C18.3529 10.2292 19.2708 11.1471 19.846 12.2761C20.5 13.5595 20.5 15.2397 20.5 18.6V20" stroke="#4C9BB6" stroke-width="2" stroke-linecap="square"/>
                             </svg>
@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="related-posts__btn-wrapper">
-                        <nuxt-link no-prefetch to="/blog" class="btnV1">
+                        <nuxt-link no-prefetch :to="localePath('/blog')" class="btnV1">
                             {{ $t("blog_view_all") }}
                         </nuxt-link>
 

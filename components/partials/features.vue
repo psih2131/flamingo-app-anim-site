@@ -143,7 +143,7 @@
               <div class="r-tax__text-wrapper">
 
                 <div class="reason-element-active__content-wrapper-text">
-                  <p class="r-small__title">{{ $t('features_tax') }} <span><br></span> {{ $t('features_residency') }}<span><br></span> {{ $t('features_assessment') }}</p>
+                  <p class="r-small__title">{{ $t('features_tax') }} <span><br></span> {{ $t('features_tax_residency') }}<span><br></span> {{ $t('features_assessment') }}</p>
                   <p class="r-small__teg">{{ $t('features_coming_soon') }}</p>
                   <div class="reason-element__text">{{ $t('features_tax_subtitle') }}</div>
                 </div>

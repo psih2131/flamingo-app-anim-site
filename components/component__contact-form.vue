@@ -22,11 +22,11 @@
 
 
         <!-- custom select component for phone model data -->
-        <component__custom_select :translateText="'contact_model'" :optionList="phone" @selectDataSend="emitSelectDataPhone" />
+        <component__custom_select :translateText="'contact_model'" :optionList="phone" @selectDataSend="emitSelectDataPhone" :translateDefault="'contact_select_model'" />
 
 
         <!-- custom select component for ios version data -->
-        <component__custom_select :translateText="'contact_version'" :optionList="ios" @selectDataSend="emitSelectDataIos" />
+        <component__custom_select :translateText="'contact_version'" :optionList="ios" @selectDataSend="emitSelectDataIos" :translateDefault="'contact_select_version'" />
 
 
         <!-- textarea message field -->

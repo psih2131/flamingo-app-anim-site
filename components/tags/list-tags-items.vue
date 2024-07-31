@@ -2,12 +2,12 @@
 
   <ul class="blog-sec__nav">
     <li class="blog-sec__nav-element">
-      <nuxt-link :to="'/blog'" class="blog-sec__nav-link" :class="{'blog-sec__nav-link_active': (null == currentTag)}">Recent</nuxt-link>
+      <nuxt-link :to="localePath('/blog')" class="blog-sec__nav-link" :class="{'blog-sec__nav-link_active': (null == currentTag)}">Recent</nuxt-link>
     </li>
     <li class="blog-sec__nav-element" v-for="item in tags" :key="item.id">
       <nuxt-link
           v-if="item.is_in_menu" 
-          :to="`/blog/tag/${item.id}`" 
+          :to="`${localePath('/blog/tag')}/${item.id}`" 
           class="blog-sec__nav-link"  
           :class="{'blog-sec__nav-link_active' :(item.id == currentTag)}"
         >{{ item.title }}

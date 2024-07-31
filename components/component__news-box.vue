@@ -1,6 +1,6 @@
 <template>
   <div class="news-box">
-    <nuxt-link :to="pageUrl" class="news-box__img-wrapper">
+    <nuxt-link :to="localePath(pageUrl)" class="news-box__img-wrapper">
         <!-- todo: clenup temp images -->
         <img v-if="post.hero_image_url.length > 10" :src="post.hero_image_url" alt="" class="news-box__img">
         <img v-else src="@/assets/images/img-5.jpg" alt="" class="news-box__img">
@@ -8,7 +8,7 @@
     <div class="news-box__info">
         <p class="news-box__date">{{ getDateParsed }}</p>
         <h3 class="news-box__title">
-            <nuxt-link :to="pageUrl" class="news-box__title-link">
+            <nuxt-link :to="localePath(pageUrl)" class="news-box__title-link">
                 {{ post.title }}
                 <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.3335 21L17.3335 11M17.3335 11H7.3335M17.3335 11V21" stroke="#121926" stroke-width="2" stroke-linecap="square"/>
@@ -22,7 +22,7 @@
                   :key="tagId"
                   :set="foundTag[tagId] = tags.find(t => t.id === tagId)"
                   :style="{'border-color':'#' + foundTag[tagId].border_color, 'color':'#' + foundTag[tagId].text_color}"
-                  :to="`/blog/tag/${foundTag[tagId].id}`"
+                  :to="`${localePath('/blog')}/tag/${foundTag[tagId].id}`"
                   :data-title="foundTag[tagId].title"
                 >{{ foundTag[tagId].title }}
             </nuxt-link>
@@ -55,9 +55,9 @@ export default {
 
 
     methods: {
-        goTo(postId){
-            this.$router.push('/blog/' + postId)
-        }
+        // goTo(postId){
+        //     this.$router.push('/blog/' + postId)
+        // }
     },
 
     computed: {
@@ -72,7 +72,7 @@ export default {
     },
 
     mounted(){
-
+        console.log(this.pageUrl)
     },
 
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="blog-sec__pagination-row pagination">
 
-    <NuxtLink :to="`/blog/page-${prevPage}`"  class="pagination__arrow-link pagination__arrow-link-prev" :style="{visibility: `${ currentPage == 1 ? 'hidden' : 'visible' }`}">
+    <NuxtLink :to="`${localePath()}/page-${prevPage}`"  class="pagination__arrow-link pagination__arrow-link-prev" :style="{visibility: `${ currentPage == 1 ? 'hidden' : 'visible' }`}">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M15.8327 9.99935H4.16602M4.16602 9.99935L9.99935 15.8327M4.16602 9.99935L9.99935 4.16602" stroke="#4B5565" stroke-width="1.66667" stroke-linecap="square"/>
       </svg>
@@ -9,7 +9,7 @@
     </NuxtLink>
 
     <div class="pagination__nambers-row" >
-      <NuxtLink v-for="n in parseInt(totalPages)" :key="n"  :to="`/blog/page-${n}`" class="pagination__number" :class="{'pagination__number_active':(currentPage == n)}">
+      <NuxtLink v-for="n in parseInt(totalPages)" :key="n"  :to="`${localePath()}/page-${n}`" class="pagination__number" :class="{'pagination__number_active':(currentPage == n)}">
         {{n}}
       </NuxtLink>
     </div>
@@ -17,7 +17,7 @@
     <div class="pagination__numbers-mob">Page <b>{{ currentPage }}</b> of <b>{{totalPages}}</b></div>
 
 
-    <NuxtLink :to="`/blog/page-${nextPage}`" class="pagination__arrow-link pagination__arrow-link-next" :style="{visibility: `${ currentPage == totalPages ? 'hidden' : 'visible' }`}">
+    <NuxtLink :to="`${localePath()}/page-${nextPage}`" class="pagination__arrow-link pagination__arrow-link-next" :style="{visibility: `${ currentPage == totalPages ? 'hidden' : 'visible' }`}">
       <span>{{ $t('pagination_next') }}</span>
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4.16602 9.99984H15.8327M15.8327 9.99984L9.99935 4.1665M15.8327 9.99984L9.99935 15.8332" stroke="#4B5565" stroke-width="1.66667" stroke-linecap="square"/>

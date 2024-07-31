@@ -37,7 +37,7 @@
 
 
         <!-- input type file START -->
-        <div class="form__file-wrapper form-file">
+        <div class="form__file-wrapper form-file" ref="onDropZone">
           <div class="form-file__button-load">
             <input hidden name="file" type="file" id="field__file-1" @change="fileCheck($event)" class="form-file__input" multiple accept=".svg,.png,.jpg,.gif">
             <label class="form-file__input-label input-label" for="field__file-1">
@@ -55,10 +55,8 @@
 
             </label>
           </div>
-
-          <div v-if="loadedFielWrapperStatus" class="form-file__loaded-file-list">
-
-            <div v-for="(item, index) in loadedFileList" :key="index"
+          <div v-show="filesData?.length > 0" class="form-file__loaded-file-list">
+            <div v-for="(item, index) in filesData" :key="index"
              class="form-file__loaded-element file-loaded-element"
              >
               <div class="file-loaded-element__header">
@@ -120,9 +118,12 @@
 
     </div>
 </template>
+<script setup>
 
+</script>
 <script>
 import { useVuelidate } from '@vuelidate/core'
+import { useDropZone } from '@vueuse/core';
 import { required, email } from '@vuelidate/validators'
 import axios from 'axios'
 
@@ -130,9 +131,18 @@ import component__custom_select from '@/components/component__custom-select.vue'
 import component__input from '@/components/component__input.vue'
 import component__drag_and_drop_file from '@/components/component__drag-and-drop-file.vue'
 
+
 export default {
   setup () {
-    return { v$: useVuelidate() }
+    let loadedFileWrapper = false;
+    const filesData = ref([]);
+    const onDropZone  = ref(null);
+    const { files } = useDropZone(onDropZone, { onDrop })
+    function onDrop(){
+      //console.log(files.value);
+      filesData.value = files.value;
+    }
+    return {  onDropZone, filesData, v$: useVuelidate() }
   },
   data() {
     return {
@@ -322,12 +332,16 @@ export default {
 
       textErrorStatus: false,
 
-      loadedFielWrapperStatus: false,
-      loadedFileList: [],
+      loadedFileWrapperStatus: false,
 
       btnSendLoadingStatus: false,
     }
   },
+
+  mounted(){
+
+  },
+
   validations () {
     return {
       form: {
@@ -346,21 +360,14 @@ export default {
     component__drag_and_drop_file
   },
   methods: {
-    //file load script
+       //file load script
     fileCheck(event){
-      this.loadedFileList = Array.from(event.target.files)
-
-      if(this.loadedFileList && this.loadedFileList.length > 0){
-        this.loadedFielWrapperStatus = true
-      }
-      else{
-        this.loadedFielWrapperStatus = false
-      }
+      this.filesData = Array.from(event.target.files)
     },
 
     //remove loaded file
     removeFile(index){
-      this.loadedFileList.splice(index, 1);
+      this.filesData.splice(index, 1);
     },
 
     //file size convert from bite to MB
@@ -422,7 +429,7 @@ Message: ${this.form.message ? this.form.message : '----'}`
 
         bodyFormData.append('message', message);
         bodyFormData.append('email', this.form.email);
-        this.loadedFileList?.forEach(f => {
+        this.filesData?.forEach(f => {
           bodyFormData.append('file', f);
         });
 
@@ -459,12 +466,11 @@ Message: ${this.form.message ? this.form.message : '----'}`
   },
 
   watch: {
+    // filesData: function(newVal, oldVal) { // watch it
+    //   console.log('Prop changed: ', newVal, ' | was: ', oldVal)
+    // }
+  }
 
-  },
-
-  mounted(){
-
-  },
 
 }
 </script>

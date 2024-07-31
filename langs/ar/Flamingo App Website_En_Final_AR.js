@@ -61,7 +61,7 @@ export default {
     features_store_text: "",
 
     features_residency : "الإقامة",
-
+    features_tax_residency : "الإقامة",
     features_dom_status : "حالة الإقامة",
 
     features_dom_text : "سواء كنت تسعى إلى إثبات أو الحفاظ على أو تجنب وضع الإقامة أو الإقامة الضريبية، فإن Flamingo يلبي احتياجاتك. قم بتحديد مستوى وفترة زمنية لتتبع ومراقبة وجودك الفعلي في الدولة أو الولاية الأمريكية. ",

@@ -61,6 +61,7 @@ export default {
     features_store_text: "",
 
     features_residency : "Residência",
+    features_tax_residency : "Residência",
 
     features_dom_status : "Estatuto de Domicílio",
 

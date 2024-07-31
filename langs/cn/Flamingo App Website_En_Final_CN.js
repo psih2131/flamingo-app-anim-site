@@ -61,7 +61,7 @@ export default {
     features_store_text: "",
 
     features_residency : "居留",
-
+    features_tax_residency : "居留",
     features_dom_status : "居住地状态",
 
     features_dom_text : "无论您是想获得、维持还是避免居住地或居留身份，Flamingo都能为您提供支持。设置一个阈值和跟踪期，并监控您身处该国或美国各州的情况。",

@@ -165,7 +165,7 @@ export default {
 
     error_text: "Algo correu mal. Por favor, tente novamente.",
     error_try: "Tente Novamente",
-    error_email: "Por favor, introduza o seu endereço de e-mail no formato correto: oseunome@empresa.com",
+    error_email: "Por favor, introduza o seu endereço de e-mail no formato correto: {'oseunome@empresa.com'}",
     error_name: "Por favor, introduza o seu nome",
     to_upload : "Clique aqui",
     or_drop: "ou arraste e largue para carregar ficheiros",

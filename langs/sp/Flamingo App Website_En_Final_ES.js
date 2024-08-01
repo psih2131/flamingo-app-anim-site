@@ -21,7 +21,7 @@ export default {
     pagination_next: "Siguiente",
 
     download : "Descarga",
-    download_now : "Flamingo Ahora",
+    download_now : "Flamingo ahora",
     download_text : "Una herramienta esencial para expatriados, residentes permanentes, residentes en dos estados y viajeros frecuentes.",
 
     faq : "Preguntas más frecuentes",
@@ -107,8 +107,8 @@ export default {
     how_important : "Notificaciones",
     how_notifications : "importantes",
     how_notify_text : "Flamingo te avisa cuando alcanzas el umbral de residencia, los límites de estancia sin visado o las fechas de caducidad del visado, para ayudarte a evitar problemas con las autoridades.",
-    how_privacy : "Privacidad",
-    how_complete: "Completo",
+    how_privacy : "Completa",
+    how_complete: "privacidad",
     how_complete_text : "Tus datos de viaje, residencia y visado se almacenan localmente solo en tu dispositivo. No recopilamos, ni almacenamos, tu información en nuestros servidores. ",
     how_complete_text2 : "*Con Flamingo PRO puedes sincronizar tus datos a través de iCloud en todos tus dispositivos.",
     how_bank_level  : "Seguridad de datos",
@@ -180,5 +180,7 @@ export default {
 
     page: "Página",
     go_back : "Volver"
+
+
 
 }

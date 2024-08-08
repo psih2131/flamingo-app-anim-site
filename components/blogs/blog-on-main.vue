@@ -33,7 +33,7 @@
 
     <div class="related-posts__btn-wrapper-mob">
       <div class="container">
-        <nuxt-link no-prefetch to="/blog" class="btnV1">
+        <nuxt-link no-prefetch :to="localePath('/blog')" class="btnV1">
           {{ $t('blog_view_all') }}
         </nuxt-link>
       </div>

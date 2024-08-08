@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="footer__top-info">
 
-                    <nuxt-link no-prefetch to="/" class="footer__logo">
+                    <nuxt-link no-prefetch :to="localePath('/')" class="footer__logo">
                         <img src="@/assets/images/logo.png" alt="" class="footer__logo-img">
                     </nuxt-link>
 

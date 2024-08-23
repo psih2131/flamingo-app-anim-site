@@ -586,7 +586,7 @@ export default {
                 "Slovenia": "SI",
                 "Spain": "ES",
                 "Sweden": "SE",
-                "Switzerland": "SZ"
+                "Switzerland": "CH"
             }
             let tpl = {
                 "id":"00000000-E6A3-4FAE-A19F-B5A5B14339B1",

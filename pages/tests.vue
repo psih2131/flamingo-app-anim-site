@@ -2,7 +2,7 @@
     <main class="main legal-main">
         <div class="container">
             <div>
-                <h1>Tests</h1>
+                <h1>Tests</h1><small>v0.1.2</small>
                 <div>current as of {{ $dayjs().utc().format('DD/MM/YYYY') }}</div>
             </div>
 
@@ -112,8 +112,17 @@ export default {
         const foundEnterDays = ref([]);
         const foundEnterDate = ref([]);
         const dayjs = useDayjs();
+        const VERBOSE = 1;
         const tests = [
             {
+                // name: '0. 70 in the beginning, 1 segment',
+                // segments: [
+                //     {
+                //         countryName: 'Spain',
+                //         days: 70,
+                //         daysFromStart180Period: 108
+                //     }
+                // ]
                 name: '1. 90 in the beginning, 1 segment',
                 segments: [
                     {
@@ -362,8 +371,8 @@ export default {
             }
         }
         
-        console.log('+++++++++++++');
-        console.time();
+        if (VERBOSE > 0) console.log('+++++++++++++');
+        if (VERBOSE > 0) console.time();
         let _today = dayjs().utc().hour(0).minute(0).second(0).format('YYYY-MM-DD');
         // prepare daysMap AND mark all daysInCountry
         for (let i = 0; i < tests.length; i++) {
@@ -387,7 +396,7 @@ export default {
 
                 ticks++;
             }
-            console.timeLog(undefined, i + 1, 'test: prepare daysMap finished');
+            if (VERBOSE > 1) console.timeLog(undefined, i + 1, 'test: prepare daysMap finished');
 
             //calculate arival/departureDate AND mark all daysInCountry on daysMap
             for (let j = 0; j < test.segments.length; j++) {
@@ -405,7 +414,7 @@ export default {
                     ticks++;
                 }
             }
-            console.timeLog(undefined, i + 1, 'test: calculate arival/departureDate AND mark all daysInCountry on daysMap finished');
+            if (VERBOSE > 1) console.timeLog(undefined, i + 1, 'test: calculate arival/departureDate AND mark all daysInCountry on daysMap finished');
 
             //calculate daysInSchengen and remainingDays for test
             _d = dayjs().utc().hour(0).minute(0).second(0);
@@ -418,7 +427,7 @@ export default {
                     let key = _d.utc().subtract(k, 'days').format('YYYY-MM-DD');
                     if (test.daysMap[key] && test.daysMap[key].daysQty === 1) {
                         daysInSchengen += 1;
-                        daysInSchengenPlusFuture +=1;
+                        if (!test.daysMap[key].isToday) daysInSchengenPlusFuture +=1;
                     }
 
                     if (test.daysMap[key] && test.daysMap[key].isTodayPlus) {
@@ -446,7 +455,7 @@ export default {
                 }
                 _d = _d.add(1, 'days');
             }
-            console.timeLog(undefined, i + 1, 'test: calculate daysInSchengen and remainingDays for test finished');
+            if (VERBOSE > 1) console.timeLog(undefined, i + 1, 'test: calculate daysInSchengen and remainingDays for test finished');
 
             // if never overflow 90days
             if (remaining === -1) {
@@ -487,7 +496,7 @@ export default {
                 }
                 _d = _d.add(1, 'days');
             }
-            console.timeLog(undefined, i + 1, 'test: calculate for every day in future how many days available to stay in schengen area');
+            if (VERBOSE > 1) console.timeLog(undefined, i + 1, 'test: calculate for every day in future how many days available to stay in schengen area');
 
             // find first entrance date if today remainingDays = 0
             // if (test.remainingDays === 0) {
@@ -535,13 +544,13 @@ export default {
                 test.remainingDateInFuture = remainingDateInFuture;
                 test.remainingDaysQtyInFuture = remainingDaysQtyInFuture;
             }
-            console.timeLog(undefined, i + 1, 'test: find first entrance date if today remainingDays = 0');
+            if (VERBOSE > 1) console.timeLog(undefined, i + 1, 'test: find first entrance date if today remainingDays = 0');
 
             test.ticks = ticks;
-            console.timeLog(undefined, i + 1, 'test FINISHED');
-            console.log('-------------');
+            if (VERBOSE > 0) console.timeLog(undefined, i + 1, 'test FINISHED');
+            if (VERBOSE > 0) console.log('-------------');
         }
-        console.timeEnd();
+        if (VERBOSE > 0) console.timeEnd();
 
         return {
             tests,
@@ -617,7 +626,7 @@ export default {
                 _tpl.countryCode = countryCode[seg.countryName];
                 t.travels.push(_tpl);
             }
-            this.saveTextAsFile(JSON.stringify(t),`${dayjs().format('YYYYMMDD_HHmm')}_test_${testNumber}.json`);
+            this.saveTextAsFile(JSON.stringify(t),`test_${testNumber}_${dayjs().format('YYYYMMDD_HHmm')}.json`);
         },
         saveTextAsFile(textToWrite, fileNameToSaveAs) {
             var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'}); 
@@ -689,6 +698,10 @@ export default {
     }
     body::-webkit-scrollbar {
         width: 10pt;
+    }
+    h1 {
+        margin-right: 2pt;
+        display: inline-block;
     }
     h4 {
         margin-top: 20pt;

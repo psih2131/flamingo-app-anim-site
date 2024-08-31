@@ -244,6 +244,112 @@ export default {
                 name: '19. 88 days, 2 segments, at middle and end',
                 segments: []
             }, {
+                name: '20. Alexis case',
+                segments: [
+                    {
+                        countryName: 'Austria',
+                        days: 11,
+                        daysFromStart180Period: 30,
+                    }, {
+                        countryName: 'France',
+                        days: 2,
+                        daysFromStart180Period: 52,
+                    }, {
+                        countryName: 'Germany',
+                        days: 1,
+                        daysFromStart180Period: 54,
+                    }, {
+                        countryName: 'Netherlands',
+                        days: 2,
+                        daysFromStart180Period: 55,
+                    }, {
+                        countryName: 'Spain',
+                        days: 5,
+                        daysFromStart180Period: 57,
+                    }, {
+                        countryName: 'Poland',
+                        days: 3,
+                        daysFromStart180Period: 93,
+                    }, {
+                        countryName: 'Czech',
+                        days: 2,
+                        daysFromStart180Period: 98,
+                    }, {
+                        countryName: 'Switzerland',
+                        days: 3,
+                        daysFromStart180Period: 100,
+                    }, {
+                        countryName: 'France',
+                        days: 2,
+                        daysFromStart180Period: 114,
+                    }, {
+                        countryName: 'Netherlands',
+                        days: 2,
+                        daysFromStart180Period: 116,
+                    }, {
+                        countryName: 'France',
+                        days: 6,
+                        daysFromStart180Period: 118,
+                    }, {
+                        countryName: 'Spain',
+                        days: 5,
+                        daysFromStart180Period: 124,
+                    }, {
+                        countryName: 'France',
+                        days: 3,
+                        daysFromStart180Period: 129,
+                    }, {
+                        countryName: 'Germany',
+                        days: 3,
+                        daysFromStart180Period: 136,
+                    }, {
+                        countryName: 'Finland',
+                        days: 4,
+                        daysFromStart180Period: 142,
+                    }, {
+                        countryName: 'Belgium',
+                        days: 4,
+                        daysFromStart180Period: 155,
+                    }, {
+                        countryName: 'Danmark',
+                        days: 1,
+                        daysFromStart180Period: 159,
+                    }, {
+                        countryName: 'Finland, Estonia',
+                        days: 1,
+                        daysFromStart180Period: 164,
+                    }, {
+                        countryName: 'Estonia',
+                        days: 1,
+                        daysFromStart180Period: 165,
+                    }, {
+                        countryName: 'Estinia, Latvia',
+                        days: 1,
+                        daysFromStart180Period: 166,
+                    }, {
+                        countryName: 'Latvia',
+                        days: 1,
+                        daysFromStart180Period: 167,
+                    }, {
+                        countryName: 'Spain',
+                        days: 3,
+                        daysFromStart180Period: 177,
+                    }
+                ]
+            }, {
+                name: '21. Simplified Alexis case',
+                segments: [
+                    {
+                        countryName: 'Spain',
+                        days: 75,
+                        daysFromStart180Period: 4
+                    }, {
+                        countryName: 'Belgium',
+                        days: 10,
+                        daysFromStart180Period: 170
+                    }
+                ]
+            }, {
                 name: 'n+1. 1 day at 1 day intervals 90 segments',
                 segments: [
                     {

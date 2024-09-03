@@ -271,7 +271,7 @@ export default {
                         days: 3,
                         daysFromStart180Period: 93,
                     }, {
-                        countryName: 'Czech',
+                        countryName: 'Czech Republic',
                         days: 2,
                         daysFromStart180Period: 98,
                     }, {
@@ -311,7 +311,7 @@ export default {
                         days: 4,
                         daysFromStart180Period: 155,
                     }, {
-                        countryName: 'Danmark',
+                        countryName: 'Denmark',
                         days: 1,
                         daysFromStart180Period: 159,
                     }, {
@@ -323,7 +323,7 @@ export default {
                         days: 1,
                         daysFromStart180Period: 165,
                     }, {
-                        countryName: 'Estinia, Latvia',
+                        countryName: 'Estonia, Latvia',
                         days: 1,
                         daysFromStart180Period: 166,
                     }, {
@@ -701,7 +701,9 @@ export default {
                 "Slovenia": "SI",
                 "Spain": "ES",
                 "Sweden": "SE",
-                "Switzerland": "CH"
+                "Switzerland": "CH",
+                "Finland, Estonia": "FI",
+                "Estonia, Latvia": "EE"
             }
             let tpl = {
                 "id":"00000000-E6A3-4FAE-A19F-B5A5B14339B1",
@@ -729,7 +731,7 @@ export default {
                 _tpl.arrivalDateString = dayjs(seg.arivalDate).utc().format('DD.MM.YYYY HH:mm');
                 _tpl.departureDateString = dayjs(seg.departureDate).utc().format('DD.MM.YYYY HH:mm');
                 _tpl.localDate = dayjs(seg.arivalDate).utc().toJSON();
-                _tpl.countryCode = countryCode[seg.countryName];
+                _tpl.countryCode = countryCode[seg.countryName] || 'EE';
                 t.travels.push(_tpl);
             }
             this.saveTextAsFile(JSON.stringify(t),`test_${testNumber}_${dayjs().format('YYYYMMDD_HHmm')}.json`);

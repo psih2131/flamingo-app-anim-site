@@ -1,8 +1,8 @@
 import pg from 'pg';
 let connectionString = null;
 
-if (process.env.HEROKU_POSTGRESQL_BRONZE_URL) {
-    connectionString = process.env.HEROKU_POSTGRESQL_BRONZE_URL || '';
+if (process.env.DATABASE_URL) {
+    connectionString = process.env.DATABASE_URL || '';
 } else {
     console.log( {"ok":false,"error":"env variables fail"} );
     process.exit(1);

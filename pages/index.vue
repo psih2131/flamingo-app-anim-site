@@ -1,8 +1,8 @@
 <template>
     <main class="main home-main">
-        <section class="home-front-sec">
-            <div class="home-front-sec__container"></div>
-        </section>
+    
+        
+        <component__front_sec />
 
         <section class="who-needs-sec" id="ourUsers">
             <div class="container">
@@ -93,6 +93,7 @@ definePageMeta({
 })
 
 import component__reason_popup from '@/components/component__reason-popup.vue'
+import component__front_sec from '@/components/component__front-sec.vue'
 
 
 export default {
@@ -110,6 +111,7 @@ export default {
 
     components: {
         component__reason_popup,
+        component__front_sec,
     },
 
 

@@ -62,7 +62,7 @@ export default {
     features_store_text: "",
 
     features_residency : "Residency",
-
+    features_tax_residency : "Residency",
     features_dom_status : "Domicile Status",
 
     features_dom_text : "Whether you’re looking to establish, maintain or avoid a domicile or residency status, Flamingo got you covered. Set up a threshold and tracking period and monitor your physical presence in the country or US state. ",

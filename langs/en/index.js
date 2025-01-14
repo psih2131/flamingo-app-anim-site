@@ -61,11 +61,11 @@ export default {
     features_store_text: "",
 
     features_residency : "Residency",
-
     features_dom_status : "Domicile Status",
 
     features_dom_text : "Whether you’re looking to establish, maintain or avoid a domicile or residency status, Flamingo got you covered. Set up a threshold and tracking period and monitor your physical presence in the country or US state. ",
     features_tax :"Tax",
+    features_tax_residency : "Residency",
     features_tax_title: "Tax Residency Assessment",
     features_tax_subtitle: "Flamingo automatically determines the likelihood of your acquiring a tax residency status in most countries, US states and cities based on international tax rules. The tax residency assessment is based on physical presence, as well as additional criteria commonly used by local authorities, such as your income, property, and family ties.",
     features_tax_text: "",

@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['dayjs-nuxt', "@nuxt/image", "@nuxtjs/i18n"],
+  modules: ['dayjs-nuxt', "@nuxt/image", "@nuxtjs/i18n", '@vueuse/nuxt'],
 
   i18n: {
     vueI18n: './langs/i18n.config.ts',

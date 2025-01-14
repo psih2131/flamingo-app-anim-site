@@ -104,8 +104,7 @@ export default {
       }
     },
     mounted() {
-        console.log(this.locale);
-
+        // console.log(this.locale);
         this.activLang = (this.locale)?this.locale:this.langList[0].langSlug;
         this.updateContainerClass()
         window.addEventListener('resize', this.updateContainerClass)

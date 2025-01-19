@@ -1,7 +1,8 @@
 <template>
 
-     <section class="home-front-sec">
+     <section class="home-front-sec" :class="{ 'is-active': isSwiperActive }">
         <swiper
+        ref="swiperRef"
         :direction="'vertical'"
         :mousewheel="true"
         :pagination="{
@@ -11,9 +12,26 @@
         :modules="modules"
         class="home-front-sec-slider"
         @slideChange="swiperData"
+        @swiper="onSwiper"
+        @reachEnd="handleReachEnd"
+        @init="initSwiper"
+
+
+        @scroll="onAttemptBeyondEnd"
+        @progress="onAttemptBeyondEnd"
+        @wheel="onWheel"
+
+        @touchEnd="touchEvent"
+        @touchMove="touchMoveEvent"
+        
+        :allowSlideNext="allowSlide"
+        :allowSlidePrev="allowSlide"
+        @slideChangeTransitionStart="onSlideChange"
+        :controller="{ control: secondSwiper }"
+        
   
         >
-        <swiper-slide class="home-front-sec-slide front-sec-slide-1">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-1 fss-1">
 
             <div class="home-front-sec-slide__wrapper">
 
@@ -101,17 +119,17 @@
                 </div>
             </div>
         </swiper-slide>
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-2 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-2__text-wrapper">
-                        <h2 class="front-sec-slide__title">Your Travels, Simplified 🇺🇸</h2>
+                        <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
                         <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>
                     </div>
                 </div>
             </div>
         </swiper-slide>
-        <swiper-slide class="home-front-sec-slide front-sec-slide-3">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-3 fss-3 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-3__text-wrapper">
@@ -121,18 +139,18 @@
                 </div>
             </div>
         </swiper-slide>
-        <swiper-slide class="home-front-sec-slide front-sec-slide-3">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-3 fss-4 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-3__text-wrapper">
                         <h2 class="front-sec-slide__title">Schengen Calculator</h2>
-                        <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                        <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
                     </div>
                 </div>
             </div>
         </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-5 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-3__text-wrapper">
@@ -153,7 +171,7 @@
             </div>
         </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-6 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-3__text-wrapper">
@@ -174,14 +192,14 @@
             </div>
         </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2">
+        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-7 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-3__text-wrapper">
                         <h2 class="front-sec-slide__title">Passport Index</h2>
                         <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
                         <div class="front-sec-slide__btn-wrapper" :class="{'front-sec-slide__btn-btn_activ': counterActivSlide == 6}">
-                            <a  class="front-sec-slide__btn-btn" >View All Features</a>
+                            <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
                         </div>
                     </div>
                 </div>
@@ -191,10 +209,128 @@
        </swiper>
 
 
+
+
+       <div class="home-front-sec-slider-mob-wrapper" :class="{'home-front-sec-slider-mob-wrapper_activ': counterActivSlide != 0}" >
+        <swiper
+        ref="swiperRefMob"
+       
+        :direction="'vertical'"
+        :mousewheel="true"
+        :free-mode="true"
+        :touchEventsTarget="'container'"
+
+        :speed="700"
+        :modules="modules"
+         @swiper="setSecondSwiper"
+          :controller="{ control: firstSwiper }"
+        class="home-front-sec-slider-mob"
+        >
+        <swiper-slide class="home-front-sec-slide-mob fms-1">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="home-front-sec-slide-mob fms-2">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
+                        <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
+                    </div>
+                   
+                </div>
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="home-front-sec-slide-mob fms-3">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
+                        <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="home-front-sec-slide-mob fms-4">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        <h2 class="front-sec-slide__title">Schengen <br>Calculator</h2>
+                        <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="home-front-sec-slide-mob fms-5">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
+                        <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates.</p>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="home-front-sec-slide-mob fms-6">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        <h2 class="front-sec-slide__title">US Cities <br>Day Count</h2>
+                        <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+
+        <swiper-slide class="home-front-sec-slide-mob fms-7">
+
+            <div class="home-front-sec-slide-mob__wrapper">
+                <div class="home-front-sec-slide-mob__text-container-wrapper">
+                    <div class="home-front-sec-slide-mob__text-container">
+                        <h2 class="front-sec-slide__title">Passport Index</h2>
+                        <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
+
+                        <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
+                    </div>
+                </div>
+            </div>
+        </swiper-slide>
+
+       </swiper>
+
+       </div>
+       
+
+
+
+    <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
+        <div class="home-front-sec__cloud cl1"></div>
+        <div class="home-front-sec__cloud cl2"></div>
+        <div class="home-front-sec__cloud cl3"></div>
+    </div>
+
+
     <div class="home-front-sec__phone-wrapper">
         <div class="home-front-sec__phone" 
         :class="{'home-front-sec__phone_first-load': +counterActivSlide == 0
-        , 'home-front-sec__phone_activs': +counterActivSlide == 1 || +counterActivSlide == 2 || +counterActivSlide == 3 || +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6 }">
+        , 'home-front-sec__phone_activs': +counterActivSlide == 1 || +counterActivSlide == 2 || +counterActivSlide == 3 || +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6,
+    'home-front-sec__phone-left-order': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6  }">
             <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
             <div class="home-front-sec__phone-videos">
                 <div class="home-front-sec__phone-video-element pve-0" v-if="counterActivSlide == 0 || counterActivSlide == 1"
@@ -383,8 +519,9 @@
 
 
 <script>
-
+import { ref, onMounted, onUnmounted } from "vue";
  // Import Swiper Vue.js components
+  import { Controller } from 'swiper/modules';
   import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // Import Swiper styles
@@ -394,7 +531,7 @@
 
 
   // import required modules
-  import { Pagination, Mousewheel } from 'swiper/modules';
+  import { Pagination, Mousewheel, Navigation } from 'swiper/modules';
 
 
 
@@ -403,6 +540,7 @@ export default {
         return {
             counterActivSlide: 999,
             counterPrevievSlide: null,
+            allowSlide: true,
           
         }
     },
@@ -416,7 +554,7 @@ export default {
     methods: {
         swiperData(data){
 
-
+            console.log(data)
 
             this.counterActivSlide = data.activeIndex
             this.counterPrevievSlide = data.previousIndex
@@ -431,7 +569,7 @@ export default {
             else if(this.counterActivSlide == 1 ){
                 setTimeout(()=>{
                     this.playForwardPhone(1)
-                },600)
+                },1500)
             }
             else if(this.counterActivSlide == 2 ){
                 setTimeout(()=>{
@@ -440,7 +578,7 @@ export default {
 
                 setTimeout(()=>{
                     this.playForwardPhone(2)
-                },600)
+                },1500)
                 
             }
 
@@ -453,7 +591,7 @@ export default {
                 setTimeout(()=>{
              
                     this.playForwardPhone(3)
-                },600)
+                },3500)
             }
 
             else if(this.counterActivSlide == 4 ){
@@ -463,7 +601,7 @@ export default {
 
                 setTimeout(()=>{
                     this.playForwardPhone(4)
-                },600)
+                },1500)
             }
 
             else if(this.counterActivSlide == 5 ){
@@ -473,7 +611,7 @@ export default {
 
                 setTimeout(()=>{
                     this.playForwardPhone(5)
-                },600)
+                },1500)
             }
 
             else if(this.counterActivSlide == 6 ){
@@ -485,10 +623,21 @@ export default {
                 setTimeout(()=>{
   
                     this.playForwardPhone(6)
-                },600)
+                },2100)
             }
         },
+        
 
+        onSlideChange() {
+            // Отключаем возможность перелистывания сразу после смены слайда
+            this.allowSlide = false;
+
+            // Включаем возможность перелистывания через 3 секунды
+            clearTimeout(this.timer);
+            this.timer = setTimeout(() => {
+                this.allowSlide = true;
+            }, 3000); // 3 секунды
+        },
 
 
 
@@ -521,15 +670,175 @@ export default {
     },
 
     setup() {
-        let swiperRef = ref(null);
-        // const swiperData = (swiper) => {
-        //     swiperRef.value = swiper;
-        //     console.log(swiperRef.value)
-        // };
-     
+        let swiperData = ''
+        let statusSwiper = true
+        let lastScrollTop = 0;
+        let currentIndex = null
+        const firstSwiper = ref(null);
+        const secondSwiper = ref(null);
+
+        let onSwiper = (swiper) => {
+            swiperData = swiper;
+            firstSwiper.value = swiper;
+        };
+
+        let setSecondSwiper = (swiper) => {
+            secondSwiper.value = swiper;
+        };
+
+
+
+        const handleReachEnd = (swiper) => {
+            console.log('rich end', swiper);
+
+            setTimeout(()=>{
+                if(statusSwiper == true){
+                    // swiperData.disable();
+                    swiperData.slideTo(6);
+                   
+                }
+                
+            },1000)
+          
+        };
+
+
+        const onAttemptBeyondEnd = (swiper) => {
+            console.log('onAttemptBeyondEnd', swiper.activeIndex);
+            setTimeout(()=>{
+                currentIndex = swiper.activeIndex
+            },3000)
+            
+
+          
+          
+        };
+
+
+        const onWheel = (event) => {
+            console.log('onWheel',event.deltaY);
+
+            if(+currentIndex == 6 && event.deltaY > 0){
+                swiperData.disable();
+                statusSwiper = false
+            }
+            else{
+                
+            }
+
+          
+          
+        };
+
+
+
+
+        const touchEvent = (swiper) => {
+            console.log('touchEvent',swiper);
+            if(swiper.activeIndex == 6){
+                swiperData.disable();
+                statusSwiper = false
+            }
+            else{
+                swiperData.enable();
+                statusSwiper = true
+            }
+        
+
+          
+          
+        };
+
+
+        const touchMoveEvent = (event) => {
+            console.log('touchMoveEvent',event);
+
+        
+
+          
+          
+        };
+
+
+
+        
+   
+
+        const handleScroll = (event) => {
+        console.log(window.scrollY);
+        const currentScrollTop = window.scrollY;
+
+        if (currentScrollTop > lastScrollTop) {
+            console.log('Прокрутка вниз');
+        } 
+        else if (currentScrollTop < lastScrollTop) {
+            console.log('Прокрутка вверх');
+
+            if(currentScrollTop <= 0){
+              
+                if(statusSwiper == false){
+             
+                    swiperData.slideTo(6)
+               
+                    swiperData.enable()
+                  
+                    statusSwiper = true
+                }
+            }
+            else{
+                if(currentIndex != 6){
+                    swiperData.slideTo(6)
+                }
+                    swiperData.disable()
+                    statusSwiper = false 
+            }
+        }
+        
+
+        lastScrollTop = currentScrollTop; // Обновляем предыдущее значение 
+        };
+
+
+
+        const initSwiper = (event) => {
+            setTimeout(()=>{
+                let currentScrollTop = window.scrollY;
+                if(event && event.activeIndex){
+                
+                    if(+currentScrollTop > 0){
+                        // swiperData.slideTo(6)
+                        // swiperData.enable()
+                        // statusSwiper = true
+                    }
+                }
+                console.log('init',currentScrollTop,event);
+            },300)
+            
+        };
+
+
+        onMounted(() => {
+        window.addEventListener('scroll', handleScroll);
+        });
+
+        onUnmounted(() => {
+        window.removeEventListener('scroll', handleScroll);
+        });
+
+
       return {
-        swiperRef,
-        modules: [Pagination, Mousewheel],
+        firstSwiper,
+        secondSwiper,
+        onSwiper,
+        setSecondSwiper,
+        handleReachEnd,
+        onAttemptBeyondEnd,
+        onWheel,
+        initSwiper,
+        touchEvent,
+        touchMoveEvent,
+   
+        modules: [Pagination, Mousewheel, Navigation, Controller],
       };
     },
 

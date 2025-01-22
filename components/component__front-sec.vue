@@ -1,6 +1,11 @@
 <template>
 
-     <section class="home-front-sec" :class="{'home-front-sec_point-event-none': pointEventNoneStatus}">
+     <section  
+     
+     @touchstart="handleTouchStart" 
+    @touchmove="handleTouchMove" 
+    @touchend="handleTouchEnd"
+     class="home-front-sec" :class="{'home-front-sec_point-event-none': pointEventNoneStatus}">
         <swiper
         ref="swiperRef"
         :direction="'vertical'"
@@ -10,12 +15,12 @@
         }"
         :speed="700"
         :modules="modules"
+        :preventInteractionOnTransition="true"
         class="home-front-sec-slider"
         @slideChange="swiperData"
         @swiper="onSwiper"
         @reachEnd="handleReachEnd"
         @init="initSwiper"
-
 
         @scroll="onAttemptBeyondEnd"
         @progress="onAttemptBeyondEnd"
@@ -29,7 +34,6 @@
         @slideChangeTransitionStart="onSlideChange"
         :controller="{ control: secondSwiper }"
         
-  
         >
         <swiper-slide class="home-front-sec-slide front-sec-slide-1 fss-1">
 
@@ -220,8 +224,9 @@
        
         :direction="'vertical'"
         :mousewheel="true"
-        :free-mode="true"
+        :preventInteractionOnTransition="true"
         :touchEventsTarget="'container'"
+        :slidesPerView="1"
 
         :speed="700"
         :modules="modules"
@@ -319,8 +324,6 @@
 
        </div>
        
-
-
 
     <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
         <div class="home-front-sec__cloud cl1"></div>
@@ -581,6 +584,8 @@ export default {
 
         swiperData(data){
 
+            
+
             console.log(data)
 
             this.counterActivSlide = data.activeIndex
@@ -706,6 +711,37 @@ export default {
         const secondSwiper = ref(null);
         const pointEventNoneStatus = ref(false)
 
+
+        const touchData = ref({
+        startX: 0,
+        startY: 0,
+        moveX: 0,
+        moveY: 0,
+        endX: 0,
+        endY: 0,
+        });
+
+        const handleTouchStart = (event) => {
+        //   touchData.value.startX = event.touches[0].clientX;
+        touchData.value.startY = event.touches[0].clientY;
+        console.log('move-start', touchData.value.startY)
+        };
+
+        const handleTouchMove = (event) => {
+        //   touchData.value.moveX = event.touches[0].clientX;
+        touchData.value.moveY = event.touches[0].clientY;
+        };
+
+        const handleTouchEnd = (event) => {
+        //   touchData.value.endX = event.changedTouches[0].clientX;
+        touchData.value.endY = event.changedTouches[0].clientY;
+        console.log('move-end', touchData.value.endY = event.changedTouches[0].clientY)
+        };
+
+
+
+
+
         let onSwiper = (swiper) => {
             swiperData = swiper;
             firstSwiper.value = swiper;
@@ -719,11 +755,21 @@ export default {
         const handleReachEnd = (swiper) => {
             console.log('rich end', swiper);
 
-            if(window.innerWidth < 750){
-                swiperData.disable();
-                swiperDataMob.disable();
-                pointEventNoneStatus.value = true
-                statusSwiper = false
+            if(window.innerWidth < 1250){
+
+                if(touchData.value.startY > touchData.value.endY){
+                    setTimeout(()=>{
+                        swiperData.disable();
+
+                        if(window.innerWidth < 750){
+                        swiperDataMob.disable()
+                        }
+                
+                        pointEventNoneStatus.value = true
+                        statusSwiper = false
+                    },700)
+                }
+              
             }
             else{
                 setTimeout(()=>{
@@ -764,19 +810,31 @@ export default {
         const touchEvent = (swiper) => {
             console.log('touchEvent',swiper);
 
-            if(window.innerWidth < 750){
+            if(window.innerWidth < 1250){
                 if(swiper.activeIndex == 6 && swiper.previousIndex == 5){
-                    swiperData.slideTo(6)
-                    swiperDataMob.slideTo(6)
-                    swiperData.disable();
-                    swiperDataMob.disable();
-                    pointEventNoneStatus.value = true
-                    statusSwiper = false
+
+                    if(touchData.value.startY > touchData.value.endY){
+                   
+                        swiperData.disable();
+
+                        if(window.innerWidth < 750){
+                            swiperDataMob.disable();
+                        }
+                        
+                        pointEventNoneStatus.value = true
+                        statusSwiper = false
+                    }
+                    
 
                 }
                 else{
                     swiperData.enable();
-                    swiperDataMob.enable();
+
+                    if(window.innerWidth < 750){
+                            swiperDataMob.enable();
+                        }
+
+               
                     statusSwiper = true
                     pointEventNoneStatus.value = false
                 }
@@ -814,7 +872,11 @@ export default {
                
                     swiperData.enable()
 
-                    swiperDataMob.enable()
+                    
+                    if(window.innerWidth < 750){
+                        swiperDataMob.enable()
+                        }
+                  
                   
                     statusSwiper = true
 
@@ -826,7 +888,9 @@ export default {
                     swiperData.slideTo(6)
                 }
                     swiperData.disable()
-                    swiperDataMob.disable()
+                    if(window.innerWidth < 750){
+                            swiperDataMob.disable();
+                        }
                     pointEventNoneStatus.value = true
                     statusSwiper = false 
             }
@@ -862,6 +926,12 @@ export default {
         });
 
 
+
+
+
+
+
+
       return {
         firstSwiper,
         secondSwiper,
@@ -875,6 +945,11 @@ export default {
         touchMoveEvent,
         pointEventNoneStatus,
         touchMoveOpposite,
+
+        touchData,
+        handleTouchEnd,
+        handleTouchMove,
+        handleTouchStart,
    
         modules: [Pagination, Mousewheel, Navigation, Controller],
         modules2: [Pagination, Mousewheel, Navigation, Controller],

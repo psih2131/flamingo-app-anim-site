@@ -1,6 +1,6 @@
 <template>
 
-     <section class="home-front-sec" :class="{ 'is-active': isSwiperActive }">
+     <section class="home-front-sec" :class="{'home-front-sec_point-event-none': pointEventNoneStatus}">
         <swiper
         ref="swiperRef"
         :direction="'vertical'"
@@ -23,7 +23,7 @@
 
         @touchEnd="touchEvent"
         @touchMove="touchMoveEvent"
-        
+        @touchMoveOpposite="touchMoveOpposite"
         :allowSlideNext="allowSlide"
         :allowSlidePrev="allowSlide"
         @slideChangeTransitionStart="onSlideChange"
@@ -119,6 +119,7 @@
                 </div>
             </div>
         </swiper-slide>
+
         <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-2 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
@@ -129,6 +130,7 @@
                 </div>
             </div>
         </swiper-slide>
+
         <swiper-slide class="home-front-sec-slide front-sec-slide-3 fss-3 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
@@ -139,6 +141,7 @@
                 </div>
             </div>
         </swiper-slide>
+        
         <swiper-slide class="home-front-sec-slide front-sec-slide-3 fss-4 front-sec-slide-tex">
             <div class="home-front-sec-slide__wrapper">
                 <div class="home-front-sec-slide__container">
@@ -211,7 +214,7 @@
 
 
 
-       <div class="home-front-sec-slider-mob-wrapper" :class="{'home-front-sec-slider-mob-wrapper_activ': counterActivSlide != 0}" >
+       <div v-if="+widthWindow < 750" class="home-front-sec-slider-mob-wrapper" :class="{'home-front-sec-slider-mob-wrapper_activ': counterActivSlide != 0}" >
         <swiper
         ref="swiperRefMob"
        
@@ -432,81 +435,86 @@
             </video>
         </div>
 
-        <div v-if="counterActivSlide == 1 || counterActivSlide == 2" class="home-front-sec__video-element home-front-sec__video-element-2"
-        :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2, 
-        'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 3}">
-            <video 
-            src="@/assets/video/glob-02.mp4" 
-            muted 
+
+        <template v-if="+widthWindow > 750">
+            <div v-if="counterActivSlide == 1 || counterActivSlide == 2" class="home-front-sec__video-element home-front-sec__video-element-2"
+            :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2, 
+            'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 3}">
+                <video 
+                src="@/assets/video/glob-02.mp4" 
+                muted 
+                 
+                ref="video2"
              
-            ref="video2"
-         
-          >
-            Ваш браузер не поддерживает тег видео.
-            </video>
-        </div>
-
-        <div v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"  class="home-front-sec__video-element home-front-sec__video-element-3"
-        :class="{'home-front-sec__video-element-3_hide': +counterActivSlide == 4, 
-        'home-front-sec__video-element-3_activ-fixed': +counterActivSlide == 3}">
-            <video 
-            src="@/assets/video/glob-03.mp4" 
-            muted 
-            
-            ref="video3" 
+              >
+                Ваш браузер не поддерживает тег видео.
+                </video>
+            </div>
+    
+            <div v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"  class="home-front-sec__video-element home-front-sec__video-element-3"
+            :class="{'home-front-sec__video-element-3_hide': +counterActivSlide == 4, 
+            'home-front-sec__video-element-3_activ-fixed': +counterActivSlide == 3}">
+                <video 
+                src="@/assets/video/glob-03.mp4" 
+                muted 
+                
+                ref="video3" 
+                 
              
-         
-          >
-            Ваш браузер не поддерживает тег видео.
-            </video>
-        </div>
-
-        <div v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"  class="home-front-sec__video-element home-front-sec__video-element-4"
-        :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4, 
-        'home-front-sec__video-element-4_activ-fixed': +counterActivSlide == 5}">
-            <video 
-            src="@/assets/video/glob-04.mp4" 
-            muted 
-            
-            ref="video4" 
+              >
+                Ваш браузер не поддерживает тег видео.
+                </video>
+            </div>
+    
+            <div v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"  class="home-front-sec__video-element home-front-sec__video-element-4"
+            :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4, 
+            'home-front-sec__video-element-4_activ-fixed': +counterActivSlide == 5}">
+                <video 
+                src="@/assets/video/glob-04.mp4" 
+                muted 
+                
+                ref="video4" 
+                 
              
-         
-          >
-            Ваш браузер не поддерживает тег видео.
-            </video>
-        </div>
-
-
-        <div v-if="counterActivSlide == 5 || counterActivSlide == 6"  class="home-front-sec__video-element home-front-sec__video-element-5"
-        :class="{'home-front-sec__video-element-5_activ-fixed': +counterActivSlide == 6, 
-        'home-front-sec__video-element-5_activ': +counterActivSlide == 5}">
-            <video 
-            src="@/assets/video/glob-05.mp4" 
-            muted 
-            
-            ref="video5" 
+              >
+                Ваш браузер не поддерживает тег видео.
+                </video>
+            </div>
+    
+    
+            <div v-if="counterActivSlide == 5 || counterActivSlide == 6"  class="home-front-sec__video-element home-front-sec__video-element-5"
+            :class="{'home-front-sec__video-element-5_activ-fixed': +counterActivSlide == 6, 
+            'home-front-sec__video-element-5_activ': +counterActivSlide == 5}">
+                <video 
+                src="@/assets/video/glob-05.mp4" 
+                muted 
+                
+                ref="video5" 
+                 
              
-         
-          >
-            Ваш браузер не поддерживает тег видео.
-            </video>
-        </div>
-
-
-        <div v-if="counterActivSlide == 6" class="home-front-sec__video-element home-front-sec__video-element-6"
-        :class="{'home-front-sec__video-element-6_activ-fixed': +counterActivSlide == 6, 
-        'home-front-sec__video-element-6_activ': +counterActivSlide == 6}">
-            <video 
-            src="@/assets/video/glob-06.mp4" 
-            muted 
-            
-            ref="video6" 
+              >
+                Ваш браузер не поддерживает тег видео.
+                </video>
+            </div>
+    
+    
+            <div v-if="counterActivSlide == 6" class="home-front-sec__video-element home-front-sec__video-element-6"
+            :class="{'home-front-sec__video-element-6_activ-fixed': +counterActivSlide == 6, 
+            'home-front-sec__video-element-6_activ': +counterActivSlide == 6}">
+                <video 
+                src="@/assets/video/glob-06.mp4" 
+                muted 
+                
+                ref="video6" 
+                 
              
-         
-          >
-            Ваш браузер не поддерживает тег видео.
-            </video>
-        </div>
+              >
+                Ваш браузер не поддерживает тег видео.
+                </video>
+            </div>
+        </template>
+
+        
 
 
     </div>
@@ -541,6 +549,7 @@ export default {
             counterActivSlide: 999,
             counterPrevievSlide: null,
             allowSlide: true,
+            widthWindow: null,
           
         }
     },
@@ -552,6 +561,24 @@ export default {
 
 
     methods: {
+
+
+        // Функция обновления состояния экрана
+        updateScreenSize() {
+         this.widthWindow = window.innerWidth;
+         console.log(this.widthWindow)
+
+        },
+        // Обработчик resize с дебаунсом
+        debouncedResizeHandler() {
+        clearTimeout(this.resizeTimeout); // Сбрасываем предыдущий таймер
+        this.resizeTimeout = setTimeout(() => {
+            this.updateScreenSize(); // Выполняем обновление через 1 секунду
+        }, 1000); // Интервал дебаунса: 1000 мс
+        },
+
+
+
         swiperData(data){
 
             console.log(data)
@@ -671,11 +698,13 @@ export default {
 
     setup() {
         let swiperData = ''
+        let swiperDataMob = ''
         let statusSwiper = true
         let lastScrollTop = 0;
         let currentIndex = null
         const firstSwiper = ref(null);
         const secondSwiper = ref(null);
+        const pointEventNoneStatus = ref(false)
 
         let onSwiper = (swiper) => {
             swiperData = swiper;
@@ -683,35 +712,38 @@ export default {
         };
 
         let setSecondSwiper = (swiper) => {
+            swiperDataMob = swiper
             secondSwiper.value = swiper;
         };
-
-
 
         const handleReachEnd = (swiper) => {
             console.log('rich end', swiper);
 
-            setTimeout(()=>{
+            if(window.innerWidth < 750){
+                swiperData.disable();
+                swiperDataMob.disable();
+                pointEventNoneStatus.value = true
+                statusSwiper = false
+            }
+            else{
+                setTimeout(()=>{
                 if(statusSwiper == true){
                     // swiperData.disable();
-                    swiperData.slideTo(6);
-                   
+                    swiperData.slideTo(6);  
                 }
                 
             },1000)
+            }
+
+           
           
         };
-
 
         const onAttemptBeyondEnd = (swiper) => {
             console.log('onAttemptBeyondEnd', swiper.activeIndex);
             setTimeout(()=>{
                 currentIndex = swiper.activeIndex
             },3000)
-            
-
-          
-          
         };
 
 
@@ -720,49 +752,49 @@ export default {
 
             if(+currentIndex == 6 && event.deltaY > 0){
                 swiperData.disable();
+                pointEventNoneStatus.value = true
                 statusSwiper = false
             }
             else{
                 
             }
-
-          
-          
         };
-
-
 
 
         const touchEvent = (swiper) => {
             console.log('touchEvent',swiper);
-            if(swiper.activeIndex == 6){
-                swiperData.disable();
-                statusSwiper = false
-            }
-            else{
-                swiperData.enable();
-                statusSwiper = true
-            }
-        
 
-          
-          
+            if(window.innerWidth < 750){
+                if(swiper.activeIndex == 6 && swiper.previousIndex == 5){
+                    swiperData.slideTo(6)
+                    swiperDataMob.slideTo(6)
+                    swiperData.disable();
+                    swiperDataMob.disable();
+                    pointEventNoneStatus.value = true
+                    statusSwiper = false
+
+                }
+                else{
+                    swiperData.enable();
+                    swiperDataMob.enable();
+                    statusSwiper = true
+                    pointEventNoneStatus.value = false
+                }
+            }
+            
         };
 
 
         const touchMoveEvent = (event) => {
-            console.log('touchMoveEvent',event);
+            // console.log('touchMoveEvent',event);
+        };
 
-        
-
-          
-          
+        const touchMoveOpposite = (event) => {
+            console.log('touchMoveOpposite',event);
         };
 
 
-
         
-   
 
         const handleScroll = (event) => {
         console.log(window.scrollY);
@@ -781,8 +813,12 @@ export default {
                     swiperData.slideTo(6)
                
                     swiperData.enable()
+
+                    swiperDataMob.enable()
                   
                     statusSwiper = true
+
+                    pointEventNoneStatus.value = false
                 }
             }
             else{
@@ -790,6 +826,8 @@ export default {
                     swiperData.slideTo(6)
                 }
                     swiperData.disable()
+                    swiperDataMob.disable()
+                    pointEventNoneStatus.value = true
                     statusSwiper = false 
             }
         }
@@ -797,8 +835,6 @@ export default {
 
         lastScrollTop = currentScrollTop; // Обновляем предыдущее значение 
         };
-
-
 
         const initSwiper = (event) => {
             setTimeout(()=>{
@@ -837,8 +873,11 @@ export default {
         initSwiper,
         touchEvent,
         touchMoveEvent,
+        pointEventNoneStatus,
+        touchMoveOpposite,
    
         modules: [Pagination, Mousewheel, Navigation, Controller],
+        modules2: [Pagination, Mousewheel, Navigation, Controller],
       };
     },
 
@@ -852,8 +891,13 @@ export default {
 
 
     mounted(){
+        this.updateScreenSize(); // Проыверяем экран при загрузке
+        window.addEventListener("resize", this.debouncedResizeHandler);
         this.startAnimPlanets()
     },
-
+    beforeDestroy() {
+        window.removeEventListener("resize", this.debouncedResizeHandler);
+        clearTimeout(this.resizeTimeout); // Чистим таймер
+    },
 }
 </script>

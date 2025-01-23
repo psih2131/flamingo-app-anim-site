@@ -2,10 +2,12 @@
 
      <section  
      
-     @touchstart="handleTouchStart" 
-    @touchmove="handleTouchMove" 
-    @touchend="handleTouchEnd"
-     class="home-front-sec" :class="{'home-front-sec_point-event-none': pointEventNoneStatus}">
+        @touchstart="handleTouchStart" 
+        @touchmove="handleTouchMove" 
+        @touchend="handleTouchEnd"
+        class="home-front-sec" :class="{'home-front-sec_point-event-none': pointEventNoneStatus}">
+
+        <!-- slider with text main data PC ipad-->
         <swiper
         ref="swiperRef"
         :direction="'vertical'"
@@ -21,11 +23,9 @@
         @swiper="onSwiper"
         @reachEnd="handleReachEnd"
         @init="initSwiper"
-
         @scroll="onAttemptBeyondEnd"
         @progress="onAttemptBeyondEnd"
         @wheel="onWheel"
-
         @touchEnd="touchEvent"
         @touchMove="touchMoveEvent"
         @touchMoveOpposite="touchMoveOpposite"
@@ -33,8 +33,8 @@
         :allowSlidePrev="allowSlide"
         @slideChangeTransitionStart="onSlideChange"
         :controller="{ control: secondSwiper }"
-        
         >
+
         <swiper-slide class="home-front-sec-slide front-sec-slide-1 fss-1">
 
             <div class="home-front-sec-slide__wrapper">
@@ -217,24 +217,22 @@
 
 
 
-
+       <!-- slider with text main data mobile  -->
        <div v-if="+widthWindow < 750" class="home-front-sec-slider-mob-wrapper" :class="{'home-front-sec-slider-mob-wrapper_activ': counterActivSlide != 0}" >
-        <swiper
-        ref="swiperRefMob"
-       
-        :direction="'vertical'"
-        :mousewheel="true"
-        :preventInteractionOnTransition="true"
-        :touchEventsTarget="'container'"
-        :slidesPerView="1"
-
-        :speed="700"
-        :modules="modules"
-         @swiper="setSecondSwiper"
-          :controller="{ control: firstSwiper }"
-        class="home-front-sec-slider-mob"
-        >
-        <swiper-slide class="home-front-sec-slide-mob fms-1">
+            <swiper
+            ref="swiperRefMob"
+            :direction="'vertical'"
+            :mousewheel="true"
+            :preventInteractionOnTransition="true"
+            :touchEventsTarget="'container'"
+            :slidesPerView="1"
+            :speed="700"
+            :modules="modules"
+            @swiper="setSecondSwiper"
+            :controller="{ control: firstSwiper }"
+            class="home-front-sec-slider-mob"
+            >
+            <swiper-slide class="home-front-sec-slide-mob fms-1">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -243,9 +241,9 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide-mob fms-2">
+            <swiper-slide class="home-front-sec-slide-mob fms-2">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -253,12 +251,12 @@
                         <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
                         <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
                     </div>
-                   
+                    
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide-mob fms-3">
+            <swiper-slide class="home-front-sec-slide-mob fms-3">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -268,9 +266,9 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide-mob fms-4">
+            <swiper-slide class="home-front-sec-slide-mob fms-4">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -280,9 +278,9 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide-mob fms-5">
+            <swiper-slide class="home-front-sec-slide-mob fms-5">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -292,9 +290,9 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide-mob fms-6">
+            <swiper-slide class="home-front-sec-slide-mob fms-6">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -304,9 +302,9 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide-mob fms-7">
+            <swiper-slide class="home-front-sec-slide-mob fms-7">
 
             <div class="home-front-sec-slide-mob__wrapper">
                 <div class="home-front-sec-slide-mob__text-container-wrapper">
@@ -318,209 +316,211 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+            </swiper-slide>
 
-       </swiper>
+            </swiper>
 
        </div>
        
+       <!-- cloud for first slide -->
+        <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
+            <div class="home-front-sec__cloud cl1"></div>
+            <div class="home-front-sec__cloud cl2"></div>
+            <div class="home-front-sec__cloud cl3"></div>
+        </div>
 
-    <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
-        <div class="home-front-sec__cloud cl1"></div>
-        <div class="home-front-sec__cloud cl2"></div>
-        <div class="home-front-sec__cloud cl3"></div>
-    </div>
+
+        <!-- phone video if video working -->
+        <div class="home-front-sec__phone-wrapper">
+            <div class="home-front-sec__phone" 
+            :class="{'home-front-sec__phone_first-load': +counterActivSlide == 0
+            , 'home-front-sec__phone_activs': +counterActivSlide == 1 || +counterActivSlide == 2 || +counterActivSlide == 3 || +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6,
+        'home-front-sec__phone-left-order': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6  }">
+                <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
+                <div class="home-front-sec__phone-videos">
+                    <div class="home-front-sec__phone-video-element pve-0" v-if="counterActivSlide == 0 || counterActivSlide == 1"
+                    :class="{'activ-phone-current-video': counterActivSlide == 0, 'fixed-phone-video': counterActivSlide == 1}">
+                        <video 
+                        src="@/assets/video/phone-0.mov" 
+                        muted 
+                        ref="videoPhone0"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
+
+                    <div class="home-front-sec__phone-video-element pve-1" v-if="counterActivSlide == 1 || counterActivSlide == 2"
+                    :class="{'activ-phone-current-video': counterActivSlide == 1, 'fixed-phone-video': counterActivSlide == 2}">
+                        <video 
+                        src="@/assets/video/phone-1.mov" 
+                        muted 
+                        ref="videoPhone1"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
 
 
-    <div class="home-front-sec__phone-wrapper">
-        <div class="home-front-sec__phone" 
-        :class="{'home-front-sec__phone_first-load': +counterActivSlide == 0
-        , 'home-front-sec__phone_activs': +counterActivSlide == 1 || +counterActivSlide == 2 || +counterActivSlide == 3 || +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6,
-    'home-front-sec__phone-left-order': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6  }">
-            <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
-            <div class="home-front-sec__phone-videos">
-                <div class="home-front-sec__phone-video-element pve-0" v-if="counterActivSlide == 0 || counterActivSlide == 1"
-                :class="{'activ-phone-current-video': counterActivSlide == 0, 'fixed-phone-video': counterActivSlide == 1}">
-                    <video 
-                    src="@/assets/video/phone-0.mov" 
-                    muted 
-                    ref="videoPhone0"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
+                    <div class="home-front-sec__phone-video-element pve-2" v-if="counterActivSlide == 1 || counterActivSlide == 2 || counterActivSlide == 3"
+                    :class="{'activ-phone-current-video': counterActivSlide == 2, 'fixed-phone-video': counterActivSlide == 3}">
+                        <video 
+                        src="@/assets/video/phone-2.mov" 
+                        muted 
+                        ref="videoPhone2"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
+
+                    <div class="home-front-sec__phone-video-element pve-3" v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"
+                    :class="{'activ-phone-current-video': counterActivSlide == 3, 'fixed-phone-video': counterActivSlide == 4}">
+                        <video 
+                        src="@/assets/video/phone-3.mov" 
+                        muted 
+                        ref="videoPhone3"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
+
+                    <div class="home-front-sec__phone-video-element pve-4" v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"
+                    :class="{'activ-phone-current-video': counterActivSlide == 4, 'fixed-phone-video': counterActivSlide == 5}">
+                        <video 
+                        src="@/assets/video/phone-4.mov" 
+                        muted 
+                        ref="videoPhone4"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
+
+                    <div class="home-front-sec__phone-video-element pve-5" v-if="counterActivSlide == 4 || counterActivSlide == 5 || counterActivSlide == 6"
+                    :class="{'activ-phone-current-video': counterActivSlide == 5, 'fixed-phone-video': counterActivSlide == 6}">
+                        <video 
+                        src="@/assets/video/phone-5.mov" 
+                        muted 
+                        ref="videoPhone5"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
+
+                    <div class="home-front-sec__phone-video-element pve-6" v-if="counterActivSlide == 5 || counterActivSlide == 6"
+                    :class="{'activ-phone-current-video': counterActivSlide == 6}">
+                        <video 
+                        src="@/assets/video/phone-6.mov" 
+                        muted 
+                        ref="videoPhone6"
+                        >
+                        Ваш браузер не поддерживает тег видео.
+                        </video>
+                    </div>
+
                 </div>
-
-                <div class="home-front-sec__phone-video-element pve-1" v-if="counterActivSlide == 1 || counterActivSlide == 2"
-                :class="{'activ-phone-current-video': counterActivSlide == 1, 'fixed-phone-video': counterActivSlide == 2}">
-                    <video 
-                    src="@/assets/video/phone-1.mov" 
-                    muted 
-                    ref="videoPhone1"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
-                </div>
-
-
-                <div class="home-front-sec__phone-video-element pve-2" v-if="counterActivSlide == 1 || counterActivSlide == 2 || counterActivSlide == 3"
-                :class="{'activ-phone-current-video': counterActivSlide == 2, 'fixed-phone-video': counterActivSlide == 3}">
-                    <video 
-                    src="@/assets/video/phone-2.mov" 
-                    muted 
-                    ref="videoPhone2"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
-                </div>
-
-                <div class="home-front-sec__phone-video-element pve-3" v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"
-                :class="{'activ-phone-current-video': counterActivSlide == 3, 'fixed-phone-video': counterActivSlide == 4}">
-                    <video 
-                    src="@/assets/video/phone-3.mov" 
-                    muted 
-                    ref="videoPhone3"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
-                </div>
-
-                <div class="home-front-sec__phone-video-element pve-4" v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"
-                :class="{'activ-phone-current-video': counterActivSlide == 4, 'fixed-phone-video': counterActivSlide == 5}">
-                    <video 
-                    src="@/assets/video/phone-4.mov" 
-                    muted 
-                    ref="videoPhone4"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
-                </div>
-
-                <div class="home-front-sec__phone-video-element pve-5" v-if="counterActivSlide == 4 || counterActivSlide == 5 || counterActivSlide == 6"
-                :class="{'activ-phone-current-video': counterActivSlide == 5, 'fixed-phone-video': counterActivSlide == 6}">
-                    <video 
-                    src="@/assets/video/phone-5.mov" 
-                    muted 
-                    ref="videoPhone5"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
-                </div>
-
-                <div class="home-front-sec__phone-video-element pve-6" v-if="counterActivSlide == 5 || counterActivSlide == 6"
-                :class="{'activ-phone-current-video': counterActivSlide == 6}">
-                    <video 
-                    src="@/assets/video/phone-6.mov" 
-                    muted 
-                    ref="videoPhone6"
-                    >
-                    Ваш браузер не поддерживает тег видео.
-                    </video>
-                </div>
-
             </div>
         </div>
-    </div>
 
   
 
+        <!-- planet videos  -->
+        <div class="home-front-sec__video-wrapper">
+            <div  class="home-front-sec__video-element home-front-sec__video-element-1"
+            :class="{'home-front-sec__video-element-1_activ': +counterActivSlide == 0}">
+                <video 
+                src="@/assets/video/glob-01.mp4" 
+                muted 
+                autoplay 
+                loop 
+                ref="video1"
+            >
+                Ваш браузер не поддерживает тег видео.
+                </video>
+            </div>
 
-    <div class="home-front-sec__video-wrapper">
-        <div  class="home-front-sec__video-element home-front-sec__video-element-1"
-        :class="{'home-front-sec__video-element-1_activ': +counterActivSlide == 0}">
-            <video 
-            src="@/assets/video/glob-01.mp4" 
-            muted 
-            autoplay 
-            loop 
-            ref="video1"
-          >
-            Ваш браузер не поддерживает тег видео.
-            </video>
+
+            <template v-if="+widthWindow > 750">
+                <div v-if="counterActivSlide == 1 || counterActivSlide == 2" class="home-front-sec__video-element home-front-sec__video-element-2"
+                :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2, 
+                'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 3}">
+                    <video 
+                    src="@/assets/video/glob-02.mp4" 
+                    muted 
+                    ref="video2"
+                >
+                    Ваш браузер не поддерживает тег видео.
+                    </video>
+                </div>
+        
+                <div v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"  class="home-front-sec__video-element home-front-sec__video-element-3"
+                :class="{'home-front-sec__video-element-3_hide': +counterActivSlide == 4, 
+                'home-front-sec__video-element-3_activ-fixed': +counterActivSlide == 3}">
+                    <video 
+                    src="@/assets/video/glob-03.mp4" 
+                    muted 
+                    
+                    ref="video3" 
+                    
+                
+                >
+                    Ваш браузер не поддерживает тег видео.
+                    </video>
+                </div>
+        
+                <div v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"  class="home-front-sec__video-element home-front-sec__video-element-4"
+                :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4, 
+                'home-front-sec__video-element-4_activ-fixed': +counterActivSlide == 5}">
+                    <video 
+                    src="@/assets/video/glob-04.mp4" 
+                    muted 
+                    ref="video4" 
+                >
+                    Ваш браузер не поддерживает тег видео.
+                    </video>
+                </div>
+        
+        
+                <div v-if="counterActivSlide == 5 || counterActivSlide == 6"  class="home-front-sec__video-element home-front-sec__video-element-5"
+                :class="{'home-front-sec__video-element-5_activ-fixed': +counterActivSlide == 6, 
+                'home-front-sec__video-element-5_activ': +counterActivSlide == 5}">
+                    <video 
+                    src="@/assets/video/glob-05.mp4" 
+                    muted 
+                    ref="video5" 
+                >
+                    Ваш браузер не поддерживает тег видео.
+                    </video>
+                </div>
+        
+        
+                <div v-if="counterActivSlide == 6" class="home-front-sec__video-element home-front-sec__video-element-6"
+                :class="{'home-front-sec__video-element-6_activ-fixed': +counterActivSlide == 6, 
+                'home-front-sec__video-element-6_activ': +counterActivSlide == 6}">
+                    <video 
+                    src="@/assets/video/glob-06.mp4" 
+                    muted 
+                    
+                    ref="video6" 
+                    
+                
+                >
+                    Ваш браузер не поддерживает тег видео.
+                    </video>
+                </div>
+            </template>
+
+            
+
+
         </div>
 
 
-        <template v-if="+widthWindow > 750">
-            <div v-if="counterActivSlide == 1 || counterActivSlide == 2" class="home-front-sec__video-element home-front-sec__video-element-2"
-            :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2, 
-            'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 3}">
-                <video 
-                src="@/assets/video/glob-02.mp4" 
-                muted 
-                 
-                ref="video2"
-             
-              >
-                Ваш браузер не поддерживает тег видео.
-                </video>
-            </div>
-    
-            <div v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"  class="home-front-sec__video-element home-front-sec__video-element-3"
-            :class="{'home-front-sec__video-element-3_hide': +counterActivSlide == 4, 
-            'home-front-sec__video-element-3_activ-fixed': +counterActivSlide == 3}">
-                <video 
-                src="@/assets/video/glob-03.mp4" 
-                muted 
-                
-                ref="video3" 
-                 
-             
-              >
-                Ваш браузер не поддерживает тег видео.
-                </video>
-            </div>
-    
-            <div v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"  class="home-front-sec__video-element home-front-sec__video-element-4"
-            :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4, 
-            'home-front-sec__video-element-4_activ-fixed': +counterActivSlide == 5}">
-                <video 
-                src="@/assets/video/glob-04.mp4" 
-                muted 
-                
-                ref="video4" 
-                 
-             
-              >
-                Ваш браузер не поддерживает тег видео.
-                </video>
-            </div>
-    
-    
-            <div v-if="counterActivSlide == 5 || counterActivSlide == 6"  class="home-front-sec__video-element home-front-sec__video-element-5"
-            :class="{'home-front-sec__video-element-5_activ-fixed': +counterActivSlide == 6, 
-            'home-front-sec__video-element-5_activ': +counterActivSlide == 5}">
-                <video 
-                src="@/assets/video/glob-05.mp4" 
-                muted 
-                
-                ref="video5" 
-                 
-             
-              >
-                Ваш браузер не поддерживает тег видео.
-                </video>
-            </div>
-    
-    
-            <div v-if="counterActivSlide == 6" class="home-front-sec__video-element home-front-sec__video-element-6"
-            :class="{'home-front-sec__video-element-6_activ-fixed': +counterActivSlide == 6, 
-            'home-front-sec__video-element-6_activ': +counterActivSlide == 6}">
-                <video 
-                src="@/assets/video/glob-06.mp4" 
-                muted 
-                
-                ref="video6" 
-                 
-             
-              >
-                Ваш браузер не поддерживает тег видео.
-                </video>
-            </div>
-        </template>
 
-        
-
-
-    </div>
+        <div class="video-test-autoplay-hiden">
+            <video ref="testVideo" muted playsinline style="display: none;">
+              <source src="@/assets/video/phone-0.mov" type="video/mp4" />
+            </video>
+            <p>{{ autoPlaySupported ? 'Автозагрузка доступна' : 'Автозагрузка недоступна' }}</p>
+          </div>
 
     
      </section>
@@ -553,7 +553,7 @@ export default {
             counterPrevievSlide: null,
             allowSlide: true,
             widthWindow: null,
-          
+            autoPlaySupported: false, // Флаг для проверки автозагрузки
         }
     },
 
@@ -564,6 +564,20 @@ export default {
 
 
     methods: {
+        async checkAutoPlaySupport() {
+        const video = this.$refs.testVideo;
+        if (!video) return;
+
+        try {
+            await video.play();
+            video.pause();
+            this.autoPlaySupported = true; // Если play() работает, автозагрузка поддерживается
+            this.startAnimPlanets()
+        } catch (error) {
+            this.autoPlaySupported = false; // Если ошибка, автозагрузка не поддерживается
+            this.startAnimPlanets()
+        }
+        },
 
 
         // Функция обновления состояния экрана
@@ -583,8 +597,6 @@ export default {
 
 
         swiperData(data){
-
-            
 
             console.log(data)
 
@@ -739,9 +751,6 @@ export default {
         };
 
 
-
-
-
         let onSwiper = (swiper) => {
             swiperData = swiper;
             firstSwiper.value = swiper;
@@ -781,8 +790,6 @@ export default {
             },1000)
             }
 
-           
-          
         };
 
         const onAttemptBeyondEnd = (swiper) => {
@@ -791,7 +798,6 @@ export default {
                 currentIndex = swiper.activeIndex
             },3000)
         };
-
 
         const onWheel = (event) => {
             console.log('onWheel',event.deltaY);
@@ -834,7 +840,6 @@ export default {
                             swiperDataMob.enable();
                         }
 
-               
                     statusSwiper = true
                     pointEventNoneStatus.value = false
                 }
@@ -851,8 +856,6 @@ export default {
             console.log('touchMoveOpposite',event);
         };
 
-
-        
 
         const handleScroll = (event) => {
         console.log(window.scrollY);
@@ -925,13 +928,6 @@ export default {
         window.removeEventListener('scroll', handleScroll);
         });
 
-
-
-
-
-
-
-
       return {
         firstSwiper,
         secondSwiper,
@@ -945,7 +941,6 @@ export default {
         touchMoveEvent,
         pointEventNoneStatus,
         touchMoveOpposite,
-
         touchData,
         handleTouchEnd,
         handleTouchMove,
@@ -966,9 +961,10 @@ export default {
 
 
     mounted(){
+        this.checkAutoPlaySupport(); // Проверить при загрузке страницы
         this.updateScreenSize(); // Проыверяем экран при загрузке
         window.addEventListener("resize", this.debouncedResizeHandler);
-        this.startAnimPlanets()
+       
     },
     beforeDestroy() {
         window.removeEventListener("resize", this.debouncedResizeHandler);

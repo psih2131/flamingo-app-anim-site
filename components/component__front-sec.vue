@@ -337,96 +337,159 @@
             , 'home-front-sec__phone_activs': +counterActivSlide == 1 || +counterActivSlide == 2 || +counterActivSlide == 3 || +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6,
         'home-front-sec__phone-left-order': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6  }">
                 <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
-                <div class="home-front-sec__phone-videos">
-                    <div class="home-front-sec__phone-video-element pve-0" v-if="counterActivSlide == 0 || counterActivSlide == 1 || !counterActivSlide"
-                    :class="{'activ-phone-current-video': counterActivSlide == 0, 'fixed-phone-video': counterActivSlide == 1}">
-                        <!-- <video 
-                        src="@/assets/video/phone-0.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone0"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video> -->
+
+
+                <!-- анимация телефонов если видео доступны -->
+                <template v-if="autoPlaySupported == true">
+                    <div class="home-front-sec__phone-videos">
+                        <div class="home-front-sec__phone-video-element pve-0" v-if="counterActivSlide == 0 || counterActivSlide == 1 || !counterActivSlide"
+                        :class="{'activ-phone-current-video': counterActivSlide == 0, 'fixed-phone-video': counterActivSlide == 1}">
+                            <!-- <video 
+                            src="@/assets/video/phone-0.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone0"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video> -->
+                            
+                            <img class="videoPhone0-img" src="@/assets/video/phone-0-img.jpg" alt="">
+                            
+                        </div>
+    
+                        <div class="home-front-sec__phone-video-element pve-1" v-if="counterActivSlide == 1 || counterActivSlide == 2"
+                        :class="{'activ-phone-current-video': counterActivSlide == 1, 'fixed-phone-video': counterActivSlide == 2}">
+                            <video 
+                            src="@/assets/video/phone-1.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone1"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video>
+                        </div>
+    
+    
+                        <div class="home-front-sec__phone-video-element pve-2" v-if="counterActivSlide == 1 || counterActivSlide == 2 || counterActivSlide == 3"
+                        :class="{'activ-phone-current-video': counterActivSlide == 2, 'fixed-phone-video': counterActivSlide == 3}">
+                            <video 
+                            src="@/assets/video/phone-2.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone2"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video>
+                        </div>
+    
+                        <div class="home-front-sec__phone-video-element pve-3" v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"
+                        :class="{'activ-phone-current-video': counterActivSlide == 3, 'fixed-phone-video': counterActivSlide == 4}">
+                            <video 
+                            src="@/assets/video/phone-3.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone3"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video>
+                        </div>
+    
+                        <div class="home-front-sec__phone-video-element pve-4" v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"
+                        :class="{'activ-phone-current-video': counterActivSlide == 4, 'fixed-phone-video': counterActivSlide == 5}">
+                            <video 
+                            src="@/assets/video/phone-4.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone4"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video>
+                        </div>
+    
+                        <div class="home-front-sec__phone-video-element pve-5" v-if="counterActivSlide == 4 || counterActivSlide == 5 || counterActivSlide == 6"
+                        :class="{'activ-phone-current-video': counterActivSlide == 5, 'fixed-phone-video': counterActivSlide == 6}">
+                            <video 
+                            src="@/assets/video/phone-5.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone5"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video>
+                        </div>
+    
+                        <div class="home-front-sec__phone-video-element pve-6" v-if="counterActivSlide == 5 || counterActivSlide == 6"
+                        :class="{'activ-phone-current-video': counterActivSlide == 6}">
+                            <video 
+                            src="@/assets/video/phone-6.mov" 
+                            muted 
+                            playsinline 
+                            ref="videoPhone6"
+                            >
+                            Ваш браузер не поддерживает тег видео.
+                            </video>
+                        </div>
+    
+                    </div>
+                </template>
+
+
+                <!-- анимация телефонов если видео недоступны -->
+                <template v-else>
+
+                    <div class="anim-phones-wrapper">
+                        <div class="anim-phones-slider">
+                            <div class="anim-phones-wrapper__row" :style="{ transform: `translateY(-${(100 / 7) * +counterActivSlide}%)` }" >
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-0-img.jpg" alt="">
+                                    </div>
+                                </div>
+    
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-1-img.jpg" alt="">
+                                    </div>
+                                </div>
+    
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-2-img.jpg" alt="">
+                                    </div>
+                                </div>
+    
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-3-img.jpg" alt="">
+                                    </div>
+                                </div>
+    
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-4-img.jpg" alt="">
+                                    </div>
+                                </div>
+    
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-5-img.jpg" alt="">
+                                    </div>
+                                </div>
+    
+                                <div class="anim-phones__element">
+                                    <div class="anim-phones__img-wrapper">
+                                        <img class="anim-phones__img" src="@/assets/video/phone-6-img.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
                         
-                        <img class="videoPhone0-img" src="@/assets/video/phone-0-img.jpg" alt="">
-                        
                     </div>
+                    
+                </template>
 
-                    <div class="home-front-sec__phone-video-element pve-1" v-if="counterActivSlide == 1 || counterActivSlide == 2"
-                    :class="{'activ-phone-current-video': counterActivSlide == 1, 'fixed-phone-video': counterActivSlide == 2}">
-                        <video 
-                        src="@/assets/video/phone-1.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone1"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video>
-                    </div>
-
-
-                    <div class="home-front-sec__phone-video-element pve-2" v-if="counterActivSlide == 1 || counterActivSlide == 2 || counterActivSlide == 3"
-                    :class="{'activ-phone-current-video': counterActivSlide == 2, 'fixed-phone-video': counterActivSlide == 3}">
-                        <video 
-                        src="@/assets/video/phone-2.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone2"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video>
-                    </div>
-
-                    <div class="home-front-sec__phone-video-element pve-3" v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"
-                    :class="{'activ-phone-current-video': counterActivSlide == 3, 'fixed-phone-video': counterActivSlide == 4}">
-                        <video 
-                        src="@/assets/video/phone-3.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone3"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video>
-                    </div>
-
-                    <div class="home-front-sec__phone-video-element pve-4" v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"
-                    :class="{'activ-phone-current-video': counterActivSlide == 4, 'fixed-phone-video': counterActivSlide == 5}">
-                        <video 
-                        src="@/assets/video/phone-4.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone4"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video>
-                    </div>
-
-                    <div class="home-front-sec__phone-video-element pve-5" v-if="counterActivSlide == 4 || counterActivSlide == 5 || counterActivSlide == 6"
-                    :class="{'activ-phone-current-video': counterActivSlide == 5, 'fixed-phone-video': counterActivSlide == 6}">
-                        <video 
-                        src="@/assets/video/phone-5.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone5"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video>
-                    </div>
-
-                    <div class="home-front-sec__phone-video-element pve-6" v-if="counterActivSlide == 5 || counterActivSlide == 6"
-                    :class="{'activ-phone-current-video': counterActivSlide == 6}">
-                        <video 
-                        src="@/assets/video/phone-6.mov" 
-                        muted 
-                        playsinline 
-                        ref="videoPhone6"
-                        >
-                        Ваш браузер не поддерживает тег видео.
-                        </video>
-                    </div>
-
-                </div>
+                
             </div>
         </div>
 
@@ -531,7 +594,7 @@
             <video ref="testVideo" muted playsinline >
               <source src="@/assets/video/phone-1.mov" type="video/mp4" />
             </video>
-            <p>{{ autoPlaySupported ? 'Автозагрузка доступна' : 'Автозагрузка недоступна' }}</p>
+            <p class="video-test-autoplay-hiden__title">{{ autoPlaySupported ? 'Автозагрузка доступна' : 'Автозагрузка недоступна' }}</p>
           </div>
 
     
@@ -743,11 +806,13 @@ export default {
     setup() {
         let swiperData = ''
         let swiperDataMob = ''
+        let swiperPhone = ''
         let statusSwiper = true
         let lastScrollTop = 0;
         let currentIndex = null
         const firstSwiper = ref(null);
         const secondSwiper = ref(null);
+        const swiper3 = ref(null);
         const pointEventNoneStatus = ref(false)
 
 
@@ -788,6 +853,20 @@ export default {
             secondSwiper.value = swiper;
         };
 
+        let set3Swiper = (swiper) => {
+            swiperPhone = swiper
+            swiper3.value = swiper;
+            console.log('set3Swiper', swiper)
+        };
+
+
+        const set3SwiperChange = (swiper) => {
+            console.log('set3SwiperChange', swiper);
+
+        };
+
+        
+
         const handleReachEnd = (swiper) => {
             console.log('rich end', swiper);
 
@@ -819,10 +898,21 @@ export default {
 
         };
 
+
+        
+
+       
+
         const onAttemptBeyondEnd = (swiper) => {
             console.log('onAttemptBeyondEnd', swiper.activeIndex);
+
+          
+           
+            
             setTimeout(()=>{
                 currentIndex = swiper.activeIndex
+
+             
             },3000)
         };
 
@@ -959,8 +1049,11 @@ export default {
       return {
         firstSwiper,
         secondSwiper,
+        swiper3,
+        
         onSwiper,
         setSecondSwiper,
+        set3Swiper,
         handleReachEnd,
         onAttemptBeyondEnd,
         onWheel,
@@ -973,7 +1066,8 @@ export default {
         handleTouchEnd,
         handleTouchMove,
         handleTouchStart,
-   
+        set3SwiperChange,
+
         modules: [Pagination, Mousewheel, Navigation, Controller],
         modules2: [Pagination, Mousewheel, Navigation, Controller],
       };

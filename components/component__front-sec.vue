@@ -721,7 +721,7 @@ export default {
             let video = this.$refs[`video${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
-      
+            video.load();
              video.play();
         },
 
@@ -730,7 +730,7 @@ export default {
             let video = this.$refs[`videoPhone${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
-    
+            video.load();
              video.play();
         },
     },

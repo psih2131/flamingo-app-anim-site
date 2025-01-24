@@ -2,7 +2,7 @@
     <main class="main home-main">
     
         
-        <component__front_sec />
+        <component__front_sec  @fixedPage="pageStatus()"/>
 
         <section class="who-needs-sec" id="ourUsers">
             <div class="container">
@@ -116,6 +116,11 @@ export default {
 
 
     methods: {
+
+        pageStatus(data){
+            console.log('page status',data)
+        },
+
         toggleActive(index) {
             if (this.activeIndex === index) {
                 this.activeIndex = null;

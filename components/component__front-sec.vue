@@ -793,9 +793,11 @@ export default {
                 if(touchData.value.startY > touchData.value.endY){
                     setTimeout(()=>{
                         swiperData.disable();
+                        document.body.style.overflow = '';  
 
                         if(window.innerWidth < 750){
                         swiperDataMob.disable()
+
                         }
                 
                         pointEventNoneStatus.value = true
@@ -828,6 +830,7 @@ export default {
 
             if(+currentIndex == 6 && event.deltaY > 0){
                 swiperData.disable();
+                document.body.style.overflow = '';  
                 pointEventNoneStatus.value = true
                 statusSwiper = false
             }
@@ -846,6 +849,7 @@ export default {
                     if(touchData.value.startY > touchData.value.endY){
                    
                         swiperData.disable();
+                        document.body.style.overflow = '';  
 
                         if(window.innerWidth < 750){
                             swiperDataMob.disable();
@@ -859,6 +863,7 @@ export default {
                 }
                 else{
                     swiperData.enable();
+                    document.body.style.overflow = 'hidden';  
 
                     if(window.innerWidth < 750){
                             swiperDataMob.enable();
@@ -898,6 +903,7 @@ export default {
                     swiperData.slideTo(6)
                
                     swiperData.enable()
+                    document.body.style.overflow = 'hidden';  
 
                     
                     if(window.innerWidth < 750){
@@ -915,6 +921,8 @@ export default {
                     swiperData.slideTo(6)
                 }
                     swiperData.disable()
+                    document.body.style.overflow = '';
+
                     if(window.innerWidth < 750){
                             swiperDataMob.disable();
                         }
@@ -946,6 +954,7 @@ export default {
 
         onMounted(() => {
         window.addEventListener('scroll', handleScroll);
+        document.body.style.overflow = 'hidden';    
         });
 
         onUnmounted(() => {

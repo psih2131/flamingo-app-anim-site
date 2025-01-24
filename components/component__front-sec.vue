@@ -516,7 +516,7 @@
 
 
         <div class="video-test-autoplay-hiden">
-            <video ref="testVideo" muted playsinline style="display: none;">
+            <video ref="testVideo" muted playsinline >
               <source src="@/assets/video/phone-0.mov" type="video/mp4" />
             </video>
             <p>{{ autoPlaySupported ? 'Автозагрузка доступна' : 'Автозагрузка недоступна' }}</p>

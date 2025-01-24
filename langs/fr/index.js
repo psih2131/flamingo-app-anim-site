@@ -12,9 +12,9 @@ export default {
     footer_text2 : "Consultez toujours votre conseiller juridique et votre cabinet de conseil fiscal au sujet des exigences spécifiques liées à votre statut de résident et de visa",
 
     footer_made_in : "Fabriqué au Royaume-Uni",
-    footer_copyright : "©2022 - 2024 Taboo Media Limited. Enregistré en Angleterre",
+    footer_copyright : "©2022 - 2025 AccuraSoft Ltd. Enregistré en Angleterre",
     footer_copyright2 : "Numéro d'entreprise : 12461952. Tous droits réservés",
-    footer_copyright3 : "Flamingo App est une marque déposée de Taboo Media Limited",
+    footer_copyright3 : "Flamingo App est une marque déposée de AccuraSoft Ltd.",
 
     mark:'',
 

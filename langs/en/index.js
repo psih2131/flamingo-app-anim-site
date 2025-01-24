@@ -12,9 +12,9 @@ export default {
     footer_text2 : "Always consult with your legal advisor and tax consulting firm about specific requirements for your residency and visa status.",
 
     footer_made_in: "Made in the U.K.",
-    footer_copyright: "©2022 — 2024 Taboo Media Limited. Registered in England",
+    footer_copyright: "©2022 — 2025 AccuraSoft Ltd. Registered in England",
     footer_copyright2: "Company number: 12461952. All rights reserved.",
-    footer_copyright3: "Flamingo App is a trademark of Taboo Media Limited.",
+    footer_copyright3: "Flamingo App is a trademark of AccuraSoft Ltd.",
 
 
     pagination_prev : "Previous",

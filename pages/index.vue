@@ -1,8 +1,8 @@
 <template>
     <main class="main home-main">
-        <section class="home-front-sec">
-            <div class="home-front-sec__container"></div>
-        </section>
+    
+        
+        <component__front_sec  @fixedPage="pageStatus()"/>
 
         <section class="who-needs-sec" id="ourUsers">
             <div class="container">
@@ -93,6 +93,7 @@ definePageMeta({
 })
 
 import component__reason_popup from '@/components/component__reason-popup.vue'
+import component__front_sec from '@/components/component__front-sec.vue'
 
 
 export default {
@@ -110,10 +111,16 @@ export default {
 
     components: {
         component__reason_popup,
+        component__front_sec,
     },
 
 
     methods: {
+
+        pageStatus(data){
+            console.log('page status',data)
+        },
+
         toggleActive(index) {
             if (this.activeIndex === index) {
                 this.activeIndex = null;

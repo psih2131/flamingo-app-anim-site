@@ -693,7 +693,8 @@ export default {
 
         playReverse(curentVideo) {
             const video = this.$refs[`video${curentVideo}`];
-            video.playbackRate = -1; // Запуск видео в обратном направлении
+            video.playbackRate = -1; // Запуск видео в обратном 
+            video.load();
             video.play();
         },
         async playForward(curentVideo) {
@@ -701,6 +702,7 @@ export default {
             let video = this.$refs[`video${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
+            video.load();
             video.play();
         },
 
@@ -709,6 +711,7 @@ export default {
             let video = this.$refs[`videoPhone${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
+            video.load();
             video.play();
         },
     },

@@ -691,19 +691,13 @@ export default {
             },300)
         },
 
-        playReverse(curentVideo) {
-            const video = this.$refs[`video${curentVideo}`];
-            video.playbackRate = -1; // Запуск видео в обратном 
-            video.load();
-            video.play();
-        },
         async playForward(curentVideo) {
             console.log(curentVideo)
             let video = this.$refs[`video${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
-            video.load();
-            video.play();
+      
+            await video.play();
         },
 
         async playForwardPhone(curentVideo) {
@@ -711,8 +705,8 @@ export default {
             let video = this.$refs[`videoPhone${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
-            video.load();
-            video.play();
+    
+            await video.play();
         },
     },
 

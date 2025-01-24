@@ -526,7 +526,7 @@
 
         <div class="video-test-autoplay-hiden">
             <video ref="testVideo" muted playsinline >
-              <source src="@/assets/video/phone-0.mov" type="video/mp4" />
+              <source src="@/assets/video/phone-1.mov" type="video/mp4" />
             </video>
             <p>{{ autoPlaySupported ? 'Автозагрузка доступна' : 'Автозагрузка недоступна' }}</p>
           </div>
@@ -578,13 +578,29 @@ export default {
         if (!video) return;
 
         try {
-            await video.play();
-            video.pause();
-            this.autoPlaySupported = true; // Если play() работает, автозагрузка поддерживается
-            this.startAnimPlanets()
+            await video.play(); // Попытка начать воспроизведение
+            video.pause(); // Останавливаем, чтобы не воспроизводилось сразу
+
+            // Включаем прослушивание завершения видео
+            return new Promise((resolve) => {
+            video.muted = true; // Убедимся, что видео может воспроизводиться без звука
+            video.currentTime = 0; // Перематываем в начало
+            video.play(); // Запускаем видео
+
+            const handleEnded = () => {
+                video.removeEventListener('ended', handleEnded); // Убираем слушатель
+                video.pause();
+                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
+                this.startAnimPlanets(); // Запускаем вашу анимацию
+                resolve(true); // Завершаем Promise
+            };
+
+            video.addEventListener('ended', handleEnded); // Ждём завершения
+            });
         } catch (error) {
-            this.autoPlaySupported = false; // Если ошибка, автозагрузка не поддерживается
-            this.startAnimPlanets()
+            this.autoPlaySupported = false; // Если воспроизведение невозможно
+            this.startAnimPlanets(); // Все равно запускаем анимацию
+            return false; // Возвращаем false
         }
         },
 

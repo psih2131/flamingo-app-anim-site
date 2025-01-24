@@ -686,7 +686,7 @@ export default {
             const handleEnded = () => {
                 video.removeEventListener('ended', handleEnded); // Убираем слушатель
                 video.pause();
-                this.autoPlaySupported = false; // Устанавливаем флаг поддержки
+                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
                 this.startAnimPlanets(); // Запускаем вашу анимацию
                 resolve(true); // Завершаем Promise
             };
@@ -820,7 +820,7 @@ export default {
             let video = this.$refs[`video${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
-            video.load();
+            // video.load();
             video.currentTime = 0;
              video.play();
         },
@@ -830,7 +830,7 @@ export default {
             let video = this.$refs[`videoPhone${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
-            video.load();
+            // video.load();
             video.currentTime = 0;
              video.play();
         },

@@ -343,6 +343,7 @@
                         <video 
                         src="@/assets/video/phone-0.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone0"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -354,6 +355,7 @@
                         <video 
                         src="@/assets/video/phone-1.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone1"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -366,6 +368,7 @@
                         <video 
                         src="@/assets/video/phone-2.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone2"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -377,6 +380,7 @@
                         <video 
                         src="@/assets/video/phone-3.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone3"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -388,6 +392,7 @@
                         <video 
                         src="@/assets/video/phone-4.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone4"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -399,6 +404,7 @@
                         <video 
                         src="@/assets/video/phone-5.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone5"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -410,6 +416,7 @@
                         <video 
                         src="@/assets/video/phone-6.mov" 
                         muted 
+                        playsinline 
                         ref="videoPhone6"
                         >
                         Ваш браузер не поддерживает тег видео.
@@ -431,6 +438,7 @@
                 muted 
                 autoplay 
                 loop 
+                playsinline 
                 ref="video1"
             >
                 Ваш браузер не поддерживает тег видео.
@@ -445,6 +453,7 @@
                     <video 
                     src="@/assets/video/glob-02.mp4" 
                     muted 
+                    playsinline 
                     ref="video2"
                 >
                     Ваш браузер не поддерживает тег видео.
@@ -457,10 +466,8 @@
                     <video 
                     src="@/assets/video/glob-03.mp4" 
                     muted 
-                    
+                    playsinline 
                     ref="video3" 
-                    
-                
                 >
                     Ваш браузер не поддерживает тег видео.
                     </video>
@@ -472,6 +479,7 @@
                     <video 
                     src="@/assets/video/glob-04.mp4" 
                     muted 
+                    playsinline 
                     ref="video4" 
                 >
                     Ваш браузер не поддерживает тег видео.
@@ -485,6 +493,7 @@
                     <video 
                     src="@/assets/video/glob-05.mp4" 
                     muted 
+                    playsinline 
                     ref="video5" 
                 >
                     Ваш браузер не поддерживает тег видео.
@@ -498,7 +507,7 @@
                     <video 
                     src="@/assets/video/glob-06.mp4" 
                     muted 
-                    
+                    playsinline 
                     ref="video6" 
                     
                 

@@ -338,20 +338,22 @@
         'home-front-sec__phone-left-order': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6  }">
                 <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
                 <div class="home-front-sec__phone-videos">
-                    
-                    <div class="home-front-sec__phone-video-element pve-0" 
+                    <div class="home-front-sec__phone-video-element pve-0" v-if="counterActivSlide == 0 || counterActivSlide == 1 || !counterActivSlide"
                     :class="{'activ-phone-current-video': counterActivSlide == 0, 'fixed-phone-video': counterActivSlide == 1}">
-                        <video 
+                        <!-- <video 
                         src="@/assets/video/phone-0.mov" 
                         muted 
                         playsinline 
                         ref="videoPhone0"
                         >
                         Ваш браузер не поддерживает тег видео.
-                        </video>
+                        </video> -->
+                        
+                        <img class="videoPhone0-img" src="@/assets/video/phone-0-img.jpg" alt="">
+                        
                     </div>
 
-                    <div class="home-front-sec__phone-video-element pve-1" 
+                    <div class="home-front-sec__phone-video-element pve-1" v-if="counterActivSlide == 1 || counterActivSlide == 2"
                     :class="{'activ-phone-current-video': counterActivSlide == 1, 'fixed-phone-video': counterActivSlide == 2}">
                         <video 
                         src="@/assets/video/phone-1.mov" 
@@ -364,7 +366,7 @@
                     </div>
 
 
-                    <div class="home-front-sec__phone-video-element pve-2" 
+                    <div class="home-front-sec__phone-video-element pve-2" v-if="counterActivSlide == 1 || counterActivSlide == 2 || counterActivSlide == 3"
                     :class="{'activ-phone-current-video': counterActivSlide == 2, 'fixed-phone-video': counterActivSlide == 3}">
                         <video 
                         src="@/assets/video/phone-2.mov" 
@@ -376,7 +378,7 @@
                         </video>
                     </div>
 
-                    <div class="home-front-sec__phone-video-element pve-3" 
+                    <div class="home-front-sec__phone-video-element pve-3" v-if="counterActivSlide == 2 || counterActivSlide == 3 || counterActivSlide == 4"
                     :class="{'activ-phone-current-video': counterActivSlide == 3, 'fixed-phone-video': counterActivSlide == 4}">
                         <video 
                         src="@/assets/video/phone-3.mov" 
@@ -388,7 +390,7 @@
                         </video>
                     </div>
 
-                    <div class="home-front-sec__phone-video-element pve-4" 
+                    <div class="home-front-sec__phone-video-element pve-4" v-if="counterActivSlide == 3 || counterActivSlide == 4 || counterActivSlide == 5"
                     :class="{'activ-phone-current-video': counterActivSlide == 4, 'fixed-phone-video': counterActivSlide == 5}">
                         <video 
                         src="@/assets/video/phone-4.mov" 
@@ -400,7 +402,7 @@
                         </video>
                     </div>
 
-                    <div class="home-front-sec__phone-video-element pve-5" 
+                    <div class="home-front-sec__phone-video-element pve-5" v-if="counterActivSlide == 4 || counterActivSlide == 5 || counterActivSlide == 6"
                     :class="{'activ-phone-current-video': counterActivSlide == 5, 'fixed-phone-video': counterActivSlide == 6}">
                         <video 
                         src="@/assets/video/phone-5.mov" 
@@ -412,7 +414,7 @@
                         </video>
                     </div>
 
-                    <div class="home-front-sec__phone-video-element pve-6" 
+                    <div class="home-front-sec__phone-video-element pve-6" v-if="counterActivSlide == 5 || counterActivSlide == 6"
                     :class="{'activ-phone-current-video': counterActivSlide == 6}">
                         <video 
                         src="@/assets/video/phone-6.mov" 
@@ -633,7 +635,7 @@ export default {
             console.log('previev',this.counterPrevievSlide)
 
             if(this.counterActivSlide == 0 ){
-                this.playForwardPhone(0)
+                // this.playForwardPhone(0)
             }
 
             else if(this.counterActivSlide == 1 ){
@@ -794,11 +796,9 @@ export default {
                 if(touchData.value.startY > touchData.value.endY){
                     setTimeout(()=>{
                         swiperData.disable();
-                        document.body.style.overflow = '';  
 
                         if(window.innerWidth < 750){
                         swiperDataMob.disable()
-
                         }
                 
                         pointEventNoneStatus.value = true
@@ -831,7 +831,6 @@ export default {
 
             if(+currentIndex == 6 && event.deltaY > 0){
                 swiperData.disable();
-                document.body.style.overflow = '';  
                 pointEventNoneStatus.value = true
                 statusSwiper = false
             }
@@ -850,7 +849,6 @@ export default {
                     if(touchData.value.startY > touchData.value.endY){
                    
                         swiperData.disable();
-                        document.body.style.overflow = '';  
 
                         if(window.innerWidth < 750){
                             swiperDataMob.disable();
@@ -864,7 +862,6 @@ export default {
                 }
                 else{
                     swiperData.enable();
-                    document.body.style.overflow = 'hidden';  
 
                     if(window.innerWidth < 750){
                             swiperDataMob.enable();
@@ -904,7 +901,6 @@ export default {
                     swiperData.slideTo(6)
                
                     swiperData.enable()
-                    document.body.style.overflow = 'hidden';  
 
                     
                     if(window.innerWidth < 750){
@@ -922,8 +918,6 @@ export default {
                     swiperData.slideTo(6)
                 }
                     swiperData.disable()
-                    document.body.style.overflow = '';
-
                     if(window.innerWidth < 750){
                             swiperDataMob.disable();
                         }
@@ -955,7 +949,7 @@ export default {
 
         onMounted(() => {
         window.addEventListener('scroll', handleScroll);
-        document.body.style.overflow = 'hidden';    
+   
         });
 
         onUnmounted(() => {

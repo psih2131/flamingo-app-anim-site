@@ -685,7 +685,7 @@ export default {
             const handleEnded = () => {
                 video.removeEventListener('ended', handleEnded); // Убираем слушатель
                 video.pause();
-                this.autoPlaySupported = false; // Устанавливаем флаг поддержки
+                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
                 this.startAnimPlanets(); // Запускаем вашу анимацию
                 resolve(true); // Завершаем Promise
             };

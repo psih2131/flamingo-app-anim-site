@@ -716,22 +716,22 @@ export default {
             },300)
         },
 
-        async playForward(curentVideo) {
+         playForward(curentVideo) {
             console.log(curentVideo)
             let video = this.$refs[`video${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
       
-            await video.play();
+             video.play();
         },
 
-        async playForwardPhone(curentVideo) {
+         playForwardPhone(curentVideo) {
             console.log(curentVideo)
             let video = this.$refs[`videoPhone${curentVideo}`];
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
     
-            await video.play();
+             video.play();
         },
     },
 

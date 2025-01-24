@@ -696,7 +696,7 @@ export default {
             video.playbackRate = -1; // Запуск видео в обратном направлении
             video.play();
         },
-        playForward(curentVideo) {
+        async playForward(curentVideo) {
             console.log(curentVideo)
             let video = this.$refs[`video${curentVideo}`];
             console.log(video)
@@ -704,7 +704,7 @@ export default {
             video.play();
         },
 
-        playForwardPhone(curentVideo) {
+        async playForwardPhone(curentVideo) {
             console.log(curentVideo)
             let video = this.$refs[`videoPhone${curentVideo}`];
             console.log(video)

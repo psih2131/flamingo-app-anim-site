@@ -9,8 +9,8 @@
                     </div>
                     <div class="legal-sec__subtitle">
                       <p>
-                        This privacy notice for AccuraSoft Ltd., doing business as JuJu Media
-                        <span> (“JuJu Media”, “we”, “us”, or “our”),</span>
+                        This privacy notice for AccuraSoft Ltd., doing business as "Flamingo – Travel Days Tracker app" 
+                        <span> ("Flamingo", "Flamingo Tracker", "Flamingo – Travel Days Tracker", “we”, “us”, or “our”),</span>
                         describes how and why we might collect, store, use, and/or share
                         <span>( 'process' )</span>
                         your information when you use our services

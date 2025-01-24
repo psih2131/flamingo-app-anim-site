@@ -216,6 +216,33 @@
        </swiper>
 
 
+       <div class="home-front-sec__noti-wrapper" v-if="+widthWindow < 750">
+        <div class="home-front-sec-slide-mob__text-container">
+
+            <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
+                <div class="tax-notification__icon-wrapper">
+                    <img src="@/assets/images/tax-noti-icon.png" alt="">
+                </div>
+                <div class="tax-notification__text">
+                    <p class="tax-notification__title">Flamingo</p>
+                    <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
+                </div>
+                <p class="tax-notification__time">Now</p>
+            </div>
+
+            <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
+                <div class="tax-notification__icon-wrapper">
+                    <img src="@/assets/images/tax-noti-icon.png" alt="">
+                </div>
+                <div class="tax-notification__text">
+                    <p class="tax-notification__title">Flamingo</p>
+                    <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
+                </div>
+                <p class="tax-notification__time">Now</p>
+            </div>
+
+        </div>
+       </div>
 
        <!-- slider with text main data mobile  -->
        <div v-if="+widthWindow < 750" class="home-front-sec-slider-mob-wrapper" :class="{'home-front-sec-slider-mob-wrapper_activ': counterActivSlide != 0}" >
@@ -499,7 +526,7 @@
         <div class="home-front-sec__video-wrapper">
             <div  class="home-front-sec__video-element home-front-sec__video-element-1"
             :class="{'home-front-sec__video-element-1_activ': +counterActivSlide == 0}">
-                <video 
+                <video v-if="autoPlaySupported == true"
                 src="@/assets/video/glob-01.mp4" 
                 muted 
                 autoplay 
@@ -509,6 +536,8 @@
             >
                 Ваш браузер не поддерживает тег видео.
                 </video>
+
+                <img v-if="autoPlaySupported == false && +widthWindow < 750" class="home-front-sec__video-element-1-img" src="@/assets/video/glob-01-img.jpg" alt="">
             </div>
 
 
@@ -656,7 +685,7 @@ export default {
             const handleEnded = () => {
                 video.removeEventListener('ended', handleEnded); // Убираем слушатель
                 video.pause();
-                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
+                this.autoPlaySupported = false; // Устанавливаем флаг поддержки
                 this.startAnimPlanets(); // Запускаем вашу анимацию
                 resolve(true); // Завершаем Promise
             };
@@ -696,70 +725,73 @@ export default {
             
             console.log('curent',this.counterActivSlide)
             console.log('previev',this.counterPrevievSlide)
+            
+            if(autoPlaySupported == true){
+                if(this.counterActivSlide == 0 ){
+                    // this.playForwardPhone(0)
+                }
 
-            if(this.counterActivSlide == 0 ){
-                // this.playForwardPhone(0)
-            }
+                else if(this.counterActivSlide == 1 ){
+                    setTimeout(()=>{
+                        this.playForwardPhone(1)
+                    },1500)
+                }
+                else if(this.counterActivSlide == 2 ){
+                    setTimeout(()=>{
+                        this.playForward(2)
+                    },300)
 
-            else if(this.counterActivSlide == 1 ){
-                setTimeout(()=>{
-                    this.playForwardPhone(1)
-                },1500)
-            }
-            else if(this.counterActivSlide == 2 ){
-                setTimeout(()=>{
-                    this.playForward(2)
-                },300)
+                    setTimeout(()=>{
+                        this.playForwardPhone(2)
+                    },1500)
+                    
+                }
 
-                setTimeout(()=>{
-                    this.playForwardPhone(2)
-                },1500)
+                else if(this.counterActivSlide == 3 ){
+                    setTimeout(()=>{
+                        this.playForward(3)
+
+                    },300)
+
+                    setTimeout(()=>{
                 
+                        this.playForwardPhone(3)
+                    },3500)
+                }
+
+                else if(this.counterActivSlide == 4 ){
+                    setTimeout(()=>{
+                        this.playForward(4)
+                    },300)
+
+                    setTimeout(()=>{
+                        this.playForwardPhone(4)
+                    },1500)
+                }
+
+                else if(this.counterActivSlide == 5 ){
+                    setTimeout(()=>{
+                        this.playForward(5)
+                    },300)
+
+                    setTimeout(()=>{
+                        this.playForwardPhone(5)
+                    },1500)
+                }
+
+                else if(this.counterActivSlide == 6 ){
+                    setTimeout(()=>{
+                        this.playForward(6)
+    
+                    },300)
+
+                    setTimeout(()=>{
+    
+                        this.playForwardPhone(6)
+                    },2100)
+                }
             }
-
-            else if(this.counterActivSlide == 3 ){
-                setTimeout(()=>{
-                    this.playForward(3)
-
-                },300)
-
-                setTimeout(()=>{
-             
-                    this.playForwardPhone(3)
-                },3500)
-            }
-
-            else if(this.counterActivSlide == 4 ){
-                setTimeout(()=>{
-                    this.playForward(4)
-                },300)
-
-                setTimeout(()=>{
-                    this.playForwardPhone(4)
-                },1500)
-            }
-
-            else if(this.counterActivSlide == 5 ){
-                setTimeout(()=>{
-                    this.playForward(5)
-                },300)
-
-                setTimeout(()=>{
-                    this.playForwardPhone(5)
-                },1500)
-            }
-
-            else if(this.counterActivSlide == 6 ){
-                setTimeout(()=>{
-                    this.playForward(6)
-  
-                },300)
-
-                setTimeout(()=>{
-  
-                    this.playForwardPhone(6)
-                },2100)
-            }
+            
         },
         
 

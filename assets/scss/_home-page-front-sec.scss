@@ -1312,7 +1312,37 @@
         top: calc(100% - 458px);
     }
 
+    .home-front-sec__noti-wrapper {
+        width: 100%;
+        position: absolute;
+        z-index: 30;
+        left: 0;
+        bottom: 300px;
 
+        .home-front-sec-slide-mob__text-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tax-notification {
+            position: absolute;
+            margin-bottom: 0;
+            bottom: 0;
+        }
+    }
+
+    .tax-notification__subtitle {
+        font-size: 12px;
+    }
+
+    .tax-notification__title {
+        font-size: 12px;
+    }
+
+    .home-front-sec__noti-wrapper .tax-notification {
+        padding: 10px;
+    }
 
 }
 
@@ -1349,6 +1379,18 @@
         height: 63px;
     }
 
+    .front-sec-slide__title {
+        font-size: 28px;
+    }
+
+    .front-sec-slide__text {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .anim-phones-slider {
+        border-radius: 27px;
+    }
 
 }
 

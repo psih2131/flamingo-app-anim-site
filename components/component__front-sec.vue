@@ -722,6 +722,7 @@ export default {
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
             video.load();
+            video.currentTime = 0;
              video.play();
         },
 
@@ -731,6 +732,7 @@ export default {
             console.log(video)
             // video.playbackRate = 1; // Обычное воспроизведение
             video.load();
+            video.currentTime = 0;
              video.play();
         },
     },

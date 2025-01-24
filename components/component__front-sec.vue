@@ -256,6 +256,7 @@
             :speed="700"
             :modules="modules"
             @swiper="setSecondSwiper"
+            
             :controller="{ control: firstSwiper }"
             class="home-front-sec-slider-mob"
             >
@@ -685,7 +686,7 @@ export default {
             const handleEnded = () => {
                 video.removeEventListener('ended', handleEnded); // Убираем слушатель
                 video.pause();
-                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
+                this.autoPlaySupported = false; // Устанавливаем флаг поддержки
                 this.startAnimPlanets(); // Запускаем вашу анимацию
                 resolve(true); // Завершаем Promise
             };
@@ -726,7 +727,7 @@ export default {
             console.log('curent',this.counterActivSlide)
             console.log('previev',this.counterPrevievSlide)
             
-            if(autoPlaySupported == true){
+          
                 if(this.counterActivSlide == 0 ){
                     // this.playForwardPhone(0)
                 }
@@ -790,7 +791,7 @@ export default {
                         this.playForwardPhone(6)
                     },2100)
                 }
-            }
+            
             
         },
         

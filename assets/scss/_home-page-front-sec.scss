@@ -255,6 +255,7 @@
     left: 0;
     top: 0;
     justify-content: center;
+    pointer-events: none;
     overflow: hidden;
 }
 
@@ -443,6 +444,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    pointer-events: none;
 
 
 }

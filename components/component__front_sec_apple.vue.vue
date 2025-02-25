@@ -755,7 +755,7 @@ export default {
 
 
        const swiperDataChange = (swiper) => {
-        if(window.innerWidth > 1250){
+     
             // console.log(swiper)
 
             counterActivSlide.value = swiper.activeIndex
@@ -865,13 +865,7 @@ export default {
             }
 
             console.log('current index change:', currentIndex)
-        }
-        
-        else{
-            counterActivSlide.value = swiper.activeIndex
-            counterPrevievSlide.value = swiper.previousIndex
-        }
-
+      
             
 
         };
@@ -880,7 +874,7 @@ export default {
 
        //функция скрола внутри слайдера, работает постоянно даже если он выключен
        const onWheel = (event) => {
-        if(window.innerWidth > 1250){
+     
 
             //этот код для видео 2 и 3 слайдов
             if(currentIndex == 2 || currentIndex == 3){
@@ -1042,7 +1036,7 @@ export default {
                     }
                 }
             }
-        }
+       
            
        };
 

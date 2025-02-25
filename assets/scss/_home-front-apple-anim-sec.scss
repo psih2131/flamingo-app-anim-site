@@ -1,0 +1,141 @@
+.front-apple-anim-sec {
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+    background: #FAFAFA;
+    height: 100vh;
+
+
+
+}
+
+.front-apple-anim-sec__body {
+    height: 10000px;
+    width: 100%;
+}
+
+.front-apple-anim-sec__content-slide-wrapper {
+    position: relative;
+    z-index: 30;
+}
+
+.front-apple-anim-sec__content-slide-element {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    // .home-front-sec-slide__container {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+}
+
+.home-front-sec__first-video-planet {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    transform: translateY(100px);
+
+}
+
+
+.front-sec-slide__text {
+    opacity: 1;
+}
+
+.home-front-sec-slide {
+    height: 100vh;
+}
+
+.asd {
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+
+
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.front-apple-anim-sec__scroll-video-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+}
+
+.scroll-video-element_vx2 {
+    width: 982px;
+    height: auto;
+    display: block;
+    position: sticky;
+    left: 0;
+    top: calc(100% - 600px);
+    transform: translateY(100%);
+    transition: all ease 0.7s;
+    opacity: 0;
+    height: 600px;
+
+    video {
+        width: 100%;
+        display: block;
+    }
+}
+
+.scroll-video-element_vx2_activ {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.front-sec-slide-1 {
+    overflow: hidden;
+}
+
+
+
+
+.home-front-sec__phone-stick-wrapperss {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding-bottom: 100px;
+}
+
+.home-front-sec__phone {
+    position: sticky;
+
+    opacity: 1;
+    pointer-events: all;
+    left: calc(50% - (336px / 2));
+    bottom: 100px;
+
+}
+
+.front-sec-slide__btn-wrapper {
+    opacity: 1;
+    height: auto;
+}
+
+.tax-notification {
+    transform: scale(1);
+    opacity: 1;
+}

@@ -2,7 +2,10 @@
     <main class="main home-main">
     
         
-        <component__front_sec  @fixedPage="pageStatus()"/>
+        <!-- <component__front_sec  @fixedPage="pageStatus()"/> -->
+        <component__front_sec_apple  />
+
+      
 
         <section class="who-needs-sec" id="ourUsers">
             <div class="container">
@@ -78,7 +81,7 @@
 
         <PartialsDownload />
 
-        <!-- <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/> -->
+        <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/>
 
 
     </main>
@@ -94,6 +97,10 @@ definePageMeta({
 
 import component__reason_popup from '@/components/component__reason-popup.vue'
 import component__front_sec from '@/components/component__front-sec.vue'
+import component__front_sec_apple from '@/components/component__front_sec_apple.vue'
+
+
+
 
 
 export default {
@@ -112,6 +119,7 @@ export default {
     components: {
         component__reason_popup,
         component__front_sec,
+        component__front_sec_apple,
     },
 
 

@@ -267,6 +267,7 @@
     transform: translateY(350px);
     opacity: 0;
     transition: all ease 0.7s;
+
     z-index: 1;
 
     video {
@@ -734,7 +735,10 @@
     position: absolute;
     height: 700%;
     transition: all ease 1s;
-    transition-delay: 1s;
+    transform: translateY(0%);
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .anim-phones__element {
@@ -756,8 +760,10 @@
 }
 
 
-
-
+// .home-front-sec__phone-wrapper {
+//     z-index: 200;
+//     pointer-events: all;
+// }
 
 @media only screen and (max-width: 2550px) {
     .home-front-sec__video-element-1 {

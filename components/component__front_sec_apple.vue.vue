@@ -431,7 +431,6 @@
            </div>
        </div>
 
- 
 
        <!-- planet videos  -->
        <div class="home-front-sec__video-wrapper">

@@ -12,9 +12,9 @@ export default {
     footer_text2 : "Consulte sempre o seu advogado e o seu contabilista no que respeita aos requisitos específicos do seu estatuto de residência e de visto.",
 
     footer_made_in: "Desenvolvido no Reino Unido",
-    footer_copyright: "©2022 — 2024 Taboo Media Limited. Registado em Inglaterra",
+    footer_copyright: "©2022 — 2025 AccuraSoft Ltd. Registado em Inglaterra",
     footer_copyright2: "Número da empresa: 12461952. Todos os direitos reservados.",
-    footer_copyright3: "A aplicação Flamingo é uma marca registada da Taboo Media Limited.",
+    footer_copyright3: "A aplicação Flamingo é uma marca registada da AccuraSoft Ltd.",
 
 
     pagination_prev : "Anterior",

@@ -9,8 +9,8 @@
                     </div>
                     <div class="legal-sec__subtitle">
                       <p>
-                        This privacy notice for Taboo Media Limited, doing business as JuJu Media
-                        <span> (“JuJu Media”, “we”, “us”, or “our”),</span>
+                        This privacy notice for AccuraSoft Ltd., doing business as "Flamingo – Travel Days Tracker app" 
+                        <span> ("Flamingo", "Flamingo Tracker", "Flamingo – Travel Days Tracker", “we”, “us”, or “our”),</span>
                         describes how and why we might collect, store, use, and/or share
                         <span>( 'process' )</span>
                         your information when you use our services
@@ -34,14 +34,14 @@
                           SUMMARY OF KEY POINTS
                         </h2>
                         <p>This summary provides key points from our privacy notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for. You can also click <a style="color: blue" @click="scrollTo('whatInformationDoWeCollect')">here </a> to go directly to our table of contents.</p>
-                        <p><b> What personal information do we process?</b> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with Taboo Media Limited and the Services, the choices you make, and the products and features you use. Click  <a  style="color: blue" @click="scrollTo('personalInformation')">here </a>  to learn more.</p>
+                        <p><b> What personal information do we process?</b> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with AccuraSoft Ltd. and the Services, the choices you make, and the products and features you use. Click  <a  style="color: blue" @click="scrollTo('personalInformation')">here </a>  to learn more.</p>
                         <p><b>Do we process any sensitive personal information? </b>We do not process sensitive personal information.</p>
                         <p><b>How do we process your information?</b>We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so. Click <a style="color: blue" @click="scrollTo('WhatLegalBassesDoWeRely')">here</a> to learn more.</p>
                         <p><b>In what situations and with which types of parties do we share personal information? </b> We may share information in specific situations and with specific categories of third parties. Click <a style="color: blue" @click="scrollTo('whenAndWithWhomDo')">here</a> to learn more.</p>
                         <p><b>How do we keep your information safe? </b>  We have organisational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorised third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Click <a style="color: blue">here</a> to learn more.</p>
                         <p><b>What are your rights?</b>Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information. Click <a style="color: blue" target="_blank" href="https://app.termly.io/notify/22e130d1-e7f1-461b-9567-bbd832d403d6" >here</a> to learn more.</p>
                         <p><b>How do you exercise your rights?</b>The easiest way to exercise your rights is by filling out our data subject request form available <a style="color: blue"  target="_blank" href="https://app.termly.io/notify/22e130d1-e7f1-461b-9567-bbd832d403d6" >here</a> , or by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</p>
-                        <p>Want to learn more about what Taboo Media Limited does with any information we collect? Click <a @click="scrollTo('whatInformationDoWeCollect')" style="color: blue">here</a> to review the notice in full.</p>
+                        <p>Want to learn more about what AccuraSoft Ltd. does with any information we collect? Click <a @click="scrollTo('whatInformationDoWeCollect')" style="color: blue">here</a> to review the notice in full.</p>
                       </div>
 
                       <div>
@@ -578,7 +578,7 @@
                         How do we use and share your personal information?
                       </p>
                       <p>
-                        Taboo Media Limited collects and shares your personal information through:
+                        AccuraSoft Ltd. collects and shares your personal information through:
                       </p>
                       <ul>
                         <li>Targeting cookies/Marketing cookies</li>
@@ -599,7 +599,7 @@
                         We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be 'selling' of your personal information.
                       </p>
                       <p>
-                        Taboo Media Limited has not sold any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. Taboo Media Limited has disclosed the following categories of personal information to third parties for a business or commercial purpose in the preceding twelve (12) months:
+                        AccuraSoft Ltd. has not sold any personal information to third parties for a business or commercial purpose in the preceding twelve (12) months. AccuraSoft Ltd. has disclosed the following categories of personal information to third parties for a business or commercial purpose in the preceding twelve (12) months:
                       </p>
                       <ul>
                         <li>Category A. Identifiers, such as contact details like your real name, alias, postal address, telephone or mobile contact number, unique personal identifier, online identifier, Internet Protocol address, email address, and account name.</li>
@@ -656,7 +656,7 @@
                         <h2>12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
                       </div>
                       <p>If you have questions or comments about this notice, you may email us at privacy@flamingotracker.com or by post to:</p>
-                      <p>Taboo Media Limited
+                      <p>AccuraSoft Ltd.
                       <br>71-75 Shelton Street
                       <br>London WC2H 9JQ
                       <br>United Kingdom</p>
@@ -672,10 +672,10 @@
                     <!--
                     <p class="legal-sec__date">LAST UPDATED NOVEMBER 10, 2022</p>
                     <h1 class="legal-sec__title">Privacy Notice</h1>
-                    <p class="legal-sec__subtitle">This privacy notice for Taboo Media Limited, doing business as JuJu Media (“JuJu Media”, “we”, “us”, or “our”),describes how and why we might collect, store, use, and/or share ( 'process' ) your information when you use our services ('Services') , such as when you:</p>
+                    <p class="legal-sec__subtitle">This privacy notice for AccuraSoft Ltd., doing business as JuJu Media (“JuJu Media”, “we”, “us”, or “our”),describes how and why we might collect, store, use, and/or share ( 'process' ) your information when you use our services ('Services') , such as when you:</p>
 
                     <div class="legal-sec__text-wrapper text-container">
-                        <p>This privacy notice for Taboo Media Limited, doing business as JuJu Media (“JuJu Media”, “we”, “us”, or “our”),describes how and why we might collect, store, use, and/or share ( 'process' ) your information when you use our services ('Services') , such as when you:</p>
+                        <p>This privacy notice for AccuraSoft Ltd., doing business as JuJu Media (“JuJu Media”, “we”, “us”, or “our”),describes how and why we might collect, store, use, and/or share ( 'process' ) your information when you use our services ('Services') , such as when you:</p>
                         <ul>
                             <li>Download and use our mobile application (Flamingo – Travel Days Tracker) , and use of the https://flamingotracker.com website or any other application or website of ours that links to this privacy notice</li>
                             <li>Engage with us in other related ways, including any sales, marketing, or events</li>
@@ -685,7 +685,7 @@
                         <h2>Summary of keypoints</h2>
                         <p>This <a href="">summary</a> provides key points from our privacy notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our table of contents below to find the section you are looking for. You can also click here to go directly to our table of contents.</p>
 
-                        <p>What personal information do we process? When you visit, use, or navigate our Services, we may process personal information depending on how you interact with Taboo Media Limited and the Services, the choices you make, and the products and features you use. Click  here to learn more.</p>
+                        <p>What personal information do we process? When you visit, use, or navigate our Services, we may process personal information depending on how you interact with AccuraSoft Ltd. and the Services, the choices you make, and the products and features you use. Click  here to learn more.</p>
 
                         <p>Do we process any sensitive personal information? We do not process sensitive personal information.</p>
 
@@ -699,7 +699,7 @@
 
                         <p>How do you exercise your rights?The easiest way to exercise your rights is by filling out our data subject request form available here , or by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</p>
                         
-                        <p>Want to learn more about what Taboo Media Limited does with any information we collect? Click here to review the notice in full.</p>
+                        <p>Want to learn more about what AccuraSoft Ltd. does with any information we collect? Click here to review the notice in full.</p>
 
                         <h2>What information do we collect?</h2>
 

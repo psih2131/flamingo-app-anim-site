@@ -12,9 +12,9 @@ export default {
     footer_text2 : "احرص دائمًا على استشارة مستشارك القانوني ومكتب الاستشارات الضريبية الخاصة بك حول المتطلبات المحددة لإقامتك وحالة التأشيرة.",
 
     footer_made_in: "ُنع في المملكة المتحدة",
-    footer_copyright: "© 2022 - 2024 شركة Taboo Media Limited. مُسجلة في إنجلترا",
+    footer_copyright: "© 2022 - 2025 شركة AccuraSoft Ltd. مُسجلة في إنجلترا",
     footer_copyright2: "رقم الشركة: 12461952. جميع الحقوق محفوظة.",
-    footer_copyright3: "تطبيق Flamingo App هو علامة تجارية تابعة لشركة Taboo Media Limited.",
+    footer_copyright3: "تطبيق Flamingo App هو علامة تجارية تابعة لشركة AccuraSoft Ltd.",
 
 
     pagination_prev : "السابق",

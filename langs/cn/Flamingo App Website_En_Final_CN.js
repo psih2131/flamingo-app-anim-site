@@ -12,9 +12,9 @@ export default {
     footer_text2 : "请务必咨询您的法律顾问和税务咨询公司，了解您的居留和签证身份的具体要求。",
 
     footer_made_in: "英国出品",
-    footer_copyright: "©2022 — 2024年 Taboo媒体有限公司。注册于英格兰",
+    footer_copyright: "©2022 — 2025年 AccuraSoft Ltd。注册于英格兰",
     footer_copyright2: "公司登记号：12461952。版权所有。",
-    footer_copyright3: "Flamingo应用程序为Taboo媒体有限公司的商标。",
+    footer_copyright3: "Flamingo应用程序为AccuraSoft Ltd。的商标。",
 
 
     pagination_prev : "上一个",

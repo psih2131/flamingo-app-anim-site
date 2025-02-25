@@ -27,7 +27,8 @@
        
        @wheel="onWheel"
        @touchEnd="touchEvent"
-      
+       @touchMove="touchMoveEvent"
+       @touchMoveOpposite="touchMoveOpposite"
        :allowSlideNext="allowSlide"
        :allowSlidePrev="allowSlide"
        @slideChangeTransitionStart="onSlideChange"
@@ -684,6 +685,7 @@ export default {
 
        let onSwiper = (swiper) => {
            swiperData = swiper;
+
            firstSwiper.value = swiper;
 
             if(window.scrollY > 0){
@@ -695,8 +697,8 @@ export default {
                 },500)
                 
             }
-       };
 
+       };
 
        let setSecondSwiper = (swiper) => {
            swiperDataMob = swiper
@@ -755,7 +757,7 @@ export default {
 
 
        const swiperDataChange = (swiper) => {
-     
+
             // console.log(swiper)
 
             counterActivSlide.value = swiper.activeIndex
@@ -800,6 +802,7 @@ export default {
                 counterScrollVideo = 10000
                 phoneScrollCounter.value = (100 / 7) * 3
             }
+
 
 
             //стартовые позици скрола для video 3
@@ -865,8 +868,6 @@ export default {
             }
 
             console.log('current index change:', currentIndex)
-      
-            
 
         };
        
@@ -874,7 +875,7 @@ export default {
 
        //функция скрола внутри слайдера, работает постоянно даже если он выключен
        const onWheel = (event) => {
-     
+
 
             //этот код для видео 2 и 3 слайдов
             if(currentIndex == 2 || currentIndex == 3){
@@ -1036,7 +1037,6 @@ export default {
                     }
                 }
             }
-       
            
        };
 
@@ -1142,9 +1142,13 @@ export default {
        };
 
 
-   
+       const touchMoveEvent = (event) => {
+           // console.log('touchMoveEvent',event);
+       };
 
-      
+       const touchMoveOpposite = (event) => {
+           console.log('touchMoveOpposite',event);
+       };
 
 
 
@@ -1153,6 +1157,7 @@ export default {
 
        const handleScroll = (event) => {
             console.log(window.scrollY);
+            
             
             const currentScrollTop = window.scrollY
 
@@ -1177,6 +1182,7 @@ export default {
 
                     }
                 }
+
        };
 
 
@@ -1213,9 +1219,9 @@ export default {
         onWheel,
         // initSwiper,
         touchEvent,
-       
+        touchMoveEvent,
         pointEventNoneStatus,
-   
+        touchMoveOpposite,
         touchData,
         handleTouchEnd,
         handleTouchMove,

@@ -96,7 +96,7 @@ definePageMeta({
 })
 
 import component__reason_popup from '@/components/component__reason-popup.vue'
-import component__front_sec from '@/components/component__front-sec.vue'
+// import component__front_sec from '@/components/component__front-sec.vue'
 import component__front_sec_apple from '@/components/component__front_sec_apple.vue'
 
 
@@ -118,7 +118,7 @@ export default {
 
     components: {
         component__reason_popup,
-        component__front_sec,
+        // component__front_sec,
         component__front_sec_apple,
     },
 

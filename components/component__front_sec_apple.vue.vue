@@ -27,8 +27,7 @@
        
        @wheel="onWheel"
        @touchEnd="touchEvent"
-       @touchMove="touchMoveEvent"
-       @touchMoveOpposite="touchMoveOpposite"
+      
        :allowSlideNext="allowSlide"
        :allowSlidePrev="allowSlide"
        @slideChangeTransitionStart="onSlideChange"
@@ -508,7 +507,7 @@
 
        <div class="video-test-autoplay-hiden">
            <video ref="testVideo" muted playsinline  >
-             <source src="@/assets/video/phone-1.mov" type="video/mp4" />
+             <source src="@/assets/video/phone-0.mov" type="video/mp4" />
            </video>
            <p class="video-test-autoplay-hiden__title">{{ autoPlaySupported ? 'Автозагрузка доступна' : 'Автозагрузка недоступна' }}</p>
          </div>
@@ -573,7 +572,7 @@ export default {
                video.removeEventListener('ended', handleEnded); // Убираем слушатель
                video.pause();
                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
-               this.startAnimPlanets(); // Запускаем вашу анимацию
+        
                resolve(true); // Завершаем Promise
            };
 
@@ -581,7 +580,7 @@ export default {
            });
        } catch (error) {
            this.autoPlaySupported = false; // Если воспроизведение невозможно
-           this.startAnimPlanets(); // Все равно запускаем анимацию
+   
            return false; // Возвращаем false
        }
        },
@@ -617,21 +616,8 @@ export default {
 
 
 
-       startAnimPlanets(){
-      
-       },
+ 
 
-        playForward(curentVideo) {
-
-       },
-
-        playForwardPhone(curentVideo) {
-
-           let video = this.$refs[`videoPhone${curentVideo}`];
-
-           video.currentTime = 0;
-            video.play();
-       },
    },
 
    setup() {
@@ -698,18 +684,10 @@ export default {
 
        let onSwiper = (swiper) => {
            swiperData = swiper;
-
-        
-
            firstSwiper.value = swiper;
-
-
-           
 
             if(window.scrollY > 0){
                 swiperData.slideTo(6);
-        
-        
             }
             else{
                 setTimeout(()=>{
@@ -717,10 +695,8 @@ export default {
                 },500)
                 
             }
-          
-
-          
        };
+
 
        let setSecondSwiper = (swiper) => {
            swiperDataMob = swiper
@@ -779,7 +755,7 @@ export default {
 
 
        const swiperDataChange = (swiper) => {
-
+        if(window.innerWidth > 1250){
             // console.log(swiper)
 
             counterActivSlide.value = swiper.activeIndex
@@ -824,7 +800,6 @@ export default {
                 counterScrollVideo = 10000
                 phoneScrollCounter.value = (100 / 7) * 3
             }
-
 
 
             //стартовые позици скрола для video 3
@@ -890,6 +865,14 @@ export default {
             }
 
             console.log('current index change:', currentIndex)
+        }
+        
+        else{
+            counterActivSlide.value = swiper.activeIndex
+            counterPrevievSlide.value = swiper.previousIndex
+        }
+
+            
 
         };
        
@@ -897,7 +880,7 @@ export default {
 
        //функция скрола внутри слайдера, работает постоянно даже если он выключен
        const onWheel = (event) => {
-
+        if(window.innerWidth > 1250){
 
             //этот код для видео 2 и 3 слайдов
             if(currentIndex == 2 || currentIndex == 3){
@@ -1059,6 +1042,7 @@ export default {
                     }
                 }
             }
+        }
            
        };
 
@@ -1164,13 +1148,9 @@ export default {
        };
 
 
-       const touchMoveEvent = (event) => {
-           // console.log('touchMoveEvent',event);
-       };
+   
 
-       const touchMoveOpposite = (event) => {
-           console.log('touchMoveOpposite',event);
-       };
+      
 
 
 
@@ -1179,7 +1159,6 @@ export default {
 
        const handleScroll = (event) => {
             console.log(window.scrollY);
-            
             
             const currentScrollTop = window.scrollY
 
@@ -1204,7 +1183,6 @@ export default {
 
                     }
                 }
-
        };
 
 
@@ -1241,9 +1219,9 @@ export default {
         onWheel,
         // initSwiper,
         touchEvent,
-        touchMoveEvent,
+       
         pointEventNoneStatus,
-        touchMoveOpposite,
+   
         touchData,
         handleTouchEnd,
         handleTouchMove,

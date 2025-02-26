@@ -437,7 +437,7 @@
            <div  class="home-front-sec__video-element home-front-sec__video-element-1"
            :class="{'home-front-sec__video-element-1_activ': +counterActivSlide == 0}">
                <video v-if="autoPlaySupported == true"
-               src="@/assets/video/glob-01.mp4" 
+               src="@/assets/video/vx1_.mp4" 
                muted 
                autoplay 
                loop 
@@ -455,13 +455,17 @@
                <div  class="home-front-sec__video-element home-front-sec__video-element-2"
                :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2 || +counterActivSlide == 3}">
                    <video 
-                   src="@/assets/video/vx2_.webm" 
+            
                    muted 
                    playsinline
                    preload="auto" 
                    ref="video2"
                >
-                   Ваш браузер не поддерживает тег видео.
+
+
+                    <source src="@/assets/video/vx2_.webm" type="video/webm">
+                    <source src="@/assets/video/vx2_.mp4" type="video/mp4">
+               
                    </video>
                </div>
 
@@ -470,14 +474,16 @@
                 :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6, 
                 'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 6}">
                     <video 
-                    src="@/assets/video/vx3_.webm" 
+                
                     muted 
                     playsinline 
                     preload="auto"
                     ref="video3"
                     
                 >
-                    Ваш браузер не поддерживает тег видео.
+                    <source src="@/assets/video/vx3_.webm" type="video/webm">
+                    <source src="@/assets/video/vx3_.mp4" type="video/mp4">
+          
                     </video>
                 </div>
 
@@ -668,18 +674,19 @@ export default {
        const handleTouchStart = (event) => {
        //   touchData.value.startX = event.touches[0].clientX;
        touchData.value.startY = event.touches[0].clientY;
-    //    console.log('move-start', touchData.value.startY)
+       console.log('move-start', touchData.value.startY)
        };
 
        const handleTouchMove = (event) => {
        //   touchData.value.moveX = event.touches[0].clientX;
        touchData.value.moveY = event.touches[0].clientY;
+       console.log('move',  touchData.value.startY)
        };
 
        const handleTouchEnd = (event) => {
        //   touchData.value.endX = event.changedTouches[0].clientX;
        touchData.value.endY = event.changedTouches[0].clientY;
-    //    console.log('move-end', touchData.value.endY = event.changedTouches[0].clientY)
+       console.log('move-end',  touchData.value.startY)
        };
 
 

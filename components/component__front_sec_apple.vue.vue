@@ -463,7 +463,7 @@
                >
 
 
-                    <source src="@/assets/video/vx2_.webm" type="video/webm">
+                    <!-- <source src="@/assets/video/vx2_.webm" type="video/webm"> -->
                     <source src="@/assets/video/vx2_.mp4" type="video/mp4">
                
                    </video>
@@ -481,7 +481,7 @@
                     ref="video3"
                     
                 >
-                    <source src="@/assets/video/vx3_.webm" type="video/webm">
+                    <!-- <source src="@/assets/video/vx3_.webm" type="video/webm"> -->
                     <source src="@/assets/video/vx3_.mp4" type="video/mp4">
           
                     </video>

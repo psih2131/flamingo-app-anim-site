@@ -564,28 +564,28 @@ export default {
 
    methods: {
        async checkAutoPlaySupport() {
-       const video = this.$refs.testVideo;
-       if (!video) return;
+       const videoX1 = this.$refs.testVideo;
+       if (!videoX1) return;
 
        try {
-           await video.play(); // Попытка начать воспроизведение
-           video.pause(); // Останавливаем, чтобы не воспроизводилось сразу
+           await videoX1.play(); // Попытка начать воспроизведение
+           videoX1.pause(); // Останавливаем, чтобы не воспроизводилось сразу
 
            // Включаем прослушивание завершения видео
            return new Promise((resolve) => {
-           video.muted = true; // Убедимся, что видео может воспроизводиться без звука
-           video.currentTime = 0; // Перематываем в начало
-           video.play(); // Запускаем видео
+           videoX1.muted = true; // Убедимся, что видео может воспроизводиться без звука
+           videoX1.currentTime = 0; // Перематываем в начало
+           videoX1.play(); // Запускаем видео
 
            const handleEnded = () => {
-               video.removeEventListener('ended', handleEnded); // Убираем слушатель
-               video.pause();
+               videoX1.removeEventListener('ended', handleEnded); // Убираем слушатель
+               videoX1.pause();
                this.autoPlaySupported = true; // Устанавливаем флаг поддержки
         
                resolve(true); // Завершаем Promise
            };
 
-           video.addEventListener('ended', handleEnded); // Ждём завершения
+           videoX1.addEventListener('ended', handleEnded); // Ждём завершения
            });
        } catch (error) {
            this.autoPlaySupported = false; // Если воспроизведение невозможно
@@ -1090,13 +1090,13 @@ export default {
        function updateVideo() {
         let video = video2.value
 
-        if(!video.currentTime){
-            video.currentTime = 0
+        if(!video){
+            console.log('video dont find')
         }
-        
+
         let containerValue = 10000
         let scrollPercentage = counterScrollVideo / containerValue;
-        video.currentTime = video.duration * scrollPercentage;
+        video.currentTime = (video.duration * scrollPercentage).toFixed(2);
         ticking = false;
 
 
@@ -1105,7 +1105,7 @@ export default {
             'scrollPercentage': scrollPercentage,
             'video.currentTime': video.currentTime,
             'video.duration': video.duration,
-            'video.duration * scrollPercentage': video.duration * scrollPercentage,
+            'video.duration * scrollPercentage': (video.duration * scrollPercentage).toFixed(2),
         }
         console.log(sssd)
        };  
@@ -1123,14 +1123,25 @@ export default {
       
         let video = video3.value
 
-        if(!video.currentTime){
-            video.currentTime = 0
+        if(!video){
+            console.log('video dont find')
         }
 
         let containerValue = 20000
         let scrollPercentage = counterScrollVideo2 / containerValue;
-        video.currentTime = video.duration * scrollPercentage;
+        video.currentTime = (video.duration * scrollPercentage).toFixed(2);
         ticking2 = false;
+
+
+
+        let sssd = {
+            'video': video,
+            'scrollPercentage': scrollPercentage,
+            'video.currentTime': video.currentTime,
+            'video.duration': video.duration,
+            'video.duration * scrollPercentage': (video.duration * scrollPercentage).toFixed(2),
+        }
+        console.log(sssd)
        }; 
 
 

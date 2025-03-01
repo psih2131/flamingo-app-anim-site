@@ -1124,25 +1124,32 @@ export default {
 
       
        const onVideoLoaded_Vx1 = (event) => {
-        console.log('video 1 loaded')
-        console.log("видео загружено:", Math.floor(Date.now() / 1000));
-        video1Status = true
-        checkOthesVideoStatus()
+        if(oneLoadVideoStatus.value == false){
+            console.log('video 1 loaded')
+            console.log("видео загружено:", Math.floor(Date.now() / 1000));
+            video1Status = true
+            checkOthesVideoStatus()
+        }
+        
        
        }
 
        const onVideoLoaded_Vx2 = (event) => {
-        console.log('video 2 loaded')
-        console.log("видео загружено:", Math.floor(Date.now() / 1000));
-        video2Status = true
-        checkOthesVideoStatus()
+        if(oneLoadVideoStatus.value == false){
+            console.log('video 2 loaded')
+            console.log("видео загружено:", Math.floor(Date.now() / 1000));
+            video2Status = true
+            checkOthesVideoStatus()
+        }
        }
 
        const onVideoLoaded_Vx3 = (event) => {
-        console.log('video 3 loaded')
-        console.log("видео загружено:", Math.floor(Date.now() / 1000));
-        video3Status = true
-        checkOthesVideoStatus()
+        if(oneLoadVideoStatus.value == false){
+            console.log('video 3 loaded')
+            console.log("видео загружено:", Math.floor(Date.now() / 1000));
+            video3Status = true
+            checkOthesVideoStatus()
+        }
        }
 
        

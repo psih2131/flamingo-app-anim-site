@@ -1095,8 +1095,9 @@ export default {
         }
 
         let containerValue = 10000
-        let scrollPercentage = counterScrollVideo / containerValue;
-        video.currentTime = (video.duration * scrollPercentage).toFixed(2);
+        let scrollPercentage = +counterScrollVideo / +containerValue;
+        let currentTimeVar = (+video.duration * +scrollPercentage).toFixed(2)
+        video.currentTime = +currentTimeVar;
         ticking = false;
 
 
@@ -1105,7 +1106,7 @@ export default {
             'scrollPercentage': scrollPercentage,
             'video.currentTime': video.currentTime,
             'video.duration': video.duration,
-            'video.duration * scrollPercentage': (video.duration * scrollPercentage).toFixed(2),
+            'currentTimeVar': +currentTimeVar,
         }
         console.log(sssd)
        };  
@@ -1128,8 +1129,9 @@ export default {
         }
 
         let containerValue = 20000
-        let scrollPercentage = counterScrollVideo2 / containerValue;
-        video.currentTime = (video.duration * scrollPercentage).toFixed(2);
+        let scrollPercentage = +counterScrollVideo2 / +containerValue;
+        let currentTimeVar = (+video.duration * +scrollPercentage).toFixed(2)
+        video.currentTime = +currentTimeVar
         ticking2 = false;
 
 
@@ -1138,8 +1140,8 @@ export default {
             'video': video,
             'scrollPercentage': scrollPercentage,
             'video.currentTime': video.currentTime,
-            'video.duration': video.duration,
-            'video.duration * scrollPercentage': (video.duration * scrollPercentage).toFixed(2),
+            'video.duration': +video.duration,
+            'currentTimeVar': +currentTimeVar,
         }
         console.log(sssd)
        }; 

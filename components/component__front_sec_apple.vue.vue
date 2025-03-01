@@ -1089,6 +1089,11 @@ export default {
 
        function updateVideo() {
         let video = video2.value
+
+        if(!video.currentTime){
+            video.currentTime = 0
+        }
+        
         let containerValue = 10000
         let scrollPercentage = counterScrollVideo / containerValue;
         video.currentTime = video.duration * scrollPercentage;
@@ -1099,6 +1104,8 @@ export default {
             'video': video,
             'scrollPercentage': scrollPercentage,
             'video.currentTime': video.currentTime,
+            'video.duration': video.duration,
+            'video.duration * scrollPercentage': video.duration * scrollPercentage,
         }
         console.log(sssd)
        };  
@@ -1113,7 +1120,13 @@ export default {
        }
 
        function updateVideo2() {
+      
         let video = video3.value
+
+        if(!video.currentTime){
+            video.currentTime = 0
+        }
+
         let containerValue = 20000
         let scrollPercentage = counterScrollVideo2 / containerValue;
         video.currentTime = video.duration * scrollPercentage;

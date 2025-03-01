@@ -9,6 +9,7 @@
 
        <!-- slider with text main data PC ipad-->
        <swiper
+       v-if="oneLoadVideoStatus == true"
        ref="swiperRef"
        :direction="'vertical'"
        :mousewheel="true"
@@ -442,6 +443,7 @@
                autoplay 
                loop 
                playsinline 
+               @canplaythrough="onVideoLoaded_Vx1"
                ref="video1"
            >
                Ваш браузер не поддерживает тег видео.
@@ -455,7 +457,7 @@
                <div  class="home-front-sec__video-element home-front-sec__video-element-2"
                :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2 || +counterActivSlide == 3}">
                    <video 
-            
+                    @canplaythrough="onVideoLoaded_Vx2"
                    muted 
                    playsinline
                    preload="auto" 
@@ -474,7 +476,7 @@
                 :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6, 
                 'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 6}">
                     <video 
-                
+                    @canplaythrough="onVideoLoaded_Vx3"
                     muted 
                     playsinline 
                     preload="auto"
@@ -659,6 +661,11 @@ export default {
 
        const video2 = ref(null);
        const video3 = ref(null);
+
+       let video1Status = false;
+       let video2Status = false;
+       let video3Status = false;
+       let oneLoadVideoStatus = ref(false);
        
 
 
@@ -1086,6 +1093,14 @@ export default {
         let scrollPercentage = counterScrollVideo / containerValue;
         video.currentTime = video.duration * scrollPercentage;
         ticking = false;
+
+
+        let sssd = {
+            'video': video,
+            'scrollPercentage': scrollPercentage,
+            'video.currentTime': video.currentTime,
+        }
+        console.log(sssd)
        };  
        
        
@@ -1107,13 +1122,43 @@ export default {
 
 
 
+      
+       const onVideoLoaded_Vx1 = (event) => {
+        console.log('video 1 loaded')
+        console.log("видео загружено:", Math.floor(Date.now() / 1000));
+        video1Status = true
+        checkOthesVideoStatus()
+       
+       }
 
+       const onVideoLoaded_Vx2 = (event) => {
+        console.log('video 2 loaded')
+        console.log("видео загружено:", Math.floor(Date.now() / 1000));
+        video2Status = true
+        checkOthesVideoStatus()
+       }
 
+       const onVideoLoaded_Vx3 = (event) => {
+        console.log('video 3 loaded')
+        console.log("видео загружено:", Math.floor(Date.now() / 1000));
+        video3Status = true
+        checkOthesVideoStatus()
+       }
 
+       
 
+       function checkOthesVideoStatus(){
+        if(video1Status == true && video2Status == true && video3Status == true && oneLoadVideoStatus.value == false){
+            oneLoadVideoStatus.value = true
 
+            loadAnimation()
+        }
+       }
 
-
+       function loadAnimation(){
+        console.log('all videos loaded, anim start')
+        window.addEventListener('scroll', handleScroll);
+       }
 
 
 
@@ -1206,6 +1251,7 @@ export default {
 
 
        onMounted(() => {
+        console.log("Текущее время:", Math.floor(Date.now() / 1000));
 
         if(window.devicePixelRatio){
             retinaCoficient = window.devicePixelRatio
@@ -1214,14 +1260,14 @@ export default {
             retinaCoficient = 1
         }
 
-        video2.value.currentTime = 0
-        video3.value.currentTime = 0
+        // video2.value.currentTime = 0
+        // video3.value.currentTime = 0
         
         // retinaCoficient = 2
 
 
         console.log('retina status',window.devicePixelRatio)
-        window.addEventListener('scroll', handleScroll);
+        // window.addEventListener('scroll', handleScroll);
 
        });
 
@@ -1260,6 +1306,11 @@ export default {
 
         swiperDataChange,
         linkSliderStop,
+
+        oneLoadVideoStatus,
+        onVideoLoaded_Vx1,
+        onVideoLoaded_Vx2,
+        onVideoLoaded_Vx3,
 
 
       

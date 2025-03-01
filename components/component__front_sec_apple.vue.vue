@@ -874,6 +874,10 @@ export default {
                 },3000)
                 
             }
+            else{
+                video2.value.currentTime = 0
+                video3.value.currentTime = 0
+            }
 
             console.log('current index change:', currentIndex)
 
@@ -1033,7 +1037,7 @@ export default {
 
                             document.body.style.overflow = "visible";
                             scrollEnable = false
-                            
+
                         }
 
 
@@ -1206,14 +1210,16 @@ export default {
 
        onMounted(() => {
 
-        // if(window.devicePixelRatio){
-        //     retinaCoficient = window.devicePixelRatio
-        // }
-        // else{
-        //     retinaCoficient = 1
-        // }
+        if(window.devicePixelRatio){
+            retinaCoficient = window.devicePixelRatio
+        }
+        else{
+            retinaCoficient = 1
+        }
         
-        retinaCoficient = 2
+        // retinaCoficient = 2
+
+
         console.log('retina status',window.devicePixelRatio)
         window.addEventListener('scroll', handleScroll);
 

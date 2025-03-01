@@ -874,10 +874,7 @@ export default {
                 },3000)
                 
             }
-            else if(window.scrollY <= 0 && swiper.activeIndex == 0){
-                video2.value.currentTime = 0
-                video3.value.currentTime = 0
-            }
+        
 
             console.log('current index change:', currentIndex)
 
@@ -1216,6 +1213,9 @@ export default {
         else{
             retinaCoficient = 1
         }
+
+        video2.value.currentTime = 0
+        video3.value.currentTime = 0
         
         // retinaCoficient = 2
 

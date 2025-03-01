@@ -874,7 +874,7 @@ export default {
                 },3000)
                 
             }
-            else{
+            else if(window.scrollY <= 0 && swiper.activeIndex == 0){
                 video2.value.currentTime = 0
                 video3.value.currentTime = 0
             }

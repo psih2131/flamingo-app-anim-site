@@ -628,6 +628,7 @@ export default {
    },
 
    setup() {
+       let retinaCoficient = 1
        let swiperData = ''
        let swiperDataMob = ''
        let swiperPhone = ''
@@ -892,7 +893,7 @@ export default {
                 // console.log(video2.value)
 
                 if(statusActivSwiper == false && scrollEnable == true){
-                    counterScrollVideo = counterScrollVideo + event.deltaY
+                    counterScrollVideo = counterScrollVideo + (event.deltaY * +retinaCoficient)
                     console.log(counterScrollVideo)     
 
                 
@@ -916,6 +917,7 @@ export default {
                             swiperData.slideTo(3);
 
                             statusActivSwiper = true
+                            counterScrollVideo = 3000
         
                         }
 
@@ -925,6 +927,7 @@ export default {
                             swiperData.slideTo(2);
 
                             statusActivSwiper = true
+                            counterScrollVideo = 2999
 
                         }
 
@@ -970,7 +973,7 @@ export default {
 
 
                 if(statusActivSwiper == false && scrollEnable == true){
-                    counterScrollVideo2 = counterScrollVideo2 + event.deltaY
+                    counterScrollVideo2 = counterScrollVideo2 + (event.deltaY * +retinaCoficient)
                     console.log(counterScrollVideo2) 
                     
                     
@@ -990,6 +993,7 @@ export default {
                             swiperData.slideTo(5);
 
                             statusActivSwiper = true
+                            counterScrollVideo2 = 5000
         
                         }
 
@@ -999,6 +1003,7 @@ export default {
                             swiperData.slideTo(4);
 
                             statusActivSwiper = true
+                            counterScrollVideo2 = 4999
 
                         }
 
@@ -1008,6 +1013,7 @@ export default {
                             swiperData.slideTo(6);
 
                             statusActivSwiper = true
+                            counterScrollVideo2 = 11700
 
                         }
 
@@ -1017,6 +1023,7 @@ export default {
                             swiperData.slideTo(5);
 
                             statusActivSwiper = true
+                            counterScrollVideo2 = 11699
 
                         }
 
@@ -1026,6 +1033,7 @@ export default {
 
                             document.body.style.overflow = "visible";
                             scrollEnable = false
+                            
                         }
 
 
@@ -1197,9 +1205,18 @@ export default {
 
 
        onMounted(() => {
+
+        // if(window.devicePixelRatio){
+        //     retinaCoficient = window.devicePixelRatio
+        // }
+        // else{
+        //     retinaCoficient = 1
+        // }
         
-       window.addEventListener('scroll', handleScroll);
-  
+        retinaCoficient = 2
+        console.log('retina status',window.devicePixelRatio)
+        window.addEventListener('scroll', handleScroll);
+
        });
 
        onUnmounted(() => {

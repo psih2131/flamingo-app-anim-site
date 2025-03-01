@@ -443,7 +443,7 @@
                autoplay 
                loop 
                playsinline 
-               @canplaythrough="onVideoLoaded_Vx1"
+               @loadedmetadata="onVideoLoaded_Vx1"
                ref="video1"
            >
                Ваш браузер не поддерживает тег видео.
@@ -457,7 +457,7 @@
                <div  class="home-front-sec__video-element home-front-sec__video-element-2"
                :class="{'home-front-sec__video-element-2_activ': +counterActivSlide == 2 || +counterActivSlide == 3}">
                    <video 
-                    @canplaythrough="onVideoLoaded_Vx2"
+                    @loadedmetadata="onVideoLoaded_Vx2"
                    muted 
                    playsinline
                    preload="auto" 
@@ -476,7 +476,7 @@
                 :class="{'home-front-sec__video-element-4_activ': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6, 
                 'home-front-sec__video-element-2_activ-fixed': +counterActivSlide == 6}">
                     <video 
-                    @canplaythrough="onVideoLoaded_Vx3"
+                    @loadedmetadata="onVideoLoaded_Vx3"
                     muted 
                     playsinline 
                     preload="auto"

@@ -3,7 +3,9 @@
     
         
         <!-- <component__front_sec  @fixedPage="pageStatus()"/> -->
-        <component__front_sec_apple  />
+        <!-- <component__front_sec_apple  /> -->
+        <component__front_sec_v2  />
+        
 
       
 
@@ -98,6 +100,7 @@ definePageMeta({
 import component__reason_popup from '@/components/component__reason-popup.vue'
 // import component__front_sec from '@/components/component__front-sec.vue'
 import component__front_sec_apple from '@/components/component__front_sec_apple.vue'
+import component__front_sec_v2 from '@/components/component__front-sec-anim-v2.vue'
 
 
 
@@ -120,6 +123,7 @@ export default {
         component__reason_popup,
         // component__front_sec,
         component__front_sec_apple,
+        component__front_sec_v2
     },
 
 

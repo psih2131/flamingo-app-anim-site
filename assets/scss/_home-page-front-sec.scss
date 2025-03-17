@@ -6,10 +6,13 @@
     position: relative;
     overflow: hidden;
 
+
     .home-front-sec-slider {
         z-index: 10;
     }
 }
+
+
 
 
 
@@ -114,7 +117,7 @@
     opacity: 0;
 
     transition: all ease 0.5s;
-    transition-delay: 0.8s;
+    // transition-delay: 0.8s;
 
 }
 
@@ -138,6 +141,15 @@
     .front-sec-slide__text {
         opacity: 1;
     }
+
+    .tax-notification {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .front-sec-slide__btn-wrapper {
+        height: 60px;
+    }
 }
 
 .tax-notification {
@@ -151,7 +163,7 @@
 
     transform: scale(0.8);
     transition: all ease 0.3s;
-    transition-delay: 1.8s;
+    transition-delay: 0.5s;
 
     opacity: 0;
 }

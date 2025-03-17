@@ -1,0 +1,134 @@
+.front-sec-v2 {
+    min-height: 100vh;
+    background: #FAFAFA;
+    opacity: 0;
+}
+
+.showFrontSec {
+    opacity: 1;
+
+    .fornt-sec-text-wrapper {
+        opacity: 1;
+    }
+
+    .front-sec-v2__phone-main-wrapper {
+        opacity: 1;
+    }
+
+    .front-sec-v2__video-wrapper-fixed {
+        opacity: 1;
+    }
+}
+
+.home-front-sec-slide {
+    height: 100vh;
+}
+
+.front-sec-v2__scroll-container {
+    height: 1900vh;
+}
+
+
+.fornt-sec-text-wrapper {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+    opacity: 0;
+}
+
+.front-sec-v2__phone-main-wrapper {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.fornt-sec-text-wrapper__container {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.home-front-sec-slide {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.home-front-sec__phone-wrapper {
+    pointer-events: all;
+}
+
+.home-front-sec__phone {
+    opacity: 1;
+    transition: all ease 0.7s;
+}
+
+.front-sec-v2__video-wrapper-fixed {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.home-front-sec__phone-ipad-cover {
+    position: absolute;
+    width: 336px;
+    height: 685px;
+    top: 100%;
+    transition: all ease 0.7s;
+
+}
+
+.home-front-sec__phone {
+    position: relative;
+    left: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+}
+
+@media only screen and (max-width: 1250px) {
+    .home-front-sec__phone-ipad-cover {
+        width: 100%;
+    }
+
+    .home-front-sec__phone {
+        position: absolute;
+        left: auto;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        right: calc(50% - 168px);
+    }
+
+    .phoneRightSide {
+
+        .home-front-sec__phone {
+            right: 0;
+        }
+
+    }
+
+    .phoneLeftSide {
+        .home-front-sec__phone {
+            right: calc(100% - 336px);
+        }
+
+
+    }
+
+
+}

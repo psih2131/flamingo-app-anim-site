@@ -529,7 +529,8 @@
 
 
 <script>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, onBeforeMount } from "vue";
+
 // Import Swiper Vue.js components
  import { Controller } from 'swiper/modules';
  import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -677,24 +678,50 @@ export default {
        moveY: 0,
        endX: 0,
        endY: 0,
+       сurentY: 0,
+       clientHeight: 0,
+       
        });
 
+
+
        const handleTouchStart = (event) => {
-       //   touchData.value.startX = event.touches[0].clientX;
+        touchData.value.clientHeight = event.target.clientHeight
+
+         touchData.value.startX = event.touches[0].clientX;
        touchData.value.startY = event.touches[0].clientY;
-       console.log('move-start', touchData.value.startY)
+
+       touchData.value.сurentY = event.touches[0].clientY;
+       console.log('start', event)
+
+    //    console.log('move-start', touchData.value.startY)
+    //    onTouch()
        };
 
        const handleTouchMove = (event) => {
-       //   touchData.value.moveX = event.touches[0].clientX;
-       touchData.value.moveY = event.touches[0].clientY;
-       console.log('move',  touchData.value.startY)
+        touchData.value.clientHeight = event.target.clientHeight
+        touchData.value.moveX = event.touches[0].clientX;
+        touchData.value.moveY = event.touches[0].clientY;
+
+        touchData.value.сurentY = event.touches[0].clientY;
+
+         let curentScrollCounter = +touchData.value.clientHeight - +event.touches[0].clientY
+
+    //    console.log('move',  touchData.value.moveY)
+    console.log('move',  curentScrollCounter, touchData.value.clientHeight)
+    //    onTouch()
        };
 
        const handleTouchEnd = (event) => {
-       //   touchData.value.endX = event.changedTouches[0].clientX;
+        touchData.value.clientHeight = event.target.clientHeight
+         touchData.value.endX = event.changedTouches[0].clientX;
        touchData.value.endY = event.changedTouches[0].clientY;
-       console.log('move-end',  touchData.value.startY)
+
+       touchData.value.сurentY = event.touches[0].clientY;
+
+    //    console.log('move-end',  touchData.value.startY)
+
+    //    onTouch()
        };
 
 
@@ -785,12 +812,14 @@ export default {
             console.log('swiperDataChange', swiper.activeIndex);
 
             if(swiper.activeIndex == 0){
+                document.body.style.overflow = "hidden";
                 setTimeout(()=>{
                     phoneScrollCounter.value = 0
                 }, 1500)
             }
 
             if(swiper.activeIndex == 1){
+                document.body.style.overflow = "hidden";
                 setTimeout(()=>{
                     phoneScrollCounter.value = (100 / 7) * 1
                 }, 1500)
@@ -865,11 +894,6 @@ export default {
                 counterScrollVideo = 10000
                 counterScrollVideo2 = 18900
 
-
-                
-
-     
-                
                 pointEventNoneStatus.value = true
                 statusSwiper = false
                 document.body.style.overflow = "visible";
@@ -957,20 +981,8 @@ export default {
                             phoneScrollCounter.value = (100 / 7) * 3
                         }
                     }
-            
-                }
-
-                // if(+currentIndex == 6 && event.deltaY > 0){
-                //     swiperData.disable();
-                //     pointEventNoneStatus.value = true
-                //     statusSwiper = false
-                // }
-                // else{
-                    
-                // }
+                }       
             }
-
-
 
             //этот код для видео 4, 5, 6 слайдов
             else if(currentIndex == 4 || currentIndex == 5 || currentIndex == 6){
@@ -1063,6 +1075,167 @@ export default {
            
        };
 
+
+        function onTouch () {
+
+
+            //этот код для видео 2 и 3 слайдов
+            if(currentIndex == 2 || currentIndex == 3){
+                // console.log('onWheel',event.deltaY);
+
+                // console.log(statusActivSwiper)
+                // console.log(video2.value)
+
+                if(statusActivSwiper == false && scrollEnable == true){
+                    counterScrollVideo = counterScrollVideo + (touchData.value.сurentY * +retinaCoficient)
+                    console.log(counterScrollVideo)     
+
+                
+
+                    if(counterScrollVideo < 0){
+                        swiperData.enable();
+                        swiperData.slideTo(1);
+                    
+                        statusActivSwiper = true
+                        counterScrollVideo = 0
+                    }
+        
+                    else{
+                        
+                        videoScroll()
+
+                        if(currentIndex == 2 && counterScrollVideo >= 3000){
+                            scrollEnable = false
+                        
+                            swiperData.enable();
+                            swiperData.slideTo(3);
+
+                            statusActivSwiper = true
+                            counterScrollVideo = 3000
+        
+                        }
+
+                        if(currentIndex == 3 && counterScrollVideo < 3000 && counterScrollVideo > 0){
+                            scrollEnable = false
+                            swiperData.enable();
+                            swiperData.slideTo(2);
+
+                            statusActivSwiper = true
+                            counterScrollVideo = 2999
+
+                        }
+
+                        if(currentIndex == 3 && counterScrollVideo >= 10000){
+                            scrollEnable = false
+                            swiperData.enable();
+                            swiperData.slideTo(4);
+                            
+                            counterScrollVideo = 10000
+
+                        }
+
+
+                        if( counterScrollVideo >= 2200 && counterScrollVideo <= 2999){
+                            phoneScrollCounter.value = (100 / 7) * 2
+                        }
+
+                        if( counterScrollVideo >= 9200){
+                            phoneScrollCounter.value = (100 / 7) * 3
+                        }
+                    }
+                }       
+            }
+
+            //этот код для видео 4, 5, 6 слайдов
+            else if(currentIndex == 4 || currentIndex == 5 || currentIndex == 6){
+                // console.log('onWheel',event.deltaY);
+
+                // console.log(statusActivSwiper)
+                // console.log(video3.value)
+
+
+                if(statusActivSwiper == false && scrollEnable == true){
+                    counterScrollVideo2 = counterScrollVideo2 + (touchData.value.сurentY * +retinaCoficient)
+                    console.log(counterScrollVideo2) 
+                    
+                    
+                    if(counterScrollVideo2 < 0){
+                        swiperData.enable();
+                        swiperData.slideTo(3);
+                    
+                        statusActivSwiper = true
+                        counterScrollVideo2 = 0
+                    }
+                    else{
+                        videoScroll2()
+
+                        if(currentIndex == 4 && counterScrollVideo2 >= 5000 ){
+                            scrollEnable = false
+                            swiperData.enable();
+                            swiperData.slideTo(5);
+
+                            statusActivSwiper = true
+                            counterScrollVideo2 = 5000
+        
+                        }
+
+                        if(currentIndex == 5 &&  counterScrollVideo2 < 5000 && counterScrollVideo2 > 0){
+                            scrollEnable = false
+                            swiperData.enable();
+                            swiperData.slideTo(4);
+
+                            statusActivSwiper = true
+                            counterScrollVideo2 = 4999
+
+                        }
+
+                        if(currentIndex == 5 && counterScrollVideo2 >= 11700 ){
+                            scrollEnable = false
+                            swiperData.enable();
+                            swiperData.slideTo(6);
+
+                            statusActivSwiper = true
+                            counterScrollVideo2 = 11700
+
+                        }
+
+                        if(currentIndex == 6 && counterScrollVideo2 < 11700 && counterScrollVideo2 > 5000 ){
+                            scrollEnable = false
+                            swiperData.enable();
+                            swiperData.slideTo(5);
+
+                            statusActivSwiper = true
+                            counterScrollVideo2 = 11699
+
+                        }
+
+                        if(currentIndex == 6 && counterScrollVideo2 > 20000 && event.deltaY > 0){
+                            pointEventNoneStatus.value = true
+                            statusSwiper = false
+
+                            document.body.style.overflow = "visible";
+                            scrollEnable = false
+
+                        }
+
+
+                        if( counterScrollVideo2 >= 3100 && counterScrollVideo2 <= 4999){
+                            phoneScrollCounter.value = (100 / 7) * 4
+                        }
+
+                        else if( counterScrollVideo2 >= 8200 && counterScrollVideo2 <= 11699){
+                            phoneScrollCounter.value = (100 / 7) * 5
+                        }
+
+                        else if( counterScrollVideo2 >= 18300 ){
+                            phoneScrollCounter.value = (100 / 7) * 6
+                        }
+
+                    }
+                }
+            }
+           
+       };
 
 
        const linkSliderStop = (event) => {
@@ -1177,7 +1350,7 @@ export default {
             checkOthesVideoStatus()
         }
        }
-
+     
        
 
        function checkOthesVideoStatus(){
@@ -1280,17 +1453,19 @@ export default {
        };
 
 
-
+    //    onBeforeMount(() => {
+    //     document.body.style.overflow = "hidden";
+    //     });
 
 
        onMounted(() => {
         console.log("Текущее время:", Math.floor(Date.now() / 1000));
 
         if(window.devicePixelRatio){
-            retinaCoficient = window.devicePixelRatio
+            retinaCoficient = window.devicePixelRatio * 2
         }
         else{
-            retinaCoficient = 1
+            retinaCoficient = 2
         }
 
         // video2.value.currentTime = 0
@@ -1344,6 +1519,9 @@ export default {
         onVideoLoaded_Vx1,
         onVideoLoaded_Vx2,
         onVideoLoaded_Vx3,
+
+
+     
 
 
       

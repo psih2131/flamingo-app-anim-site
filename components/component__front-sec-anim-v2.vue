@@ -386,6 +386,12 @@ export default {
 
 
 
+        widthWind: null,
+        heightWind: null,
+        resizeTimeout: null,
+
+
+
         
         
        }
@@ -878,6 +884,28 @@ export default {
         }
     },
 
+
+    updateWindowSize(){
+        clearTimeout(this.resizeTimeout); // Очищаем предыдущий таймер
+        this.resizeTimeout = setTimeout(() => {
+            this.widthWind = window.innerWidth;
+            this.heightWind = window.innerHeight;
+            console.log("Пользователь закончил изменять размер окна!");
+
+            this.refreshAnimationAfterBrowserSizeChange()
+        }, 1500); // Задержка перед выполнением
+
+    },
+
+    refreshAnimationAfterBrowserSizeChange(){
+        this.windowHeingt = window.innerHeight
+        this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
+
+        console.log('window height', this.windowHeingt)
+
+        this.handleScroll()
+    },
+
    },
 
    setup(){
@@ -901,6 +929,9 @@ export default {
       this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
       console.log('window height', this.windowHeingt)
+
+
+      window.addEventListener("resize", this.updateWindowSize);
    },
    beforeDestroy() {
         // window.removeEventListener('scroll', this.handleScroll);

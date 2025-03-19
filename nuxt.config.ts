@@ -12,6 +12,10 @@ export default defineNuxtConfig({
       API_BASE_URL: process.env.API_URL+'/api' || '/api'
     }
   },
+  routeRules: {
+    '/tests': { ssr: false },
+    '/tests-city-tax': { ssr: false },
+  },
 
   modules: ['dayjs-nuxt', "@nuxt/image", "@nuxtjs/i18n", '@vueuse/nuxt'],
 

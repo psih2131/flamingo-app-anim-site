@@ -169,7 +169,7 @@ export default {
                     let pointsCount = randomInRange(CONFIG.POINTS_PER_TRIP);
                     let tripRegions = [lastRegion];
                     while (Math.random() < CONFIG.REGION_SWITCH_PROBABILITY) {
-                        let nextRegion = (tripRegions[tripRegions.length - 1] + 1) % 3;
+                        let nextRegion = (tripRegions[tripRegions.length - 1] + getRnd(1, 3)) % 3;
                         tripRegions.push(nextRegion);
                     }
 

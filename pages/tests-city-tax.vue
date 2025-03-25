@@ -25,9 +25,10 @@
                 {{ log }}
             </pre>
             <div>
-                <button @click="calcTravels">calc & show travels</button>
+                <button @click="()=>{calcTravels();markCityOnlyDays();}">calc & show travels</button>
             </div>
             <div v-if="travels.length > 0">
+                <pre>homeRegion: {{ getHomeRegion() }}; totalVisits: {{ log.length }}</pre>
                 <pre>
                     <table>
                         <tr>
@@ -35,12 +36,14 @@
                             <th>arrivalDateString</th>
                             <th>departureDateString</th>
                             <th>isHome</th>
+                            <th>isCandidateToCollapse</th>
                         </tr>
                         <tr v-for="travel in travels">
                             <td>{{ travel.usaStateCode }}</td>
                             <td>{{ travel.arrivalDateString }}</td>
                             <td>{{ travel.departureDateString }}</td>
                             <td>{{ travel.isHome }}</td>
+                            <td>{{ travel.isCandidateToCollapse || '' }}</td>
                         </tr>
                     </table>
                 </pre>
@@ -262,6 +265,7 @@ export default {
         let csvLog = ref('');
         const travels = ref([]);
         const nycCard = ref({});
+        const collapsCard = ref({});
         return {
             zoomVal,
             scrollVal,
@@ -275,7 +279,8 @@ export default {
             regions,
             travels,
             nycCard,
-            scrollWidth: (CONFIG.DAYS + 1) * 86400
+            scrollWidth: (CONFIG.DAYS + 1) * 86400,
+            collapsCard
         }
     },
     methods: {
@@ -440,7 +445,32 @@ export default {
             }
 
             // console.log(this.travels);
-        }
+        },
+        markCityOnlyDays() {
+            this.collapsCard;
+            for (let i = 0; i < this.travels.length; i++) {
+                const t = this.travels[i];
+
+                if (!this.collapsCard[t.arrivalDateString.substring(0,10)]) this.collapsCard[t.arrivalDateString.substring(0,10)] = {};
+                if (!this.collapsCard[t.departureDateString.substring(0,10)]) this.collapsCard[t.departureDateString.substring(0,10)] = {};
+                this.collapsCard[t.arrivalDateString.substring(0,10)][t.usaStateCode] = true;
+                this.collapsCard[t.departureDateString.substring(0,10)][t.usaStateCode] = true;
+            }
+
+            Object.entries(this.collapsCard).forEach(v => {
+                if (v[1]['NYC'] && v[1]['New Jarsey State'] && !v[1]['New York State']) {
+                    for (let i = 0; i < this.travels.length; i++) {
+                        const t = this.travels[i];
+                        if ((t.arrivalDateString.substring(0,10) === v[0] || t.departureDateString.substring(0,10) === v[0]) 
+                                && t.usaStateCode === 'NYC') {
+                            t.isCandidateToCollapse = true;
+                        }
+                    }
+                }
+            });
+
+            console.log(this.collapsCard);
+        },
     }
 }
 </script>

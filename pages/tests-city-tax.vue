@@ -130,7 +130,7 @@ export default {
             NIGHT_OUTS: 2,
             DAY_START_HOUR: 8,
             DAY_END_HOUR: 22,
-            REGION_SWITCH_PROBABILITY: 0.3
+            REGION_SWITCH_PROBABILITY: 0.5
         };
 
         const regions = [
@@ -457,13 +457,16 @@ export default {
                 this.collapsCard[t.departureDateString.substring(0,10)][t.usaStateCode] = true;
             }
 
+            let lastRegion = 'New Jarsey State';
             Object.entries(this.collapsCard).forEach(v => {
-                if (v[1]['NYC'] && v[1]['New Jarsey State'] && !v[1]['New York State']) {
+                if (v[1]['NYC'] && v[1]['New Jarsey State'] && !v[1]['New York State'] && lastRegion === 'New Jarsey State') {
                     for (let i = 0; i < this.travels.length; i++) {
                         const t = this.travels[i];
-                        if ((t.arrivalDateString.substring(0,10) === v[0] || t.departureDateString.substring(0,10) === v[0]) 
+                        if ((t.arrivalDateString.substring(0,10) === v[0] || t.departureDateString.substring(0,10) === v[0])
+                                && t.arrivalDateString.substring(0,10) === t.departureDateString.substring(0,10)
                                 && t.usaStateCode === 'NYC') {
                             t.isCandidateToCollapse = true;
+                            lastRegion = this.travels[i - 1].usaStateCode;
                         }
                     }
                 }

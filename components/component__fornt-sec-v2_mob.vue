@@ -1,42 +1,19 @@
 <template>
+    <div class="front-sec-v2-mob" v-if="fullLoadPageStatus" :class="{'showFrontSec': fullLoadPageStatus == true}" :style="{opacity: opacityAnim}">
+        
+        <div class="front-sec-v2-mob__scroll-wrapper" ref="frontScrollContainerMobRef">
 
-     <section  
-     
-        @touchstart="handleTouchStart" 
-        @touchmove="handleTouchMove" 
-        @touchend="handleTouchEnd"
-        class="home-front-sec" :class="{'home-front-sec_point-event-none': pointEventNoneStatus}">
+        </div>
 
-        <!-- slider with text main data PC ipad-->
-        <swiper
-        ref="swiperRef"
-        :direction="'vertical'"
-        :mousewheel="true"
-        :pagination="{
-        clickable: true,
-        }"
-        :speed="700"
-        :modules="modules"
-        :preventInteractionOnTransition="true"
-        class="home-front-sec-slider"
-        @slideChange="swiperData"
-        @swiper="onSwiper"
-        @reachEnd="handleReachEnd"
-        @init="initSwiper"
-        @scroll="onAttemptBeyondEnd"
-        @progress="onAttemptBeyondEnd"
-        @wheel="onWheel"
-        @touchEnd="touchEvent"
- 
-   
-        :allowSlideNext="allowSlide"
-        :allowSlidePrev="allowSlide"
-        @slideChangeTransitionStart="onSlideChange"
-        :controller="{ control: secondSwiper }"
-        >
+        <!-- cloud for first slide -->
+        <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
+            <div class="home-front-sec__cloud cl1"></div>
+            <div class="home-front-sec__cloud cl2"></div>
+            <div class="home-front-sec__cloud cl3"></div>
+        </div>
 
-        <swiper-slide class="home-front-sec-slide front-sec-slide-1 fss-1">
-
+        <!-- first text box -->
+         <div class="front-sec-v2-mob__first-box-wrapper">
             <div class="home-front-sec-slide__wrapper">
 
                 <div class="home-front-sec__sun" :class="{'home-front-sec__sun_activ': counterActivSlide == 0}">
@@ -122,672 +99,447 @@
                     </div>
                 </div>
             </div>
-        </swiper-slide>
+         </div>
 
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-2 front-sec-slide-tex">
-            <div class="home-front-sec-slide__wrapper">
-                <div class="home-front-sec-slide__container">
-                    <div class="front-sec-slide-2__text-wrapper">
-                        <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
-                        <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>
+        <!-- text container -->
+        <div class="front-sec-v2-mob__text-wrapper front-sec-v2-mob-text-wrapper" ref="textMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
+            <div class="front-sec-v2-mob-text-wrapper__move-line"  ref="textMobMoveLine" :style="{transform: `translateY(-${textScrollValue}px)`}">
+                
+                <div class="front-sec-v2-mob-text-wrapper__element">
+                    <div class="home-front-sec-slide-mob__text-container-wrapper">
+                        <div class="home-front-sec-slide-mob__text-container">
+                            <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
+                            <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
+                        </div>
+                        
                     </div>
                 </div>
-            </div>
-        </swiper-slide>
 
-        <swiper-slide class="home-front-sec-slide front-sec-slide-3 fss-3 front-sec-slide-tex">
-            <div class="home-front-sec-slide__wrapper">
-                <div class="home-front-sec-slide__container">
-                    <div class="front-sec-slide-3__text-wrapper">
-                        <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
-                        <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                <div class="front-sec-v2-mob-text-wrapper__element">
+                    <div class="home-front-sec-slide-mob__wrapper">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
+                                <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </swiper-slide>
+                <div class="front-sec-v2-mob-text-wrapper__element">
+                    <div class="home-front-sec-slide-mob__wrapper">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">Schengen <br>Calculator</h2>
+                                <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="front-sec-v2-mob-text-wrapper__element">
+                    <div class="home-front-sec-slide-mob__wrapper">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
+                                <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="front-sec-v2-mob-text-wrapper__element">
+                    <div class="home-front-sec-slide-mob__wrapper">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">US Cities <br>Day Count</h2>
+                                <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="front-sec-v2-mob-text-wrapper__element">
+                    <div class="home-front-sec-slide-mob__wrapper">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">Passport Index</h2>
+                                <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
         
-        <swiper-slide class="home-front-sec-slide front-sec-slide-3 fss-4 front-sec-slide-tex">
-            <div class="home-front-sec-slide__wrapper">
-                <div class="home-front-sec-slide__container">
-                    <div class="front-sec-slide-3__text-wrapper">
-                        <h2 class="front-sec-slide__title">Schengen Calculator</h2>
-                        <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
-                    </div>
-                </div>
-            </div>
-        </swiper-slide>
-
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-5 front-sec-slide-tex">
-            <div class="home-front-sec-slide__wrapper">
-                <div class="home-front-sec-slide__container">
-                    <div class="front-sec-slide-3__text-wrapper">
-                        <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
-                            <div class="tax-notification__icon-wrapper">
-                                <img src="@/assets/images/tax-noti-icon.png" alt="">
+                                <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
                             </div>
-                            <div class="tax-notification__text">
-                                <p class="tax-notification__title">Flamingo</p>
-                                <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
-                            </div>
-                            <p class="tax-notification__time">Now</p>
-                        </div>
-                        <h2 class="front-sec-slide__title">Tax Residency & Domicile</h2>
-                        <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates.</p>
-                    </div>
-                </div>
-            </div>
-        </swiper-slide>
-
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-6 front-sec-slide-tex">
-            <div class="home-front-sec-slide__wrapper">
-                <div class="home-front-sec-slide__container">
-                    <div class="front-sec-slide-3__text-wrapper">
-                        <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
-                            <div class="tax-notification__icon-wrapper">
-                                <img src="@/assets/images/tax-noti-icon.png" alt="">
-                            </div>
-                            <div class="tax-notification__text">
-                                <p class="tax-notification__title">Flamingo</p>
-                                <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
-                            </div>
-                            <p class="tax-notification__time">Now</p>
-                        </div>
-                        <h2 class="front-sec-slide__title">US Cities Day Count</h2>
-                        <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
-                    </div>
-                </div>
-            </div>
-        </swiper-slide>
-
-        <swiper-slide class="home-front-sec-slide front-sec-slide-2 fss-7 front-sec-slide-tex">
-            <div class="home-front-sec-slide__wrapper">
-                <div class="home-front-sec-slide__container">
-                    <div class="front-sec-slide-3__text-wrapper">
-                        <h2 class="front-sec-slide__title">Passport Index</h2>
-                        <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
-                        <div class="front-sec-slide__btn-wrapper" :class="{'front-sec-slide__btn-btn_activ': counterActivSlide == 6}">
-                            <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </swiper-slide>
-
-       </swiper>
-
-
-       <div class="home-front-sec__noti-wrapper" v-if="+widthWindow < 750">
-        <div class="home-front-sec-slide-mob__text-container">
-
-            <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
-                <div class="tax-notification__icon-wrapper">
-                    <img src="@/assets/images/tax-noti-icon.png" alt="">
-                </div>
-                <div class="tax-notification__text">
-                    <p class="tax-notification__title">Flamingo</p>
-                    <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
-                </div>
-                <p class="tax-notification__time">Now</p>
-            </div>
-
-            <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
-                <div class="tax-notification__icon-wrapper">
-                    <img src="@/assets/images/tax-noti-icon.png" alt="">
-                </div>
-                <div class="tax-notification__text">
-                    <p class="tax-notification__title">Flamingo</p>
-                    <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
-                </div>
-                <p class="tax-notification__time">Now</p>
+    
             </div>
 
         </div>
-       </div>
 
-       <!-- slider with text main data mobile  -->
-       <div v-if="+widthWindow < 750" class="home-front-sec-slider-mob-wrapper" :class="{'home-front-sec-slider-mob-wrapper_activ': counterActivSlide != 0}" >
-            <swiper
-            ref="swiperRefMob"
-            :direction="'vertical'"
-            :mousewheel="true"
-            :preventInteractionOnTransition="true"
-            :touchEventsTarget="'container'"
-            :slidesPerView="1"
-            :speed="700"
-            :modules="modules"
-            @swiper="setSecondSwiper"
-            
-            :controller="{ control: firstSwiper }"
-            class="home-front-sec-slider-mob"
-            >
-            <swiper-slide class="home-front-sec-slide-mob fms-1">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        
-                    </div>
-                </div>
-            </div>
-            </swiper-slide>
-
-            <swiper-slide class="home-front-sec-slide-mob fms-2">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
-                        <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
-                    </div>
-                    
-                </div>
-            </div>
-            </swiper-slide>
-
-            <swiper-slide class="home-front-sec-slide-mob fms-3">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
-                        <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
-                    </div>
-                </div>
-            </div>
-            </swiper-slide>
-
-            <swiper-slide class="home-front-sec-slide-mob fms-4">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        <h2 class="front-sec-slide__title">Schengen <br>Calculator</h2>
-                        <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
-                    </div>
-                </div>
-            </div>
-            </swiper-slide>
-
-            <swiper-slide class="home-front-sec-slide-mob fms-5">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
-                        <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates.</p>
-                    </div>
-                </div>
-            </div>
-            </swiper-slide>
-
-            <swiper-slide class="home-front-sec-slide-mob fms-6">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        <h2 class="front-sec-slide__title">US Cities <br>Day Count</h2>
-                        <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
-                    </div>
-                </div>
-            </div>
-            </swiper-slide>
-
-            <swiper-slide class="home-front-sec-slide-mob fms-7">
-
-            <div class="home-front-sec-slide-mob__wrapper">
-                <div class="home-front-sec-slide-mob__text-container-wrapper">
-                    <div class="home-front-sec-slide-mob__text-container">
-                        <h2 class="front-sec-slide__title">Passport Index</h2>
-                        <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
-
-                        <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
-                    </div>
-                </div>
-            </div>
-            </swiper-slide>
-
-            </swiper>
-
-       </div>
-       
-       <!-- cloud for first slide -->
-        <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
-            <div class="home-front-sec__cloud cl1"></div>
-            <div class="home-front-sec__cloud cl2"></div>
-            <div class="home-front-sec__cloud cl3"></div>
-        </div>
-
-
-        <!-- phone video  -->
-        <div class="home-front-sec__phone-wrapper">
-            <div class="home-front-sec__phone" 
-            :class="{'home-front-sec__phone_first-load': +counterActivSlide == 0
-            , 'home-front-sec__phone_activs': +counterActivSlide == 1 || +counterActivSlide == 2 || +counterActivSlide == 3 || +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6,
-        'home-front-sec__phone-left-order': +counterActivSlide == 4 || +counterActivSlide == 5 || +counterActivSlide == 6  }">
-                <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
-
-
-                <!-- анимация телефонов если видео доступны -->
-                <template v-if="autoPlaySupported == true">
-                 
-                </template>
-
-
-                <!-- анимация телефонов если видео недоступны -->
-                <template v-else>
-
-                    <div class="anim-phones-wrapper">
-                        <div class="anim-phones-slider">
-                            <div class="anim-phones-wrapper__row" :style="{ transform: `translateY(-${(100 / 7) * +counterActivSlide}%)` }" >
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-0-img.jpg" alt="">
-                                    </div>
-                                </div>
+        <!-- phone video if video working -->
+        <div class="front-sec-v2__phone-main-wrapper" :style="{top: `-${animTopPosition}px` }">
+            <div class="home-front-sec__phone-wrapper">
     
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-1-img.jpg" alt="">
+                <div class="home-front-sec__phone-ipad-cover" ref="phoneElementcoverMob">
+                    <div class="home-front-sec__phone " ref="phoneElementMob">
+                        <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
+                            <div class="anim-phones-wrapper">
+                                <div class="anim-phones-slider">
+                                    <div class="anim-phones-wrapper__row" :style="{ transform: `translateY(-${textScrollCounter}%)` }" >
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-0-img.jpg" alt="">
+                                            </div>
+                                        </div>
+        
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-1-img.jpg" alt="">
+                                            </div>
+                                        </div>
+        
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-2-img.jpg" alt="">
+                                            </div>
+                                        </div>
+        
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-3-img.jpg" alt="">
+                                            </div>
+                                        </div>
+        
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-4-img.jpg" alt="">
+                                            </div>
+                                        </div>
+        
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-5-img.jpg" alt="">
+                                            </div>
+                                        </div>
+        
+                                        <div class="anim-phones__element">
+                                            <div class="anim-phones__img-wrapper">
+                                                <img class="anim-phones__img" src="@/assets/video/phone-6-img.jpg" alt="">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-    
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-2-img.jpg" alt="">
-                                    </div>
-                                </div>
-    
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-3-img.jpg" alt="">
-                                    </div>
-                                </div>
-    
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-4-img.jpg" alt="">
-                                    </div>
-                                </div>
-    
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-5-img.jpg" alt="">
-                                    </div>
-                                </div>
-    
-                                <div class="anim-phones__element">
-                                    <div class="anim-phones__img-wrapper">
-                                        <img class="anim-phones__img" src="@/assets/video/phone-6-img.jpg" alt="">
-                                    </div>
-                                </div>
+                            
+                                
                             </div>
-                        </div>
-                       
+                            
+                  
+        
                         
                     </div>
-                    
-                </template>
-
+                </div>
                 
             </div>
         </div>
 
-  
+        <!-- planet mob wrapper  -->
+         <div class="front-sec-v2__planet-img-wrapper" >
+            <img :class="{'front-sec-v2__planet-img_show': planetVisibleStatus == true}"  class="front-sec-v2__planet-img" src="@/assets/video/glob-01-img.jpg" alt="">
+         </div>
 
-        <!-- planet videos  -->
-        <div class="home-front-sec__video-wrapper">
-            <div  class="home-front-sec__video-element home-front-sec__video-element-1"
-            :class="{'home-front-sec__video-element-1_activ': +counterActivSlide == 0}">
-            <img v-if="autoPlaySupported == false && +widthWindow < 750" class="home-front-sec__video-element-1-img" src="@/assets/video/glob-01-img.jpg" alt="">
-        </div>
+      
 
-        </div>
-
-     </section>
-        
+    </div>
 </template>
-
 
 
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
- // Import Swiper Vue.js components
-  import { Controller } from 'swiper/modules';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-
-  // Import Swiper styles
-  import 'swiper/css';
-
-  import 'swiper/css/pagination';
-
-
-  // import required modules
-  import { Pagination, Mousewheel, Navigation } from 'swiper/modules';
-
 
 
 export default {
-    data() {
-        return {
-            counterActivSlide: 999,
-            counterPrevievSlide: null,
-            allowSlide: true,
-            widthWindow: null,
-            autoPlaySupported: false, // Флаг для проверки автозагрузки
+
+  data() {
+    return {
+        fullLoadPageStatus: false,
+        counterActivSlide: 0,
+        animTopPosition: 0,
+        textScrollCounter: 0,
+        scrollPosition: null,
+        windowHeingt: null,
+        lastScrollY: null,
+        scrollPosition: null,
+        scrollDeltaChange: null,
+        textScrollValue: 0,
+        textTranslateValue: 0,
+        maxScrollValue: 0,
+        opacityAnim: 1,
+        planetVisibleStatus: false,
+      
+
+    }
+  },
+
+  methods: {
+    firstLoadMobAnim(){
+
+        let phoneHeight = this.$refs.phoneElementMob.offsetHeight
+        let maxTextTranslateValue = this.$refs.textMobWrapper.offsetHeight
+        let moveLineHeight = this.$refs.textMobMoveLine.offsetHeight
+
+        let maxScrollTextValue = (((this.windowHeingt * 1) - (phoneHeight / 2)) + maxTextTranslateValue + moveLineHeight - (moveLineHeight / 6))
+        this.maxScrollValue = maxScrollTextValue
+
+
+
+        this.$refs.frontScrollContainerMobRef.style.height = this.maxScrollValue + this.windowHeingt  + 'px'
+
+        this.scrollPosition = window.scrollY;
+        console.log('this.scrollPositions',this.scrollPosition) 
+
+        this.firstMobPhoneLoad()
+        this.handleScrollMob()
+
+        window.addEventListener('scroll', this.handleScrollMob);
+
+        window.addEventListener('scroll', this.handleScroll);
+        window.scrollTo(0, this.scrollPosition + 1)
+        window.scrollTo(0, this.scrollPosition -1)
+    },
+
+    firstMobPhoneLoad(){
+
+        if(+this.scrollPosition < 10){
+            let phoneHeight = this.$refs.phoneElementcoverMob.offsetHeight
+            this.$refs.phoneElementcoverMob.style.transition = 'all ease 0.7s'
+            this.$refs.phoneElementcoverMob.style.top = this.windowHeingt - (phoneHeight / 2) + 'px'
+        }
+        else{
+            let phoneHeight = this.$refs.phoneElementMob.offsetHeight
+            this.$refs.phoneElementcoverMob.style.transition = 'all ease 0.7s'
+            this.$refs.phoneElementcoverMob.style.top = (this.windowHeingt / 2) - (phoneHeight / 2) + 'px'
         }
     },
 
-    components: {
-        Swiper,
-        SwiperSlide,
+
+    handleScrollMob(){
+        this.scrollPosition = window.scrollY;
+        this.scrollDeltaChange = this.scrollPosition - this.lastScrollY;
+        console.log('Текущая позиция прокрутки:', this.scrollPosition);
+
+        console.log('this.scrollDeltaChange',this.scrollDeltaChange)
+
+
+       
+        this.changePhoneSlide()
+        this.changePositionPhone()
+        this.changeTextTranslateValue()
+        this.changeTextMoveLine()
+        this.chengePlanetVisible()
+        this.chengeAnimHidenStatus()
+
+        this.lastScrollY = this.scrollPosition
     },
 
+    changePositionPhone(){
+        let phoneHeight = this.$refs.phoneElementMob.offsetHeight
+        let maxTopValue = 70
+        let currentTopValue = (this.windowHeingt - (phoneHeight / 2)) - this.scrollPosition
 
-    methods: {
-
-        // Функция обновления состояния экрана
-        updateScreenSize() {
-         this.widthWindow = window.innerWidth;
-         console.log(this.widthWindow)
-
-        },
-        // Обработчик resize с дебаунсом
-        debouncedResizeHandler() {
-        clearTimeout(this.resizeTimeout); // Сбрасываем предыдущий таймер
-        this.resizeTimeout = setTimeout(() => {
-            this.updateScreenSize(); // Выполняем обновление через 1 секунду
-        }, 1000); // Интервал дебаунса: 1000 мс
-        },
-
-
-        swiperData(data){
-            this.counterActivSlide = data.activeIndex
-            this.counterPrevievSlide = data.previousIndex 
-        },
-        
-
-        onSlideChange() {
-            // Отключаем возможность перелистывания сразу после смены слайда
-            this.allowSlide = false;
-
-            // Включаем возможность перелистывания через 3 секунды
-            clearTimeout(this.timer);
-            this.timer = setTimeout(() => {
-                this.allowSlide = true;
-            }, 3000); // 3 секунды
-        },
-
-
-
-        startAnimPlanets(){
-            setTimeout(()=>{
-                this.counterActivSlide = 0
-            },300)
-        },
-
+        if(currentTopValue <= maxTopValue){
+            currentTopValue = maxTopValue
+        }
+        this.$refs.phoneElementcoverMob.style.transition = 'none'
+        this.$refs.phoneElementcoverMob.style.top = currentTopValue + 'px'
     },
 
-    setup() {
-        let swiperData = ''
-        let swiperDataMob = ''
-        let swiperPhone = ''
-        let statusSwiper = true
-        let lastScrollTop = 0;
-        let currentIndex = null
-        const firstSwiper = ref(null);
-        const secondSwiper = ref(null);
-        const swiper3 = ref(null);
-        const pointEventNoneStatus = ref(false)
-
-
-        const touchData = ref({
-        startX: 0,
-        startY: 0,
-        moveX: 0,
-        moveY: 0,
-        endX: 0,
-        endY: 0,
-        });
-
-        const handleTouchStart = (event) => {
-        //   touchData.value.startX = event.touches[0].clientX;
-        touchData.value.startY = event.touches[0].clientY;
-        console.log('move-start', touchData.value.startY)
-        };
-
-        const handleTouchMove = (event) => {
-        //   touchData.value.moveX = event.touches[0].clientX;
-        touchData.value.moveY = event.touches[0].clientY;
-        };
-
-        const handleTouchEnd = (event) => {
-        //   touchData.value.endX = event.changedTouches[0].clientX;
-        touchData.value.endY = event.changedTouches[0].clientY;
-        console.log('move-end', touchData.value.endY = event.changedTouches[0].clientY)
-        };
-
-        let onSwiper = (swiper) => {
-            swiperData = swiper;
-            firstSwiper.value = swiper;
-        };
-
-        let setSecondSwiper = (swiper) => {
-            swiperDataMob = swiper
-            secondSwiper.value = swiper;
-        };
-
-        let set3Swiper = (swiper) => {
-            swiperPhone = swiper
-            swiper3.value = swiper;
-            console.log('set3Swiper', swiper)
-        };
+    changePhoneSlide(){
         
-        const handleReachEnd = (swiper) => {
-            console.log('rich end', swiper);
+        let phoneHeight = this.$refs.phoneElementMob.offsetHeight
+        let maxTextTranslateValue = this.$refs.textMobWrapper.offsetHeight
+        let moveLineHeight = this.$refs.textMobMoveLine.offsetHeight
+        let oneTexsectionSmall = (moveLineHeight / 6)
 
-            if(window.innerWidth < 1250){
+        let minScrollTextValue = ((this.windowHeingt * 1) - (phoneHeight / 2)) + maxTextTranslateValue
+        let maxScrollTextValue = (((this.windowHeingt * 1) - (phoneHeight / 2)) + maxTextTranslateValue + moveLineHeight - (moveLineHeight / 6))
 
-                if(touchData.value.startY > touchData.value.endY){
-                    setTimeout(()=>{
-                        swiperData.disable();
-
-                        if(window.innerWidth < 750){
-                        swiperDataMob.disable()
-                        }
-                
-                        pointEventNoneStatus.value = true
-                        statusSwiper = false
-                    },700)
-                }
-              
-            }
-            else{
-                setTimeout(()=>{
-                if(statusSwiper == true){
-                    // swiperData.disable();
-                    swiperData.slideTo(6);  
-                }
-                
-            },1000)
+        if (this.scrollDeltaChange > 0){
+            if(+this.scrollPosition <= 10){
+                this.textScrollCounter = 0
             }
 
-        };
-
-
-        const onAttemptBeyondEnd = (swiper) => {
-            console.log('onAttemptBeyondEnd', swiper.activeIndex);
-
-            setTimeout(()=>{
-                currentIndex = swiper.activeIndex
-            },3000)
-        };
-
-
-        const onWheel = (event) => {
-            console.log('onWheel',event.deltaY);
-
-            if(+currentIndex == 6 && event.deltaY > 0){
-                swiperData.disable();
-                pointEventNoneStatus.value = true
-                statusSwiper = false
-            }
-            else{
-                
-            }
-        };
-
-        const touchEvent = (swiper) => {
-            console.log('touchEvent',swiper);
-
-            if(window.innerWidth < 1250){
-                if(swiper.activeIndex == 6 && swiper.previousIndex == 5){
-
-                    if(touchData.value.startY > touchData.value.endY){
-                   
-                        swiperData.disable();
-
-                        if(window.innerWidth < 750){
-                            swiperDataMob.disable();
-                        }
-                        
-                        pointEventNoneStatus.value = true
-                        statusSwiper = false
-                    }
-                    
-
-                }
-                else{
-                    swiperData.enable();
-
-                    if(window.innerWidth < 750){
-                            swiperDataMob.enable();
-                        }
-
-                    statusSwiper = true
-                    pointEventNoneStatus.value = false
-                }
+            if(+this.scrollPosition >= minScrollTextValue * 1 && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 1)){
+                this.textScrollCounter = (100 / 7) * 1
             }
             
-        };
+            if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 1) && this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 2)){
+                this.textScrollCounter = (100 / 7) * 2
+            }
 
+            if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 2) && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 3) ){
+                this.textScrollCounter = (100 / 7) * 3
+            }
 
-        const handleScroll = (event) => {
-        console.log(window.scrollY);
-        const currentScrollTop = window.scrollY;
+            if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 3) && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 4)  ){
+                this.textScrollCounter = (100 / 7) * 4
+            }
 
-        if (currentScrollTop > lastScrollTop) {
-            console.log('Прокрутка вниз');
-        } 
-        else if (currentScrollTop < lastScrollTop) {
-            console.log('Прокрутка вверх');
+            if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 4) && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 5) ){
+                this.textScrollCounter = (100 / 7) * 5
+            }
 
-            if(currentScrollTop <= 0){
-              
-                if(statusSwiper == false){
-             
-                    swiperData.slideTo(6)
+            if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 5)){
+                this.textScrollCounter = (100 / 7) * 6
+            } 
+        }
+        else if(this.scrollDeltaChange < 0){
+            if(+this.scrollPosition <= 10){
+                this.textScrollCounter = 0
+            }
+
+            if(+this.scrollPosition <= minScrollTextValue  && +this.scrollPosition > 10){
+                this.textScrollCounter = (100 / 7) * 1
+            }
+            
+            if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 1) && this.scrollPosition > minScrollTextValue){
+                this.textScrollCounter = (100 / 7) * 2
+            }
+
+            if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 2) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 1) ){
+                this.textScrollCounter = (100 / 7) * 3
+            }
+
+            if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 3) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 2) ){
+                this.textScrollCounter = (100 / 7) * 4
+            }
+
+            if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 4) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 3) ){
+                this.textScrollCounter = (100 / 7) * 5
+            }
+
+            if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 5) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 4)){
+                this.textScrollCounter = (100 / 7) * 6
+            } 
+        }
+
+        
+        
+    },
+
+    changeTextTranslateValue(){
+        let phoneHeight = this.$refs.phoneElementMob.offsetHeight
+        // let textTranslateValueHeight = this.$refs.textMobWrapper.offsetHeight
+        let maxTextTranslateValue = this.$refs.textMobWrapper.offsetHeight
+
+        // let currentTopValueText = this.windowHeingt + this.scrollPosition
+
+        // if(currentTopValueText >= maxTextTranslateValue){
+        //     currentTopValueText = maxTextTranslateValue
+        // }
+        let currentTransitionValue 
+        if(this.scrollPosition >= (this.windowHeingt * 1) - (phoneHeight / 2)){
+            currentTransitionValue = this.scrollPosition - ((this.windowHeingt * 1) - (phoneHeight / 2))
+
+            if(currentTransitionValue >= maxTextTranslateValue){
+                currentTransitionValue = maxTextTranslateValue
                
-                    swiperData.enable()
-
-                    
-                    if(window.innerWidth < 750){
-                        swiperDataMob.enable()
-                        }
-                  
-                  
-                    statusSwiper = true
-
-                    pointEventNoneStatus.value = false
-                }
             }
-            else{
-                if(currentIndex != 6){
-                    swiperData.slideTo(6)
-                }
-                    swiperData.disable()
-                    if(window.innerWidth < 750){
-                            swiperDataMob.disable();
-                        }
-                    pointEventNoneStatus.value = true
-                    statusSwiper = false 
-            }
+           
         }
-
-        lastScrollTop = currentScrollTop; // Обновляем предыдущее значение 
-        };
-
-
-        const initSwiper = (event) => {
-            setTimeout(()=>{
-                let currentScrollTop = window.scrollY;
-                if(event && event.activeIndex){
-                
-                    if(+currentScrollTop > 0){
-                        // swiperData.slideTo(6)
-                        // swiperData.enable()
-                        // statusSwiper = true
-                    }
-                }
-                console.log('init',currentScrollTop,event);
-            },300)
-            
-        };
-
-
-        onMounted(() => {
-        window.addEventListener('scroll', handleScroll);
-   
-        });
-
-        onUnmounted(() => {
-        window.removeEventListener('scroll', handleScroll);
-        });
-
-      return {
-        firstSwiper,
-        secondSwiper,
-        swiper3,
-        
-        onSwiper,
-        setSecondSwiper,
-        set3Swiper,
-        handleReachEnd,
-        onAttemptBeyondEnd,
-        onWheel,
-        initSwiper,
-        touchEvent,
-
-        pointEventNoneStatus,
-  
-        touchData,
-        handleTouchEnd,
-        handleTouchMove,
-        handleTouchStart,
-
-
-        modules: [Pagination, Mousewheel, Navigation, Controller],
-        modules2: [Pagination, Mousewheel, Navigation, Controller],
-      };
-    },
-
-    computed: {
-
-    },
-
-    watch: {
-
-    },
-
-
-    mounted(){
-        this.startAnimPlanets();
-        this.updateScreenSize(); // Проыверяем экран при загрузке
-        window.addEventListener("resize", this.debouncedResizeHandler);
+        else{
+            currentTransitionValue =  0
+        }
+        this.textTranslateValue = currentTransitionValue
        
     },
-    beforeDestroy() {
-        window.removeEventListener("resize", this.debouncedResizeHandler);
-        clearTimeout(this.resizeTimeout); // Чистим таймер
+
+    changeTextMoveLine(){
+        let phoneHeight = this.$refs.phoneElementMob.offsetHeight
+        let maxTextTranslateValue = this.$refs.textMobWrapper.offsetHeight
+        let moveLineHeight = this.$refs.textMobMoveLine.offsetHeight
+
+        let minScrollTextValue = ((this.windowHeingt * 1) - (phoneHeight / 2)) + maxTextTranslateValue
+        let maxScrollTextValue = (((this.windowHeingt * 1) - (phoneHeight / 2)) + maxTextTranslateValue + moveLineHeight - (moveLineHeight / 6))
+        this.maxScrollValue = maxScrollTextValue
+
+        let currentTextScrollValue 
+
+        if(this.scrollPosition >= minScrollTextValue && this.scrollPosition < maxScrollTextValue){
+            currentTextScrollValue = this.scrollPosition - minScrollTextValue
+            console.log('x1')
+        }
+        else if(this.scrollPosition >= maxScrollTextValue){
+            currentTextScrollValue = maxScrollTextValue - minScrollTextValue
+            console.log('x2')
+        }
+        else{
+            currentTextScrollValue =  0
+            console.log('x3')
+        }
+
+        this.textScrollValue = currentTextScrollValue
+        console.log('minScrollTextValue', minScrollTextValue)
+        console.log('maxScrollTextValue', maxScrollTextValue)
+        console.log('this.textScrollValue', this.textScrollValue)
     },
+
+
+    chengePlanetVisible(){
+
+        if(this.scrollPosition >= 20){
+            this.planetVisibleStatus = false
+        }
+        else{
+            this.planetVisibleStatus = true
+        }
+
+        
+    },
+
+    chengeAnimHidenStatus(){
+
+        let maxTextTranslateValue = this.$refs.textMobWrapper.offsetHeight
+
+        if(this.scrollPosition > this.maxScrollValue  ){
+            
+            this.animTopPosition = this.scrollPosition - this.maxScrollValue
+            this.textTranslateValue = this.scrollPosition - this.maxScrollValue + maxTextTranslateValue
+
+            if(this.animTopPosition >=  this.windowHeingt){
+                this.animTopPosition = this.windowHeingt
+            }
+            if(this.textTranslateValue >=  this.windowHeingt + maxTextTranslateValue){
+                this.textTranslateValue =  this.windowHeingt + maxTextTranslateValue
+            }
+
+            let currentOpacityProcent = this.animTopPosition / this.windowHeingt
+            this.opacityAnim = 1 - currentOpacityProcent
+           
+        }
+        else{
+            this.opacityAnim = 1
+        }
+
+    },
+
+
+
+
+    
+
+  },
+
+
+    mounted() {
+
+        this.fullLoadPageStatus = true
+        this.counterActivSlide = 0
+        this.windowHeingt = window.innerHeight
+        
+
+        setTimeout(()=>{
+            this.firstLoadMobAnim()
+        },100)
+       
+
+    },
+
 }
+
 </script>

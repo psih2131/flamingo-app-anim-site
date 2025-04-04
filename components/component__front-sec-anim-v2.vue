@@ -936,6 +936,8 @@ export default {
    beforeDestroy() {
         // window.removeEventListener('scroll', this.handleScroll);
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener("resize", this.updateWindowSize);
+        window.removeEventListener("resize", this.$i18nupdateWindowSize);
    },
 }
 </script>

@@ -1,12 +1,8 @@
 <template>
     <main class="main home-main">
     
-        
-        <!-- <component__front_sec  @fixedPage="pageStatus()"/> -->
-        <!-- <component__front_sec_apple  /> -->
-        <component__front_sec_v2  />
-        
 
+        <component__first_sec />
       
 
         <section class="who-needs-sec" id="ourUsers">
@@ -98,10 +94,8 @@ definePageMeta({
 })
 
 import component__reason_popup from '@/components/component__reason-popup.vue'
-// import component__front_sec from '@/components/component__front-sec.vue'
-import component__front_sec_apple from '@/components/component__front_sec_apple.vue'
-import component__front_sec_v2 from '@/components/component__front-sec-anim-v2.vue'
 
+import component__first_sec from '@/components/component__first-sec-anim.vue'
 
 
 
@@ -116,14 +110,18 @@ export default {
 
             activeFirsLoad: false,
             previewActivIndex: null,
+
+    
+            pcAnimSecStatus: true,
         }
     },
 
     components: {
         component__reason_popup,
-        // component__front_sec,
-        component__front_sec_apple,
-        component__front_sec_v2
+
+
+        component__first_sec,
+
     },
 
 
@@ -426,6 +424,29 @@ export default {
             element4.classList.remove('activ-hover-anim-small')
         },
 
+
+        updateWindowSizeComponent(){
+            clearTimeout(this.resizeTimeout); // Очищаем предыдущий таймер
+            this.resizeTimeout = setTimeout(() => {
+                this.widthWind = window.innerWidth;
+                this.heightWind = window.innerHeight;
+                console.log("Пользователь закончил изменять размер окна!");
+
+                this.checkCurrentComponent()
+            }, 1500); // Задержка перед выполнением
+
+        },
+        checkCurrentComponent(){
+            if(this.widthWind <= 750){
+                this.pcAnimSecStatus = false
+            }
+            else{
+                this.pcAnimSecStatus = true
+            }
+
+        },
+
+
         // openPopupInfo(data){
         //     this.popupStatus = true;
         //     this.popupData = data;
@@ -445,7 +466,12 @@ export default {
 
 
     mounted(){
-
+        console.log("pcAnimSecStatus до изменения:", this.pcAnimSecStatus);
+    this.pcAnimSecStatus = false;
+    console.log("pcAnimSecStatus после изменения:", this.pcAnimSecStatus);
+        // this.checkCurrentComponent()
+     
+        // window.addEventListener("resize", this.updateWindowSizeComponent);
     },
 
 }

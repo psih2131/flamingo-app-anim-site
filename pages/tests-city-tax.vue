@@ -25,9 +25,10 @@
                 {{ log }}
             </pre>
             <div>
-                <button @click="calcTravels">calc & show travels</button>
+                <button @click="()=>{calcTravels();markCityOnlyDays();}">calc & show travels</button>
             </div>
             <div v-if="travels.length > 0">
+                <pre>homeRegion: {{ getHomeRegion() }}; totalVisits: {{ log.length }}</pre>
                 <pre>
                     <table>
                         <tr>
@@ -35,12 +36,14 @@
                             <th>arrivalDateString</th>
                             <th>departureDateString</th>
                             <th>isHome</th>
+                            <th>isCandidateToCollapse</th>
                         </tr>
                         <tr v-for="travel in travels">
                             <td>{{ travel.usaStateCode }}</td>
                             <td>{{ travel.arrivalDateString }}</td>
                             <td>{{ travel.departureDateString }}</td>
                             <td>{{ travel.isHome }}</td>
+                            <td>{{ travel.isCandidateToCollapse || '' }}</td>
                         </tr>
                     </table>
                 </pre>
@@ -127,7 +130,7 @@ export default {
             NIGHT_OUTS: 2,
             DAY_START_HOUR: 8,
             DAY_END_HOUR: 22,
-            REGION_SWITCH_PROBABILITY: 0.3
+            REGION_SWITCH_PROBABILITY: 0.5
         };
 
         const regions = [
@@ -169,7 +172,7 @@ export default {
                     let pointsCount = randomInRange(CONFIG.POINTS_PER_TRIP);
                     let tripRegions = [lastRegion];
                     while (Math.random() < CONFIG.REGION_SWITCH_PROBABILITY) {
-                        let nextRegion = (tripRegions[tripRegions.length - 1] + 1) % 3;
+                        let nextRegion = (tripRegions[tripRegions.length - 1] + getRnd(1, 3)) % 3;
                         tripRegions.push(nextRegion);
                     }
 
@@ -262,6 +265,7 @@ export default {
         let csvLog = ref('');
         const travels = ref([]);
         const nycCard = ref({});
+        const collapsCard = ref({});
         return {
             zoomVal,
             scrollVal,
@@ -275,7 +279,8 @@ export default {
             regions,
             travels,
             nycCard,
-            scrollWidth: (CONFIG.DAYS + 1) * 86400
+            scrollWidth: (CONFIG.DAYS + 1) * 86400,
+            collapsCard
         }
     },
     methods: {
@@ -440,7 +445,35 @@ export default {
             }
 
             // console.log(this.travels);
-        }
+        },
+        markCityOnlyDays() {
+            this.collapsCard;
+            for (let i = 0; i < this.travels.length; i++) {
+                const t = this.travels[i];
+
+                if (!this.collapsCard[t.arrivalDateString.substring(0,10)]) this.collapsCard[t.arrivalDateString.substring(0,10)] = {};
+                if (!this.collapsCard[t.departureDateString.substring(0,10)]) this.collapsCard[t.departureDateString.substring(0,10)] = {};
+                this.collapsCard[t.arrivalDateString.substring(0,10)][t.usaStateCode] = true;
+                this.collapsCard[t.departureDateString.substring(0,10)][t.usaStateCode] = true;
+            }
+
+            let lastRegion = 'New Jarsey State';
+            Object.entries(this.collapsCard).forEach(v => {
+                if (v[1]['NYC'] && v[1]['New Jarsey State'] && !v[1]['New York State'] && lastRegion === 'New Jarsey State') {
+                    for (let i = 0; i < this.travels.length; i++) {
+                        const t = this.travels[i];
+                        if ((t.arrivalDateString.substring(0,10) === v[0] || t.departureDateString.substring(0,10) === v[0])
+                                && t.arrivalDateString.substring(0,10) === t.departureDateString.substring(0,10)
+                                && t.usaStateCode === 'NYC') {
+                            t.isCandidateToCollapse = true;
+                            lastRegion = this.travels[i - 1].usaStateCode;
+                        }
+                    }
+                }
+            });
+
+            console.log(this.collapsCard);
+        },
     }
 }
 </script>

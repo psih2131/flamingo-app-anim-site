@@ -104,6 +104,36 @@
             </div>
          </div>
 
+
+         <!-- notification -->
+         <div class="home-front-sec__noti-wrapper" ref="notiMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
+            <div class="home-front-sec-slide-mob__text-container">
+    
+                <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
+                    <div class="tax-notification__icon-wrapper">
+                        <img src="@/assets/images/tax-noti-icon.png" alt="">
+                    </div>
+                    <div class="tax-notification__text">
+                        <p class="tax-notification__title">Flamingo</p>
+                        <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
+                    </div>
+                    <p class="tax-notification__time">Now</p>
+                </div>
+    
+                <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
+                    <div class="tax-notification__icon-wrapper">
+                        <img src="@/assets/images/tax-noti-icon.png" alt="">
+                    </div>
+                    <div class="tax-notification__text">
+                        <p class="tax-notification__title">Flamingo</p>
+                        <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
+                    </div>
+                    <p class="tax-notification__time">Now</p>
+                </div>
+    
+            </div>
+        </div>
+
         <!-- text container -->
         <div class="front-sec-v2-mob__text-wrapper front-sec-v2-mob-text-wrapper" ref="textMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
             <div class="front-sec-v2-mob-text-wrapper__move-line"  ref="textMobMoveLine" :style="{transform: `translateY(-${textScrollValue}px)`}">
@@ -365,59 +395,73 @@ export default {
         if (this.scrollDeltaChange > 0){
             if(+this.scrollPosition <= 10){
                 this.textScrollCounter = 0
+                this.counterActivSlide = 0
             }
 
             if(+this.scrollPosition >= minScrollTextValue * 1 && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 1)){
                 this.textScrollCounter = (100 / 7) * 1
+                this.counterActivSlide = 1
             }
             
             if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 1) && this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 2)){
                 this.textScrollCounter = (100 / 7) * 2
+                this.counterActivSlide = 2
             }
 
             if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 2) && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 3) ){
                 this.textScrollCounter = (100 / 7) * 3
+                this.counterActivSlide = 3
             }
 
             if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 3) && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 4)  ){
                 this.textScrollCounter = (100 / 7) * 4
+                this.counterActivSlide = 4
             }
 
             if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 4) && +this.scrollPosition < minScrollTextValue + (oneTexsectionSmall * 5) ){
                 this.textScrollCounter = (100 / 7) * 5
+                this.counterActivSlide = 5
             }
 
             if(+this.scrollPosition >= minScrollTextValue + (oneTexsectionSmall * 5)){
                 this.textScrollCounter = (100 / 7) * 6
+                this.counterActivSlide = 6
             } 
         }
         else if(this.scrollDeltaChange < 0){
             if(+this.scrollPosition <= 10){
                 this.textScrollCounter = 0
+                this.counterActivSlide = 0
             }
 
             if(+this.scrollPosition <= minScrollTextValue  && +this.scrollPosition > 10){
                 this.textScrollCounter = (100 / 7) * 1
+                this.counterActivSlide = 1
             }
             
             if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 1) && this.scrollPosition > minScrollTextValue){
                 this.textScrollCounter = (100 / 7) * 2
+                this.counterActivSlide = 2
             }
 
             if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 2) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 1) ){
                 this.textScrollCounter = (100 / 7) * 3
+                this.counterActivSlide = 3
             }
 
             if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 3) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 2) ){
                 this.textScrollCounter = (100 / 7) * 4
+                this.counterActivSlide = 4
             }
 
             if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 4) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 3) ){
                 this.textScrollCounter = (100 / 7) * 5
+                this.counterActivSlide = 5
             }
 
             if(+this.scrollPosition <= minScrollTextValue + (oneTexsectionSmall * 5) && +this.scrollPosition > minScrollTextValue + (oneTexsectionSmall * 4)){
                 this.textScrollCounter = (100 / 7) * 6
+                this.counterActivSlide = 6
             } 
         }
 

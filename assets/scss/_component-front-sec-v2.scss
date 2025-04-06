@@ -162,8 +162,8 @@
     margin-bottom: 15px;
 
     transform: scale(0.8);
-    transition: all ease 0.3s;
-    transition-delay: 0.5s;
+    transition: all ease 0.2s;
+
 
     opacity: 0;
 }
@@ -1483,10 +1483,10 @@
 
     .home-front-sec__noti-wrapper {
         width: 100%;
-        position: absolute;
+        position: fixed;
         z-index: 30;
         left: 0;
-        bottom: 300px;
+        bottom: 0px;
 
         .home-front-sec-slide-mob__text-container {
             position: relative;
@@ -1606,6 +1606,7 @@
         top: 0;
         position: absolute;
     }
+
 
 
 }

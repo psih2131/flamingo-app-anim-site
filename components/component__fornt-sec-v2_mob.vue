@@ -1,9 +1,12 @@
 <template>
     <div class="front-sec-v2-mob" v-if="fullLoadPageStatus" :class="{'showFrontSec': fullLoadPageStatus == true}" :style="{opacity: opacityAnim}">
+
+        <div class="front-sec-v2-mob__iphone-height-window" ref="iphoneHeightWindow"></div>
         
         <div class="front-sec-v2-mob__scroll-wrapper" ref="frontScrollContainerMobRef">
 
         </div>
+
 
         <!-- cloud for first slide -->
         <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
@@ -278,7 +281,7 @@ export default {
 
   methods: {
     firstLoadMobAnim(){
-
+        this.windowHeingt = this.$refs.iphoneHeightWindow.clientHeight 
         let phoneHeight = this.$refs.phoneElementMob.offsetHeight
         let maxTextTranslateValue = this.$refs.textMobWrapper.offsetHeight
         let moveLineHeight = this.$refs.textMobMoveLine.offsetHeight
@@ -530,8 +533,8 @@ export default {
 
         this.fullLoadPageStatus = true
         this.counterActivSlide = 0
-        this.windowHeingt = window.innerHeight
-        
+        // this.windowHeingt = this.$refs.iphoneHeightWindow.clientHeight 
+        // this.windowHeingt = window.innerHeight
 
         setTimeout(()=>{
             this.firstLoadMobAnim()

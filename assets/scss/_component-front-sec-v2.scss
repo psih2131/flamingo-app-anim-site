@@ -1597,6 +1597,15 @@
         bottom: 0;
     }
 
+    .front-sec-v2-mob__iphone-height-window {
+        height: 100vh;
+        width: 100%;
+        pointer-events: none;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
 
 
 }

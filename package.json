@@ -1,5 +1,8 @@
 {
   "name": "nuxt-app",
+  "engines": {
+    "node": "20.16.0 || 22.14.0"
+  },
   "private": true,
   "type": "module",
   "scripts": {

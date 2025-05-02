@@ -208,6 +208,15 @@
             <div class="home-front-sec__phone-ipad-cover" ref="phoneElementcover">
                 <div class="home-front-sec__phone " ref="phoneElement">
                     <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
+
+                    <div class="home-front-sec__phone-header">
+                        <img src="@/assets/video/phone-system-image/status_bar_w.png" alt="" class="home-front-sec__phone-header-w">
+                    </div>
+
+                    <div class="home-front-sec__phone-home">
+                        <img src="@/assets/video/phone-system-image/home.png" alt="" class="home-front-sec__home-img">
+                    </div>
+                    
     
     
                     <!-- анимация телефонов если видео доступны -->
@@ -221,9 +230,52 @@
                         <div class="anim-phones-wrapper">
                             <div class="anim-phones-slider">
                                 <div class="anim-phones-wrapper__row" :style="{ transform: `translateY(-${textScrollCounter}%)` }" >
-                                    <div class="anim-phones__element">
+
+                                    <div class="anim-phones__element phone-anim-element-v1">
                                         <div class="anim-phones__img-wrapper">
-                                            <img class="anim-phones__img" src="@/assets/video/phone-0-img.jpg" alt="">
+
+                                
+                                            <div class="phone-anim-element-v1__tab-row">
+
+                                                <div class="phone-anim-element-v1__tab-row-phone-1" 
+                                                :style="{ opacity: `${1 - (phoneStapTimelineSlideValue / 100)}` }">
+
+                                                    <div class="phone-anim-element-v1__counter-wrapper " :class="{'phone-anim-element-v1__counter-wrapper_activ': phoneAnimStap >= 1}">2
+                                                        <div class="phone-anim-element-v1__counter-num-wrapper">
+                                                            <div class="phone-anim-element-v1__counter-num-col">
+                                                                <span>4</span>
+                                                                <span>5</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="phone-anim-element-v1__text-wrapper" :class="{'phone-anim-element-v1__text-wrapper_activ': phoneAnimStap >= 1}">
+                                                        <div class="phone-anim-element-v1__text-col">
+                                                            <p class="phone-anim-element-v1__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi minus quibusdam dolores obcaecati</p>
+                                                            <p class="phone-anim-element-v1__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi minus quibusdam dolores obcaecati nostrum itaque excepturi asperiores</p>
+                                                        </div>
+                                                        
+                                                    </div>
+
+
+                                                    <img class="anim-phones__img " src="@/assets/video/phone-image/db_empty.jpg" alt="">
+                                                </div>
+                                                
+
+                                                <div class="phone-anim-element-v1__tab-row-phone-2" 
+                                                :style="{ transform: `translateX(-${phoneStapTimelineSlideValue}%)` }"
+                                                :class="{'phone-anim-element-v1__tab-row-phone-2_activ': phoneAnimStap >= 2}">
+                                                    <div class="phone-anim-element-v1__tab-row-phone-2-timeline-wrapper" :class="{'phone-anim-element-v1__tab-row-phone-2-timeline-wrapper_show-first-img':phoneStapTimelineSlideValue >= 100 }">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-2-timeline-header-v1" src="@/assets/video/phone-image/header1.jpg" alt="">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-2-timeline-header-v2" src="@/assets/video/phone-image/header2.jpg" alt="">
+                                                    </div>
+                                                    <div class="phone-anim-element-v1__tab-row-phone-2-timeline-wrapper">
+                                                        <img src="@/assets/video/phone-image/italy.png" alt="" class="phone-anim-element-v1__tab-row-phone-2-timeline-italy-img">
+                                                        <img src="@/assets/video/phone-image/timeline.jpg" alt="" class="phone-anim-element-v1__tab-row-phone-2-timeline-main-img">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
     
@@ -368,6 +420,9 @@ export default {
         windowHeingt: null,
         activTextBox: null,
         textScrollCounter: null,
+        phoneAnimStap: null,
+        phoneStapTimelineSlideValue: 0,
+
         textScrollValue: 0,
         lastScrollY: 0,
         scrollDeltaChange: 0,
@@ -521,30 +576,68 @@ export default {
     
         if(+this.scrollPosition <= 10){
             this.textScrollCounter = 0
+            this.phoneAnimStap = 0
+            this.phoneStapTimelineSlideValue = 0
+      
         }
 
+
+         //промежуточное значение только для горизонт скрол
+        if(+this.scrollPosition <= this.windowHeingt * 1.4){
+            this.phoneStapTimelineSlideValue = 0
+        }
+
+
         if(+this.scrollPosition >= this.windowHeingt * 1 && +this.scrollPosition <= this.windowHeingt * 2.018){
-            this.textScrollCounter = (100 / 7) * 1
+            this.textScrollCounter = 0
+            this.phoneAnimStap = 1
+             
+
+
+            if(+this.scrollPosition >= this.windowHeingt * 1.4 && +this.scrollPosition <= this.windowHeingt * 2.018){
+                let current_100_procent = (this.windowHeingt * 2.018) - (this.windowHeingt * 1.4)
+                let current_1_procent = current_100_procent / 100
+
+                let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 1.4)) / current_1_procent
+                this.phoneStapTimelineSlideValue = currentSvipeValue
+                console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
+            }
+            
+        }
+
+
+        //промежуточное значение только для горизонт скрол
+        if(+this.scrollPosition >= this.windowHeingt * 2.018 && this.scrollPosition <= this.windowHeingt * 2.9){
+            this.textScrollCounter = 0
+            this.phoneStapTimelineSlideValue = 100
+            this.phoneAnimStap = 1
         }
         
         if(+this.scrollPosition >= this.windowHeingt * 2.9 && this.scrollPosition <= this.windowHeingt * 4.4){
-            this.textScrollCounter = (100 / 7) * 2
+            // this.textScrollCounter = (100 / 7) * 2
+            this.textScrollCounter = 0
+            this.phoneStapTimelineSlideValue = 100
+            this.phoneAnimStap = 2
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 6.5 && +this.scrollPosition <= this.windowHeingt * 6.96 ){
             this.textScrollCounter = (100 / 7) * 3
+            this.phoneStapTimelineSlideValue = 100
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 9.18 && +this.scrollPosition <= this.windowHeingt * 11.2  ){
             this.textScrollCounter = (100 / 7) * 4
+            this.phoneStapTimelineSlideValue = 100
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 12.2 && +this.scrollPosition <= this.windowHeingt * 14.12 ){
             this.textScrollCounter = (100 / 7) * 5
+            this.phoneStapTimelineSlideValue = 100
         }
 
         if(+this.scrollPosition >= (this.windowHeingt * 16.75) ){
             this.textScrollCounter = (100 / 7) * 6
+            this.phoneStapTimelineSlideValue = 100
         } 
            
     },

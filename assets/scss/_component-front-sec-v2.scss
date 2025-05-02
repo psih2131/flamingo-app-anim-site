@@ -469,6 +469,32 @@
     width: 100%;
 }
 
+.home-front-sec__phone-header {
+    position: absolute;
+    width: calc(100% - 20px);
+    z-index: 3;
+    left: 10px;
+    top: 15px;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+
+.home-front-sec__phone-home {
+    position: absolute;
+    width: calc(100% - 20px);
+    z-index: 3;
+    left: 10px;
+    bottom: 15px;
+
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+
 .home-front-sec__phone {
     position: absolute;
     width: 336px;
@@ -762,6 +788,7 @@
 .anim-phones__img-wrapper {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .anim-phones__img {
@@ -772,6 +799,88 @@
 }
 
 
+.phone-anim-element-v1__tab-row {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.phone-anim-element-v1__tab-row-phone-1 {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.phone-anim-element-v1__tab-row-phone-2 {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    z-index: 2;
+
+}
+
+.phone-anim-element-v1__tab-row-phone-2-timeline-wrapper {
+    width: 100%;
+    height: 170px;
+    position: relative;
+}
+
+.phone-anim-element-v1__tab-row-phone-2-timeline-header-v1 {
+    opacity: 1;
+}
+
+.phone-anim-element-v1__tab-row-phone-2-timeline-header-v2 {
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.phone-anim-element-v1__tab-row-phone-2-timeline-header-v1,
+.phone-anim-element-v1__tab-row-phone-2-timeline-header-v2 {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+
+    top: 0;
+}
+
+.phone-anim-element-v1__tab-row-phone-2-timeline-main-img {
+    width: 100%;
+    display: block;
+}
+
+.phone-anim-element-v1__tab-row-phone-2-timeline-italy-img {
+    width: 100%;
+    display: block;
+    height: 0;
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+
+
+.phone-anim-element-v1__tab-row-phone-2_activ {
+
+    .phone-anim-element-v1__tab-row-phone-2-timeline-italy-img {
+        height: 45px;
+        opacity: 1;
+    }
+
+    .phone-anim-element-v1__tab-row-phone-2-timeline-header-v1 {
+        opacity: 1;
+    }
+
+    .phone-anim-element-v1__tab-row-phone-2-timeline-header-v2 {
+        opacity: 1;
+    }
+}
 
 
 
@@ -825,6 +934,7 @@
     top: 0;
     pointer-events: none;
     opacity: 0;
+    z-index: 999;
 }
 
 .fornt-sec-text-wrapper__container {
@@ -842,7 +952,7 @@
 }
 
 .home-front-sec__phone-wrapper {
-    pointer-events: all;
+    // pointer-events: all;
 }
 
 .home-front-sec__phone {
@@ -876,6 +986,98 @@
     right: auto;
     bottom: auto;
 }
+
+.anim-phones__element-first-anim {
+    .anim-phones__img-wrapper {
+        position: relative;
+    }
+}
+
+.phone-anim-element-v1 {
+    position: relative;
+}
+
+.phone-anim-element-v1__counter-wrapper {
+    position: absolute;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    left: 13px;
+    top: 58px;
+    line-height: 1;
+}
+
+.phone-anim-element-v1__counter-num-wrapper {
+    overflow: hidden;
+    width: 16px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-anim-element-v1__counter-num-col {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all ease 0.3s;
+
+    span {
+        display: block;
+    }
+}
+
+.phone-anim-element-v1__text-wrapper {
+    position: absolute;
+    left: 14px;
+    font-size: 11px;
+    line-height: 1.4;
+    top: 170px;
+    color: #fff;
+    font-weight: 300;
+    width: 220px;
+    height: 70px;
+    overflow: hidden;
+
+}
+
+.phone-anim-element-v1__text-col {
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all ease 0.3s;
+}
+
+.phone-anim-element-v1__text {
+    height: 50%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.phone-anim-element-v1__counter-wrapper_activ {
+    .phone-anim-element-v1__counter-num-col {
+        transform: translateY(-50%);
+    }
+}
+
+.phone-anim-element-v1__text-wrapper_activ {
+    .phone-anim-element-v1__text-col {
+        transform: translateY(-50%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

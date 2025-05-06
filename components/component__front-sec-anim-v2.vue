@@ -15,6 +15,11 @@
             <div class="home-front-sec__cloud cl3"></div>
         </div>
 
+        <!-- arrow scroll down for text sec 2 -->
+        <div class="front-sec-slide-2__ar-down" :class="{'front-sec-slide-2__ar-down_active': scrollPosition >= windowHeingt * 0.5 && scrollPosition < windowHeingt * 1.5}" :style="{top: `-${animTopPosition}px` }">
+            <img  src="@/assets/video/scroll_for_more.webp" alt="" class="front-sec-slide-2__ar-down-img">
+        </div>
+
 
         <!-- text wrapper -->
         <div class="fornt-sec-text-wrapper" :style="{ transform: `translateY(-${textScrollValue}px)`, top: `-${animTopPosition}px` }">
@@ -115,6 +120,8 @@
                             <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
                             <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>
                         </div>
+
+                        
                     </div>
                 </div>
             </div>
@@ -145,7 +152,7 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
+                            <div class="tax-notification" :class="{'tax-notification_activ': activTextBox == 4}">
                                 <div class="tax-notification__icon-wrapper">
                                     <img src="@/assets/images/tax-noti-icon.png" alt="">
                                 </div>
@@ -166,7 +173,7 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
+                            <div class="tax-notification" :class="{'tax-notification_activ': phoneAnimStap >= 5}">
                                 <div class="tax-notification__icon-wrapper">
                                     <img src="@/assets/images/tax-noti-icon.png" alt="">
                                 </div>
@@ -207,10 +214,16 @@
 
             <div class="home-front-sec__phone-ipad-cover" ref="phoneElementcover">
                 <div class="home-front-sec__phone " ref="phoneElement">
-                    <img src="@/assets/images/iphone-15.png" alt="" class="home-front-sec__phone-img">
+                    <img src="@/assets/video/phone-system-image/iphone_mockup.webp" alt="" class="home-front-sec__phone-img">
 
-                    <div class="home-front-sec__phone-header">
-                        <img src="@/assets/video/phone-system-image/status_bar_w.png" alt="" class="home-front-sec__phone-header-w">
+                    <div class="home-front-sec__phone-header" :class="{'home-front-sec__phone-header_white': phoneWhiteSystemIconStatus == true}" >
+                        <img  src="@/assets/video/phone-system-image/status_bar_w.png" alt="" class="home-front-sec__phone-header-w">
+
+                        <img  src="@/assets/video/phone-system-image/status_bar_b.png" alt="" class="home-front-sec__phone-header-b">
+                    </div>
+
+                    <div class="home-front-sec__phone-camera">
+                        <img  src="@/assets/video/phone-system-image/camera.webp" alt="" class="home-front-sec__phone-camera-img">
                     </div>
 
                     <div class="home-front-sec__phone-home">
@@ -249,29 +262,116 @@
                                                         </div>
                                                     </div>
         
-                                                    <div class="phone-anim-element-v1__text-wrapper" :class="{'phone-anim-element-v1__text-wrapper_activ': phoneAnimStap >= 1}">
+                                                    <!-- <div class="phone-anim-element-v1__text-wrapper" :class="{'phone-anim-element-v1__text-wrapper_activ': phoneAnimStap >= 1}">
                                                         <div class="phone-anim-element-v1__text-col">
                                                             <p class="phone-anim-element-v1__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi minus quibusdam dolores obcaecati</p>
                                                             <p class="phone-anim-element-v1__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi minus quibusdam dolores obcaecati nostrum itaque excepturi asperiores</p>
                                                         </div>
                                                         
-                                                    </div>
+                                                    </div> -->
 
 
-                                                    <img class="anim-phones__img " src="@/assets/video/phone-image/db_empty.jpg" alt="">
+                                                    <img class="anim-phones__img " src="@/assets/video/phone-image/dashboard-no-days.webp" alt="">
                                                 </div>
                                                 
-
+                                                <!-- Timeline anim phone sec -->
                                                 <div class="phone-anim-element-v1__tab-row-phone-2" 
-                                                :style="{ transform: `translateX(-${phoneStapTimelineSlideValue}%)` }"
-                                                :class="{'phone-anim-element-v1__tab-row-phone-2_activ': phoneAnimStap >= 2}">
+                                                :style="{ transform: `translateX(-${phoneStapTimelineSlideValue}%)`, opacity: `${1 - (phoneStapShengenSlideValue / 100)}` }"
+                                                :class="{'phone-anim-element-v1__tab-row-phone-2_activ': phoneAnimStap >= 2}"
+                                                
+                                                >
                                                     <div class="phone-anim-element-v1__tab-row-phone-2-timeline-wrapper" :class="{'phone-anim-element-v1__tab-row-phone-2-timeline-wrapper_show-first-img':phoneStapTimelineSlideValue >= 100 }">
-                                                        <img class="phone-anim-element-v1__tab-row-phone-2-timeline-header-v1" src="@/assets/video/phone-image/header1.jpg" alt="">
-                                                        <img class="phone-anim-element-v1__tab-row-phone-2-timeline-header-v2" src="@/assets/video/phone-image/header2.jpg" alt="">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-2-timeline-header-v1" src="@/assets/video/phone-image/header1.webp" alt="">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-2-timeline-header-v2" src="@/assets/video/phone-image/header2.webp" alt="">
                                                     </div>
                                                     <div class="phone-anim-element-v1__tab-row-phone-2-timeline-wrapper">
-                                                        <img src="@/assets/video/phone-image/italy.png" alt="" class="phone-anim-element-v1__tab-row-phone-2-timeline-italy-img">
-                                                        <img src="@/assets/video/phone-image/timeline.jpg" alt="" class="phone-anim-element-v1__tab-row-phone-2-timeline-main-img">
+                                                        <img src="@/assets/video/phone-image/italy.webp" alt="" class="phone-anim-element-v1__tab-row-phone-2-timeline-italy-img">
+                                                        <img src="@/assets/video/phone-image/timeline.webp" alt="" class="phone-anim-element-v1__tab-row-phone-2-timeline-main-img">
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- Schengen anim sec -->
+                                                <div class="phone-anim-element-v1__tab-row-phone-3" :style="{ transform: `translateY(-${phoneStapShengenSlideValue}%)`, opacity: `${1 - (phoneStapTaxSlideValue / 100)}` }">
+                                                    <div class="phone-anim-element-v1__tab-row-phone-3-header" :class="{'phone-anim-element-v1__tab-row-phone-3-header_activ': phoneStapShengenSlideValue == 100}">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-3-header-img" src="@/assets/video/phone-image/header_schengen.webp" alt="">
+                                                    </div>
+                                                    <div class="phone-anim-element-v1__tab-row-phone-3-body" :class="{'phone-anim-element-v1__tab-row-phone-3-body_activ': phoneAnimStap >= 3}">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-3-body-img-v1" src="@/assets/video/phone-image/schengen1.webp" alt="">
+                                                        <img class="phone-anim-element-v1__tab-row-phone-3-body-img-v2" src="@/assets/video/phone-image/schengen2.webp" alt="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Tax anim sec -->
+                                                <div class="phone-anim-element-v1__tab-row-phone-4 " :style="{ transform: `translateX(-${phoneStapTaxSlideValue}%)`, opacity: `${1 - (phoneStapUsCitiesSlideValue / 100)}` }">
+                                                    <div class="phone-anim-element-v1__tab-row-phone-4-main-bg-image-container" :class="{'phone-anim-element-v1__tab-row-phone-4-main-bg-image-container_activ': phoneAnimStap >= 4}">
+                                                        <img src="@/assets/video/phone-image/tax_residency.webp" alt="" class="phone-anim-element-v1__tab-row-phone-4-img phone-anim-element-v1__tab-row-phone-4-img-v1">
+                                                        <img src="@/assets/video/phone-image/tax_residency2.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-img phone-anim-element-v1__tab-row-phone-4-img-v2">
+                                                    </div>
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-4-num-container tab-row-phone-4-num_V1" :class="{'phone-anim-element-v1__tab-row-phone-4-num-container_activ': phoneAnimStap >= 4}">
+                                                        <div class="phone-anim-element-v1__tab-row-phone-4-num-col">
+                                                            <img src="@/assets/video/phone-image/4.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                            <img src="@/assets/video/phone-image/5.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-4-num-container tab-row-phone-4-num_V2" :class="{'phone-anim-element-v1__tab-row-phone-4-num-container_activ': phoneAnimStap >= 4}">
+                                                        <div class="phone-anim-element-v1__tab-row-phone-4-num-col">
+                                                            <img src="@/assets/video/phone-image/9.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                            <img src="@/assets/video/phone-image/8.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-4-num-container tab-row-phone-4-num_V3" :class="{'phone-anim-element-v1__tab-row-phone-4-num-container_activ': phoneAnimStap >= 4}">
+                                                        <div class="phone-anim-element-v1__tab-row-phone-4-num-col">
+                                                            <div class="phone-anim-element-v1__tab-row-phone-4-num-row"></div>
+                                                            <img src="@/assets/video/phone-image/50.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                            <img src="@/assets/video/phone-image/49.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                
+                                                <!-- us cities anim sec-->
+                                                <div class="phone-anim-element-v1__tab-row-phone-5" :style="{ transform: `translateX(-${phoneStapUsCitiesSlideValue}%)`, opacity: `${1 - (phoneStapPassportIndexSlideValue / 100)}` }">
+                                                    <div class="phone-anim-element-v1__tab-row-phone-5-main-bg-image-container" >
+                                                        <img src="@/assets/video/phone-image/city_residency.webp" alt="" class="phone-anim-element-v1__tab-row-phone-5-img phone-anim-element-v1__tab-row-phone-4-img-v1">
+                                                    </div>
+
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-5-num-container tab-row-phone-5-num_V1" :class="{'phone-anim-element-v1__tab-row-phone-5-num-container_activ': phoneAnimStap >= 5}">
+                                                        <div class="phone-anim-element-v1__tab-row-phone-5-num-col">
+                                                            <img src="@/assets/video/phone-image/7-w.png" alt="" class="phone-anim-element-v1__tab-row-phone-5-num-element">
+                                                            <img src="@/assets/video/phone-image/8-w.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-5-num-container tab-row-phone-5-num_V2" :class="{'phone-anim-element-v1__tab-row-phone-5-num-container_activ': phoneAnimStap >= 5}">
+                                                        <div class="phone-anim-element-v1__tab-row-phone-5-num-col">
+                                                            <img src="@/assets/video/phone-image/8-w.png" alt="" class="phone-anim-element-v1__tab-row-phone-5-num-element">
+                                                            <img src="@/assets/video/phone-image/9-w.png" alt="" class="phone-anim-element-v1__tab-row-phone-4-num-element">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-5-calendar" :class="{'phone-anim-element-v1__tab-row-phone-5-calendar_activ': phoneAnimStap >= 4.5}">
+                                                        <img src="@/assets/video/phone-image/calendar1.webp" alt="" class="phone-anim-element-v1__tab-row-phone-5-calendar-img phone-anim-element-v1__tab-row-phone-5-calendar-img-V1">
+                                                        <img src="@/assets/video/phone-image/calendar2.webp" alt="" class="phone-anim-element-v1__tab-row-phone-5-calendar-img phone-anim-element-v1__tab-row-phone-5-calendar-img-V2" :class="{'phone-anim-element-v1__tab-row-phone-5-calendar-img-V2_activ': phoneAnimStap >= 5}">
+                                                    </div>
+
+
+                                                </div>
+
+
+                                                <!-- pasport index anim sec -->
+                                                <div class="phone-anim-element-v1__tab-row-phone-6" :style="{ transform: `translateX(-${phoneStapPassportIndexSlideValue}%)` }" :class="{'phone-anim-element-v1__tab-row-phone-6_activ': phoneAnimStap >= 6}">
+                                                    <div class="phone-anim-element-v1__tab-row-phone-6-main-bg-image-container" >
+                                                        <img src="@/assets/video/phone-image/countries_access.webp" alt="" class="phone-anim-element-v1__tab-row-phone-6-img phone-anim-element-v1__tab-row-phone-5-img-v1">
+                                                    </div>
+
+                                                    <div class="phone-anim-element-v1__tab-row-phone-6-hidden-img-wrapper">
+                                                        <img src="@/assets/video/phone-image/country_requirements.webp" alt="" class="phone-anim-element-v1__tab-row-phone-6-hidden-img">
                                                     </div>
                                                 </div>
                                             </div>
@@ -422,11 +522,17 @@ export default {
         textScrollCounter: null,
         phoneAnimStap: null,
         phoneStapTimelineSlideValue: 0,
+        phoneStapShengenSlideValue: 0,
+        phoneStapTaxSlideValue: 0,
+        phoneStapUsCitiesSlideValue: 0,
+        phoneStapPassportIndexSlideValue: 0,
+        phoneWhiteSystemIconStatus: true,
 
         textScrollValue: 0,
         lastScrollY: 0,
         scrollDeltaChange: 0,
         currentPlayVideo: 999,
+
 
         // firsVideoPlayStatus: false,
 
@@ -444,8 +550,6 @@ export default {
         widthWind: null,
         heightWind: null,
         resizeTimeout: null,
-
-
 
         
         
@@ -578,21 +682,23 @@ export default {
             this.textScrollCounter = 0
             this.phoneAnimStap = 0
             this.phoneStapTimelineSlideValue = 0
+            this.phoneWhiteSystemIconStatus = true
+
+   
       
         }
 
 
-         //промежуточное значение только для горизонт скрол
+         //first anim phone sec
         if(+this.scrollPosition <= this.windowHeingt * 1.4){
             this.phoneStapTimelineSlideValue = 0
-        }
+            this.phoneWhiteSystemIconStatus = true
 
+        }
 
         if(+this.scrollPosition >= this.windowHeingt * 1 && +this.scrollPosition <= this.windowHeingt * 2.018){
             this.textScrollCounter = 0
             this.phoneAnimStap = 1
-             
-
 
             if(+this.scrollPosition >= this.windowHeingt * 1.4 && +this.scrollPosition <= this.windowHeingt * 2.018){
                 let current_100_procent = (this.windowHeingt * 2.018) - (this.windowHeingt * 1.4)
@@ -602,44 +708,145 @@ export default {
                 this.phoneStapTimelineSlideValue = currentSvipeValue
                 console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
             }
+
+            if(+this.scrollPosition >= this.windowHeingt * 1.7 && +this.scrollPosition <= this.windowHeingt * 2.018){
+                this.phoneWhiteSystemIconStatus = false
+            }
+            else{
+                this.phoneWhiteSystemIconStatus = true
+            }
             
         }
 
 
-        //промежуточное значение только для горизонт скрол
+        //timeline anim
         if(+this.scrollPosition >= this.windowHeingt * 2.018 && this.scrollPosition <= this.windowHeingt * 2.9){
             this.textScrollCounter = 0
             this.phoneStapTimelineSlideValue = 100
             this.phoneAnimStap = 1
+            this.phoneWhiteSystemIconStatus = false
         }
         
         if(+this.scrollPosition >= this.windowHeingt * 2.9 && this.scrollPosition <= this.windowHeingt * 4.4){
             // this.textScrollCounter = (100 / 7) * 2
             this.textScrollCounter = 0
             this.phoneStapTimelineSlideValue = 100
+            this.phoneWhiteSystemIconStatus = false
+            
+        }
+        if(+this.scrollPosition >= this.windowHeingt * 2.9){
             this.phoneAnimStap = 2
         }
-
-        if(+this.scrollPosition >= this.windowHeingt * 6.5 && +this.scrollPosition <= this.windowHeingt * 6.96 ){
-            this.textScrollCounter = (100 / 7) * 3
+        if(+this.scrollPosition >= this.windowHeingt * 4.4){
             this.phoneStapTimelineSlideValue = 100
         }
+      
 
-        if(+this.scrollPosition >= this.windowHeingt * 9.18 && +this.scrollPosition <= this.windowHeingt * 11.2  ){
-            this.textScrollCounter = (100 / 7) * 4
-            this.phoneStapTimelineSlideValue = 100
+
+        //шенген анимация
+        if(+this.scrollPosition < this.windowHeingt * 3.5 ){
+            this.phoneStapShengenSlideValue = 0
+        }
+        if(+this.scrollPosition >= this.windowHeingt * 3.5 && +this.scrollPosition <= this.windowHeingt * 4.2){
+            let current_100_procent = (this.windowHeingt * 4.2) - (this.windowHeingt * 3.5)
+            let current_1_procent = current_100_procent / 100
+
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 3.5)) / current_1_procent
+            this.phoneStapShengenSlideValue = currentSvipeValue
+            
+        }
+        if(+this.scrollPosition >= this.windowHeingt * 4.2 ){
+            this.phoneStapShengenSlideValue = 100
+            this.phoneWhiteSystemIconStatus = true
+            
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 12.2 && +this.scrollPosition <= this.windowHeingt * 14.12 ){
-            this.textScrollCounter = (100 / 7) * 5
-            this.phoneStapTimelineSlideValue = 100
+        if(+this.scrollPosition >= this.windowHeingt * 6.5 ){
+            // this.textScrollCounter = (100 / 7) * 3
+            this.phoneAnimStap = 3
         }
 
-        if(+this.scrollPosition >= (this.windowHeingt * 16.75) ){
-            this.textScrollCounter = (100 / 7) * 6
-            this.phoneStapTimelineSlideValue = 100
-        } 
-           
+
+        
+        //Tax флорида анимация
+        if(+this.scrollPosition < this.windowHeingt * 7.5 ){
+            this.phoneStapTaxSlideValue = 0
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 7.5 && +this.scrollPosition <= this.windowHeingt * 8){
+            let current_100_procent = (this.windowHeingt * 8) - (this.windowHeingt * 7.5)
+            let current_1_procent = current_100_procent / 100
+
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 7.5)) / current_1_procent
+            this.phoneStapTaxSlideValue = currentSvipeValue
+   
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 8 ){
+            this.phoneStapTaxSlideValue = 100
+            this.phoneWhiteSystemIconStatus = false
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 9.38 ){
+            this.phoneAnimStap = 4
+        }
+
+
+      
+        //us cities anim
+        if(+this.scrollPosition < this.windowHeingt * 9.8 ){
+            this.phoneStapUsCitiesSlideValue = 0
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 9.8 && +this.scrollPosition <= this.windowHeingt * 10.365){
+            let current_100_procent = (this.windowHeingt * 10.365) - (this.windowHeingt * 9.8)
+            let current_1_procent = current_100_procent / 100
+
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 9.8)) / current_1_procent
+            this.phoneStapUsCitiesSlideValue = currentSvipeValue
+   
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 10.365 ){
+            this.phoneStapUsCitiesSlideValue = 100
+        }
+        if(+this.scrollPosition >= this.windowHeingt * 11.47 ){
+            this.phoneAnimStap = 4.5
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 12.41 ){
+            this.phoneAnimStap = 5
+        }
+       
+
+
+        //passport index
+        if(+this.scrollPosition < this.windowHeingt * 13.4 ){
+            this.phoneStapPassportIndexSlideValue = 0
+        }
+
+
+        if(+this.scrollPosition >= this.windowHeingt * 13.4 && +this.scrollPosition <= this.windowHeingt * 14){
+            let current_100_procent = (this.windowHeingt * 14) - (this.windowHeingt * 13.4)
+            let current_1_procent = current_100_procent / 100
+
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 13.4)) / current_1_procent
+            this.phoneStapPassportIndexSlideValue = currentSvipeValue
+   
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 14 ){
+            this.phoneStapPassportIndexSlideValue = 100
+        }
+        if(+this.scrollPosition >= this.windowHeingt * 16.7 ){
+            this.phoneAnimStap = 6
+            this.phoneWhiteSystemIconStatus = true
+        }
+
+
+
+        console.log('sssda',this.windowHeingt, this.scrollPosition / this.windowHeingt)
+        
     },
 
     phoneDirection(){

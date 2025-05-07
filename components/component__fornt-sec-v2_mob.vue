@@ -175,7 +175,7 @@
                         <div class="home-front-sec-slide-mob__text-container-wrapper">
                             <div class="home-front-sec-slide-mob__text-container">
                                 <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
-                                <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates.</p>
+                                <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates. </p>
                             </div>
                         </div>
                     </div>

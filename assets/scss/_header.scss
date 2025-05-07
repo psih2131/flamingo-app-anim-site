@@ -4,7 +4,7 @@
     left: 0;
     top: 0;
     z-index: 100;
-    padding: 34px 0;
+    padding-top: 34px;
 
     .container {
         display: flex;
@@ -138,7 +138,7 @@
 
 @media only screen and (max-width: 1250px) {
     .header {
-        padding: 20px 0;
+        padding-top: 20px;
     }
 
     .header__nav-wrapper {
@@ -332,6 +332,6 @@
 
 @media only screen and (max-width: 750px) {
     .header {
-        padding: 16px 0;
+        padding-top: 16px;
     }
 }

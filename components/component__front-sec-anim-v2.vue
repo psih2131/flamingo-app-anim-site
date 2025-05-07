@@ -16,7 +16,7 @@
         </div>
 
         <!-- arrow scroll down for text sec 2 -->
-        <div class="front-sec-slide-2__ar-down" :class="{'front-sec-slide-2__ar-down_active': scrollPosition >= windowHeingt * 0.5 && scrollPosition < windowHeingt * 1.5}" :style="{top: `-${animTopPosition}px` }">
+        <div class="front-sec-slide-2__ar-down" :class="{'front-sec-slide-2__ar-down_active': scrollPosition >= windowHeingt * 0.7 && scrollPosition < windowHeingt * 1.2}" :style="{top: `-${animTopPosition}px` }">
             <img  src="@/assets/video/scroll_for_more.webp" alt="" class="front-sec-slide-2__ar-down-img">
         </div>
 
@@ -141,7 +141,11 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">Schengen Calculator</h2>
+                            <h2 class="front-sec-slide__title">Schengen 
+                                <span class="front-sec-slide__title-icon">
+                                    <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
+                                </span> 
+                                Calculator</h2>
                             <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
                         </div>
                     </div>
@@ -152,7 +156,7 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <div class="tax-notification" :class="{'tax-notification_activ': activTextBox == 4}">
+                            <div class="tax-notification" :class="{'tax-notification_activ': phoneAnimStap == 4}">
                                 <div class="tax-notification__icon-wrapper">
                                     <img src="@/assets/images/tax-noti-icon.png" alt="">
                                 </div>
@@ -183,7 +187,10 @@
                                 </div>
                                 <p class="tax-notification__time">Now</p>
                             </div>
-                            <h2 class="front-sec-slide__title">US Cities Day Count</h2>
+                            <h2 class="front-sec-slide__title">
+                                <span class="front-sec-slide__title-icon">
+                                    <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
+                                </span> US Cities Day Count</h2>
                             <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
                         </div>
                     </div>
@@ -196,7 +203,7 @@
                         <div class="front-sec-slide-3__text-wrapper">
                             <h2 class="front-sec-slide__title">Passport Index</h2>
                             <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
-                            <div class="front-sec-slide__btn-wrapper" :class="{'front-sec-slide__btn-btn_activ': counterActivSlide == 6}">
+                            <div class="front-sec-slide__btn-wrapper" :class="{'front-sec-slide__btn-btn_activ': phoneAnimStap >= 5.5}">
                                 <a href="/#Features"   class="front-sec-slide__btn-btn" >View All Features</a>
                             </div>
                         </div>
@@ -209,7 +216,7 @@
   
         
         <!-- phone video if video working -->
-        <div class="front-sec-v2__phone-main-wrapper" :style="{top: `-${animTopPosition}px` }">
+        <div class="front-sec-v2__phone-main-wrapper" :style="{top: `-${animTopPosition }px` }">
         <div class="home-front-sec__phone-wrapper">
 
             <div class="home-front-sec__phone-ipad-cover" ref="phoneElementcover">
@@ -658,11 +665,23 @@ export default {
 
 
     changePositionPhone(){
-
+        let mobVersion = window.matchMedia("(max-width: 750px)")
+        let headerHeight = document.querySelector('header').offsetHeight
       
         let phoneHeight = this.$refs.phoneElement.offsetHeight
-        let maxTopValue = (this.windowHeingt / 2) - (phoneHeight / 2)
-        let currentTopValue = (this.windowHeingt - (phoneHeight / 2)) - this.textScrollValue
+
+        let maxTopValue
+        let currentTopValue
+
+        if (mobVersion.matches) {
+            maxTopValue = (this.windowHeingt / 2) - ((phoneHeight) / 2)
+            currentTopValue = (this.windowHeingt - ((phoneHeight ) / 2)) - this.textScrollValue
+        }
+        else{
+            maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
+            currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2)) - this.textScrollValue
+        }
+        
 
         if(currentTopValue <= maxTopValue){
             currentTopValue = maxTopValue
@@ -832,11 +851,13 @@ export default {
 
             let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 13.4)) / current_1_procent
             this.phoneStapPassportIndexSlideValue = currentSvipeValue
+
    
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 14 ){
             this.phoneStapPassportIndexSlideValue = 100
+            this.phoneAnimStap = 5.5
         }
         if(+this.scrollPosition >= this.windowHeingt * 16.7 ){
             this.phoneAnimStap = 6

@@ -1,5 +1,5 @@
 <template>
-    <header class="header header-home" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }">
+    <header class="header header-home" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }" ref="homeHeaderId">
         <div class="container">
             <div class="header__logo-wrapper">
                 <nuxt-link no-prefetch :to="localePath('/')"  class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></nuxt-link>

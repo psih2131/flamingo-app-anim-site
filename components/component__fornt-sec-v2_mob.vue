@@ -162,7 +162,9 @@
                     <div class="home-front-sec-slide-mob__wrapper">
                         <div class="home-front-sec-slide-mob__text-container-wrapper">
                             <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">Schengen <br>Calculator</h2>
+                                <h2 class="front-sec-slide__title">Schengen <span class="front-sec-slide__title-icon">
+                                    <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
+                                </span><br>Calculator</h2>
                                 <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
                             </div>
                         </div>
@@ -182,7 +184,9 @@
                     <div class="home-front-sec-slide-mob__wrapper">
                         <div class="home-front-sec-slide-mob__text-container-wrapper">
                             <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">US Cities <br>Day Count</h2>
+                                <h2 class="front-sec-slide__title"><span class="front-sec-slide__title-icon">
+                                    <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
+                                </span> US Cities <br>Day Count</h2>
                                 <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
                             </div>
                         </div>

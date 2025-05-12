@@ -502,7 +502,7 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    pointer-events: none;
+    pointer-events: all;
 
 
 }
@@ -857,6 +857,7 @@
     transform: translateY(0%);
     position: absolute;
     left: 0;
+    z-index: 2;
     top: 0;
 }
 
@@ -893,6 +894,7 @@
     top: 0;
     position: absolute;
     z-index: 1;
+    opacity: 1;
 }
 
 .phone-anim-element-v1__tab-row-phone-2 {
@@ -1293,6 +1295,8 @@
     min-height: 100vh;
     background: #FAFAFA;
     opacity: 0;
+    overflow: hidden;
+    width: 100%;
 }
 
 .showFrontSec {
@@ -1309,6 +1313,18 @@
     .front-sec-v2__video-wrapper-fixed {
         opacity: 1;
     }
+
+
+}
+
+.animFullLoad {
+    .fornt-sec-text-wrapper {
+        position: fixed;
+    }
+
+    .front-sec-v2__phone-main-wrapper {
+        position: fixed;
+    }
 }
 
 .home-front-sec-slide {
@@ -1322,6 +1338,7 @@
 
 .fornt-sec-text-wrapper {
     position: fixed;
+    position: absolute;
     width: 100%;
     left: 0;
     top: 0;
@@ -1332,14 +1349,15 @@
 
 .front-sec-v2__phone-main-wrapper {
     position: fixed;
+    position: absolute;
     z-index: 9;
     width: 100%;
     height: 100vh;
     left: 0;
     top: 0;
     pointer-events: none;
-    opacity: 0;
-    z-index: 999;
+    opacity: 1;
+    z-index: 500;
 }
 
 .fornt-sec-text-wrapper__container {
@@ -1379,9 +1397,38 @@
     position: absolute;
     width: 336px;
     height: 685px;
-    top: 100%;
+    top: calc(100% - 342px);
     transition: all ease 0.7s;
 
+
+}
+
+.anim-phones__img-preload-first-load {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.phoneRightSide {
+    .home-front-sec__phone {
+        transform: translateY(0);
+    }
+
+    .anim-phones__img-preload-first-load {
+        opacity: 0;
+    }
+
+}
+
+.phoneLeftSide {
+    .home-front-sec__phone {
+        transform: translateY(0);
+    }
+
+    .anim-phones__img-preload-first-load {
+        opacity: 0;
+    }
 }
 
 .home-front-sec__phone {
@@ -1390,6 +1437,8 @@
     top: auto;
     right: auto;
     bottom: auto;
+    transform: translateY(-0);
+    transition: all ease 0.3s;
 }
 
 .anim-phones__element-first-anim {

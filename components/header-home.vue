@@ -64,19 +64,19 @@
                         <ul class="mob-meny__nav-list">
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  :href="localePath('/#ourUsers')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
+                                <a  :href="localePath('/#ourUsers')" class="mob-meny__nav-list-element-link" @click="mobMenyStatus = false" :class="{ 'router-link-active': activeSection === 'ourUsers' }">{{ $t('ourusers') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                                <a  :href="localePath('/#Features')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Features' }">{{ $t('features') }}</a>
+                                <a  :href="localePath('/#Features')" class="mob-meny__nav-list-element-link" @click="mobMenyStatus = false" :class="{ 'router-link-active': activeSection === 'Features' }">{{ $t('features') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                                <a :href="localePath('/#Security')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
+                                <a :href="localePath('/#Security')" class="mob-meny__nav-list-element-link" @click="mobMenyStatus = false" :class="{ 'router-link-active': activeSection === 'Security' }">{{ $t('security') }}</a>
                             </li>
 
                             <li  class="mob-meny__nav-list-element">
-                              <a  :href="localePath('/#Faq')" class="mob-meny__nav-list-element-link" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
+                              <a  :href="localePath('/#Faq')" class="mob-meny__nav-list-element-link" @click="mobMenyStatus = false" :class="{ 'router-link-active': activeSection === 'Faq' }">{{ $t('faq_short') }}</a>
                             </li>
 
                             <li class="mob-meny__nav-list-element">

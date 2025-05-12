@@ -1,6 +1,6 @@
 <template>
 
-    <section class="front-sec-v2" :class="{'showFrontSec': fullLoadPageStatus == true}" ref="frontSecRef" :style="{opacity: opacityAnim}">
+    <section class="front-sec-v2" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" ref="frontSecRef" :style="{opacity: opacityAnim}">
         
         <!-- scroll container -->
         <div class="front-sec-v2__scroll-container" ref="frontScrollContainerRef">
@@ -237,18 +237,19 @@
                         <img src="@/assets/video/phone-system-image/home.png" alt="" class="home-front-sec__home-img">
                     </div>
                     
-    
+                    
     
                     <!-- анимация телефонов если видео доступны -->
-                    <template v-if="videoPhoneStatus == true">
+                    <!-- <template v-if="videoPhoneStatus == true">
                     
-                    </template>
+                    </template> -->
     
                     <!-- анимация телефонов если видео недоступны -->
-                    <template v-else>
+                  
     
                         <div class="anim-phones-wrapper">
                             <div class="anim-phones-slider">
+                                <img class="anim-phones__img  anim-phones__img-preload-first-load" src="/dashboard-no-days.webp" alt="">
                                 <div class="anim-phones-wrapper__row" :style="{ transform: `translateY(-${textScrollCounter}%)` }" >
 
                                     <div class="anim-phones__element phone-anim-element-v1">
@@ -257,9 +258,11 @@
                                 
                                             <div class="phone-anim-element-v1__tab-row">
 
+                                                
+
                                                 <div class="phone-anim-element-v1__tab-row-phone-1" 
                                                 :style="{ opacity: `${1 - (phoneStapTimelineSlideValue / 100)}` }">
-
+                                              
                                                     <div class="phone-anim-element-v1__counter-wrapper " :class="{'phone-anim-element-v1__counter-wrapper_activ': phoneAnimStap >= 1}">2
                                                         <div class="phone-anim-element-v1__counter-num-wrapper">
                                                             <div class="phone-anim-element-v1__counter-num-col">
@@ -278,7 +281,7 @@
                                                     </div> -->
 
 
-                                                    <img class="anim-phones__img " src="@/assets/video/phone-image/dashboard-no-days.webp" alt="">
+                                                    <img class="anim-phones__img " src="/dashboard-no-days.webp" alt="">
                                                 </div>
                                                 
                                                 <!-- Timeline anim phone sec -->
@@ -427,7 +430,7 @@
                             
                         </div>
                         
-                    </template>
+                
     
                     
                 </div>
@@ -506,10 +509,10 @@ import { ref, onMounted, onUnmounted } from "vue";
 export default {
    data() {
        return {
-       
+        statusAnimLoad: false,
         counterActivSlide: 999,
         phoneScrollCounter: 0,
-        videoPhoneStatus: false,
+        // videoPhoneStatus: false,
         widthWindow: 1000,
         autoPlaySupported: null,
         scrollPosition: null,
@@ -621,6 +624,8 @@ export default {
         window.addEventListener('scroll', this.handleScroll);
         window.scrollTo(0, this.scrollPosition + 1)
         window.scrollTo(0, this.scrollPosition -1)
+
+        this.statusAnimLoad = true
     },
 
 
@@ -646,13 +651,13 @@ export default {
             
     },
 
-
+    
     firstLoadPhone(){
        
         if(+this.scrollPosition < 10){
             let phoneHeight = this.$refs.phoneElementcover.offsetHeight
             this.$refs.phoneElementcover.style.transition = 'all ease 0.7s'
-            this.$refs.phoneElementcover.style.top = this.windowHeingt - (phoneHeight / 2) + 'px'
+            this.$refs.phoneElementcover.style.top = this.windowHeingt - (phoneHeight / 2)  + 'px'
         }
         else{
             let phoneHeight = this.$refs.phoneElement.offsetHeight
@@ -678,6 +683,15 @@ export default {
             currentTopValue = (this.windowHeingt - ((phoneHeight ) / 2)) - this.textScrollValue
         }
         else{
+
+            // if(+this.scrollPosition < 10){
+            //     maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
+            //     currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2) - 40) - this.textScrollValue
+            // }
+            // else{
+            //     maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
+            //     currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2)) - this.textScrollValue
+            // }
             maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
             currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2)) - this.textScrollValue
         }
@@ -685,9 +699,18 @@ export default {
 
         if(currentTopValue <= maxTopValue){
             currentTopValue = maxTopValue
+            console.log('xxxx')
+        }
+        else{
+            currentTopValue = currentTopValue
+            console.log('yyyy')
+
+            if(currentTopValue >= this.windowHeingt - (phoneHeight / 2) ){
+                currentTopValue = this.windowHeingt - (phoneHeight / 2)
+            }
         }
         this.$refs.phoneElementcover.style.transition = 'none'
-        this.$refs.phoneElementcover.style.top = currentTopValue + 'px'
+        this.$refs.phoneElementcover.style.top = +currentTopValue + 'px'
         
         
         
@@ -702,17 +725,12 @@ export default {
             this.phoneAnimStap = 0
             this.phoneStapTimelineSlideValue = 0
             this.phoneWhiteSystemIconStatus = true
-
-   
-      
         }
-
 
          //first anim phone sec
         if(+this.scrollPosition <= this.windowHeingt * 1.4){
             this.phoneStapTimelineSlideValue = 0
             this.phoneWhiteSystemIconStatus = true
-
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 1 && +this.scrollPosition <= this.windowHeingt * 2.018){
@@ -734,7 +752,6 @@ export default {
             else{
                 this.phoneWhiteSystemIconStatus = true
             }
-            
         }
 
 
@@ -810,7 +827,6 @@ export default {
             this.phoneAnimStap = 4
         }
 
-
       
         //us cities anim
         if(+this.scrollPosition < this.windowHeingt * 9.8 ){
@@ -850,9 +866,7 @@ export default {
             let current_1_procent = current_100_procent / 100
 
             let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 13.4)) / current_1_procent
-            this.phoneStapPassportIndexSlideValue = currentSvipeValue
-
-   
+            this.phoneStapPassportIndexSlideValue = currentSvipeValue   
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 14 ){

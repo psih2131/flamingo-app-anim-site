@@ -1,5 +1,5 @@
 <template>
-    <div class="front-sec-v2-mob" v-if="fullLoadPageStatus" :class="{'showFrontSec': fullLoadPageStatus == true}" :style="{opacity: opacityAnim}">
+    <section class="front-sec-v2-mob" v-if="fullLoadPageStatus" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" :style="{opacity: opacityAnim}">
 
         <div class="front-sec-v2-mob__iphone-height-window" ref="iphoneHeightWindow"></div>
         
@@ -106,7 +106,7 @@
 
 
          <!-- notification -->
-         <div class="home-front-sec__noti-wrapper" ref="notiMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
+         <!-- <div class="home-front-sec__noti-wrapper" ref="notiMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
             <div class="home-front-sec-slide-mob__text-container">
     
                 <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
@@ -132,80 +132,116 @@
                 </div>
     
             </div>
-        </div>
+        </div> -->
 
         <!-- text container -->
         <div class="front-sec-v2-mob__text-wrapper front-sec-v2-mob-text-wrapper" ref="textMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
-            <div class="front-sec-v2-mob-text-wrapper__move-line"  ref="textMobMoveLine" :style="{transform: `translateY(-${textScrollValue}px)`}">
-                
-                <div class="front-sec-v2-mob-text-wrapper__element">
-                    <div class="home-front-sec-slide-mob__text-container-wrapper">
-                        <div class="home-front-sec-slide-mob__text-container">
-                            <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
-                            <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
-                        </div>
-                        
-                    </div>
-                </div>
 
-                <div class="front-sec-v2-mob-text-wrapper__element">
-                    <div class="home-front-sec-slide-mob__wrapper">
-                        <div class="home-front-sec-slide-mob__text-container-wrapper">
-                            <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
-                                <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="front-sec-v2-mob-text-wrapper__element">
-                    <div class="home-front-sec-slide-mob__wrapper">
-                        <div class="home-front-sec-slide-mob__text-container-wrapper">
-                            <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">Schengen <span class="front-sec-slide__title-icon">
-                                    <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
-                                </span><br>Calculator</h2>
-                                <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="front-sec-v2-mob-text-wrapper__element">
-                    <div class="home-front-sec-slide-mob__wrapper">
-                        <div class="home-front-sec-slide-mob__text-container-wrapper">
-                            <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
-                                <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="front-sec-v2-mob-text-wrapper__element">
-                    <div class="home-front-sec-slide-mob__wrapper">
-                        <div class="home-front-sec-slide-mob__text-container-wrapper">
-                            <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title"><span class="front-sec-slide__title-icon">
-                                    <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
-                                </span> US Cities <br>Day Count</h2>
-                                <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="front-sec-v2-mob-text-wrapper__element">
-                    <div class="home-front-sec-slide-mob__wrapper">
-                        <div class="home-front-sec-slide-mob__text-container-wrapper">
-                            <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">Passport Index</h2>
-                                <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
+
+            <!-- notification -->
+             <!-- :style="{ transform: `translateY(-${textTranslateValue}px)` }" -->
+            <div class="home-front-sec__noti-wrapper" ref="notiMobWrapper" >
+                <div class="home-front-sec-slide-mob__text-container">
         
-                                <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
+                    <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
+                        <div class="tax-notification__icon-wrapper">
+                            <img src="@/assets/images/tax-noti-icon.png" alt="">
+                        </div>
+                        <div class="tax-notification__text">
+                            <p class="tax-notification__title">Flamingo</p>
+                            <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
+                        </div>
+                        <p class="tax-notification__time">Now</p>
+                    </div>
+        
+                    <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
+                        <div class="tax-notification__icon-wrapper">
+                            <img src="@/assets/images/tax-noti-icon.png" alt="">
+                        </div>
+                        <div class="tax-notification__text">
+                            <p class="tax-notification__title">Flamingo</p>
+                            <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
+                        </div>
+                        <p class="tax-notification__time">Now</p>
+                    </div>
+        
+                </div>
+            </div>
+
+
+            <div class="front-sec-v2-mob-text-wrapper__text-wrapper">
+                <div class="front-sec-v2-mob-text-wrapper__move-line"  ref="textMobMoveLine" :style="{transform: `translateY(-${textScrollValue}px)`}">
+                
+                    <div class="front-sec-v2-mob-text-wrapper__element">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
+                                <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="front-sec-v2-mob-text-wrapper__element">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
+                                    <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">Schengen <span class="front-sec-slide__title-icon">
+                                        <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
+                                    </span><br>Calculator</h2>
+                                    <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
+                                    <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title"><span class="front-sec-slide__title-icon">
+                                        <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
+                                    </span> US Cities <br>Day Count</h2>
+                                    <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">Passport Index</h2>
+                                    <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
+            
+                                    <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
                 </div>
-    
             </div>
+            
 
         </div>
 
@@ -282,7 +318,7 @@
 
       
 
-    </div>
+    </section>
 </template>
 
 
@@ -294,6 +330,7 @@ export default {
 
   data() {
     return {
+        statusAnimLoad: false,
         fullLoadPageStatus: false,
         counterActivSlide: 0,
         animTopPosition: 0,
@@ -338,6 +375,8 @@ export default {
         window.addEventListener('scroll', this.handleScroll);
         window.scrollTo(0, this.scrollPosition + 1)
         window.scrollTo(0, this.scrollPosition -1)
+
+        this.statusAnimLoad = true
     },
 
     firstMobPhoneLoad(){

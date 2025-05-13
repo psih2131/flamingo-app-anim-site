@@ -193,6 +193,14 @@
     .container-contact-us {
         width: 746px;
     }
+
+    .contact-us-sec__sup-btn-link {
+        display: none;
+    }
+
+    .contact-us-sec__sup-text {
+        margin-bottom: 0;
+    }
 }
 
 @media only screen and (max-width: 750px) {
@@ -232,7 +240,7 @@
         font-style: normal;
         font-weight: 300;
         line-height: 24px;
-        margin-bottom: 24px;
+        // margin-bottom: 24px;
     }
 
     .contact-us-sec__sup-btn-link {
@@ -284,4 +292,5 @@
         width: 100%;
         flex-wrap: wrap;
     }
+
 }

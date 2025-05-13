@@ -129,6 +129,7 @@
 
 .header__mob-meny {
     display: none;
+    pointer-events: none;
 }
 
 
@@ -203,14 +204,16 @@
 
         .header__mob-meny {
             transform: translateY(0);
+            pointer-events: all;
         }
     }
 
     .header__mob-meny {
-        display: block;
+        display: none;
         position: fixed;
         width: 100%;
-        height: 100vh;
+        // height: 100vh;
+        height: 0;
         left: 0;
         top: 0;
         background: #F1F3F6;

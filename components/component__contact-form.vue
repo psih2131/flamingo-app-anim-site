@@ -151,166 +151,114 @@ export default {
       displayError: false,
       phone:[
         {
-          id:30,
-          text:'iPhone 15 Pro Max - 2023',
-        },
-        {
-          id:29,
-          text:'iPhone 15 Pro - 2023'
-        },
-        {
-          id:28,
-          text:'iPhone 15 Plus - 2023'
-        },
-        {
-          id:27,
-          text:'iPhone 15 - 2023'
-        },
-        {
-          id:26,
-          text:'iPhone 14 Pro Max - 2022',
-        },
-        {
-          id:25,
-          text:'iPhone 14 Pro - 2022'
-        },
-        {
-          id:24,
-          text:'iPhone 14 Plus - 2022'
-        },
-        {
-          id:23,
-          text:'iPhone 14 - 2022'
-        },
-        {
-          id:22,
-          text:'iPhone SE (3rd) - 2022'
-        },
-        {
-          id:21,
-          text:'iPhone 13 Pro Max - 2021'
-        },
-        {
-          id:20,
-          text:'iPhone 13 Pro - 2021'
-        },
-        {
-          id:19,
-          text:'iPhone 13 Mini - 2021'
-        },
-        {
-          id:18,
-          text:'iPhone 13 - 2021'
-        },
-        {
           id:17,
-          text:'iPhone 12 Pro Max - 2020'
+          text:'iPhone 16e (Feb, 2025)'
         },
         {
           id:16,
-          text:'iPhone 12 Pro - 2020'
+          text:'iPhone 16 Pro / 16 Pro Max (Sep, 2024)'
         },
         {
           id:15,
-          text:'iPhone 12 Mini - 2020'
+          text:'iPhone 16 / 16 Plus (Sep, 2024)'
         },
         {
           id:14,
-          text:'iPhone 12 - 2020'
+          text:'iPhone 15 Pro / 15 Pro Max (Sep, 2023)'
         },
         {
           id:13,
-          text:'iPhone SE (2nd) - 2020'
+          text:'iPhone 15 / 15 Plus (Sep, 2023)'
         },
         {
           id:12,
-          text:'iPhone 11 Pro Max - 2019'
+          text:'iPhone 14 Pro / 14 Pro Max (Sep, 2022)'
         },
         {
           id:11,
-          text:'iPhone 11 Pro - 2019'
+          text:'iPhone 14 / 14 Plus (Sep, 2022)'
         },
         {
           id:10,
-          text:'iPhone 11 - 2019'
+          text:'iPhone SE (3rd) (Mar, 2022)'
         },
         {
           id:9,
-          text:'iPhone XS Max - 2018'
+          text:'iPhone 13 Pro / 13 Pro Max (Sep, 2021)'
         },
         {
           id:8,
-          text:'iPhone XS - 2018'
+          text:'iPhone 13 / 13 Mini (Sep, 2021)'
         },
         {
           id:7,
-          text:'iPhone XR - 2018'
+          text:'iPhone 12 Pro / 12 Pro Max (Oct, 2020)'
         },
         {
           id:6,
-          text:'iPhone X - 2017'
+          text:'iPhone 12 / 12 Mini (Oct, 2020)'
         },
         {
           id:5,
-          text:'iPhone 8 Plus - 2017'
+          text:'iPhone SE (2nd) (Apr, 2020)'
         },
         {
           id:4,
-          text:'iPhone 8 - 2017'
+          text:'iPhone 11 Pro / 11 Pro Max (Sep, 2019)'
         },
         {
           id:3,
-          text:'iPhone 7 Plus - 2016'
+          text:'iPhone 11 (Sep, 2019)'
         },
         {
           id:2,
-          text:'iPhone 7 - 2016'
+          text:'iPhone XR (Sep, 2018)'
         },
         {
           id:1,
-          text:'iPhone SE (1st) - 2016'
+          text:'iPhone XS / XS Max (Sep, 2018)'
         },
       ],
       ios:[
-        {
-          id:10,
-          text:'latest 17',
-        },
-        {
-          id:9,
-          text:'latest 16.6.1'
-        },
-        {
-          id:8,
-          text:'minor 16'
-        },
-        {
-          id:7,
-          text:'latest 15.7.9'
-        },
-        {
-          id:6,
-          text:'minor 15'
-        },
-        {
-          id:5,
-          text:'latest 14.8.1'
-        },
+        // {
+        //   id:10,
+        //   text:'latest 17',
+        // },
+        // {
+        //   id:9,
+        //   text:'latest 16.6.1'
+        // },
+        // {
+        //   id:8,
+        //   text:'minor 16'
+        // },
+        // {
+        //   id:7,
+        //   text:'latest 15.7.9'
+        // },
+        // {
+        //   id:6,
+        //   text:'minor 15'
+        // },
+        // {
+        //   id:5,
+        //   text:'latest 14.8.1'
+        // },
         {
           id:4,
-          text:'minor 14'
+          text:'iOS 18 (Current)'
         },
         {
           id:3,
-          text:'latest 13.7'
+          text:'iOS 17'
         },
         {
           id:2,
-          text:'minor 13'
+          text:'iOS 16'
         },
         {
           id:1,
-          text:'x13.0'
+          text:'iOS 15'
         },
       ],
       describe: '',

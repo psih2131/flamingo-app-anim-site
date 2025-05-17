@@ -27,12 +27,12 @@
           </div>
 
           <div class="download-sec__qr">
-            <img src="@/assets/images/qr.png" alt="" class="download-sec__qr-img">
+            <img src="@/assets/images/qr_site2.webp" alt="" class="download-sec__qr-img">
           </div>
         </div>
       </div>
       <div class="download-sec__phone-wrapper">
-        <img src="@/assets/images/phone.png" alt="" class="download-sec__phone">
+        <img src="@/assets/images/phone-down-mokap.webp" alt="" class="download-sec__phone">
         <img src="@/assets/images/green-buble.png" alt="" class="download-sec__bable">
       </div>
     </div>

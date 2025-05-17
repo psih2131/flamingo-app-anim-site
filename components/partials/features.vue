@@ -11,14 +11,23 @@
       <div class="reasons-sec__wrapper">
 
         <div class="reasons-sec__big-wrapper">
-          <div class="reasons-sec__big-element reason-element r-big r-big_x1">
+          <div class="reasons-sec__big-element reason-element r-big r-big_x1" @mouseenter="playVideoStart('featureVideoAuto')" @mouseleave="pauseVideo('featureVideoAuto')">
             <div class="r-big__text">
               <p class="r-big__title">{{ $t('features_auto') }}<br>{{ $t('features_record') }}</p>
               <p class="r-big__subtitle">{{ $t('features_record_text') }}</p>
             </div>
 
             <div class="r-big__img-wrapper">
-              <img src="@/assets/images/reasons-pages/r1.jpg" alt="" class="r-big__img">
+              <img src="@/assets/images/reasons-pages/r1.jpg" alt="" class="r-big__img reasons-sec__element-img">
+              <video class="r-big__video reasons-sec__element-video" 
+                src="@/assets/video/features-video/auto.mp4" 
+                muted  
+                loop 
+                playsinline
+                ref="featureVideoAuto" 
+            >
+                Ваш браузер не поддерживает тег видео.
+                </video>
             </div>
           </div>
 
@@ -123,14 +132,23 @@
           </div>
         </div>
 
-        <div class="reasons-sec__big-element reason-element r-big r-big_40 r-big_x2">
+        <div class="reasons-sec__big-element reason-element r-big r-big_40 r-big_x2" @mouseenter="playVideoStart('featureVideoResidency')" @mouseleave="pauseVideo('featureVideoResidency')">
           <div class="r-big__text">
             <p class="r-big__title">{{ $t('features_residency') }}<br>& {{ $t('features_dom_status') }}</p>
             <p class="r-big__subtitle">{{ $t('features_dom_text') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">
-            <img src="@/assets/images/reasons-pages/r2.jpg" alt="" class="r-big__img">
+            <img src="@/assets/images/reasons-pages/r2.jpg" alt="" class="r-big__img reasons-sec__element-img">
+            <video class="r-big__video reasons-sec__element-video" 
+                src="@/assets/video/features-video/residency.mp4" 
+                muted  
+                loop 
+                playsinline
+                ref="featureVideoResidency" 
+            >
+                Ваш браузер не поддерживает тег видео.
+            </video>
           </div>
         </div>
 
@@ -195,25 +213,43 @@
 
         </div>
 
-        <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x3 ">
+        <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x3 " @mouseenter="playVideoStart('featureVideoNyc')" @mouseleave="pauseVideo('featureVideoNyc')">
           <div class="r-big__text">
             <p class="r-big__title">{{ $t('features_usa') }}<br> {{ $t('features_day_count') }}</p>
             <p class="r-big__subtitle"> {{ $t('features_usa_text') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">
-            <img src="@/assets/images/reasons-pages/r4.jpg" alt="" class="r-big__img">
+            <img src="@/assets/images/reasons-pages/r4.jpg" alt="" class="r-big__img reasons-sec__element-img">
+            <video class="r-big__video reasons-sec__element-video" 
+                src="@/assets/video/features-video/nyc.mp4" 
+                muted  
+                loop 
+                playsinline 
+                ref="featureVideoNyc"
+            >
+                Ваш браузер не поддерживает тег видео.
+            </video>
           </div>
         </div>
 
-        <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x4">
+        <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x4" @mouseenter="playVideoStart('featureVideoSchengen')" @mouseleave="pauseVideo('featureVideoSchengen')">
           <div class="r-big__text">
             <p class="r-big__title">{{ $t('features_schengen') }}<br>{{ $t('features_calculator') }}</p>
             <p class="r-big__subtitle"> {{ $t('features_calculator_text') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">
-            <img src="@/assets/images/reasons-pages/r5.jpg" alt="" class="r-big__img">
+            <img src="@/assets/images/reasons-pages/r5.jpg" alt="" class="r-big__img reasons-sec__element-img">
+            <video class="r-big__video reasons-sec__element-video" 
+                src="@/assets/video/features-video/schengen.mp4" 
+                muted  
+                loop 
+                playsinline 
+                ref="featureVideoSchengen"
+            >
+                Ваш браузер не поддерживает тег видео.
+            </video>
           </div>
         </div>
 
@@ -456,8 +492,33 @@ export default {
       //   'popup_text': text,
       // }
       // this.$emit('openPopup', popupData)
-    }
-  }
+    },
+
+
+     playVideoStart(currentRef){
+      console.log(currentRef)
+      let video = this.$refs[currentRef];
+    
+      if (video) {
+          video.play();
+      }
+    },
+
+    pauseVideo(currentRef){
+      let video = this.$refs[currentRef];
+
+      if (video ) {
+          video.pause();
+      }
+    },
+
+
+
+  },
+
+
+
+ 
 
 }
 </script>

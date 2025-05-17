@@ -606,6 +606,7 @@
     display: block;
 }
 
+
 .reasons-sec__big-wrapper {
     width: calc(40% - 4px);
     margin: 0 2px;
@@ -1000,6 +1001,16 @@
     }
 }
 
+
+
+.reasons-sec__element-img {
+    display: none;
+}
+
+.reasons-sec__element-video {
+    display: block;
+    width: 100%;
+}
 
 
 
@@ -1814,6 +1825,14 @@
         }
     }
 
+    .reasons-sec__element-img {
+        display: block;
+    }
+
+    .reasons-sec__element-video {
+        display: none;
+        width: 100%;
+    }
 
 
 

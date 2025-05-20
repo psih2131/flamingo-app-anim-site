@@ -2,7 +2,7 @@
     <main class="main home-main">
     
 
-        <!-- <component__first_sec /> -->
+        <component__first_sec />
       
 
         <section class="who-needs-sec" id="ourUsers">

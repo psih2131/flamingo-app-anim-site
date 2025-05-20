@@ -9,6 +9,7 @@
 .lang-list__row {
     display: flex;
     align-items: center;
+    margin-top: -2px;
 }
 
 .lang-list__drop-down-list {
@@ -19,7 +20,7 @@
     color: #4B5565;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 24px;
     cursor: pointer;
 }
@@ -97,6 +98,12 @@
     transform: translateY(-30px);
     opacity: 0;
 
+}
+
+.lang-list__icon-wrapper {
+    svg {
+        display: block;
+    }
 }
 
 

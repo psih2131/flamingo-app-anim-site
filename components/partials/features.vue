@@ -22,7 +22,7 @@
               <video class="r-big__video reasons-sec__element-video" 
                 src="@/assets/video/features-video/auto.mp4" 
                 muted  
-                loop 
+                 
                 playsinline
                 ref="featureVideoAuto" 
             >
@@ -143,7 +143,7 @@
             <video class="r-big__video reasons-sec__element-video" 
                 src="@/assets/video/features-video/residency.mp4" 
                 muted  
-                loop 
+                 
                 playsinline
                 ref="featureVideoResidency" 
             >
@@ -224,7 +224,7 @@
             <video class="r-big__video reasons-sec__element-video" 
                 src="@/assets/video/features-video/nyc.mp4" 
                 muted  
-                loop 
+                 
                 playsinline 
                 ref="featureVideoNyc"
             >
@@ -244,7 +244,7 @@
             <video class="r-big__video reasons-sec__element-video" 
                 src="@/assets/video/features-video/schengen.mp4" 
                 muted  
-                loop 
+                 
                 playsinline 
                 ref="featureVideoSchengen"
             >
@@ -259,6 +259,7 @@
 
               <div class="reason-element-active__content-wrapper-text">
                 <p class="r-small__title">{{ $t('features_short_term') }}</p>
+                <p class="r-small__teg">{{ $t('features_coming_soon') }}</p>
                 <!-- <p class="r-small__teg"> {{ $t('features_coming_soon') }}</p> -->
                 <div class="reason-element__text">{{ $t('features_short_term_subtitle') }}</div>
               </div>
@@ -303,6 +304,7 @@
               <div class="reason-element-active__content-wrapper-text">
                 <p class="r-small__title">{{ $t('features_new_york') }}</p>
                 <div class="reason-element__text">{{ $t('features_new_york_subtitle') }}</div>
+                
               </div>
 
 
@@ -346,7 +348,9 @@
 
         </div>
 
-        <div class="reasons-sec__small-element reason-element r-small r-small-x5 r-small_black reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
+
+        <!-- r-small_black -->
+        <div class="reasons-sec__small-element reason-element r-small r-small-x5  reason-element-active reasons-sec__dropdown reason-element__dropdown-revers reason-element__large-anim reasons-sec__dropdown_right"  @click="openPopupInfo('large-anim',$event)">
 
           <div class="reasons-sec__dropdown-container">
             <div class="reason-element-active__content-wrapper">
@@ -495,21 +499,28 @@ export default {
     },
 
 
-     playVideoStart(currentRef){
-      console.log(currentRef)
-      let video = this.$refs[currentRef];
-    
+     playVideoStart(currentRef) {
+      const video = this.$refs[currentRef];
+
       if (video) {
-          video.play();
+        // Если видео уже закончилось, ничего не делаем
+        if (video.ended) {
+          return;
+        }
+
+        // Если видео ещё не проигрывалось или не закончилось — проигрываем
+        video.play().catch(err => {
+          console.error('Ошибка при воспроизведении видео:', err);
+        });
       }
     },
 
     pauseVideo(currentRef){
-      let video = this.$refs[currentRef];
+      // let video = this.$refs[currentRef];
 
-      if (video ) {
-          video.pause();
-      }
+      // if (video ) {
+      //     video.pause();
+      // }
     },
 
 

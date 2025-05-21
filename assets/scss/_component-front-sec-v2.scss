@@ -1,6 +1,6 @@
 .home-front-sec {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     padding: 0;
     background: #F9FAFF;
     position: relative;
@@ -305,7 +305,7 @@
 
 .home-front-sec__video-wrapper {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     position: absolute;
     z-index: 1;
     display: flex;
@@ -499,7 +499,7 @@
     top: 0;
     z-index: 5;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     justify-content: center;
     pointer-events: none;
@@ -1292,7 +1292,7 @@
 
 
 .front-sec-v2 {
-    min-height: 100vh;
+    min-height: 100dvh;
     background: #FAFAFA;
     opacity: 0;
     overflow: hidden;
@@ -1328,11 +1328,11 @@
 }
 
 .home-front-sec-slide {
-    height: 100vh;
+    height: 100dvh;
 }
 
 .front-sec-v2__scroll-container {
-    height: 1900vh;
+    height: 1900dvh;
 }
 
 
@@ -1342,7 +1342,7 @@
     width: 100%;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100dvh;
     z-index: 10;
     opacity: 0;
 }
@@ -1352,7 +1352,7 @@
     position: absolute;
     z-index: 9;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     left: 0;
     top: 0;
     pointer-events: none;
@@ -1371,7 +1371,7 @@
     position: relative;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 }
 
 
@@ -1384,7 +1384,7 @@
 .front-sec-v2__video-wrapper-fixed {
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     left: 0;
     top: 0;
     z-index: 1;
@@ -2336,7 +2336,7 @@
     }
 
     .home-front-sec__cloud-wrapper {
-        top: calc(100vh - 458px);
+        top: calc(100dvh - 458px);
     }
 
     .home-front-sec__noti-wrapper {
@@ -2372,7 +2372,7 @@
     }
 
     .front-sec-v2-mob {
-        min-height: 100vh;
+        min-height: 100dvh;
         position: relative;
         background: #FAFAFA;
         overflow: hidden;
@@ -2382,7 +2382,7 @@
     .front-sec-v2-mob__scroll-wrapper {
         position: relative;
         width: 100%;
-        min-height: 100vh;
+        min-height: 100dvh;
         // height: 300vh;
     }
 
@@ -2394,7 +2394,7 @@
     .front-sec-v2-mob-text-wrapper {
         position: fixed;
         z-index: 30;
-        top: calc(100vh);
+        top: calc(100dvh);
         height: 375px;
         left: 0;
         width: 100%;
@@ -2431,7 +2431,7 @@
         left: 0;
         top: 0;
         width: 100%;
-        height: 100vh;
+        height: 100dvh;
         z-index: 20;
         overflow: hidden;
 
@@ -2442,7 +2442,7 @@
 
     .front-sec-v2__planet-img-wrapper {
         position: fixed;
-        height: 100vh;
+        height: 100dvh;
         width: 100%;
         left: 0;
         top: 0;
@@ -2468,7 +2468,7 @@
     }
 
     .front-sec-v2-mob__iphone-height-window {
-        height: 100vh;
+        height: 100dvh;
         width: 100%;
         pointer-events: none;
         z-index: 0;
@@ -2531,7 +2531,7 @@
     }
 
     .home-front-sec__cloud-wrapper {
-        top: calc(100vh - 417px);
+        top: calc(100dvh - 417px);
         height: 63px;
     }
 

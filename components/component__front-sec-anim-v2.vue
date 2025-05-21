@@ -1210,7 +1210,15 @@ export default {
     hiddenTopAnimSec(){
         if(this.scrollPosition > +this.windowHeingt * 18){
             this.animTopPosition = this.scrollPosition - (this.windowHeingt * 18)
-            let currentOpacityProcent = this.animTopPosition / this.windowHeingt
+            let currentOpacityProcent
+            
+            if(this.scrollPosition >= +this.windowHeingt * 19){
+                currentOpacityProcent = 1
+            }
+            else{
+                currentOpacityProcent = this.animTopPosition / this.windowHeingt
+            }
+
             this.opacityAnim = 1 - currentOpacityProcent
         }
         else{

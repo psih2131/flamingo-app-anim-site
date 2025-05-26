@@ -82,8 +82,8 @@
 
                 <div class="home-front-sec-slide__container">
                     <div class="front-sec-slide-1__text-wrapper">
-                        <h1 class="front-sec-slide-1__title">Overseas and Stateside Travel App</h1>
-                        <p class="front-sec-slide-1__subtitle">Automated travel days tracker designed for tax residency, visa, and immigration compliance.</p>
+                        <h1 class="front-sec-slide-1__title">{{ $t('anim_stap1_title') }}</h1>
+                        <p class="front-sec-slide-1__subtitle">{{ $t('anim_stap1_text') }}</p>
                         <div class="front-sec-slide-1__btn-wrapper">
                             <a target="_blank" href="https://flamingotracker.com/appstore?s=0" class="header__download-ios">
                                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@
                                     </clipPath>
                                     </defs>
                                 </svg>
-                                Download
+                                {{ $t('Download') }}
                             </a>
                         </div>
                     </div>
@@ -104,35 +104,6 @@
             </div>
          </div>
 
-
-         <!-- notification -->
-         <!-- <div class="home-front-sec__noti-wrapper" ref="notiMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
-            <div class="home-front-sec-slide-mob__text-container">
-    
-                <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 4}">
-                    <div class="tax-notification__icon-wrapper">
-                        <img src="@/assets/images/tax-noti-icon.png" alt="">
-                    </div>
-                    <div class="tax-notification__text">
-                        <p class="tax-notification__title">Flamingo</p>
-                        <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
-                    </div>
-                    <p class="tax-notification__time">Now</p>
-                </div>
-    
-                <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
-                    <div class="tax-notification__icon-wrapper">
-                        <img src="@/assets/images/tax-noti-icon.png" alt="">
-                    </div>
-                    <div class="tax-notification__text">
-                        <p class="tax-notification__title">Flamingo</p>
-                        <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
-                    </div>
-                    <p class="tax-notification__time">Now</p>
-                </div>
-    
-            </div>
-        </div> -->
 
         <!-- text container -->
         <div class="front-sec-v2-mob__text-wrapper front-sec-v2-mob-text-wrapper" ref="textMobWrapper" :style="{ transform: `translateY(-${textTranslateValue}px)` }">
@@ -175,8 +146,8 @@
                     <div class="front-sec-v2-mob-text-wrapper__element">
                         <div class="home-front-sec-slide-mob__text-container-wrapper">
                             <div class="home-front-sec-slide-mob__text-container">
-                                <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
-                                <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>     
+                                <h2 class="front-sec-slide__title">{{ $t('anim_stap2_title') }}</h2>
+                                <p class="front-sec-slide__text">{{ $t('anim_stap2_text') }}</p>     
                             </div>
                             
                         </div>
@@ -186,8 +157,8 @@
                         <div class="home-front-sec-slide-mob__wrapper">
                             <div class="home-front-sec-slide-mob__text-container-wrapper">
                                 <div class="home-front-sec-slide-mob__text-container">
-                                    <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
-                                    <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap3_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap3_text') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -196,10 +167,10 @@
                         <div class="home-front-sec-slide-mob__wrapper">
                             <div class="home-front-sec-slide-mob__text-container-wrapper">
                                 <div class="home-front-sec-slide-mob__text-container">
-                                    <h2 class="front-sec-slide__title">Schengen <span class="front-sec-slide__title-icon">
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap4_title1') }} <span class="front-sec-slide__title-icon">
                                         <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
-                                    </span><br>Calculator</h2>
-                                    <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
+                                    </span><br>{{ $t('anim_stap4_title2') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap4_text') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -208,8 +179,8 @@
                         <div class="home-front-sec-slide-mob__wrapper">
                             <div class="home-front-sec-slide-mob__text-container-wrapper">
                                 <div class="home-front-sec-slide-mob__text-container">
-                                    <h2 class="front-sec-slide__title">Tax Residency<br> & Domicile</h2>
-                                    <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates. </p>
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap5_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap5_text') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -220,8 +191,8 @@
                                 <div class="home-front-sec-slide-mob__text-container">
                                     <h2 class="front-sec-slide__title"><span class="front-sec-slide__title-icon">
                                         <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
-                                    </span> US Cities <br>Day Count</h2>
-                                    <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
+                                    </span> {{ $t('anim_stap6_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap6_text') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -230,10 +201,10 @@
                         <div class="home-front-sec-slide-mob__wrapper">
                             <div class="home-front-sec-slide-mob__text-container-wrapper">
                                 <div class="home-front-sec-slide-mob__text-container">
-                                    <h2 class="front-sec-slide__title">Passport Index</h2>
-                                    <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap7_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap7_text') }}</p>
             
-                                    <a href="/#Features"  class="front-sec-slide__btn-btn" >View All Features</a>
+                                    <a href="/#Features"  class="front-sec-slide__btn-btn" >{{ $t('anim_stap7_btn_title') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -298,16 +269,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            
-                                
                             </div>
-                            
-                  
-        
-                        
+
                     </div>
                 </div>
-                
+            
             </div>
         </div>
 
@@ -316,11 +282,14 @@
             <img :class="{'front-sec-v2__planet-img_show': planetVisibleStatus == true}"  class="front-sec-v2__planet-img" src="@/assets/video/glob-01-img.jpg" alt="">
          </div>
 
-      
-
     </section>
 </template>
 
+
+
+<script setup>
+const { locale, setLocale } = useI18n()
+</script>
 
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
@@ -345,8 +314,6 @@ export default {
         maxScrollValue: 0,
         opacityAnim: 1,
         planetVisibleStatus: false,
-      
-
     }
   },
 
@@ -359,8 +326,6 @@ export default {
 
         let maxScrollTextValue = (((this.windowHeingt * 1) - (phoneHeight / 2)) + maxTextTranslateValue + moveLineHeight - (moveLineHeight / 6))
         this.maxScrollValue = maxScrollTextValue
-
-
 
         this.$refs.frontScrollContainerMobRef.style.height = this.maxScrollValue + this.windowHeingt  + 'px'
 
@@ -400,8 +365,6 @@ export default {
         console.log('Текущая позиция прокрутки:', this.scrollPosition);
 
         console.log('this.scrollDeltaChange',this.scrollDeltaChange)
-
-
        
         this.changePhoneSlide()
         this.changePositionPhone()
@@ -507,8 +470,6 @@ export default {
                 this.counterActivSlide = 6
             } 
         }
-
-        
         
     },
 
@@ -606,12 +567,7 @@ export default {
             this.opacityAnim = 1
         }
 
-    },
-
-
-
-
-    
+    },  
 
   },
 

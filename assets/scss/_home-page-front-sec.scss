@@ -1301,6 +1301,10 @@
 
     .home-front-sec-slide-mob__text-container {
         padding-top: 25px;
+
+        .front-sec-slide__title {
+            padding-right: 140px;
+        }
     }
 
     .front-sec-slide__text {
@@ -1334,6 +1338,8 @@
             position: relative;
             display: flex;
             justify-content: center;
+
+
         }
 
         .tax-notification {

@@ -1,24 +1,14 @@
 <template>
-
-    <!-- <component__front_sec_apple  /> -->
+    <!-- PC  /> -->
     <component__front_sec_v2_x1 v-if="pcAnimSecStatus == true"  />
 
+    <!-- Mobile  /> -->
     <component__front_sec_anim_mob_x1 v-else-if="pcAnimSecStatus == false"  />
-
 </template>
 
-
-
 <script>
-
-
-
 import component__front_sec_v2_x1 from '@/components/component__front-sec-anim-v2.vue'
 import component__front_sec_anim_mob_x1 from '@/components/component__fornt-sec-v2_mob.vue'
-
-
-
-
 
 export default {
     data() {
@@ -31,19 +21,11 @@ export default {
     },
 
     components: {
-
         component__front_sec_v2_x1,
         component__front_sec_anim_mob_x1,
     },
 
-
     methods: {
-
-
-
-
-
-
 
         updateWindowSizeComponentX1(){
             clearTimeout(this.resizeTimeout); // Очищаем предыдущий таймер
@@ -56,6 +38,7 @@ export default {
             }, 1500); // Задержка перед выполнением
 
         },
+
         checkCurrentComponent(){
             if(this.widthWind > 750){
                 this.pcAnimSecStatus = true
@@ -65,7 +48,6 @@ export default {
             }
 
         },
-
 
     },
 
@@ -77,11 +59,9 @@ export default {
 
     },
 
-
     mounted(){
         this.widthWind = window.innerWidth;
         this.checkCurrentComponent()
-     
         window.addEventListener("resize", this.updateWindowSizeComponentX1);
     },
 

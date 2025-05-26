@@ -41,7 +41,7 @@
                             </clipPath>
                             </defs>
                         </svg>
-                        Download
+                        {{ $t('Download') }}
                     </a>
                 </div>
 
@@ -106,7 +106,7 @@
                                 </clipPath>
                                 </defs>
                             </svg>
-                            Download
+                            {{ $t('Download') }}
                         </a>
                     </div>
                 </div>
@@ -136,21 +136,21 @@ export default {
 
     methods: {
         handleScroll() {
-            // this.isScrolled = window.scrollY > 100;
+            this.isScrolled = window.scrollY > 100;
         },
 
         onScroll() {
-            // const sections = document.querySelectorAll('section');
-            // let currentSection = '';
+            const sections = document.querySelectorAll('section');
+            let currentSection = '';
 
-            // sections.forEach(section => {
-            //     const rect = section.getBoundingClientRect();
-            //     if (rect.top <= 50 && rect.bottom > 50) {
-            //     currentSection = section.id;
-            //     }
-            // });
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 50 && rect.bottom > 50) {
+                currentSection = section.id;
+                }
+            });
 
-            // this.activeSection = currentSection;
+            this.activeSection = currentSection;
         }
 
     },

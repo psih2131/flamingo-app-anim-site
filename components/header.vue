@@ -44,7 +44,7 @@
                             </clipPath>
                             </defs>
                         </svg>
-                        Download
+                        {{ $t('Download') }}
                     </a>
                 </div>
 
@@ -104,7 +104,7 @@
                                 </clipPath>
                                 </defs>
                             </svg>
-                            Download
+                            {{ $t('Download') }}
                         </a>
                     </div>
                 </div>
@@ -114,6 +114,11 @@
 
 
 </template>
+
+<script setup>
+const { locale, setLocale } = useI18n()
+</script>
+
 <script>
 import component__lang_list from '@/components/lang-list.vue'
 

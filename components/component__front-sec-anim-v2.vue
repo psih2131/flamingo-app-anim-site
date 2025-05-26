@@ -93,8 +93,8 @@
      
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-1__text-wrapper">
-                            <h1 class="front-sec-slide-1__title">Overseas and Stateside Travel App</h1>
-                            <p class="front-sec-slide-1__subtitle">Automated travel days tracker designed for tax residency, visa, and immigration compliance.</p>
+                            <h1 class="front-sec-slide-1__title">{{ $t('anim_stap1_title') }}</h1>
+                            <p class="front-sec-slide-1__subtitle">{{ $t('anim_stap1_text') }}</p>
                             <div class="front-sec-slide-1__btn-wrapper">
                                 <a target="_blank" href="https://flamingotracker.com/appstore?s=0" class="header__download-ios">
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +107,7 @@
                                         </clipPath>
                                         </defs>
                                     </svg>
-                                    Download
+                                    {{ $t('Download') }}
                                 </a>
                             </div>
                         </div>
@@ -120,11 +120,9 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-2__text-wrapper">
-                            <h2 class="front-sec-slide__title">Your Travels, Simplified</h2>
-                            <p class="front-sec-slide__text">Effortlessly track trips, monitor visa days, and stay compliant, all at your fingertips. Designed to adapt to your lifestyle, wherever you go.</p>
+                            <h2 class="front-sec-slide__title">{{ $t('anim_stap2_title') }}</h2>
+                            <p class="front-sec-slide__text">{{ $t('anim_stap2_text') }}</p>
                         </div>
-
-                        
                     </div>
                 </div>
             </div>
@@ -133,8 +131,8 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">Auto Trip Recording</h2>
-                            <p class="front-sec-slide__text">Flamingo travels with you and automatically records your movements between countries, US states and select US cities.</p>
+                            <h2 class="front-sec-slide__title">{{ $t('anim_stap3_title') }}</h2>
+                            <p class="front-sec-slide__text">{{ $t('anim_stap3_text') }}</p>
                         </div>
                     </div>
                 </div>
@@ -144,12 +142,12 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">Schengen 
+                            <h2 class="front-sec-slide__title">{{ $t('anim_stap4_title1') }} 
                                 <span class="front-sec-slide__title-icon">
                                     <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
                                 </span> 
-                                Calculator</h2>
-                            <p class="front-sec-slide__text">Easily comply with the Schengen 90/180 rules when traveling around Europe with the Flamingo Schengen area calculator.</p>
+                                {{ $t('anim_stap4_title2') }}</h2>
+                            <p class="front-sec-slide__text">{{ $t('anim_stap4_text') }}</p>
                         </div>
                     </div>
                 </div>
@@ -164,13 +162,13 @@
                                     <img src="@/assets/images/tax-noti-icon.png" alt="">
                                 </div>
                                 <div class="tax-notification__text">
-                                    <p class="tax-notification__title">Flamingo</p>
-                                    <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
+                                    <p class="tax-notification__title">{{ $t('anim_stap5_noti_title') }}</p>
+                                    <p class="tax-notification__subtitle">{{ $t('anim_stap5_noti_subtitle') }}</p>
                                 </div>
-                                <p class="tax-notification__time">Now</p>
+                                <p class="tax-notification__time">{{ $t('anim_stap5_noti_now') }}</p>
                             </div>
-                            <h2 class="front-sec-slide__title">Tax Residency & Domicile</h2>
-                            <p class="front-sec-slide__text">Keep track of your domicile and tax residency status with timely alerts and important updates.</p>
+                            <h2 class="front-sec-slide__title">{{ $t('anim_stap5_title') }}</h2>
+                            <p class="front-sec-slide__text">{{ $t('anim_stap5_text') }}</p>
                         </div>
                     </div>
                 </div>
@@ -185,16 +183,16 @@
                                     <img src="@/assets/images/tax-noti-icon.png" alt="">
                                 </div>
                                 <div class="tax-notification__text">
-                                    <p class="tax-notification__title">Flamingo</p>
-                                    <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
+                                    <p class="tax-notification__title">{{ $t('anim_stap6_noti_title') }}</p>
+                                    <p class="tax-notification__subtitle">{{ $t('anim_stap6_noti_subtitle') }}</p>
                                 </div>
-                                <p class="tax-notification__time">Now</p>
+                                <p class="tax-notification__time">{{ $t('anim_stap6_noti_now') }}</p>
                             </div>
                             <h2 class="front-sec-slide__title">
                                 <span class="front-sec-slide__title-icon">
                                     <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
-                                </span> US Cities Day Count</h2>
-                            <p class="front-sec-slide__text">Count days and track your residency status in select US cities to comply with local tax regulations.</p>
+                                </span> {{ $t('anim_stap6_title') }}</h2>
+                            <p class="front-sec-slide__text">{{ $t('anim_stap6_text') }}</p>
                         </div>
                     </div>
                 </div>
@@ -204,10 +202,10 @@
                 <div class="home-front-sec-slide__wrapper">
                     <div class="home-front-sec-slide__container">
                         <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">Passport Index</h2>
-                            <p class="front-sec-slide__text">Check visa requirements for your next trip by adding your citizenship, with real-time updates synced to the IATA database.</p>
+                            <h2 class="front-sec-slide__title">{{ $t('anim_stap7_title') }}</h2>
+                            <p class="front-sec-slide__text">{{ $t('anim_stap7_text') }}</p>
                             <div class="front-sec-slide__btn-wrapper" :class="{'front-sec-slide__btn-btn_activ': phoneAnimStap >= 5.5}">
-                                <a href="/#Features"   class="front-sec-slide__btn-btn" >View All Features</a>
+                                <a href="/#Features"   class="front-sec-slide__btn-btn" >{{ $t('anim_stap7_btn_title') }}</a>
                             </div>
                         </div>
                     </div>
@@ -454,10 +452,7 @@
                 autoplay 
                 loop 
                 playsinline 
-                
                 @loadedmetadata="onVideoLoaded_Vx1"
-                
-        
                 ref="video1"
             >
                 Ваш браузер не поддерживает тег видео.
@@ -471,7 +466,6 @@
                 :class="{'home-front-sec__video-element-2_activ': +currentPlayVideo == 1}">
                     <video v-if="autoPlaySupported == true"
                     @loadedmetadata="onVideoLoaded_Vx2"
-                
                     muted 
                     playsinline
                     preload="auto" 
@@ -505,6 +499,9 @@
 </template>
 
 
+<script setup>
+const { locale, setLocale } = useI18n()
+</script>
 
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
@@ -520,12 +517,10 @@ export default {
         autoPlaySupported: null,
         scrollPosition: null,
         
-        
         oneLoadVideoStatus: false,
         video1Status: false,
         video2Status: false,
         video3Status: false,
-  
 
         fullLoadPageStatus: false,
         firsLoadPhone: true,
@@ -546,7 +541,6 @@ export default {
         scrollDeltaChange: 0,
         currentPlayVideo: 999,
 
-
         // firsVideoPlayStatus: false,
 
         counterScrollVideo: 0,
@@ -558,14 +552,10 @@ export default {
         animTopPosition: 0,
         opacityAnim: 1,
 
-
-
         widthWind: null,
         heightWind: null,
         resizeTimeout: null,
 
-        
-        
        }
    },
 
@@ -576,7 +566,7 @@ export default {
 
    methods: {
 
-     onVideoLoaded_Vx1() {
+    onVideoLoaded_Vx1() {
         if(this.oneLoadVideoStatus == false){
             console.log('video 1 loaded')
             console.log("видео загружено:", Math.floor(Date.now() / 1000));
@@ -645,9 +635,7 @@ export default {
         this.phoneDirection()
         this.changePositionText()
         this.changeActivTextBox()
-       
         this.changeCurrentVideo()
-
         this.hiddenTopAnimSec()
 
         this.lastScrollY = this.scrollPosition
@@ -856,13 +844,10 @@ export default {
             this.phoneAnimStap = 5
         }
        
-
-
         //passport index
         if(+this.scrollPosition < this.windowHeingt * 13.4 ){
             this.phoneStapPassportIndexSlideValue = 0
         }
-
 
         if(+this.scrollPosition >= this.windowHeingt * 13.4 && +this.scrollPosition <= this.windowHeingt * 14){
             let current_100_procent = (this.windowHeingt * 14) - (this.windowHeingt * 13.4)
@@ -880,8 +865,6 @@ export default {
             this.phoneAnimStap = 6
             this.phoneWhiteSystemIconStatus = true
         }
-
-
 
         console.log('sssda',this.windowHeingt, this.scrollPosition / this.windowHeingt)
         
@@ -1120,7 +1103,6 @@ export default {
         if(this.scrollPosition >= this.windowHeingt * 13.98 && this.scrollPosition < this.windowHeingt * 18.16){
             this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8) - ( (this.windowHeingt * 9.38) - (this.windowHeingt * 8))
         }
-
     
    
     //    console.log(this.counterScrollVideo3)
@@ -1149,8 +1131,6 @@ export default {
 
         // console.log(currentTimeVar)
 
-
-            
 
         let containerValue = (this.windowHeingt * 7)  - (this.windowHeingt * 3)
         let scrollPercentage = +this.counterScrollVideo / +containerValue;

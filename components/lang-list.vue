@@ -47,7 +47,7 @@
 
         <transition name="slide-toggle">
             <ul v-if="show" class="mob-meny__lang-list">
-                <template  v-for="locale in availableLocales">
+                <template  v-for="locale in availableLocales" :key="locale">
                     <li @click.prevent.stop="selectLang(locale.code); setLocale(locale.code)"
                         :class="{'lang-list__drop-down-list-element_current': activLang === locale.code}"
                         class="mob-meny__lang-list-element">

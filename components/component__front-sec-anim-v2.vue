@@ -2,6 +2,9 @@
 
     <section class="front-sec-v2" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" ref="frontSecRef" :style="{opacity: opacityAnim}">
         
+        <!-- just for get height -->
+        <div ref="heingtCurrent100VH" class="front-sec-v2__example-window-height"></div>
+
         <!-- scroll container -->
         <div class="front-sec-v2__scroll-container" ref="frontScrollContainerRef">
 
@@ -1241,8 +1244,8 @@ export default {
     },
 
     refreshAnimationAfterBrowserSizeChange(){
-        this.windowHeingt = window.innerHeight
-        // this.windowHeingt = 1000
+        // this.windowHeingt = window.innerHeight
+        this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
         this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
         console.log('window height', this.windowHeingt)
@@ -1269,8 +1272,9 @@ export default {
       this.fullLoadPageStatus = true
       this.counterActivSlide = 0
       this.autoPlaySupported = true
-      this.windowHeingt = window.innerHeight
-    //   this.windowHeingt = 1000
+     
+    //   this.windowHeingt = window.innerHeight
+      this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
       this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
       console.log('window height', this.windowHeingt)

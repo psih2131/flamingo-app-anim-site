@@ -1241,8 +1241,8 @@ export default {
     },
 
     refreshAnimationAfterBrowserSizeChange(){
-        // this.windowHeingt = window.innerHeight
-        this.windowHeingt = 1000
+        this.windowHeingt = window.innerHeight
+        // this.windowHeingt = 1000
         this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
         console.log('window height', this.windowHeingt)
@@ -1269,8 +1269,8 @@ export default {
       this.fullLoadPageStatus = true
       this.counterActivSlide = 0
       this.autoPlaySupported = true
-    //   this.windowHeingt = window.innerHeight
-      this.windowHeingt = 1000
+      this.windowHeingt = window.innerHeight
+    //   this.windowHeingt = 1000
       this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
       console.log('window height', this.windowHeingt)

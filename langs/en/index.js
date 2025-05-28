@@ -48,7 +48,7 @@ export default {
     features_10reason_text: "An essential tool for global expats, permanent residents, overseas homeowners and frequent travelers.",
     features_auto: "Auto",
     features_record: 'Trip Recording',
-    features_record_text: "Flamingo automatically determines when you cross the border and accurately records your trip details. ",
+    features_record_text: "Flamingo automatically determines when you cross the border and accurately records your trip details. You can always review your travel timeline in the app and make adjustments for transits as needed.",
 
     features_plan: "Plan Future Travel",
     features_plan_title: "Plan Future Travel",
@@ -60,10 +60,10 @@ export default {
     features_store_subtitle: "Keep your trips organized by adding detailed notes and storing all relevant documents in one place. This is especially useful if you need to present proof of your travels to lawyers, tax advisors, or government authorities.",
     features_store_text: "",
 
-    features_residency: "Residency",
+    features_residency: "Tax Residency",
     features_dom_status: "Domicile Status",
 
-    features_dom_text: "Whether you’re looking to establish, maintain or avoid a domicile or residency status, Flamingo got you covered. Set up a threshold and tracking period and monitor your physical presence in the country or US state. ",
+    features_dom_text: "Whether you’re looking to establish, maintain or avoid a domicile or tax residency status, Flamingo got you covered. Set up a threshold and tracking period and monitor your physical presence in the country or US state. Receive timely alerts about your status to always stay on top of your tax obligations.",
     features_tax: "Tax",
     features_tax_residency: "Residency",
     features_tax_title: "Tax Residency Assessment",
@@ -73,9 +73,10 @@ export default {
     features_assessment: "Assessment",
 
     features_coming_soon: "Coming soon",
-    features_usa: "USA States",
+    features_usa: "US City & State",
     features_day_count: "Day Count",
-    features_usa_text: "If you are a dual-state resident, or just travel frequently between US states, Flamingo will automatically record and count how many days you spend in each state to determine your physical presence for domicile and state residency.",
+    features_usa_text : "Flamingo auto-tracks your days in every US state and your workdays in key cities. You can select residency-eligible days, mark non-work days, and receive warnings as you approach residency status.",
+    features_usa_text_2 : "*Currently available only for New York City, NY. Other cities coming soon.",
     features_schengen: "Schengen Area",
     features_calculator: "Calculator",
     features_calculator_text: "Flamingo’s built-in Schengen calculator uses your cumulative days spent in Schengen countries to display days you have left and allows you to plan future trips to the EU based on the 90/180 day rule.",
@@ -85,9 +86,9 @@ export default {
     features_short_term_subtitle: 'Add your short-term visa details and visa-free access conditions, and the Flamingo app will automatically track your entries and stays in the country, alerting you as you approach your limits.',
     features_short_term_text: '',
 
-    features_new_york: "US Cities Day Count",
+    features_new_york: "Long-Term Visa & Residence Permit Tracking",
     features_new_york_title: "US Cities Day Count",
-    features_new_york_subtitle: 'We recognize the importance of adhering to both state and local city tax regulations in the United States, which is why we now offer separate day tracking for individual US cities. For instance, you can set up tax residency and track your visits to the five New York City boroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — independently from your stays in New York State. \n\n We are continuously adding more US cities to the app to enhance your experience.',
+    features_new_york_subtitle: 'Track days in a country where you hold a long-term visa or residence permit for work, study, family or other immigration purpose. You can set multiple tracking rules, such as presence or absence caps for different reporting periods, store document details, and receive alerts as you near any limit or expiry date.',
     features_new_york_text: "",
 
     features_build_in: "Passport Index",

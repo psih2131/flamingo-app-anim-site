@@ -77,6 +77,7 @@ export default {
     features_usa : "Recuento de días en",
     features_day_count : "estados de EE.UU.",
     features_usa_text : "Si resides en dos estados o solo viajas con frecuencia entre estados de EE.UU., Flamingo registrará y contará automáticamente cuántos días pasas en cada estado para determinar tu presencia física a efectos de domicilio y residencia estatal.",
+    features_usa_text_2 : "",
     features_schengen : "Calculadora",
     features_calculator: "del espacio Schengen",
     features_calculator_text : "La calculadora Schengen integrada de Flamingo utiliza los días acumulados en los países Schengen para mostrar los días que te quedan y te permite planificar futuros viajes a la UE basándose en la regla de los 90/180 días.",

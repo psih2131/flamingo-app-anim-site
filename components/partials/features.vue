@@ -216,7 +216,7 @@
         <div class="reasons-sec__big-element reason-element r-big r-big_50 r-big_x3 " @mouseenter="playVideoStart('featureVideoNyc')" @mouseleave="pauseVideo('featureVideoNyc')">
           <div class="r-big__text">
             <p class="r-big__title">{{ $t('features_usa') }}<br> {{ $t('features_day_count') }}</p>
-            <p class="r-big__subtitle"> {{ $t('features_usa_text') }}</p>
+            <p class="r-big__subtitle"> {{ $t('features_usa_text') }}<br>{{ $t('features_usa_text_2') }}</p>
           </div>
 
           <div class="r-big__img-wrapper">

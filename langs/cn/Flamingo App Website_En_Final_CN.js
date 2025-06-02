@@ -76,6 +76,7 @@ export default {
     features_usa : "美国各州",
     features_day_count : "天数统计",
     features_usa_text : "如果您是跨州居民，或者只是经常在美国各州之间旅行，Flamingo将自动记录并计算您在每个州度过的天数，以确定您的居住地和州居民的实际情况。",
+    features_usa_text_2 : "",
     features_schengen : "申根地区",
     features_calculator: "计算器",
     features_calculator_text : "Flamingo的内置申根计算器使用您在申根国家的累计天数来显示您剩余的天数，并允许您根据90/180天的规则计划未来前往欧盟的旅行。",

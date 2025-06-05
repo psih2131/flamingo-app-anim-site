@@ -24,6 +24,18 @@
                 </div>
                 </transition>
 
+                <!-- <div class="lang-list__drop-down-list-fixed-wrapper">
+                    <ul class="lang-list__drop-down-list-fixed">
+                        <template v-for="locale in availableLocales" :key="locale.code">
+                            <li @click.prevent.stop="selectLang(locale.code); setLocale(locale.code)"
+                                :class="{'lang-list__drop-down-list-element_current': activLang === locale.code}"
+                                class="lang-list__drop-down-list-element">
+                                {{locale.name}}
+                            </li>
+                        </template>
+                    </ul>
+                </div> -->
+
             </div>
 
         </div>

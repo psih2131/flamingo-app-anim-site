@@ -8,7 +8,7 @@
                     <div class="contact-us-sec__sup-info-box">
                         <h2 class="contact-us-sec__sup-title">{{ $t('contact_support') }} 👋</h2>
                         <p class="contact-us-sec__sup-text">{{ $t('contact_text') }}</p>
-                        <a href="" class="contact-us-sec__sup-btn-link">{{ $t('contact_go_to') }}</a>
+                        <a target="_blank" href="https://apps.apple.com/app/flamingo-travel-days-tracker/id1631680437" class="contact-us-sec__sup-btn-link">{{ $t('contact_go_to') }}</a>
                     </div>
                     <p class="contact-us-sec__form-title">{{ $t('contact_dsc') }}</p>
 

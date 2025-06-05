@@ -1,5 +1,5 @@
 <template>
-  <section class="blog-home-sec">
+  <section class="blog-home-sec" id="Blog">
     <div class="container">
       <div class="related-posts__header">
         <div class="related-posts__header-text">

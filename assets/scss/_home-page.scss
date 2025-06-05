@@ -1393,9 +1393,24 @@
 
 .download-sec__phone {
     width: 336px;
+    // position: absolute;
     position: relative;
     z-index: 10;
+    // right: 84px;
+    // top: 0;
     margin-right: 84px;
+    transform: translateY(50%);
+    transition: all ease 0.3s;
+}
+
+.download-sec__height-windows {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px;
+    height: 100vh;
 }
 
 .download-sec__bable {

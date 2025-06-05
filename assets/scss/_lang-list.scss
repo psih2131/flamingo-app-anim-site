@@ -1,5 +1,28 @@
 .lang-list {
-    padding: 0 32px 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 60px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0);
+        content: "";
+        transition: all ease 0.3s;
+    }
+
+    &:hover {
+        &::before {
+            background: #4B5565;
+            transition: all ease 0.3s;
+        }
+    }
 }
 
 .mob-meny__lang-list-element {
@@ -9,7 +32,9 @@
 .lang-list__row {
     display: flex;
     align-items: center;
-    margin-top: -2px;
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
 }
 
 .lang-list__drop-down-list {
@@ -28,8 +53,14 @@
 
 
 .lang-list__wrapper {
-    position: relative;
-    padding-left: 10px;
+    position: absolute;
+    padding-left: 44px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
 }
 
 .lang-list__drop-down-list-fixed {
@@ -38,6 +69,7 @@
     border-radius: 20px;
     width: 100%;
     padding: 7px;
+    margin-top: 8px;
     box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
 }
 
@@ -63,10 +95,10 @@
 
 .lang-list__drop-down-list-fixed-wrapper {
     position: absolute;
-    left: -10px;
-    top: 100%;
+    left: -0;
+    top: calc(100%);
     width: 240px;
-    padding-top: 20px;
+    padding-top: 0px;
     transition: all .3s ease;
     transform: translateY(0px);
     opacity: 1;

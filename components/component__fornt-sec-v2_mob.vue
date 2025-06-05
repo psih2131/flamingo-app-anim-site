@@ -119,10 +119,10 @@
                             <img src="@/assets/images/tax-noti-icon.png" alt="">
                         </div>
                         <div class="tax-notification__text">
-                            <p class="tax-notification__title">Flamingo</p>
-                            <p class="tax-notification__subtitle">You’ve achieved tax residency!</p>
+                            <p class="tax-notification__title">{{ $t('anim_stap5_noti_title') }}</p>
+                            <p class="tax-notification__subtitle">{{ $t('anim_stap5_noti_subtitle') }}</p>
                         </div>
-                        <p class="tax-notification__time">Now</p>
+                        <p class="tax-notification__time">{{ $t('anim_stap5_noti_now') }}</p>
                     </div>
         
                     <div class="tax-notification" :class="{'tax-notification_activ': counterActivSlide == 5}">
@@ -130,10 +130,10 @@
                             <img src="@/assets/images/tax-noti-icon.png" alt="">
                         </div>
                         <div class="tax-notification__text">
-                            <p class="tax-notification__title">Flamingo</p>
-                            <p class="tax-notification__subtitle">3 days left to reach tax residency in New York, NY. Plan ahead!</p>
+                            <p class="tax-notification__title">{{ $t('anim_stap6_noti_title') }}</p>
+                            <p class="tax-notification__subtitle">{{ $t('anim_stap6_noti_subtitle') }}</p>
                         </div>
-                        <p class="tax-notification__time">Now</p>
+                        <p class="tax-notification__time">{{ $t('anim_stap6_noti_now') }}</p>
                     </div>
         
                 </div>

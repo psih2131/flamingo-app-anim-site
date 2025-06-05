@@ -1,5 +1,6 @@
 <template>
-  <section class="download-sec">
+  <section class="download-sec" ref="donwloadSec">
+    <div class="download-sec__height-windows" ref="windowHeingtX"></div>
     <div class="container">
       <div class="download-sec__info">
         <h2 class="download-sec__title">{{ $t('download') }}<br>{{ $t('download_now') }}</h2>
@@ -32,10 +33,11 @@
         </div>
       </div>
       <div class="download-sec__phone-wrapper">
-        <img src="@/assets/images/phone-down-mokap.webp" alt="" class="download-sec__phone">
+        <img ref="mobImg" src="@/assets/images/phone-down-mokap.webp" alt="" class="download-sec__phone">
         <img src="@/assets/images/green-buble.png" alt="" class="download-sec__bable">
       </div>
     </div>
+
   </section>
 </template>
 
@@ -44,6 +46,86 @@ export default {
   name: "download"
 }
 </script>
+
+
+<script setup>
+
+import { ref, onMounted, onBeforeUnmount, computed, watch, defineEmits  } from 'vue';
+
+
+
+//DATA
+const currentScrollValue = ref(null)
+const donwloadSec = ref()
+const mobImg = ref()
+
+const heightDownloadSec = ref()
+const trigerStartAnim = ref()
+const trigerEndAnim = ref()
+const differetnHeight = ref()
+const windowHeingtX = ref()
+
+const currentProgressProcent = ref()
+
+
+//METHODS 
+function animScrollPhone(){
+    currentScrollValue.value = window.scrollY
+
+    
+
+     
+     heightDownloadSec.value = donwloadSec.value.clientHeight
+     differetnHeight.value = +windowHeingtX.value.clientHeight - +heightDownloadSec.value
+     trigerStartAnim.value = donwloadSec.value.offsetTop - differetnHeight.value
+     trigerEndAnim.value = donwloadSec.value.offsetTop 
+
+     console.log('____download', window.scrollY)
+     console.log('donwloadSec offsetTop', donwloadSec.value.offsetTop)
+     console.log('____dowtrigerStartAnim.valuenload', trigerStartAnim.value)
+     console.log('trigerEndAnim', trigerEndAnim.value)
+
+
+     if(currentScrollValue.value < trigerStartAnim.value){
+      currentProgressProcent.value = 0
+     }
+
+     if(currentScrollValue.value >= trigerStartAnim.value && currentScrollValue.value < trigerEndAnim.value){
+      let rangeValuer = trigerEndAnim.value - trigerStartAnim.value
+      let currentStapValue = currentScrollValue.value - trigerStartAnim.value
+      currentProgressProcent.value = 50 - (((currentStapValue / rangeValuer) * 100)/2)
+      console.log(currentStapValue / rangeValuer)
+
+
+       mobImg.value.style.transform = `translateY(${currentProgressProcent.value }%)`
+     }
+}
+
+
+
+//HOOKS
+onMounted(() => {
+  console.log('download', window.scrollY)
+
+  //first load position
+  animScrollPhone()
+
+
+  document.addEventListener('scroll', ()=>{
+    animScrollPhone()
+   
+  })
+  
+});
+
+onBeforeUnmount(() => {
+
+
+});
+
+
+</script>
+
 
 <style scoped>
 

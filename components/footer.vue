@@ -19,28 +19,58 @@
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch :to="localePath('/#ourUsers')" class="footer__nav-element-link">{{ $t('ourusers') }}</nuxt-link>
                         </li>
-                        <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch :to="localePath('/legal')" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
-                        </li>
-                        <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch :to="localePath('/#Features')" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
-                        </li>
+
                         <li class="footer__top-nav-list-element">
                           <nuxt-link no-prefetch :to="localePath('/terms-of-use')" class="footer__nav-element-link">{{ $t('terms_of_use') }}</nuxt-link>
                         </li>
+
+                        <li class="footer__top-nav-list-element">
+                            <nuxt-link no-prefetch :to="localePath('/#Features')" class="footer__nav-element-link">{{ $t('features') }}</nuxt-link>
+                        </li>
+
+                        <li class="footer__top-nav-list-element">
+                          <nuxt-link no-prefetch :to="localePath('/legal')" class="footer__nav-element-link">{{ $t('privacy_notice') }}</nuxt-link>
+                        </li>
+                        
+       
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch :to="localePath('/#Security')" class="footer__nav-element-link">{{ $t('security') }}</nuxt-link>
                         </li>
+
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch :to="localePath('/contact-us')" class="footer__nav-element-link">{{ $t('contact_support_link') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/cookies')" class="footer__nav-element-link">{{ $t('cookies') }}</nuxt-link>
                         </li>
+
                         <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch :to="localePath('/blog')" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
+                          <nuxt-link no-prefetch :to="localePath('/#blog')" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
                         </li>
-                        <li class="footer__top-nav-list-element"></li>
+
+
+                        <li class="footer__top-nav-list-element">
+                          <a target="_blank" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" class="footer__nav-element-link">EULA</a>,
+                          <a target="_blank" href="https://www.apple.com/legal/internet-services/itunes/" class="footer__nav-element-link footer__nav-element-link--second">ECSN</a>
+                        </li>
+
                         <li class="footer__top-nav-list-element">
                             <nuxt-link no-prefetch :to="localePath('/#Faq')" class="footer__nav-element-link">{{ $t('faq_short') }}</nuxt-link>
                         </li>
+
+                        <li class="footer__top-nav-list-element">
+                          <nuxt-link no-prefetch :to="localePath('/accessibility')" class="footer__nav-element-link">{{ $t('accessibility') }}</nuxt-link>,
+                          
+                        </li>
+
+                        <li class="footer__top-nav-list-element">
+                            <nuxt-link no-prefetch :to="localePath('/contact-us')" class="footer__nav-element-link">{{ $t('contact_support_link') }}</nuxt-link>
+                        </li>
+                        
+
+                        <li class="footer__top-nav-list-element">
+                          <a target="_blank" href="https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt/" class="footer__nav-element-link">HMRC SRT</a>,
+                          
+                        </li>
+                        
+                        
                     </ul>
                 </nav>
                 <div class="footer__developer-row">

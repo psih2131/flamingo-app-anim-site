@@ -2521,3 +2521,144 @@
 
 
 }
+
+
+@media only screen and (max-width: 450px) {
+    @keyframes jumpAnimationDropdownSmall {
+        0% {
+            width: 100%;
+        }
+
+        40% {
+            width: calc(210% + 8px);
+        }
+
+        80% {
+            width: calc(190% + 8px);
+        }
+
+        100% {
+            width: calc(200% + 8px);
+        }
+    }
+
+    @keyframes jumpAnimationDropdownSmallRevers {
+        0% {
+            width: calc(200% + 8px);
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes jumpAnimationDropdownMidle {
+        0% {
+            width: 100%;
+            max-height: 200px;
+        }
+
+        40% {
+            width: 103%;
+        }
+
+        80% {
+            width: 98%;
+        }
+
+        100% {
+            width: 100%;
+            max-height: 500px;
+        }
+    }
+
+    @keyframes jumpAnimationDropdownMidleRevers {
+        0% {
+            width: 100%;
+            max-height: 500px;
+        }
+
+        100% {
+            width: 100%;
+            max-height: 200px;
+        }
+    }
+
+    @keyframes jumpAnimationDropdownLarge {
+        0% {
+            width: 100%;
+        }
+
+        40% {
+            width: calc(210% + 8px);
+        }
+
+        80% {
+            width: calc(190% + 8px);
+        }
+
+        100% {
+            width: calc(200% + 8px);
+        }
+    }
+
+    @keyframes jumpAnimationDropdownLargeRevers {
+        0% {
+            width: calc(200% + 8px);
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+
+    @keyframes fontAnimationDropdownSmall {
+        0% {
+            font-size: 18px;
+        }
+
+        40% {
+            font-size: 26px;
+        }
+
+        80% {
+            font-size: 23px;
+        }
+
+        100% {
+            font-size: 24px;
+        }
+    }
+
+    @keyframes fontAnimationDropdownSmallRevers {
+        0% {
+            font-size: 24px;
+        }
+
+        100% {
+            font-size: 18px;
+        }
+    }
+
+
+
+    .r-tax__img-mob {
+        width: auto;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: auto;
+        right: 0;
+        z-index: 1;
+    }
+
+    .home-main {
+        overflow: hidden;
+    }
+
+    .r-tax.reason-element__dropdown-active .reasons-sec__dropdown-container .reason-element__text {
+        transition: all ease 0.5s;
+    }
+
+}

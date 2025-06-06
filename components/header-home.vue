@@ -2,11 +2,11 @@
     <header class="header header-home" :class="{ 'header_active': isScrolled, 'header_mob-meny-active': mobMenyStatus }" ref="homeHeaderId">
         <div class="container">
             <div class="header__logo-wrapper">
-                <a  class="header__logo" @click="toTop"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></a>
+                <a href="/"  class="header__logo"><img src="@/assets/images/logo.png" alt="" class="header__logo-img"></a>
             </div>
             <nav class="header__nav-wrapper">
 
-                <a @click="toTop" class="header__nav-logo">
+                <a href="/" class="header__nav-logo">
                    <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M41.5547 20.9834C45.4854 23.9033 47.9355 28.0233 47.9355 32.5898C47.9354 41.4436 38.7276 48.6211 27.3691 48.6211C16.0107 48.6211 6.80286 41.4436 6.80273 32.5898C6.80273 32.3957 6.8086 32.2022 6.81738 32.0098H41.5547V20.9834Z" fill="#96D0FF"/>
                     <path d="M40.711 20.2236L17.9825 5.32617C17.9825 5.32617 14.8975 11.6543 14.4493 18.8789C14.001 26.1035 17.9825 31.9834 17.9825 31.9834L40.711 20.2236Z" fill="#D1E9E3"/>

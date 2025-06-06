@@ -11,6 +11,7 @@
         </div>
 
         <!-- cloud for first slide -->
+         
         <div class="home-front-sec__cloud-wrapper" v-if="counterActivSlide == 0">
             <div class="home-front-sec__cloud cl1"></div>
             <div class="home-front-sec__cloud cl2"></div>

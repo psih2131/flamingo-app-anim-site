@@ -47,7 +47,7 @@
 
 
                         <li class="footer__top-nav-list-element">
-                          <a target="_blank" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" class="footer__nav-element-link">EULA</a>,
+                          <a target="_blank" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" class="footer__nav-element-link">EULA</a>
                           <a target="_blank" href="https://www.apple.com/legal/internet-services/itunes/" class="footer__nav-element-link footer__nav-element-link--second">ECSN</a>
                         </li>
 
@@ -56,17 +56,17 @@
                         </li>
 
                         <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch :to="localePath('/accessibility')" class="footer__nav-element-link">{{ $t('accessibility') }}</nuxt-link>,
+                          <nuxt-link no-prefetch :to="localePath('/accessibility')" class="footer__nav-element-link">{{ $t('accessibility') }}</nuxt-link>
                           
                         </li>
 
                         <li class="footer__top-nav-list-element">
-                            <nuxt-link no-prefetch :to="localePath('/contact-us')" class="footer__nav-element-link">{{ $t('contact_support_link') }}</nuxt-link>
+                            <nuxt-link no-prefetch :to="localePath('/contact-us')" class="footer__nav-element-link">{{ $t('contact_us') }}</nuxt-link>
                         </li>
                         
 
                         <li class="footer__top-nav-list-element">
-                          <a target="_blank" href="https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt/" class="footer__nav-element-link">HMRC SRT</a>,
+                          <a target="_blank" href="https://www.gov.uk/government/publications/rdr3-statutory-residence-test-srt/" class="footer__nav-element-link">HMRC SRT</a>
                           
                         </li>
                         

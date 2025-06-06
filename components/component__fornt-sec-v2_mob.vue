@@ -1,5 +1,5 @@
 <template>
-    <section class="front-sec-v2-mob" v-if="fullLoadPageStatus" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" :style="{opacity: opacityAnim}">
+    <section id="#hero" class="front-sec-v2-mob" v-if="fullLoadPageStatus" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" :style="{opacity: opacityAnim}">
 
         <div class="front-sec-v2-mob__iphone-height-window" ref="iphoneHeightWindow"></div>
         

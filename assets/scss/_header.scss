@@ -133,9 +133,17 @@
     max-width: 0;
     overflow: hidden;
     transition: all ease 0.3s;
+    border-radius: 27px;
+    width: 54px;
+    height: 54px;
 
     svg {
         display: block;
+    }
+
+    &:hover {
+        background: #EDEFF1;
+        transition: all ease 0.3s;
     }
 }
 

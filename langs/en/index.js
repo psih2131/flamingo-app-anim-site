@@ -4,7 +4,7 @@ export default {
     security: 'Security',
     blog: 'Blog',
     contact_support_link: 'Contact Support',
-    contact_us: 'Contact us',
+    contact_us: 'Contact Us',
     privacy_notice: 'Privacy Policy',
     terms_of_use: 'Terms of Use',
     support: 'Support',

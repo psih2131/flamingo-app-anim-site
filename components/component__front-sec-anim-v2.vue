@@ -1,6 +1,6 @@
 <template>
 
-    <section class="front-sec-v2" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" ref="frontSecRef" :style="{opacity: opacityAnim}">
+    <section id="hero" class="front-sec-v2" :class="{'showFrontSec': fullLoadPageStatus == true, 'animFullLoad': statusAnimLoad == true}" ref="frontSecRef" :style="{opacity: opacityAnim}">
         
         <!-- just for get height -->
         <div ref="heingtCurrent100VH" class="front-sec-v2__example-window-height"></div>

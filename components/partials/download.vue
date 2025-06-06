@@ -78,7 +78,7 @@ function animScrollPhone(){
      heightDownloadSec.value = donwloadSec.value.clientHeight
      differetnHeight.value = +windowHeingtX.value.clientHeight - +heightDownloadSec.value
      trigerStartAnim.value = donwloadSec.value.offsetTop - differetnHeight.value
-     trigerEndAnim.value = donwloadSec.value.offsetTop 
+     trigerEndAnim.value = donwloadSec.value.offsetTop - 200
 
      console.log('____download', window.scrollY)
      console.log('donwloadSec offsetTop', donwloadSec.value.offsetTop)

@@ -42,7 +42,7 @@
                         </li>
 
                         <li class="footer__top-nav-list-element">
-                          <nuxt-link no-prefetch :to="localePath('/#blog')" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
+                          <nuxt-link no-prefetch :to="localePath('/#Blog')" class="footer__nav-element-link">{{ $t('blog') }}</nuxt-link>
                         </li>
 
 

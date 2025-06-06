@@ -25,7 +25,7 @@ export default {
 
     download: "Download",
     download_now: "Flamingo Now",
-    download_text: "An essential tool for global expats, permanent residents, dual-state residency and frequent travelers.",
+    download_text: "An essential tool for tax residents, business executives, dual residents, HNWIs, digital nomads, expats, remote workers, international students and other travelers.",
 
     faq: "Frequently Asked Questions",
     faq_short: "FAQ",

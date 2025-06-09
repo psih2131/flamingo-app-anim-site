@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     const searchParams = new URLSearchParams(url.parse(req.url).query);
     let parse = () => {
         return new Promise((resolve, reject) => {
-            let response = {"success":true, "subscriptionType":"1", "isSubscriptionEnabled":true};
+            let response = {"success":true, "subscriptionType":"2", "isSubscriptionEnabled":true};
 
             if (searchParams.has('scc') && salesAccessCountryList[searchParams.get('scc').toUpperCase()] === true) {
                 response.salesAccess = true;

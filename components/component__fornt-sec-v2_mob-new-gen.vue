@@ -19,9 +19,9 @@
         </div>
 
         <!-- arrow scroll down for text sec 2 -->
-        <div class="front-sec-slide-2__ar-down" :class="{'front-sec-slide-2__ar-down_active': scrollPosition >= windowHeingt * 0.7 && scrollPosition < windowHeingt * 1.2}" :style="{top: `-${animTopPosition}px` }">
+        <!-- <div class="front-sec-slide-2__ar-down" :class="{'front-sec-slide-2__ar-down_active': scrollPosition >= windowHeingt * 0.7 && scrollPosition < windowHeingt * 1.2}" :style="{top: `-${animTopPosition}px` }">
             <img  src="@/assets/video/scroll_for_more.webp" alt="" class="front-sec-slide-2__ar-down-img">
-        </div>
+        </div> -->
 
 
         <!-- text wrapper -->
@@ -31,7 +31,7 @@
 
                 <div class="home-front-sec-slide__wrapper">
      
-                     <div class="home-front-sec__sun" :class="{'home-front-sec__sun_activ': counterActivSlide == 0}">
+                    <div class="home-front-sec__sun" :class="{'home-front-sec__sun_activ': counterActivSlide == 0}">
                         <svg width="410" height="407" viewBox="0 0 410 407" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-inside-1_8066_1351" fill="white">
                             <path d="M252.382 8.62676L251.373 8.23386L250.339 7.85123L249.28 7.47804L248.199 7.11428L247.094 6.75997L245.966 6.41595L244.818 6.08224L243.648 5.75966L242.457 5.44738L241.248 5.1454L240.019 4.85458L238.773 4.57489L237.508 4.30637L236.227 4.04985L234.93 3.80451L233.618 3.57029L232.291 3.34896L230.95 3.13877L229.597 2.94058L228.232 2.75443L226.854 2.58111L225.467 2.41984L224.069 2.27055L222.662 2.13415L221.247 2.00976L219.825 1.89823L218.396 1.79958L216.961 1.71378L215.521 1.64001L214.076 1.57995L212.629 1.5319L211.178 1.49758L209.727 1.47527L208.273 1.46585L206.82 1.47014L205.367 1.48643L203.916 1.51646L202.467 1.5585L201.021 1.61427L199.579 1.68205L198.142 1.76269L196.71 1.85705L195.284 1.96258L193.866 2.08181L192.455 2.21309L191.053 2.35721L189.66 2.51336L188.278 2.68236L186.907 2.86337L185.548 3.05641L184.201 3.26143L182.868 3.47934L181.55 3.70756L180.246 3.94863L178.957 4.20084L177.685 4.46422L176.43 4.73962L175.193 5.02615L173.974 5.32299L172.775 5.63098L171.595 5.95011L170.436 6.27954L169.3 6.61927L168.184 6.96845L167.091 7.32875L166.022 7.69851L164.977 8.07772L163.957 8.46635L162.961 8.86355L161.991 9.27019L161.048 9.68543L160.132 10.1092L159.243 10.5416L158.383 10.9817L157.551 11.4296L156.749 11.8851L155.976 12.3484L155.233 12.8185L154.521 13.2946L153.839 13.7776L153.19 14.2666L152.572 14.7625L151.987 15.2635L151.435 15.7697L150.916 16.281L150.43 16.7966L149.979 17.3173L149.561 17.8424L149.178 18.3717L148.83 18.9036L148.517 19.439L148.24 19.9777L147.997 20.519L147.79 21.0629L147.62 21.6086L147.486 22.1559L147.387 22.7041L147.325 23.2541L147.3 23.8048L147.312 24.3556L147.359 24.9064L147.443 25.4571L147.564 26.0071L147.722 26.5553L147.916 27.1035L148.146 27.6491L148.414 28.1939L148.718 28.7352L149.057 29.2748L149.433 29.8102L149.845 30.3438L150.292 30.8731L150.775 31.3981L151.294 31.9189L151.847 32.4353L152.435 32.9467L153.058 33.4528L153.714 33.953L154.405 34.4471L155.128 34.9361L155.885 35.4174L156.674 35.8927L157.496 36.3603L158.348 36.8201L159.232 37.2722L160.147 37.7166L161.091 38.1524L162.066 38.5796L163.069 38.9983L164.1 39.4075L165.159 39.8073L166.246 40.1968L167.359 40.5768L168.498 40.9466L169.661 41.3052L170.849 41.6535L172.06 41.9915L173.295 42.3176L174.551 42.6324L175.829 42.9352L177.128 43.2261L178.446 43.5057L179.783 43.7725L181.138 44.0273L182.511 44.2693L183.899 44.4983L185.303 44.7145L186.722 44.9178L188.154 45.1074L189.599 45.2842L191.056 45.4472L192.524 45.5973L194.001 45.7329L195.488 45.8555L196.983 45.9636L198.485 46.058L199.993 46.1386L201.505 46.2056L203.023 46.2579L204.543 46.2956L206.065 46.3205L207.59 46.33L209.113 46.3257L210.636 46.3077L212.158 46.275L213.676 46.2279L215.192 46.1678L216.702 46.0923L218.207 46.004L219.705 45.901L221.195 45.7843L222.678 45.6539L224.15 45.5098L225.612 45.3519L227.062 45.1812L228.5 44.9968L229.925 44.7986L231.336 44.5876L232.732 44.3636L234.112 44.1269L235.475 43.8772L236.82 43.6156L238.147 43.341L239.455 43.0553L240.743 42.7568L242.009 42.4471L243.254 42.1254L244.475 41.7925L245.675 41.4485L246.849 41.0933L247.999 40.7287L249.124 40.3529L250.222 39.9669L251.295 39.5714L252.339 39.1656L253.355 38.7512L254.342 38.3274L255.3 37.8951L256.229 37.4541L257.127 37.0045L257.994 36.5481L258.83 36.0832L259.634 35.6113L260.406 35.1326L261.144 34.647L261.849 34.1546L262.522 33.657L263.16 33.1525L263.764 32.6438L264.333 32.1291L264.868 31.61L265.367 31.0867L265.831 30.5591L266.259 30.0272L266.652 29.4927L267.008 28.9548L267.328 28.4143L267.612 27.8704L267.86 27.3257L268.07 26.7783L268.245 26.2301L268.382 25.6802L268.484 25.1303L268.549 24.5795L268.576 24.0287L268.568 23.478L268.522 22.928L268.441 22.379L268.323 21.8308L268.169 21.2843L267.979 20.7395L267.754 20.1973L267.492 19.6577L267.195 19.1207L266.863 18.587L266.496 18.0569L266.094 17.5301L265.659 17.0076L265.188 16.4903L264.685 15.9764L264.148 15.4686L263.578 14.965L262.975 14.4674L262.34 13.9758L261.674 13.4902L260.976 13.0107L260.247 12.538L259.488 12.073L258.699 11.614L257.881 11.1628L257.033 10.7201L256.157 10.2842L255.254 9.85702L254.323 9.43835L253.366 9.02828L252.382 8.62676Z"/>
@@ -116,107 +116,131 @@
                 </div>
             </div>
      
-            <div class="home-front-sec-slide front-sec-slide-2 fss-2 front-sec-slide-tex" :class="{'swiper-slide-active': activTextBox == 1}">
-                <div class="home-front-sec-slide__wrapper">
-                    <div class="home-front-sec-slide__container">
-                        <div class="front-sec-slide-2__text-wrapper">
-                            <h2 class="front-sec-slide__title">{{ $t('anim_stap2_title') }}</h2>
-                            <p class="front-sec-slide__text">{{ $t('anim_stap2_text') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
-            <div class="home-front-sec-slide front-sec-slide-3 fss-3 front-sec-slide-tex" :class="{'swiper-slide-active': activTextBox == 2}">
-                <div class="home-front-sec-slide__wrapper">
-                    <div class="home-front-sec-slide__container">
-                        <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">{{ $t('anim_stap3_title') }}</h2>
-                            <p class="front-sec-slide__text">{{ $t('anim_stap3_text') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="home-front-sec-slide front-sec-slide-3 fss-4 front-sec-slide-tex" :class="{'swiper-slide-active': activTextBox == 3}">
-                <div class="home-front-sec-slide__wrapper">
-                    <div class="home-front-sec-slide__container">
-                        <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">{{ $t('anim_stap4_title1') }} 
-                                <span class="front-sec-slide__title-icon">
-                                    <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
-                                </span> 
-                                {{ $t('anim_stap4_title2') }}</h2>
-                            <p class="front-sec-slide__text">{{ $t('anim_stap4_text') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
-            <div class="home-front-sec-slide front-sec-slide-2 fss-5 front-sec-slide-tex" :class="{'swiper-slide-active': activTextBox == 4}">
-                <div class="home-front-sec-slide__wrapper">
-                    <div class="home-front-sec-slide__container">
-                        <div class="front-sec-slide-3__text-wrapper">
-                            <div class="tax-notification" :class="{'tax-notification_activ': phoneAnimStap == 4}">
-                                <div class="tax-notification__icon-wrapper">
-                                    <img src="@/assets/images/tax-noti-icon.png" alt="">
-                                </div>
-                                <div class="tax-notification__text">
-                                    <p class="tax-notification__title">{{ $t('anim_stap5_noti_title') }}</p>
-                                    <p class="tax-notification__subtitle">{{ $t('anim_stap5_noti_subtitle') }}</p>
-                                </div>
-                                <p class="tax-notification__time">{{ $t('anim_stap5_noti_now') }}</p>
-                            </div>
-                            <h2 class="front-sec-slide__title">{{ $t('anim_stap5_title') }}</h2>
-                            <p class="front-sec-slide__text">{{ $t('anim_stap5_text') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
-            <div class="home-front-sec-slide front-sec-slide-2 fss-6 front-sec-slide-tex" :class="{'swiper-slide-active': activTextBox == 5}">
-                <div class="home-front-sec-slide__wrapper">
-                    <div class="home-front-sec-slide__container">
-                        <div class="front-sec-slide-3__text-wrapper">
-                            <div class="tax-notification" :class="{'tax-notification_activ': phoneAnimStap >= 5}">
-                                <div class="tax-notification__icon-wrapper">
-                                    <img src="@/assets/images/tax-noti-icon.png" alt="">
-                                </div>
-                                <div class="tax-notification__text">
-                                    <p class="tax-notification__title">{{ $t('anim_stap6_noti_title') }}</p>
-                                    <p class="tax-notification__subtitle">{{ $t('anim_stap6_noti_subtitle') }}</p>
-                                </div>
-                                <p class="tax-notification__time">{{ $t('anim_stap6_noti_now') }}</p>
-                            </div>
-                            <h2 class="front-sec-slide__title">
-                                <span class="front-sec-slide__title-icon">
-                                    <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
-                                </span> {{ $t('anim_stap6_title') }}</h2>
-                            <p class="front-sec-slide__text">{{ $t('anim_stap6_text') }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
-            <div class="home-front-sec-slide front-sec-slide-2 fss-7 front-sec-slide-tex" :class="{'swiper-slide-active': activTextBox == 6}">
-                <div class="home-front-sec-slide__wrapper">
-                    <div class="home-front-sec-slide__container">
-                        <div class="front-sec-slide-3__text-wrapper">
-                            <h2 class="front-sec-slide__title">{{ $t('anim_stap7_title') }}</h2>
-                            <p class="front-sec-slide__text">{{ $t('anim_stap7_text') }}</p>
-                            <div class="front-sec-slide__btn-wrapper" :class="{'front-sec-slide__btn-btn_activ': phoneAnimStap >= 5.5}">
-                                <a href="/#Features"   class="front-sec-slide__btn-btn" >{{ $t('anim_stap7_btn_title') }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
             
         </div>
+
+
+
+
+
+
+
+        <!-- text container -->
+        <div class="front-sec-v2-mob__text-wrapper front-sec-v2-mob-text-wrapper"  :class="{'front-sec-v2-mob__activ': showTextStatus == true, 'front-sec-v2-mob__activ--no-anim': noAnimTexScroll == true}" :style="{ transform: `translateY(-${animTopPosition}px)`,  }">
+
+
+            <!-- notification -->
+             <!-- :style="{ transform: `translateY(-${textTranslateValue}px)` }" -->
+            <div class="home-front-sec__noti-wrapper" ref="notiMobWrapper" >
+                <div class="home-front-sec-slide-mob__text-container">
+        
+                    <div class="tax-notification" :class="{'tax-notification_activ': activTextBox == 3}">
+                        <div class="tax-notification__icon-wrapper">
+                            <img src="@/assets/images/tax-noti-icon.png" alt="">
+                        </div>
+                        <div class="tax-notification__text">
+                            <p class="tax-notification__title">{{ $t('anim_stap5_noti_title') }}</p>
+                            <p class="tax-notification__subtitle">{{ $t('anim_stap5_noti_subtitle') }}</p>
+                        </div>
+                        <p class="tax-notification__time">{{ $t('anim_stap5_noti_now') }}</p>
+                    </div>
+        
+                    <div class="tax-notification" :class="{'tax-notification_activ': activTextBox == 4}">
+                        <div class="tax-notification__icon-wrapper">
+                            <img src="@/assets/images/tax-noti-icon.png" alt="">
+                        </div>
+                        <div class="tax-notification__text">
+                            <p class="tax-notification__title">{{ $t('anim_stap6_noti_title') }}</p>
+                            <p class="tax-notification__subtitle">{{ $t('anim_stap6_noti_subtitle') }}</p>
+                        </div>
+                        <p class="tax-notification__time">{{ $t('anim_stap6_noti_now') }}</p>
+                    </div>
+        
+                </div>
+            </div>
+
+
+            <div class="front-sec-v2-mob-text-wrapper__text-wrapper">
+                <div class="front-sec-v2-mob-text-wrapper__move-line"  ref="textMobMoveLine" :style="{transform: `translateY(-${16.6 * activTextBox}%)`}">
+                
+                    <div class="front-sec-v2-mob-text-wrapper__element" :class="{'swiper-slide-active': activTextBox == 0}">
+                        <div class="home-front-sec-slide-mob__text-container-wrapper">
+                            <div class="home-front-sec-slide-mob__text-container">
+                                <h2 class="front-sec-slide__title">{{ $t('anim_stap2_title') }}</h2>
+                                <p class="front-sec-slide__text">{{ $t('anim_stap2_text') }}</p>     
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="front-sec-v2-mob-text-wrapper__element" :class="{'swiper-slide-active': activTextBox == 1}">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap3_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap3_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element" :class="{'swiper-slide-active': activTextBox == 2}">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap4_title1') }} <span class="front-sec-slide__title-icon">
+                                        <img src="@/assets/video/phone-image/icon_eu.webp" alt="" >
+                                    </span><br>{{ $t('anim_stap4_title2') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap4_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element" :class="{'swiper-slide-active': activTextBox == 3}">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap5_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap5_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element" :class="{'swiper-slide-active': activTextBox == 4}">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title"><span class="front-sec-slide__title-icon">
+                                        <img src="@/assets/video/phone-image/icon_usa.webp" alt="" >
+                                    </span> {{ $t('anim_stap6_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap6_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="front-sec-v2-mob-text-wrapper__element" :class="{'swiper-slide-active': activTextBox == 5}">
+                        <div class="home-front-sec-slide-mob__wrapper">
+                            <div class="home-front-sec-slide-mob__text-container-wrapper">
+                                <div class="home-front-sec-slide-mob__text-container">
+                                    <h2 class="front-sec-slide__title">{{ $t('anim_stap7_title') }}</h2>
+                                    <p class="front-sec-slide__text">{{ $t('anim_stap7_text') }}</p>
+            
+                                    <a href="/#Features"  class="front-sec-slide__btn-btn" >{{ $t('anim_stap7_btn_title') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+            
+
+        </div>
+
+        
   
         
-        <!-- phone video if video working -->
+         <!-- phone video if video working -->
         <div class="front-sec-v2__phone-main-wrapper" :style="{top: `-${animTopPosition }px` }">
         <div class="home-front-sec__phone-wrapper">
 
@@ -250,7 +274,7 @@
     
                         <div class="anim-phones-wrapper">
                             <div class="anim-phones-slider">
-                                <img class="anim-phones__img  anim-phones__img-preload-first-load" src="/dashboard-no-days.webp" alt="">
+                                <img class="anim-phones__img  anim-phones__img-preload-first-load" src="/dashboard-no-days.webp" alt=""  :style="{ opacity: `${1 - (phoneStapTimelineSlideValue / 100)}` }">
                                 <div class="anim-phones-wrapper__row" :style="{ transform: `translateY(-${textScrollCounter}%)` }" >
 
                                     <div class="anim-phones__element phone-anim-element-v1">
@@ -442,57 +466,10 @@
       
 
         <!-- planet videos  -->
-        <div class="front-sec-v2__video-wrapper-fixed" :style="{top: `-${animTopPosition}px` }">
-            <div class="home-front-sec__video-wrapper">
-            <div  class="home-front-sec__video-element home-front-sec__video-element-1"
-            :class="{'home-front-sec__video-element-1_activ': +currentPlayVideo == 0}">
-                <video v-if="autoPlaySupported == true"
-                src="@/assets/video/vx1_.mp4" 
-                muted 
-                autoplay 
-                loop 
-                playsinline 
-                @loadedmetadata="onVideoLoaded_Vx1"
-                ref="video1"
-            >
-                Ваш браузер не поддерживает тег видео.
-                </video>
-
-                <img v-if="autoPlaySupported == false && +widthWindow < 750" class="home-front-sec__video-element-1-img" src="@/assets/video/glob-01-img.jpg" alt="">
-            </div>
-
-        
-                <div  class="home-front-sec__video-element home-front-sec__video-element-2"
-                :class="{'home-front-sec__video-element-2_activ': +currentPlayVideo == 1}">
-                    <video v-if="autoPlaySupported == true"
-                    @loadedmetadata="onVideoLoaded_Vx2"
-                    muted 
-                    playsinline
-                    preload="auto" 
-                    ref="video2"
-                >
-        
-                    <source src="@/assets/video/vx2_.mp4" type="video/mp4">
-                
-                    </video>
-                </div>
-
-
-                <div  class="home-front-sec__video-element home-front-sec__video-element-4"
-                :class="{'home-front-sec__video-element-4_activ': +currentPlayVideo == 2}">
-                    <video v-if="autoPlaySupported == true"
-                    @loadedmetadata="onVideoLoaded_Vx3" 
-                    muted 
-                    playsinline 
-                    preload="auto"
-                    ref="video3"
-                >
-                    <source src="@/assets/video/vx3_.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-            </div>
-        </div>
+       <!-- planet mob wrapper  -->
+         <div class="front-sec-v2__planet-img-wrapper" >
+            <img :class="{'front-sec-v2__planet-img_show': planetVisibleStatus == true}"  class="front-sec-v2__planet-img" src="@/assets/video/glob-01-img.jpg" alt="">
+         </div>
  
     </section>
        
@@ -511,21 +488,17 @@ export default {
        return {
         statusAnimLoad: false,
         counterActivSlide: 999,
-        phoneScrollCounter: 0,
+
         // videoPhoneStatus: false,
-        widthWindow: 1000,
-        autoPlaySupported: null,
+  
         scrollPosition: null,
         
-        oneLoadVideoStatus: false,
-        video1Status: false,
-        video2Status: false,
-        video3Status: false,
-
         fullLoadPageStatus: false,
         firsLoadPhone: true,
         
         windowHeingt: null,
+        showTextStatus: false,
+        noAnimTexScroll: false,
         activTextBox: null,
         textScrollCounter: null,
         phoneAnimStap: null,
@@ -539,15 +512,8 @@ export default {
         textScrollValue: 0,
         lastScrollY: 0,
         scrollDeltaChange: 0,
-        currentPlayVideo: 999,
 
         // firsVideoPlayStatus: false,
-
-        counterScrollVideo: 0,
-        ticking: false,
-
-        counterScrollVideo3: 0,
-        ticking2: false,
 
         animTopPosition: 0,
         opacityAnim: 1,
@@ -555,6 +521,8 @@ export default {
         widthWind: null,
         heightWind: null,
         resizeTimeout: null,
+
+        planetVisibleStatus: false,
 
        }
    },
@@ -566,49 +534,13 @@ export default {
 
    methods: {
 
-    onVideoLoaded_Vx1() {
-        if(this.oneLoadVideoStatus == false){
-            console.log('video 1 loaded')
-            console.log("видео загружено:", Math.floor(Date.now() / 1000));
-            this.video1Status = true
-            this.checkOthesVideoStatus()
-        }   
-    },
 
-    onVideoLoaded_Vx2() {
-        if(this.oneLoadVideoStatus == false){
-            console.log('video 2 loaded')
-            console.log("видео загружено:", Math.floor(Date.now() / 1000));
-            this.video2Status = true
-            this.checkOthesVideoStatus()
-        }   
-    },
-
-    onVideoLoaded_Vx3() {
-        if(this.oneLoadVideoStatus == false){
-            console.log('video 3 loaded')
-            console.log("видео загружено:", Math.floor(Date.now() / 1000));
-            this.video3Status = true
-            this.checkOthesVideoStatus()
-        }   
-    },
-     
-    checkOthesVideoStatus(){
-        if(this.video1Status == true && this.video2Status == true && this.video3Status == true && this.oneLoadVideoStatus == false){
-            this.oneLoadVideoStatus = true
-            this.firsLoadAnimScripts()
-        }
-    },
 
     firsLoadAnimScripts(){
         this.scrollPosition = window.scrollY;
-        console.log('this.scrollPositions',this.scrollPosition) 
+        // console.log('this.scrollPositions',this.scrollPosition) 
 
-        this.$refs.video2.currentTime = 0.1
-        this.$refs.video3.currentTime = 0.1
 
-        this.$refs.video2.currentTime = 0.0
-        this.$refs.video3.currentTime = 0.0
 
 
         this.firstLoadPhone()
@@ -628,14 +560,14 @@ export default {
         this.scrollDeltaChange = this.scrollPosition - this.lastScrollY;
 
         // console.log('Пикселей за 1 скрол:', this.scrollDeltaChange);
-        console.log('Текущая позиция прокрутки:', this.scrollPosition);
+        // console.log('Текущая позиция прокрутки:', this.scrollPosition);
         
         this.changePositionPhone()
         this.changePhoneSlide()
         this.phoneDirection()
         this.changePositionText()
         this.changeActivTextBox()
-        this.changeCurrentVideo()
+         this.chengePlanetVisible()
         this.hiddenTopAnimSec()
 
         this.lastScrollY = this.scrollPosition
@@ -653,10 +585,25 @@ export default {
         else{
             let phoneHeight = this.$refs.phoneElement.offsetHeight
             this.$refs.phoneElementcover.style.transition = 'all ease 0.7s'
-            this.$refs.phoneElementcover.style.top = (this.windowHeingt / 2) - (phoneHeight / 2) + 'px'
+            // this.$refs.phoneElementcover.style.top = (this.windowHeingt / 2) - (phoneHeight / 2) + 'px'
+             this.$refs.phoneElementcover.style.top = 80 + 'px'
         }
         this.firsLoadPhone = false
 
+    },
+
+
+
+    chengePlanetVisible(){
+
+        if(this.scrollPosition >= 20){
+            this.planetVisibleStatus = false
+        }
+        else{
+            this.planetVisibleStatus = true
+        }
+
+        
     },
 
 
@@ -670,31 +617,22 @@ export default {
         let currentTopValue
 
         if (mobVersion.matches) {
-            maxTopValue = (this.windowHeingt / 2) - ((phoneHeight) / 2)
+            maxTopValue = 80
             currentTopValue = (this.windowHeingt - ((phoneHeight ) / 2)) - this.textScrollValue
         }
         else{
-
-            // if(+this.scrollPosition < 10){
-            //     maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
-            //     currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2) - 40) - this.textScrollValue
-            // }
-            // else{
-            //     maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
-            //     currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2)) - this.textScrollValue
-            // }
-            maxTopValue = (this.windowHeingt / 2) - ((phoneHeight - headerHeight) / 2)
+            maxTopValue = 80
             currentTopValue = (this.windowHeingt - ((phoneHeight - headerHeight) / 2)) - this.textScrollValue
         }
         
 
         if(currentTopValue <= maxTopValue){
             currentTopValue = maxTopValue
-            console.log('xxxx')
+  
         }
         else{
             currentTopValue = currentTopValue
-            console.log('yyyy')
+     
 
             if(currentTopValue >= this.windowHeingt - (phoneHeight / 2) ){
                 currentTopValue = this.windowHeingt - (phoneHeight / 2)
@@ -704,8 +642,7 @@ export default {
         this.$refs.phoneElementcover.style.top = +currentTopValue + 'px'
         
         
-        
-        // console.log('maxTopValue',currentTopValue)
+
     },
 
 
@@ -719,25 +656,26 @@ export default {
         }
 
          //first anim phone sec
-        if(+this.scrollPosition <= this.windowHeingt * 1.4){
+        //  1.4
+        if(+this.scrollPosition <= this.windowHeingt * 0.64){
             this.phoneStapTimelineSlideValue = 0
             this.phoneWhiteSystemIconStatus = true
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 1 && +this.scrollPosition <= this.windowHeingt * 2.018){
+        if(+this.scrollPosition >= this.windowHeingt * 0.8 && +this.scrollPosition <= this.windowHeingt * 1.2){
             this.textScrollCounter = 0
             this.phoneAnimStap = 1
 
-            if(+this.scrollPosition >= this.windowHeingt * 1.4 && +this.scrollPosition <= this.windowHeingt * 2.018){
-                let current_100_procent = (this.windowHeingt * 2.018) - (this.windowHeingt * 1.4)
+            if(+this.scrollPosition >= this.windowHeingt * 0.8 && +this.scrollPosition <= this.windowHeingt * 1.2){
+                let current_100_procent = (this.windowHeingt * 1.2) - (this.windowHeingt * 0.8)
                 let current_1_procent = current_100_procent / 100
 
-                let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 1.4)) / current_1_procent
+                let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 0.8)) / current_1_procent
                 this.phoneStapTimelineSlideValue = currentSvipeValue
                 console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
             }
 
-            if(+this.scrollPosition >= this.windowHeingt * 1.7 && +this.scrollPosition <= this.windowHeingt * 2.018){
+            if(+this.scrollPosition >= this.windowHeingt * 1 && +this.scrollPosition <= this.windowHeingt * 1.2){
                 this.phoneWhiteSystemIconStatus = false
             }
             else{
@@ -747,48 +685,48 @@ export default {
 
 
         //timeline anim
-        if(+this.scrollPosition >= this.windowHeingt * 2.018 && this.scrollPosition <= this.windowHeingt * 2.9){
+        if(+this.scrollPosition >= this.windowHeingt * 1.2 && this.scrollPosition <= this.windowHeingt * 1.4){
             this.textScrollCounter = 0
             this.phoneStapTimelineSlideValue = 100
             this.phoneAnimStap = 1
             this.phoneWhiteSystemIconStatus = false
         }
         
-        if(+this.scrollPosition >= this.windowHeingt * 2.9 && this.scrollPosition <= this.windowHeingt * 4.4){
+        if(+this.scrollPosition >= this.windowHeingt * 1.2 && this.scrollPosition <= this.windowHeingt * 1.4){
             // this.textScrollCounter = (100 / 7) * 2
             this.textScrollCounter = 0
             this.phoneStapTimelineSlideValue = 100
             this.phoneWhiteSystemIconStatus = false
             
         }
-        if(+this.scrollPosition >= this.windowHeingt * 2.9){
+        if(+this.scrollPosition >= this.windowHeingt * 1.2){
             this.phoneAnimStap = 2
         }
-        if(+this.scrollPosition >= this.windowHeingt * 4.4){
+        if(+this.scrollPosition >= this.windowHeingt * 1.4){
             this.phoneStapTimelineSlideValue = 100
         }
       
 
 
         //шенген анимация
-        if(+this.scrollPosition < this.windowHeingt * 3.5 ){
+        if(+this.scrollPosition < this.windowHeingt * 1.4){
             this.phoneStapShengenSlideValue = 0
         }
-        if(+this.scrollPosition >= this.windowHeingt * 3.5 && +this.scrollPosition <= this.windowHeingt * 4.2){
-            let current_100_procent = (this.windowHeingt * 4.2) - (this.windowHeingt * 3.5)
+        if(+this.scrollPosition >= this.windowHeingt * 1.4 && +this.scrollPosition <= this.windowHeingt * 2){
+            let current_100_procent = (this.windowHeingt * 2) - (this.windowHeingt * 1.4)
             let current_1_procent = current_100_procent / 100
 
-            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 3.5)) / current_1_procent
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 1.4)) / current_1_procent
             this.phoneStapShengenSlideValue = currentSvipeValue
             
         }
-        if(+this.scrollPosition >= this.windowHeingt * 4.2 ){
+        if(+this.scrollPosition >= this.windowHeingt * 2 ){
             this.phoneStapShengenSlideValue = 100
             this.phoneWhiteSystemIconStatus = true
             
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 6.5 ){
+        if(+this.scrollPosition >= this.windowHeingt * 2 ){
             // this.textScrollCounter = (100 / 7) * 3
             this.phoneAnimStap = 3
         }
@@ -796,72 +734,72 @@ export default {
 
         
         //Tax флорида анимация
-        if(+this.scrollPosition < this.windowHeingt * 7.5 ){
+        if(+this.scrollPosition < this.windowHeingt * 2.2 ){
             this.phoneStapTaxSlideValue = 0
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 7.5 && +this.scrollPosition <= this.windowHeingt * 8){
-            let current_100_procent = (this.windowHeingt * 8) - (this.windowHeingt * 7.5)
+        if(+this.scrollPosition >= this.windowHeingt * 2.2 && +this.scrollPosition <= this.windowHeingt * 2.8){
+            let current_100_procent = (this.windowHeingt * 2.8) - (this.windowHeingt * 2.2)
             let current_1_procent = current_100_procent / 100
 
-            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 7.5)) / current_1_procent
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 2.2)) / current_1_procent
             this.phoneStapTaxSlideValue = currentSvipeValue
    
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 8 ){
+        if(+this.scrollPosition >= this.windowHeingt * 2.8 ){
             this.phoneStapTaxSlideValue = 100
             this.phoneWhiteSystemIconStatus = false
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 9.38 ){
+        if(+this.scrollPosition >= this.windowHeingt * 2.8 ){
             this.phoneAnimStap = 4
         }
 
       
         //us cities anim
-        if(+this.scrollPosition < this.windowHeingt * 9.8 ){
+        if(+this.scrollPosition < this.windowHeingt * 2.8 ){
             this.phoneStapUsCitiesSlideValue = 0
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 9.8 && +this.scrollPosition <= this.windowHeingt * 10.365){
-            let current_100_procent = (this.windowHeingt * 10.365) - (this.windowHeingt * 9.8)
+        if(+this.scrollPosition >= this.windowHeingt * 3.0 && +this.scrollPosition <= this.windowHeingt * 3.6){
+            let current_100_procent = (this.windowHeingt * 3.6) - (this.windowHeingt * 3.0)
             let current_1_procent = current_100_procent / 100
 
-            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 9.8)) / current_1_procent
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 3.0)) / current_1_procent
             this.phoneStapUsCitiesSlideValue = currentSvipeValue
    
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 10.365 ){
+        if(+this.scrollPosition >= this.windowHeingt * 3.8){
             this.phoneStapUsCitiesSlideValue = 100
         }
-        if(+this.scrollPosition >= this.windowHeingt * 11.47 ){
+        if(+this.scrollPosition >= this.windowHeingt * 3.8 ){
             this.phoneAnimStap = 4.5
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 12.41 ){
+        if(+this.scrollPosition >= this.windowHeingt * 3.8 ){
             this.phoneAnimStap = 5
         }
        
         //passport index
-        if(+this.scrollPosition < this.windowHeingt * 13.4 ){
+        if(+this.scrollPosition < this.windowHeingt * 4.2 ){
             this.phoneStapPassportIndexSlideValue = 0
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 13.4 && +this.scrollPosition <= this.windowHeingt * 14){
-            let current_100_procent = (this.windowHeingt * 14) - (this.windowHeingt * 13.4)
+        if(+this.scrollPosition >= this.windowHeingt * 4.2 && +this.scrollPosition <= this.windowHeingt * 4.8){
+            let current_100_procent = (this.windowHeingt * 4.8) - (this.windowHeingt * 4.2)
             let current_1_procent = current_100_procent / 100
 
-            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 13.4)) / current_1_procent
+            let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 4.2)) / current_1_procent
             this.phoneStapPassportIndexSlideValue = currentSvipeValue   
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 14 ){
+        if(+this.scrollPosition >= this.windowHeingt * 4.8 ){
             this.phoneStapPassportIndexSlideValue = 100
             this.phoneAnimStap = 5.5
         }
-        if(+this.scrollPosition >= this.windowHeingt * 16.7 ){
+        if(+this.scrollPosition >= this.windowHeingt * 4.9 ){
             this.phoneAnimStap = 6
             this.phoneWhiteSystemIconStatus = true
         }
@@ -871,23 +809,7 @@ export default {
     },
 
     phoneDirection(){
-        if(+this.scrollPosition <= 10){
-            this.$refs.phoneElementcover.classList.remove('phoneRightSide')
-            this.$refs.phoneElementcover.classList.remove('phoneLeftSide')
-        }
-        
-        else if(+this.scrollPosition > 10 && +this.scrollPosition < this.windowHeingt * 7.26){
-            this.$refs.phoneElementcover.classList.add('phoneRightSide')
-            this.$refs.phoneElementcover.classList.remove('phoneLeftSide')
-        }
-        else if(+this.scrollPosition >= this.windowHeingt * 7.26){
-            this.$refs.phoneElementcover.classList.remove('phoneRightSide')
-            this.$refs.phoneElementcover.classList.add('phoneLeftSide')
-        }
-        else{
-            this.$refs.phoneElementcover.classList.remove('phoneRightSide')
-            this.$refs.phoneElementcover.classList.remove('phoneLeftSide')
-        }
+
   
     },
 
@@ -932,270 +854,63 @@ export default {
     },
 
     changeActivTextBox(){
-        if(+this.scrollPosition <= 10){
+        if(+this.scrollPosition > this.windowHeingt * 0.45){
+            this.showTextStatus = true
+            console.log('SOSI',  this.showTextStatus)
+            
+        }
+        else{
+            this.showTextStatus = false      
+            console.log('SOSI',  this.showTextStatus)
+        }
+
+        if(+this.scrollPosition >= this.windowHeingt * 0.64 && +this.scrollPosition <= this.windowHeingt * 1.2){
             this.activTextBox = 0
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 0.8 && +this.scrollPosition <= this.windowHeingt * 2.018){
+        if(+this.scrollPosition >= this.windowHeingt * 1.2 && this.scrollPosition <= this.windowHeingt * 2){
             this.activTextBox = 1
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 2.01 && this.scrollPosition <= this.windowHeingt * 3.73){
+        if(+this.scrollPosition >= this.windowHeingt * 2 && this.scrollPosition <= this.windowHeingt * 2.8){
             this.activTextBox = 2
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 4.03 && this.scrollPosition <= this.windowHeingt * 7.78){
+        if(+this.scrollPosition >= this.windowHeingt * 2.8 && this.scrollPosition <= this.windowHeingt * 3.6){
             this.activTextBox = 3
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 8.07 && this.scrollPosition <= this.windowHeingt * 10.19){
+        if(+this.scrollPosition >= this.windowHeingt * 3.6 && this.scrollPosition <= this.windowHeingt * 4.2){
             this.activTextBox = 4
         }
 
-        if(+this.scrollPosition >= this.windowHeingt * 10.39 && this.scrollPosition <= this.windowHeingt * 13.72){
+        if(+this.scrollPosition >= this.windowHeingt * 4.2 ){
             this.activTextBox = 5
+            this.noAnimTexScroll = true
         }
-
-        if(+this.scrollPosition >= this.windowHeingt * 14.02 && this.scrollPosition <= this.windowHeingt * 18.16){
-            this.activTextBox = 6
-        }
-    },
-    
-
-
-    changeCurrentVideo(){
-        if(+this.scrollPosition <= 10){
-            this.currentPlayVideo = 0
-        }
- 
-        else if(this.scrollPosition >= this.windowHeingt * 2 && this.scrollPosition < this.windowHeingt * 7){
-            this.currentPlayVideo = 1
-
-            this.video2ScrollScripts()
-
-            // if(this.scrollPosition >= this.windowHeingt * 2 && this.scrollPosition < this.windowHeingt * 3){
-            //     this.video2ScrollScripts()
-            // }
-
-            // if(this.scrollPosition >= this.windowHeingt * 4 && this.scrollPosition < this.windowHeingt * 7){
-            //     this.video2ScrollScripts()
-            // }
-        }
-
-        else if(this.scrollPosition >= this.windowHeingt * 8 ){
-            this.currentPlayVideo = 2
-
-            this.video3ScrollScripts()
-
-            // if(this.scrollPosition >= this.windowHeingt * 8 && this.scrollPosition < this.windowHeingt * 9.38){
-            //     this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8)
-            //     this.video3ScrollScripts()
-            // }
-
-            // if(this.scrollPosition >= this.windowHeingt * 10.365 && this.scrollPosition < this.windowHeingt * 13.47){
-            //     this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8)
-            //     this.video3ScrollScripts()
-            // }
-
-            // if(this.scrollPosition >= this.windowHeingt * 13.98 && this.scrollPosition < this.windowHeingt * 18.16){
-            //     this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8)
-            //     this.video3ScrollScripts()
-            // }
-
-
-            // if(this.scrollPosition >= this.windowHeingt * 9.38 && this.scrollPosition < this.windowHeingt * 10.365){
-            //     this.counterScrollVideo3 = (this.windowHeingt * 9.38) - (this.windowHeingt * 8)
-            //     this.video3ScrollScripts()
-            // }
-
-            // if(this.scrollPosition >= this.windowHeingt * 13.47 && this.scrollPosition < this.windowHeingt * 13.98){
-            //     this.counterScrollVideo3 = (this.windowHeingt * 13.47) - (this.windowHeingt * 8)
-            //     this.video3ScrollScripts()
-            // }
-
-            // if(this.scrollPosition >= this.windowHeingt * 18.16){
-            //     this.counterScrollVideo3 = this.windowHeingt * 8
-            //     this.video3ScrollScripts()
-            // }
-
-            // if(this.scrollPosition < this.windowHeingt * 8){
-            //     this.counterScrollVideo3 = 0
-            //     this.video3ScrollScripts()
-            // }
-        }
-     
         else{
-            this.currentPlayVideo = 999    
-        }
-       
-    },
-
-    video2ScrollScripts(){
-       
-        // if(this.counterScrollVideo < 0){
-        //     this.counterScrollVideo = 0
-        // }
-
-        // else if(this.counterScrollVideo >  this.windowHeingt * 4){
-        //     this.counterScrollVideo = this.windowHeingt * 4
-        // }
-        // else{
-        //     this.counterScrollVideo = this.counterScrollVideo + this.scrollDeltaChange
-        // }
-
-        if(this.scrollPosition < this.windowHeingt * 2){
-            this.counterScrollVideo = 0
+            this.noAnimTexScroll = false
         }
 
-        if(this.scrollPosition >= this.windowHeingt * 2 && this.scrollPosition < this.windowHeingt * 3.12){
-            this.counterScrollVideo = this.scrollPosition - (this.windowHeingt * 2)
-        }
-
-        if(this.scrollPosition >= this.windowHeingt * 3.12 && this.scrollPosition < this.windowHeingt * 4){
-            this.counterScrollVideo = (this.windowHeingt * 3.12) - (this.windowHeingt * 2)
-        }
-
-        if(this.scrollPosition >= this.windowHeingt * 4 && this.scrollPosition < this.windowHeingt * 7){
-            this.counterScrollVideo = this.scrollPosition - (this.windowHeingt * 3.12)
-        }
-
-        // this.counterScrollVideo = this.scrollPosition - (this.windowHeingt * 2)
-        // console.log('this.counterScrollVideo 2',this.counterScrollVideo)
-
-        this.updateVideo()
-    },
-
-
-    video3ScrollScripts(){        
-    //    if(this.counterScrollVideo3 < 0){
-    //        this.counterScrollVideo3 = 0
-    //    }
-
-    //    else if(this.counterScrollVideo3 >  this.windowHeingt * 8){
-    //        this.counterScrollVideo3 = this.windowHeingt * 8
-    //    }
-    //    else{
-    //     //    this.counterScrollVideo3 = this.counterScrollVideo3 + this.scrollDeltaChange
-    //     this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8)
-    //    }
-
-
-        if(this.scrollPosition >= this.windowHeingt * 8 && this.scrollPosition < this.windowHeingt * 9.38){
-            this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8)
-        }
-
-
-        if(this.scrollPosition >= this.windowHeingt * 9.38 && this.scrollPosition < this.windowHeingt * 10.365){
-            this.counterScrollVideo3 = (this.windowHeingt * 9.38) - (this.windowHeingt * 8)
-        }
      
-        if(this.scrollPosition >= this.windowHeingt * 10.365 && this.scrollPosition < this.windowHeingt * 13.47){
-            this.counterScrollVideo3 = this.scrollPosition - ( (this.windowHeingt * 10.365) - ((this.windowHeingt * 9.38) - (this.windowHeingt * 8)) )
-        }
 
 
-        if(this.scrollPosition >= this.windowHeingt * 13.47 && this.scrollPosition < this.windowHeingt * 13.98){
-            this.counterScrollVideo3 = (this.windowHeingt * 13.98) - ((this.windowHeingt * 9.38) - (this.windowHeingt * 8)) - (this.windowHeingt * 8)
-        }
-
- 
-
-        if(this.scrollPosition >= this.windowHeingt * 13.98 && this.scrollPosition < this.windowHeingt * 18.16){
-            this.counterScrollVideo3 = this.scrollPosition - (this.windowHeingt * 8) - ( (this.windowHeingt * 9.38) - (this.windowHeingt * 8))
-        }
-    
-   
-    //    console.log(this.counterScrollVideo3)
-       this.updateVideo3()
-   },
-
-     videoScroll(){
-            if (!this.ticking) {
-                window.requestAnimationFrame(this.updateVideo); // Планируем обновление
-                this.ticking = true;
-            }
-       },
-
-    updateVideo() {
-        let video = this.$refs.video2
-
-        if(!video){
-            console.log('video dont find')
-        }
-
-        // let containerValue = this.windowHeingt * 4
-        // let scrollPercentage = +this.counterScrollVideo / +containerValue;
-        // let currentTimeVar = (+video.duration * +scrollPercentage).toFixed(2)
-        // video.currentTime = +currentTimeVar;
-        // this.ticking = false;
-
-        // console.log(currentTimeVar)
-
-
-        let containerValue = (this.windowHeingt * 7)  - (this.windowHeingt * 3)
-        let scrollPercentage = +this.counterScrollVideo / +containerValue;
         
-        let currentTimeVar
-
-        if(this.scrollPosition >= this.windowHeingt * 7){
-            currentTimeVar = +video.duration.toFixed(2)
-        }
-        else if(this.scrollPosition < this.windowHeingt * 2){
-            currentTimeVar = 0
-        }
-        else{
-            currentTimeVar = (+video.duration * +scrollPercentage).toFixed(2)
-        }
-
-        video.currentTime = +currentTimeVar;
-        this.ticking = false;
-
-        console.log(currentTimeVar)
     },
+    
 
-    videoScroll3(){
-        if (!this.ticking2) {
-            window.requestAnimationFrame(this.updateVideo3); // Планируем обновление
-            this.ticking2 = true;
-        }
-    },
 
-    updateVideo3() {
-        let video = this.$refs.video3
 
-        if(!video){
-            console.log('video dont find')
-        }
 
-        let containerValue = this.windowHeingt * 8
-        let scrollPercentage = +this.counterScrollVideo3 / +containerValue;
 
-        let currentTimeVar
-
-        if(this.scrollPosition >= this.windowHeingt * 18.16){
-            currentTimeVar = +video.duration.toFixed(2)
-        }
-        else if(this.scrollPosition < this.windowHeingt * 8){
-            currentTimeVar = 0
-        }
-        else{
-            currentTimeVar = (+video.duration * +scrollPercentage).toFixed(2)
-        }
-
-        video.currentTime = +currentTimeVar;
-        this.ticking2 = false;
-
-        console.log('video 3 currentTime', video.currentTime)
- 
-    },
 
 
     hiddenTopAnimSec(){
-        if(this.scrollPosition > +this.windowHeingt * 18){
-            this.animTopPosition = this.scrollPosition - (this.windowHeingt * 18)
+        if(this.scrollPosition > +this.windowHeingt * 5){
+            this.animTopPosition = this.scrollPosition - (this.windowHeingt * 5)
             let currentOpacityProcent
             
-            if(this.scrollPosition >= +this.windowHeingt * 19){
+            if(this.scrollPosition >= +this.windowHeingt * 6){
                 currentOpacityProcent = 1
             }
             else{
@@ -1226,9 +941,9 @@ export default {
     refreshAnimationAfterBrowserSizeChange(){
         // this.windowHeingt = window.innerHeight
         this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
-        this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
+        this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 6 + 'px'
 
-        console.log('window height', this.windowHeingt)
+        // console.log('window height', this.windowHeingt)
 
         this.handleScroll()
     },
@@ -1251,13 +966,14 @@ export default {
    mounted(){
       this.fullLoadPageStatus = true
       this.counterActivSlide = 0
-      this.autoPlaySupported = true
+ 
      
     //   this.windowHeingt = window.innerHeight
       this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
-      this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
+      this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 6 + 'px'
 
       console.log('window height', this.windowHeingt)
+      this.firsLoadAnimScripts()
 
 
       window.addEventListener("resize", this.updateWindowSize);

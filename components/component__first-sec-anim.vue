@@ -3,12 +3,17 @@
     <component__front_sec_v2_x1 v-if="pcAnimSecStatus == true"  />
 
     <!-- Mobile  /> -->
-    <component__front_sec_anim_mob_x1 v-else-if="pcAnimSecStatus == false"  />
+    <!-- <component__front_sec_anim_mob_x1 v-else-if="pcAnimSecStatus == false"  /> -->
+
+    <component__front_sec_anim_mob_x2 v-else-if="pcAnimSecStatus == false"/>
 </template>
 
 <script>
 import component__front_sec_v2_x1 from '@/components/component__front-sec-anim-v2.vue'
 import component__front_sec_anim_mob_x1 from '@/components/component__fornt-sec-v2_mob.vue'
+import component__front_sec_anim_mob_x2 from '@/components/component__fornt-sec-v2_mob-new-gen.vue'
+
+
 
 export default {
     data() {
@@ -23,6 +28,7 @@ export default {
     components: {
         component__front_sec_v2_x1,
         component__front_sec_anim_mob_x1,
+        component__front_sec_anim_mob_x2,
     },
 
     methods: {

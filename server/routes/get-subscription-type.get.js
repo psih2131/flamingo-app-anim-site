@@ -4,18 +4,27 @@ import db from './../_cfg/dbClient';
 export default defineEventHandler(async (event) => {
     const req = event.node.req;
     let result = {};
+    let salesAccessCountryList = {UA: true, PL: true, GB: true, US: true}
     // res.setHeader('Content-Type', 'application/json');
 
     const searchParams = new URLSearchParams(url.parse(req.url).query);
     let parse = () => {
         return new Promise((resolve, reject) => {
+            let response = {"success":true, "subscriptionType":"2", "isSubscriptionEnabled":true};
+
+            if (searchParams.has('scc') && salesAccessCountryList[searchParams.get('scc').toUpperCase()] === true) {
+                response.salesAccess = true;
+            }
+
             if (!searchParams.has('udid')) {
-                resolve( {"success":true, "subscriptionType":"1", "nonAuthoritative":1, "isSubscriptionEnabled":true} );
+                response.nonAuthoritative = 1;
+                resolve( response );
                 return;
             }
 
             if (!db.isActive()) {
-                resolve( {"success":true, "subscriptionType":"1", "nonAuthoritative":2, "isSubscriptionEnabled":true} );
+                response.nonAuthoritative = 2;
+                resolve( response );
                 return;
             }
 
@@ -26,19 +35,23 @@ export default defineEventHandler(async (event) => {
                 }
                 db.client().query(`select * from subscription_type_get('${searchParams.get('udid')}','${old_udid}');`, (err, result) => {
                     if (err) {
-                        resolve( {"success":true, "subscriptionType":"1", "nonAuthoritative":3, "isSubscriptionEnabled":true} );
+                        response.nonAuthoritative = 3;
+                        resolve( response );
                         return;
                     }
                     let data = result.rows.pop();
-                    let resp = {"success":true, "subscriptionType":`${data?.subscription_type_get?.type || 1}`, "isSubscriptionEnabled": data?.subscription_type_get?.is_active || false, "lastTaxQuestionsUpdate": data?.subscription_type_get?.tax_updated_at};
+                    response.subscriptionType = `${data?.subscription_type_get?.type || 1}`;
+                    response.isSubscriptionEnabled = data?.subscription_type_get?.is_active || false;
                     if (data && data.subscription_type_get && !data.subscription_type_get.is_active) {
-                        resp = {"success":true, "subscriptionType":`${data?.subscription_type_get?.type || 1}`, "isSubscriptionEnabled": data?.subscription_type_get?.is_active || false, "lastTaxQuestionsUpdate": data?.subscription_type_get?.tax_updated_at, "isSubsDisabled_36FdGtSm":true};
+                        response.lastTaxQuestionsUpdate = data?.subscription_type_get?.tax_updated_at;
+                        response.isSubsDisabled_36FdGtSm = true;
                     }
-                    resolve(resp);
+                    resolve( response );
                 });
             } catch (error) {
                 if (error) {
-                    resolve( {"success":true, "subscriptionType":"1", "nonAuthoritative":4, "isSubscriptionEnabled":true} );
+                    response.nonAuthoritative = 4;
+                    resolve( response );
                     return;
                 }
             }

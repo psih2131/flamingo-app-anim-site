@@ -118,12 +118,12 @@ export default {
         const CONFIG = {
             DAYS: 365 * 5,
             TRIPS_PER_DAY: [0, 1],
-            POINTS_PER_TRIP: [1, 5],
+            POINTS_PER_TRIP: [1, 13],
             BATCH_SIZE: [1, 3],
             TIME_BETWEEN_BATCHES: [5, 45],
             TIME_BETWEEN_TRIPS: 60,
             NIGHT_OUTS: 2000,
-            DAY_START_HOUR: 8,
+            DAY_START_HOUR: 2,
             DAY_END_HOUR: 22,
             REGION_SWITCH_PROBABILITY: 0.2
         };

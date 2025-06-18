@@ -4,7 +4,7 @@ import db from './../_cfg/dbClient';
 export default defineEventHandler(async (event) => {
     const req = event.node.req;
     let result = {};
-    let salesAccessCountryList = {UA: true, PL: true, GB: true, US: true}
+    let salesAccessCountryList = {UKR: true, POL: true, GBR: true, USA: true};
     // res.setHeader('Content-Type', 'application/json');
 
     const searchParams = new URLSearchParams(url.parse(req.url).query);

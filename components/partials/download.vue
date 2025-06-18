@@ -81,10 +81,13 @@ function animScrollPhone(){
      trigerStartAnim.value = donwloadSec.value.offsetTop - differetnHeight.value
 
      if (mobVersion.matches) {
-     trigerEndAnim.value = donwloadSec.value.offsetTop 
+     trigerEndAnim.value = donwloadSec.value.offsetTop + 200
+     
      }
      else{
        trigerEndAnim.value = donwloadSec.value.offsetTop - 200
+
+      
      }
 
      console.log('____download', window.scrollY)

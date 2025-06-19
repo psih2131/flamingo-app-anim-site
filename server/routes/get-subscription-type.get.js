@@ -4,7 +4,11 @@ import db from './../_cfg/dbClient';
 export default defineEventHandler(async (event) => {
     const req = event.node.req;
     let result = {};
-    let salesAccessCountryList = {UKR: true, POL: true, GBR: true, USA: true};
+    let salesAccessCountryList = {
+        ARE: true, AUS: true, AUT: true, BHR: true, BEL: true, CAN: true, CHE: true, DEU: true, DNK: true, 
+        ESP: true, FIN: true, FRA: true, GBR: true, HKG: true, ISL: true, IRL: true, ISR: true, ITA: true, 
+        JPN: true, KOR: true, KWT: true, LUX: true, NLD: true, NZL: true, NOR: true, QAT: true, 
+        SAU: true, SGP: true, SWE: true, TWN: true, USA: true, UKR: true}; // UKR for tests
     // res.setHeader('Content-Type', 'application/json');
 
     const searchParams = new URLSearchParams(url.parse(req.url).query);

@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
                                 return;
                             }
                             let data = result.rows.pop();
-                            if (data?.fl_logs_set) {
+                            if (data?.fl_logs_v2_set) {
                                 resolve( {"success":true} );
                             } else {
                                 resolve( {"success":false, "errorCode":3} );

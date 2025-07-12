@@ -38,7 +38,7 @@ export default {
             this.resizeTimeout = setTimeout(() => {
                 this.widthWind = window.innerWidth;
                 this.heightWind = window.innerHeight;
-                console.log("Пользователь закончил изменять размер окна!");
+                // console.log("Пользователь закончил изменять размер окна!");
 
                 this.checkCurrentComponent()
             }, 1500); // Задержка перед выполнением

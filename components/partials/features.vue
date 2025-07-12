@@ -19,8 +19,9 @@
 
             <div class="r-big__img-wrapper">
               <img src="@/assets/images/reasons-pages/r1.jpg" alt="" class="r-big__img reasons-sec__element-img">
+              <!-- @/assets/video/features-video/auto.mp4 -->
               <video class="r-big__video reasons-sec__element-video" 
-                src="@/assets/video/features-video/auto.mp4" 
+                src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/features-video/auto.mp4" 
                 muted  
                  
                 playsinline
@@ -140,8 +141,10 @@
 
           <div class="r-big__img-wrapper">
             <img src="@/assets/images/reasons-pages/r2.jpg" alt="" class="r-big__img reasons-sec__element-img">
+
+            <!-- @/assets/video/features-video/residency.mp4 -->
             <video class="r-big__video reasons-sec__element-video" 
-                src="@/assets/video/features-video/residency.mp4" 
+                src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/features-video/residency.mp4" 
                 muted  
                  
                 playsinline
@@ -221,8 +224,9 @@
 
           <div class="r-big__img-wrapper">
             <img src="@/assets/images/reasons-pages/r4.jpg" alt="" class="r-big__img reasons-sec__element-img">
+            <!-- @/assets/video/features-video/nyc.mp4 -->
             <video class="r-big__video reasons-sec__element-video" 
-                src="@/assets/video/features-video/nyc.mp4" 
+                src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/features-video/nyc.mp4" 
                 muted  
                  
                 playsinline 
@@ -241,8 +245,10 @@
 
           <div class="r-big__img-wrapper">
             <img src="@/assets/images/reasons-pages/r5.jpg" alt="" class="r-big__img reasons-sec__element-img">
+
+            <!-- @/assets/video/features-video/schengen.mp4 -->
             <video class="r-big__video reasons-sec__element-video" 
-                src="@/assets/video/features-video/schengen.mp4" 
+                src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/features-video/schengen.mp4" 
                 muted  
                  
                 playsinline 
@@ -466,8 +472,8 @@ export default {
     openPopupInfo(typeAnim, event){
       let allAnimElement = document.querySelectorAll('.reasons-sec__dropdown')
       let elementOpen = event.target.closest('.reason-element')
-      console.log(typeAnim)
-      console.log(elementOpen)
+      // console.log(typeAnim)
+      // console.log(elementOpen)
 
 
 

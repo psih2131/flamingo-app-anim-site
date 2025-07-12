@@ -107,7 +107,7 @@
                                         </clipPath>
                                         </defs>
                                     </svg>
-                                    {{ $t('Download') }}
+                                    {{ $t('download') }}
                                 </a>
                             </div>
                         </div>
@@ -446,8 +446,10 @@
             <div class="home-front-sec__video-wrapper">
             <div  class="home-front-sec__video-element home-front-sec__video-element-1"
             :class="{'home-front-sec__video-element-1_activ': +currentPlayVideo == 0}">
+
+            <!-- @/assets/video/vx1_.mp4 -->
                 <video v-if="autoPlaySupported == true"
-                src="@/assets/video/vx1_.mp4" 
+                src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/vx1_.mp4" 
                 muted 
                 autoplay 
                 loop 
@@ -471,8 +473,8 @@
                     preload="auto" 
                     ref="video2"
                 >
-        
-                    <source src="@/assets/video/vx2_.mp4" type="video/mp4">
+                    <!-- @/assets/video/vx2_.mp4 -->
+                    <source src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/vx2_.mp4" type="video/mp4">
                 
                     </video>
                 </div>
@@ -487,7 +489,8 @@
                     preload="auto"
                     ref="video3"
                 >
-                    <source src="@/assets/video/vx3_.mp4" type="video/mp4">
+                <!-- @/assets/video/vx3_.mp4 -->
+                    <source src="https://bucketeer-d6e4e59e-ad1d-4fcd-8e39-ddb579eec238.s3.amazonaws.com/public/flamingo/video/vx3_.mp4" type="video/mp4">
                     </video>
                 </div>
 
@@ -568,8 +571,8 @@ export default {
 
     onVideoLoaded_Vx1() {
         if(this.oneLoadVideoStatus == false){
-            console.log('video 1 loaded')
-            console.log("видео загружено:", Math.floor(Date.now() / 1000));
+            // console.log('video 1 loaded')
+            // console.log("видео загружено:", Math.floor(Date.now() / 1000));
             this.video1Status = true
             this.checkOthesVideoStatus()
         }   
@@ -577,8 +580,8 @@ export default {
 
     onVideoLoaded_Vx2() {
         if(this.oneLoadVideoStatus == false){
-            console.log('video 2 loaded')
-            console.log("видео загружено:", Math.floor(Date.now() / 1000));
+            // console.log('video 2 loaded')
+            // console.log("видео загружено:", Math.floor(Date.now() / 1000));
             this.video2Status = true
             this.checkOthesVideoStatus()
         }   
@@ -586,8 +589,8 @@ export default {
 
     onVideoLoaded_Vx3() {
         if(this.oneLoadVideoStatus == false){
-            console.log('video 3 loaded')
-            console.log("видео загружено:", Math.floor(Date.now() / 1000));
+            // console.log('video 3 loaded')
+            // console.log("видео загружено:", Math.floor(Date.now() / 1000));
             this.video3Status = true
             this.checkOthesVideoStatus()
         }   
@@ -602,7 +605,7 @@ export default {
 
     firsLoadAnimScripts(){
         this.scrollPosition = window.scrollY;
-        console.log('this.scrollPositions',this.scrollPosition) 
+        // console.log('this.scrollPositions',this.scrollPosition) 
 
         this.$refs.video2.currentTime = 0.1
         this.$refs.video3.currentTime = 0.1
@@ -628,7 +631,7 @@ export default {
         this.scrollDeltaChange = this.scrollPosition - this.lastScrollY;
 
         // console.log('Пикселей за 1 скрол:', this.scrollDeltaChange);
-        console.log('Текущая позиция прокрутки:', this.scrollPosition);
+        // console.log('Текущая позиция прокрутки:', this.scrollPosition);
         
         this.changePositionPhone()
         this.changePhoneSlide()
@@ -690,11 +693,11 @@ export default {
 
         if(currentTopValue <= maxTopValue){
             currentTopValue = maxTopValue
-            console.log('xxxx')
+            // console.log('xxxx')
         }
         else{
             currentTopValue = currentTopValue
-            console.log('yyyy')
+            // console.log('yyyy')
 
             if(currentTopValue >= this.windowHeingt - (phoneHeight / 2) ){
                 currentTopValue = this.windowHeingt - (phoneHeight / 2)
@@ -734,7 +737,7 @@ export default {
 
                 let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 1.4)) / current_1_procent
                 this.phoneStapTimelineSlideValue = currentSvipeValue
-                console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
+                // console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
             }
 
             if(+this.scrollPosition >= this.windowHeingt * 1.7 && +this.scrollPosition <= this.windowHeingt * 2.018){
@@ -866,7 +869,7 @@ export default {
             this.phoneWhiteSystemIconStatus = true
         }
 
-        console.log('sssda',this.windowHeingt, this.scrollPosition / this.windowHeingt)
+        // console.log('sssda',this.windowHeingt, this.scrollPosition / this.windowHeingt)
         
     },
 
@@ -1150,7 +1153,7 @@ export default {
         video.currentTime = +currentTimeVar;
         this.ticking = false;
 
-        console.log(currentTimeVar)
+        // console.log(currentTimeVar)
     },
 
     videoScroll3(){
@@ -1164,7 +1167,7 @@ export default {
         let video = this.$refs.video3
 
         if(!video){
-            console.log('video dont find')
+            // console.log('video dont find')
         }
 
         let containerValue = this.windowHeingt * 8
@@ -1185,7 +1188,7 @@ export default {
         video.currentTime = +currentTimeVar;
         this.ticking2 = false;
 
-        console.log('video 3 currentTime', video.currentTime)
+        // console.log('video 3 currentTime', video.currentTime)
  
     },
 
@@ -1216,7 +1219,7 @@ export default {
         this.resizeTimeout = setTimeout(() => {
             this.widthWind = window.innerWidth;
             this.heightWind = window.innerHeight;
-            console.log("Пользователь закончил изменять размер окна!");
+            // console.log("Пользователь закончил изменять размер окна!");
 
             this.refreshAnimationAfterBrowserSizeChange()
         }, 1500); // Задержка перед выполнением
@@ -1228,7 +1231,7 @@ export default {
         this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
         this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
-        console.log('window height', this.windowHeingt)
+        // console.log('window height', this.windowHeingt)
 
         this.handleScroll()
     },
@@ -1257,7 +1260,7 @@ export default {
       this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
       this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 19 + 'px'
 
-      console.log('window height', this.windowHeingt)
+    //   console.log('window height', this.windowHeingt)
 
 
       window.addEventListener("resize", this.updateWindowSize);

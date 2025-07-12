@@ -72,7 +72,7 @@ export default {
     },
 
     mounted(){
-        console.log(this.pageUrl)
+        // console.log(this.pageUrl)
     },
 
 }

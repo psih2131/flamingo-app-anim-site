@@ -58,7 +58,7 @@
                             </clipPath>
                             </defs>
                         </svg>
-                        {{ $t('Download') }}
+                        {{ $t('download') }}
                     </a>
                 </div>
 
@@ -119,7 +119,7 @@
                                 </clipPath>
                                 </defs>
                             </svg>
-                            {{ $t('Download') }}
+                            {{ $t('download') }}
                         </a>
                     </div>
                 </div>

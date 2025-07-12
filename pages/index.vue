@@ -67,7 +67,8 @@
             </div>
         </section>
 
-        <PartialsFeatures @openPopup="openPopupInfo"/>
+        <PartialsFeatures />
+        <!-- @openPopup="openPopupInfo" -->
 
         <PartialsHowItWorks />
 
@@ -79,7 +80,7 @@
 
         <PartialsDownload />
 
-        <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/>
+        <!-- <component__reason_popup v-if="popupStatus"  @closePopup="closePopup" :popupData="popupData"/> -->
 
 
     </main>
@@ -327,9 +328,9 @@ export default {
                 }
 
                 
-                console.log(element)
-                console.log(this.activeFirsLoad)
-                console.log('preview element',this.previewActivIndex)
+                // console.log(element)
+                // console.log(this.activeFirsLoad)
+                // console.log('preview element',this.previewActivIndex)
 
 
 
@@ -430,7 +431,7 @@ export default {
             this.resizeTimeout = setTimeout(() => {
                 this.widthWind = window.innerWidth;
                 this.heightWind = window.innerHeight;
-                console.log("Пользователь закончил изменять размер окна!");
+                // console.log("Пользователь закончил изменять размер окна!");
 
                 this.checkCurrentComponent()
             }, 1500); // Задержка перед выполнением
@@ -466,9 +467,9 @@ export default {
 
 
     mounted(){
-        console.log("pcAnimSecStatus до изменения:", this.pcAnimSecStatus);
+        // console.log("pcAnimSecStatus до изменения:", this.pcAnimSecStatus);
     this.pcAnimSecStatus = false;
-    console.log("pcAnimSecStatus после изменения:", this.pcAnimSecStatus);
+    // console.log("pcAnimSecStatus после изменения:", this.pcAnimSecStatus);
         // this.checkCurrentComponent()
      
         // window.addEventListener("resize", this.updateWindowSizeComponent);

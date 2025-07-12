@@ -672,7 +672,7 @@ export default {
 
                 let currentSvipeValue = (this.scrollPosition - (this.windowHeingt * 0.8)) / current_1_procent
                 this.phoneStapTimelineSlideValue = currentSvipeValue
-                console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
+                // console.log('scroll phone value',current_1_procent, current_100_procent, currentSvipeValue )
             }
 
             if(+this.scrollPosition >= this.windowHeingt * 1 && +this.scrollPosition <= this.windowHeingt * 1.2){
@@ -804,7 +804,7 @@ export default {
             this.phoneWhiteSystemIconStatus = true
         }
 
-        console.log('sssda',this.windowHeingt, this.scrollPosition / this.windowHeingt)
+        // console.log('sssda',this.windowHeingt, this.scrollPosition / this.windowHeingt)
         
     },
 
@@ -856,12 +856,12 @@ export default {
     changeActivTextBox(){
         if(+this.scrollPosition > this.windowHeingt * 0.45){
             this.showTextStatus = true
-            console.log('SOSI',  this.showTextStatus)
+            // console.log('SOSI',  this.showTextStatus)
             
         }
         else{
             this.showTextStatus = false      
-            console.log('SOSI',  this.showTextStatus)
+            // console.log('SOSI',  this.showTextStatus)
         }
 
         if(+this.scrollPosition >= this.windowHeingt * 0.64 && +this.scrollPosition <= this.windowHeingt * 1.2){
@@ -931,7 +931,7 @@ export default {
         this.resizeTimeout = setTimeout(() => {
             this.widthWind = window.innerWidth;
             this.heightWind = window.innerHeight;
-            console.log("Пользователь закончил изменять размер окна!");
+            // console.log("Пользователь закончил изменять размер окна!");
 
             this.refreshAnimationAfterBrowserSizeChange()
         }, 1500); // Задержка перед выполнением
@@ -972,7 +972,7 @@ export default {
       this.windowHeingt = this.$refs.heingtCurrent100VH.clientHeight
       this.$refs.frontScrollContainerRef.style.height = this.windowHeingt * 6 + 'px'
 
-      console.log('window height', this.windowHeingt)
+    //   console.log('window height', this.windowHeingt)
       this.firsLoadAnimScripts()
 
 

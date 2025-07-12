@@ -90,10 +90,10 @@ function animScrollPhone(){
       
      }
 
-     console.log('____download', window.scrollY)
-     console.log('donwloadSec offsetTop', donwloadSec.value.offsetTop)
-     console.log('____dowtrigerStartAnim.valuenload', trigerStartAnim.value)
-     console.log('trigerEndAnim', trigerEndAnim.value)
+    //  console.log('____download', window.scrollY)
+    //  console.log('donwloadSec offsetTop', donwloadSec.value.offsetTop)
+    //  console.log('____dowtrigerStartAnim.valuenload', trigerStartAnim.value)
+    //  console.log('trigerEndAnim', trigerEndAnim.value)
 
 
      if(currentScrollValue.value < trigerStartAnim.value){
@@ -104,7 +104,7 @@ function animScrollPhone(){
       let rangeValuer = trigerEndAnim.value - trigerStartAnim.value
       let currentStapValue = currentScrollValue.value - trigerStartAnim.value
       currentProgressProcent.value = 50 - (((currentStapValue / rangeValuer) * 100)/2)
-      console.log(currentStapValue / rangeValuer)
+      // console.log(currentStapValue / rangeValuer)
 
 
        mobImg.value.style.transform = `translateY(${currentProgressProcent.value }%)`
@@ -115,7 +115,7 @@ function animScrollPhone(){
 
 //HOOKS
 onMounted(() => {
-  console.log('download', window.scrollY)
+  // console.log('download', window.scrollY)
 
   //first load position
   animScrollPhone()
